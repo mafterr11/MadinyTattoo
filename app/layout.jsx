@@ -3,8 +3,6 @@ import "./globals.css";
 import Layout from "./components/Layout";
 
 
-
-
 export const metadata = {
   title: "Madiny Tattoo",
   description: "",
@@ -13,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className="bg-site text-white  bg-cover bg-no-repeat bg-fixed bg-center">
+    <html lang='en' className="bg-site text-white  bg-cover bg-no-repeat bg-fixed bg-center relative">
         <Layout>{children}</Layout>
     </html>
   );

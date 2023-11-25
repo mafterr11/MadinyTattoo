@@ -21,17 +21,19 @@ const poppins = Poppins({
 const Layout = ({ children }) => {
   const router = usePathname();
   return (
-    <body className={`${poppins.className} page  ${poppins.variable} font-poppins relative `}>
+    <div>
       <AnimatePresence mode='wait'>
-        <motion.div key={router} className='h-full'>
-          <Transition />
-          <TopLeftImg />
-          <Nav />
-          <Header />
-          {children}
-        </motion.div>
+        <body className={`${poppins.className} page`}>
+          <motion.div key={router} className='h-full'>
+            <Transition />
+            <TopLeftImg />
+            <Nav />
+            <Header />
+            {children}
+          </motion.div>
+        </body>
       </AnimatePresence>
-    </body>
+    </div>
   );
 };
 
