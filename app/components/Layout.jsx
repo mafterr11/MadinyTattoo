@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <AnimatePresence mode='wait'>
-        <motion.div>
+        <motion.div key={router} className='h-full'>
           <Transition />
           <TopLeftImg />
           <Nav />
