@@ -1,3 +1,6 @@
+"use client"
+import { useState } from "react";
+
 // icons
 import {
   FaHtml5,
@@ -88,8 +91,14 @@ const aboutData = [
   },
 ];
 
+import Avatar from '../components/Avatar'
+import Circles from '../components/Circles'
+
 const About = () => {
-  return <div>About</div>;
+  const [index, setIndex] = useState(0)
+  return <div>
+    <Circles />
+  </div>;
 };
 
 export default About;
