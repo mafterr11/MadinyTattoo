@@ -21,7 +21,10 @@ const poppins = Poppins({
 const Layout = ({ children }) => {
   const router = usePathname();
   return (
-    <div>
+    <html
+      lang='en'
+      className='bg-site text-white  bg-cover bg-no-repeat bg-fixed bg-center relative'
+    >
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} page`}>
           <motion.div key={router} className='h-full'>
@@ -33,7 +36,7 @@ const Layout = ({ children }) => {
           </motion.div>
         </body>
       </AnimatePresence>
-    </div>
+    </html>
   );
 };
 
