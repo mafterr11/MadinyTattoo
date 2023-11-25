@@ -21,7 +21,7 @@
 @layer base {
  
   body {
-    @apply overflow-hidden leading-relaxed bg-site text-white  bg-cover bg-no-repeat bg-fixed bg-center;
+    @apply overflow-hidden leading-relaxed text-white  bg-cover bg-no-repeat bg-fixed bg-center;
   }
   .page {
     @apply w-full h-screen overflow-hidden;
