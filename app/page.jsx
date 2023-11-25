@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 // COMPONENTS
 import ParticleContainer from "./components/ParticlesContainer";
 import ProjectsBtn from "./components/ProjectsBtn";
