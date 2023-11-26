@@ -92,15 +92,15 @@ const aboutData = [
   },
 ];
 
-import Avatar from "../components/Avatar";
-import Circles from "../components/Circles";
+// import Avatar from "../components/Avatar";
+// import Circles from "../components/Circles";
 import CountUp from "react-countup";
 
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full  py-32 text-center xl:text-left'>
-      <Circles />
+    <div className='xl:h-full py-32 text-center xl:text-left bg-primary/70'>
+      {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
         variants={fadeIn("right", 0.2)}
@@ -190,7 +190,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='flex flex-col w-full xl:max-w-[40%] h-[480px]'
+          className='flex flex-col w-full xl:max-w-[40%] h-fit'
         >
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
             {aboutData.map((item, itemIndex) => {

@@ -12,10 +12,10 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   return (
-    <div className='h-full'>
+    <div className='bg-primary/70 h-full'>
       {/* text */}
-      <div className='w-full h-full bg-gradient-to-r '>
-        <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto'>
+      <div className='w-full h-full bg-gradient-to-r'>
+        <div className='text-center flex flex-col justify-center pt-40 xl:text-left h-full container mx-auto'>
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
@@ -38,7 +38,7 @@ const Home = () => {
             În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea ta personală.
           </motion.p>
           {/* btn */}
-          <div className='flex justify-center xl:hidden relative'>
+          <div className='flex justify-center xl:hidden relative mb-16'>
             <ProjectsBtn />
           </div>
           <motion.div

@@ -1,15 +1,15 @@
 "use client";
 import { Poppins } from "next/font/google";
-// Components
+// COMPONENTS
 import Nav from "./Nav";
 import Header from "./Header";
-import Transition from "./Transition";
 import TopLeftImg from "./TopLeftImg";
+import Transition from "./Transition";
 
-// Router
+// ROUTER
 import { usePathname } from "next/navigation";
 
-// Framer
+// FRAMER MOTION
 import { AnimatePresence, motion } from "framer-motion";
 
 const poppins = Poppins({
@@ -23,11 +23,11 @@ const Layout = ({ children }) => {
   return (
     <html
       lang='en'
-      className='bg-site bg-cover bg-no-repeat bg-fixed bg-center relative'
+      className='bg-site text-white overflow-x-hidden bg-cover bg-no-repeat bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
-        <body className={`${poppins.className} page text-white`}>
-          <motion.div key={router} className='h-full bg-primary/70'>
+        <body className={`${poppins.className} page`}>
+          <motion.div key={router} className='h-full '>
             <Transition />
             {/* <TopLeftImg /> */}
             <Nav />
