@@ -1,7 +1,7 @@
 "use client";
 // COMPONENTS
-import ParticleContainer from "./components/ParticlesContainer";
 import ProjectsBtn from "./components/ProjectsBtn";
+import ParticleContainer from "./components/ParticlesContainer";
 import Avatar from "./components/Avatar";
 
 // FRAMER MOTION
@@ -12,7 +12,7 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   return (
-    <div className=' h-full'>
+    <div className='h-full'>
       {/* text */}
       <div className='w-full h-full bg-gradient-to-r '>
         <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto'>
@@ -25,7 +25,7 @@ const Home = () => {
             className='h1'
           >
             Transformăm Ideile <br /> In{" "}
-            <span className='text-accent'>Realitate</span>
+            <span className='text-accent '>Realitate</span>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -33,9 +33,9 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-black'
+            className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-p xl:text-lg'
           >
-            În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea ta personală
+            În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea ta personală.
           </motion.p>
           {/* btn */}
           <div className='flex justify-center xl:hidden relative'>
@@ -56,7 +56,7 @@ const Home = () => {
       {/* <div className='w-[1200px] h-full absolute right-0 bottom-0'> */}
         {/* bg image */}
         {/* DELETE */}
-        {/* <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-overlay translate-z-0'></div> */}
+        {/* <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-overlay opacity-20 translate-z-0'></div> */}
         {/* DELETE */}
         
         {/* particles */}

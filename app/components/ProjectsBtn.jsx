@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 // Image
 import Image from "next/image";
-import roundedText from "../../public/rounded-text.png";
+import roundedText from "../../public/rounded-white-bold.png";
 
 const ProjectsBtn = () => {
   return (

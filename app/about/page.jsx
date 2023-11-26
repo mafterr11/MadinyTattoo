@@ -1,15 +1,9 @@
 "use client";
 import { useState } from "react";
-// Components
-import Avatar from "../components/Avatar";
-import Circles from "../components/Circles";
-import CountUp from "react-countup";
-
-// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-// Icons
+// icons
 import {
   FaHtml5,
   FaCss3,
@@ -26,7 +20,7 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
-//  Data
+//  data
 const aboutData = [
   {
     title: "skills",
@@ -98,13 +92,17 @@ const aboutData = [
   },
 ];
 
+import Avatar from "../components/Avatar";
+import Circles from "../components/Circles";
+import CountUp from "react-countup";
+
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
+    <div className='h-full  py-32 text-center xl:text-left'>
       <Circles />
       {/* avatar img */}
-      <motion.div
+      {/* <motion.div
         variants={fadeIn("right", 0.2)}
         initial='hidden'
         animate='show'
@@ -112,7 +110,7 @@ const About = () => {
         className='hidden xl:flex absolute bottom-0 -left-[370px]'
       >
         <Avatar />
-      </motion.div>
+      </motion.div> */}
       <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
@@ -123,19 +121,20 @@ const About = () => {
             exit='hidden'
             className='h2'
           >
-            Captivation <span className='text-accent'>stories</span> birth
-            magnificent designs.
+            Poveștile <span className='text-accent'>captivante</span> dau
+            naștere designurilor magnifice.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
+            className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-p xl:text-lg'
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collaborated on digital products for buisiness and consumer use
+            Cu un an în urmă, am început activitatea ca artist tatuator
+            independent. În acest interval, am creat designuri unice și
+            memorabile, aducând la viață ideile clienților mei. Le mulțumesc
+            pentru susținere și încrederea acordată!
           </motion.p>
           {/* counters */}
           <motion.div
@@ -149,28 +148,28 @@ const About = () => {
               {/* experience */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={10} duration={5} /> +
+                  <CountUp start={0} end={1} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                  Years of experience
+                  Ani de experiență
                 </div>
               </div>
               {/* clients */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={255} duration={5} /> +
+                  <CountUp start={0} end={320} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                  Satisfied Clients
+                  Clienți satisfăcuți
                 </div>
               </div>
               {/* projects */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={621} duration={5} /> +
+                  <CountUp start={0} end={1250} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                  Finished Projects
+                  Proiecte finalizate
                 </div>
               </div>
               {/* awards */}
@@ -191,7 +190,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='flex flex-col w-full xl:max-w-[48%] h-[480px]'
+          className='flex flex-col w-full xl:max-w-[40%] h-[480px]'
         >
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
             {aboutData.map((item, itemIndex) => {
@@ -218,9 +217,9 @@ const About = () => {
                   className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
                 >
                   {/* title */}
-                  <div className='font-light mb-2 md:mb-0'>{item.title}</div>
+                  <div className='font-light mb-2 md:mb-0 text-p'>{item.title}</div>
                   <div className='hidden md:flex'>-</div>
-                  <div>{item.stage}</div>
+                  <div className="text-p">{item.stage}</div>
                   <div className='flex gap-x-4'>
                     {/* icons */}
                     {item.icons?.map((icon, itemIndex) => {

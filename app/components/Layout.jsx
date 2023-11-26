@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
       className='bg-site bg-cover bg-no-repeat bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
-        <body className={`${poppins.className} page text-black`}>
-          <motion.div key={router} className='h-full'>
+        <body className={`${poppins.className} page text-white`}>
+          <motion.div key={router} className='h-full bg-primary/70'>
             <Transition />
             {/* <TopLeftImg /> */}
             <Nav />
