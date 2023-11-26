@@ -19,15 +19,15 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#131424',
+        primary: 'black',
         secondary: '#393A47',
         accent: '#F13024',
+        site: '#FDF7E4',  
       },
       backgroundImage: {
         explosion: "url('/bg-explosion.png')",
         circles: "url('/bg-circles.png')",
         circleStar: "url('/circle-star.svg')",
-        site: "url('/site-bg.svg')",
       },
       animation: {
         'spin-slow': 'spin 6s linear infinite',
