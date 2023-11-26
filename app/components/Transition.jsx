@@ -1,7 +1,7 @@
-// FRAMER MOTION
+// Framer
 import { motion } from "framer-motion";
 
-// VARIANTS
+// Variants
 const transitionVariants = {
   initial: {
     x: "100%",

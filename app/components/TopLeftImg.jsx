@@ -1,3 +1,4 @@
+// Image
 import Image from "next/image";
 import topLeft from "../../public/bird.png"
 

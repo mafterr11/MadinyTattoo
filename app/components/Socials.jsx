@@ -1,8 +1,7 @@
 import Link from "next/link";
+// Icons
 import { RiInstagramLine, RiTiktokLine, RiWhatsappLine } from "react-icons/ri";
 import { BiPhone } from "react-icons/bi";
-
-
 
 const Socials = () => {
   return (

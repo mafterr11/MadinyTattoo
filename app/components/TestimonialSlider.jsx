@@ -1,5 +1,5 @@
 "use client";
-// testimonial data
+// Testimonial Data
 const testimonialData = [
   {
     image: "/t-avt-1.png",

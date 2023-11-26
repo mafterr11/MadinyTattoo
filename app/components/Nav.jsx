@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// icons
+// Icons
 import {
   HiHome,
   HiUser,
@@ -11,7 +11,7 @@ import {
   HiEnvelope,
 } from "react-icons/hi2";
 
-// nav data
+// Nav Data
 export const navData = [
   { name: "home", path: "/", icon: <HiHome /> },
   { name: "about", path: "/about", icon: <HiUser /> },

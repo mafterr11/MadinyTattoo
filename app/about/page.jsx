@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
+// Components
+import Avatar from "../components/Avatar";
+import Circles from "../components/Circles";
+import CountUp from "react-countup";
+
+// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-// icons
+// Icons
 import {
   FaHtml5,
   FaCss3,
@@ -20,7 +26,7 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
-//  data
+//  Data
 const aboutData = [
   {
     title: "skills",
@@ -91,10 +97,6 @@ const aboutData = [
     ],
   },
 ];
-
-import Avatar from "../components/Avatar";
-import Circles from "../components/Circles";
-import CountUp from "react-countup";
 
 const About = () => {
   const [index, setIndex] = useState(0);
