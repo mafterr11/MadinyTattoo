@@ -24,8 +24,8 @@ const Home = () => {
             exit='hidden'
             className='h1'
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className='text-accent'>Art</span>
+            Transformăm Ideile <br /> In{" "}
+            <span className='text-accent'>Realitate</span>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -35,8 +35,7 @@ const Home = () => {
             exit='hidden'
             className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo libero
-            nihil ratione ut numquam illo incidunt repellendus.
+            În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea ta personală
           </motion.p>
           {/* btn */}
           <div className='flex justify-center xl:hidden relative'>
