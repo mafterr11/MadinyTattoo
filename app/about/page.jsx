@@ -131,10 +131,7 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-p xl:text-lg'
           >
-            Cu un an în urmă, am început activitatea ca artist tatuator
-            independent. În acest interval, am creat designuri unice și
-            memorabile, aducând la viață ideile clienților mei. Le mulțumesc
-            pentru susținere și încrederea acordată!
+            Încă de când am început activitatea ca artist tatuator independent, am creat designuri unice și memorabile, aducând la viață ideile clienților mei. Le mulțumesc pentru susținere și încrederea acordată!
           </motion.p>
           {/* counters */}
           <motion.div
@@ -145,42 +142,42 @@ const About = () => {
             className='hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'
           >
             <div className='flex flex-1 xl:gap-x-6'>
-              {/* experience */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={1} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                  Ani de experiență
-                </div>
-              </div>
               {/* clients */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={320} duration={5} /> +
+                  <CountUp start={0} end={1224} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
                   Clienți satisfăcuți
                 </div>
               </div>
+              {/* experience */}
+              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
+                  <CountUp start={0} end={968} duration={5} /> +
+                </div>
+                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
+                Clienți recurenți
+                </div>
+              </div>
               {/* projects */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={1250} duration={5} /> +
+                  <CountUp start={0} end={3580} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
                   Proiecte finalizate
                 </div>
               </div>
               {/* awards */}
-              <div className='relative flex-1'>
+              {/* <div className='relative flex-1'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={8} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
                   Winning Awards
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
