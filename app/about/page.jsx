@@ -99,7 +99,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='xl:h-full py-32 text-center xl:text-left bg-primary/70'>
+    <div className='xl:h-full pt-32 pb-12 xl:pt-0 xl:pb-0 text-center xl:text-left bg-primary/70'>
       {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
@@ -217,13 +217,15 @@ const About = () => {
                   className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
                 >
                   {/* title */}
-                  <div className='font-light mb-2 md:mb-0 text-p'>{item.title}</div>
+                  <div className='font-light mb-2 md:mb-0 text-p'>
+                    {item.title}
+                  </div>
                   <div className='hidden md:flex'>-</div>
-                  <div className="text-p">{item.stage}</div>
+                  <div className='text-p'>{item.stage}</div>
                   <div className='flex gap-x-4'>
                     {/* icons */}
                     {item.icons?.map((icon, itemIndex) => {
-                      return <div className='text-2xl text-white'>{icon}</div>;
+                      return <div key={itemIndex} className='text-2xl text-white'>{icon}</div>;
                     })}
                   </div>
                 </div>
