@@ -14,15 +14,15 @@ const Home = () => {
   return (
     <div className='bg-primary/70 h-full'>
       {/* text */}
-      <div className='w-full h-full bg-gradient-to-r'>
-        <div className='text-center flex flex-col justify-center pt-40 xl:text-left h-full container mx-auto'>
+      <div className='w-full h-screen bg-gradient-to-r'>
+        <div className='text-center flex flex-col justify-center pt-40 md:pt-0 xl:pt-40 xl:text-left h-full container mx-auto'>
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h1'
+            className='h1 '
           >
             Transformăm Ideile <br /> In{" "}
             <span className='text-accent '>Realitate</span>
@@ -33,7 +33,7 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-p xl:text-lg'
+            className='max-w-sm md:max-w-md xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-p md:text-2xl xl:text-lg'
           >
             În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea personală.
           </motion.p>

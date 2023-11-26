@@ -99,7 +99,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='xl:h-full pt-32 pb-12 xl:pt-0 xl:pb-0 text-center xl:text-left bg-primary/70'>
+    <div className='xl:h-screen h-screen md:h-screen pt-32 pb-12 xl:pt-0 xl:pb-0 text-center xl:text-left bg-primary/70'>
       {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
@@ -131,7 +131,10 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-p xl:text-lg'
           >
-            Încă de când am început activitatea ca artist tatuator independent, am creat designuri unice și memorabile, aducând la viață ideile clienților mei. Le mulțumesc pentru susținere și încrederea acordată!
+            Încă de când am început activitatea ca artist tatuator independent,
+            am creat designuri unice și memorabile, aducând la viață ideile
+            clienților mei. Le mulțumesc pentru susținere și încrederea
+            acordată!
           </motion.p>
           {/* counters */}
           <motion.div
@@ -145,7 +148,7 @@ const About = () => {
               {/* clients */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={1224} duration={5} /> +
+                  <CountUp start={0} end={878} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
                   Clienți satisfăcuți
@@ -154,16 +157,16 @@ const About = () => {
               {/* experience */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={968} duration={5} /> +
+                  <CountUp start={0} end={652} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                Clienți recurenți
+                  Clienți recurenți
                 </div>
               </div>
               {/* projects */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={3580} duration={5} /> +
+                  <CountUp start={0} end={2725} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
                   Proiecte finalizate
@@ -222,7 +225,11 @@ const About = () => {
                   <div className='flex gap-x-4'>
                     {/* icons */}
                     {item.icons?.map((icon, itemIndex) => {
-                      return <div key={itemIndex} className='text-2xl text-white'>{icon}</div>;
+                      return (
+                        <div key={itemIndex} className='text-2xl text-white'>
+                          {icon}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
