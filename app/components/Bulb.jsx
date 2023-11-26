@@ -1,4 +1,3 @@
-// Image
 import Image from "next/image";
 import bulb from '../../public/bulb.png'
 

@@ -2,7 +2,7 @@
 // Components
 import TestimonialSlider from "../components/TestimonialSlider";
 
-// Framer
+// Framer Motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 

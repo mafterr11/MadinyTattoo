@@ -23,11 +23,11 @@ const Layout = ({ children }) => {
   return (
     <html
       lang='en'
-      className='bg-site text-white overflow-x-hidden bg-cover bg-no-repeat bg-fixed bg-center'
+      className='bg-site text-white  bg-cover bg-no-repeat bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
-        <body className={`${poppins.className} page h-screen`}>
-          <motion.div key={router}>
+        <body className={`${poppins.className} page`}>
+          <motion.div key={router} className='h-full'>
             <Transition />
             {/* <TopLeftImg /> */}
             <Nav />

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// Icons
+// icons
 import {
   HiHome,
   HiUser,
@@ -11,7 +11,7 @@ import {
   HiEnvelope,
 } from "react-icons/hi2";
 
-// Nav Data
+// nav data
 export const navData = [
   { name: "home", path: "/", icon: <HiHome /> },
   { name: "about", path: "/about", icon: <HiUser /> },
@@ -32,8 +32,8 @@ export const navData = [
 const Nav = () => {
   const pathname = usePathname();
   return (
-    <nav className='flex overflow-hidden flex-col items-center gap-y-4 h-max xl:fixed xl:bottom-0 xl:right-[2%] w-full xl:w-16 xl:max-w-md z-50  xl:justify-center xl:h-screen text-black'>
-      <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-[#FDF9EE] backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full border-[1px] border-black rounded'>
+    <nav className='flex flex-col items-center gap-y-4 fixed h-max bottom-0 xl:right-[2%] w-full xl:w-16 xl:max-w-md z-50  xl:justify-center xl:h-screen text-black'>
+      <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-[#FDF9EE] backdrop-blur-sm text-3xl xl:text-2xl xl:rounded-full border-[1px] border-black/70 rounded'>
         {navData.map((link, index) => {
           return (
             <Link
@@ -55,7 +55,7 @@ const Nav = () => {
                 </div>
               </div>
               {/* icons */}
-              <div>{link.icon}</div>
+              <div >{link.icon}</div>
             </Link>
           );
         })}

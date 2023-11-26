@@ -1,4 +1,0 @@
-BG images
-
-NOT MANDATORY - Photo by <a href="https://unsplash.com/@nampoh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Maxim Hopman</a> on <a href="https://unsplash.com/photos/a-man-with-tattoos-on-his-arm-holding-a-cigarette-52Kf36w124Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  

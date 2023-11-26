@@ -1,5 +1,4 @@
 import Image from "next/image";
-// Component
 import avatar from "../../public/Avatar.png"
 
 const Avatar = () => {

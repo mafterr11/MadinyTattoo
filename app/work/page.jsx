@@ -1,10 +1,8 @@
 "use client";
-// Components
 import WorkSlider from "../components/WorkSlider";
 import Bulb from "../components/Bulb";
 import Circles from "../components/Circles";
 
-// Framer & Variant
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
