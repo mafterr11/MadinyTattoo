@@ -36,7 +36,32 @@ const workSlides = {
           title: "title",
           path: "/tattoo7.png",
         },
+        {
+          title: "title",
+          path: "/tattoo8.png",
+        },
 
+      ],
+    },
+    {
+      images: [
+
+        {
+          title: "title",
+          path: "/tattoo9.png",
+        },
+        {
+          title: "title",
+          path: "/tattoo10.png",
+        },
+        {
+          title: "title",
+          path: "/tattoo11.png",
+        },
+        {
+          title: "title",
+          path: "/tattoo12.png",
+        },
 
       ],
     },
