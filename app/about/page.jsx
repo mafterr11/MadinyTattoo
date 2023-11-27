@@ -99,7 +99,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full bg-primary/60 py-12 text-center xl:text-left'>
+    <div className='h-full bg-primary/40 py-12 text-center xl:text-left'>
       {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
