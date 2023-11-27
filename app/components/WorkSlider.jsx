@@ -96,11 +96,11 @@ const WorkSlider = () => {
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className='grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 cursor-pointer'>
+            <div className='grid grid-cols-2 grid-rows-2 gap-2 cursor-pointer'>
               {slide.images.map((image, index) => {
                 return (
                   <div className='relative rounded-lg overflow-hidden flex items-center justify-center group' key={index}>
-                    <div className='flex items-center justify-center relative overflow-hidden group'>
+                    <div className='flex items-center justify-center relative overflow-hidden group border-black/40 border-solid border-2'>
                       {/* image */}
                       <Image
                         src={image.path}

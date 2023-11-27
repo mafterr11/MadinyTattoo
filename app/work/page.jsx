@@ -11,7 +11,7 @@ const Work = () => {
     <div className='h-full bg-primary/40 flex items-center'>
       {/* <Circles /> */}
       <div className='container mx-auto h-full py-36 xl:py-60'>
-        <div className='flex h-screen xl:h-full flex-col xl:flex-row gap-x-8'>
+        <div className='flex justify-center items-start h-screen xl:h-full flex-col xl:flex-row gap-x-8'>
           {/* text */}
           <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
             <motion.h2
