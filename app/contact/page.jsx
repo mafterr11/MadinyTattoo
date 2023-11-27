@@ -16,7 +16,7 @@ const Contact = () => {
     <div className='h-full bg-primary/30'>
       <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
         {/* text n form */}
-        <div className=' flex flex-col w-full max-w-[700px]'>
+        <div className=' flex flex-col w-full'>
           {/* text */}
           <motion.h2
             variants={fadeIn("up", 0, 2)}
@@ -28,14 +28,58 @@ const Contact = () => {
             Let's <span className='text-accent'>connect.</span>
           </motion.h2>
           {/* form */}
-          <motion.form
+          <div className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 xl:pt-[7rem] '>
+            {/* map */}
+            <div className='w-full relative lg:w-full md:w-1/2 mt-12 lg:mt-0 rounted-lg'>
+              <iframe
+                src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1196.8146252130132!2d26.10955270913075!3d44.483991660275706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sro!2sro!4v1701113350695!5m2!1sro!2sro'
+                width='100%'
+                height='100%'
+                style={{ border: "0" }}
+                allowFullScreen=''
+                title="google map"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className='text-center flex flex-col w-3/4 text-xl gap-6'>
+              <h1 className='text-3xl underline underline-offset-8'>
+                Contact Us
+              </h1>
+              <p>
+                <strong className='font-bold text-accent text-2xl'>
+                  Rezervari:
+                </strong>{" "}
+                contact@madinytattoo.ro
+              </p>
+              <p>
+                <strong className='font-bold text-accent text-2xl'>
+                  Restaurant:
+                </strong>{" "}
+                021-XXX-230
+              </p>
+              <p>
+                <strong className='font-bold text-accent text-2xl'>
+                  Adresa:
+                </strong>{" "}
+                Cloud 9, Pipera
+              </p>
+              <div>
+                <p>
+                  <strong className='font-bold text-accent text-2xl'>
+                    Program:
+                  </strong>{" "}
+                  10:00 am - 20:00 pm{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* <motion.form
             variants={fadeIn("up", 0, 4)}
             initial='hidden'
             animate='show'
             exit='hidden'
             className='flex-1 flex flex-col gap-6 w-full mx-auto'
           >
-            {/* input group  */}
             <div className='flex gap-x-6 w-full'>
               <input type='text' placeholder='name' className='input' />
               <input type='text' placeholder='email' className='input' />
@@ -48,7 +92,7 @@ const Contact = () => {
               </span>
               <BsArrowRight className='-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]' />
             </button>
-          </motion.form>
+          </motion.form> */}
         </div>
       </div>
     </div>
