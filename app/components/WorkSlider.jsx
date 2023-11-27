@@ -23,7 +23,7 @@ const workSlides = {
     },
     {
       images: [
-       
+
         {
           title: "title",
           path: "/tattoo5.png",
@@ -66,12 +66,12 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className='h-[280px] sm:h-fit h-fit'
+      className='h-fit'
     >
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className='grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer'>
+            <div className='grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 cursor-pointer'>
               {slide.images.map((image, index) => {
                 return (
                   <div className='relative rounded-lg overflow-hidden flex items-center justify-center group' key={index}>
