@@ -3,24 +3,24 @@
 const testimonialData = [
   {
     image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
+    name: "Ana Maria",
+    position: "Tattoo Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Sincer, nu o să mai merg în altă parte VREODATĂ să mă tatuez. Sunt atât de superbe și a fost atât de faină atmosfera la tine, încât aș simți că te-aș trăda dacă aș merge în altă parte. Abia aștept să revin!",
   },
   {
     image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
+    name: "Ioana",
+    position: "Tattoo Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Tatuajul este absolut divin. Îți mulțumesc din suflet, ești cea mai profesionistă și pricepută de pe piață. Nu aș fi avut încredere în altcineva pentru primul tatuaj!",
   },
   {
     image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
+    name: "Andreea",
+    position: "Tattoo Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Nu pot să nu admir cât de incredibil este tatuajul meu! Mulțumesc din inimă, ești pur și simplu remarcabilă în ceea ce faci!",
   },
 ];
 
@@ -68,7 +68,7 @@ const TestimonialSlider = () => {
                   {/* name */}
                   <div className='text-lg'>{person.name}</div>
                   {/* position */}
-                  <div className='text-[12px] uppercase font-extralight tracking-widest'>
+                  <div className='text-[12px] uppercase text-p tracking-widest'>
                     {person.position}
                   </div>
                 </div>
