@@ -23,7 +23,6 @@ const workSlides = {
     },
     {
       images: [
-
         {
           title: "title",
           path: "/tattoo5.png",
@@ -40,12 +39,10 @@ const workSlides = {
           title: "title",
           path: "/tattoo8.png",
         },
-
       ],
     },
     {
       images: [
-
         {
           title: "title",
           path: "/tattoo9.png",
@@ -62,7 +59,6 @@ const workSlides = {
           title: "title",
           path: "/tattoo12.png",
         },
-
       ],
     },
   ],
@@ -80,17 +76,18 @@ import "swiper/css/pagination";
 import { BsArrowRight } from "react-icons/bs";
 
 // Required Modules
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import Image from "next/image";
 
 const WorkSlider = () => {
   return (
     <Swiper
       spaceBetween={10}
+      navigation={true}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Navigation, Pagination]}
       className='h-fit'
     >
       {workSlides.slides.map((slide, index) => {
@@ -99,7 +96,10 @@ const WorkSlider = () => {
             <div className='grid grid-cols-2 grid-rows-2 gap-2 cursor-pointer'>
               {slide.images.map((image, index) => {
                 return (
-                  <div className='relative rounded-lg overflow-hidden flex items-center justify-center group' key={index}>
+                  <div
+                    className='relative rounded-lg overflow-hidden flex items-center justify-center group'
+                    key={index}
+                  >
                     <div className='flex items-center justify-center relative overflow-hidden group border-black/40 border-solid border-2'>
                       {/* image */}
                       <Image
