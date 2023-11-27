@@ -14,8 +14,8 @@ const Home = () => {
   return (
     <div className='bg-primary/60 h-full'>
       {/* text */}
-      <div className='w-full h-full bg-gradient-to-r pt-24'>
-        <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto'>
+      <div className='w-full h-full bg-gradient-to-r py-12'>
+        <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-screen xl:h-full container mx-auto'>
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
