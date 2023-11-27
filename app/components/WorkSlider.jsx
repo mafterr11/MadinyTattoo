@@ -5,40 +5,39 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/tattoo1.png",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/tattoo2.png",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
+          path: "/tattoo3.png",
         },
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/tattoo4.png",
         },
       ],
     },
     {
       images: [
+       
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/tattoo5.png",
         },
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/tattoo6.png",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/tattoo7.png",
         },
-        {
-          title: "title",
-          path: "/thumb3.jpg",
-        },
+
+
       ],
     },
   ],
@@ -67,7 +66,7 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className='h-[280px] sm:h-[480px]'
+      className='h-[280px] sm:h-fit h-fit'
     >
       {workSlides.slides.map((slide, index) => {
         return (

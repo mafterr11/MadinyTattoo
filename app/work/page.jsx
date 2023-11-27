@@ -10,7 +10,7 @@ const Work = () => {
   return (
     <div className='h-full bg-primary/30 py-36 flex items-center'>
       {/* <Circles /> */}
-      <div className='container mx-auto'>
+      <div className='container mx-auto h-screen py-36 xl:py-60'>
         <div className='flex flex-col xl:flex-row gap-x-8'>
           {/* text */}
           <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
@@ -21,18 +21,16 @@ const Work = () => {
               exit='hidden'
               className='h2 xl:mt-8'
             >
-              My Work <span className='text-accent'>.</span>
+              Lucrările mele <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[400px] mx-auto lg:mx-0'
+              className='mb-4 max-w-[500px] mx-auto lg:mx-0 text-p text-lg'
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-              mollitia dolores veniam delectus laborum explicabo, natus
-              perferendis modi.
+              Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj. Explorează portofoliul meu și lasă-te captivat de poveștile vizuale pe care le-am imprimat pe piele.
             </motion.p>
           </div>
           {/* slider */}
@@ -41,7 +39,7 @@ const Work = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='w-full xl:max-w-[65%]'
+            className='w-full xl:max-w-[45%]'
           >
             <WorkSlider />
           </motion.div>
