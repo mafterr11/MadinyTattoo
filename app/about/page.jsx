@@ -99,7 +99,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full bg-primary/40 py-12 text-center xl:text-left'>
+    <div className='h-full bg-primary/40 py-40 text-center xl:text-left'>
       {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
@@ -111,9 +111,9 @@ const About = () => {
       >
         <Avatar />
       </motion.div> */}
-      <div className='container mx-auto h-screen xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
-        <div className='flex-1 flex flex-col justify-center'>
+        <div className='flex flex-col justify-center'>
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial='hidden'
