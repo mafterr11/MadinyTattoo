@@ -99,7 +99,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full bg-primary/40 py-40 text-center xl:text-left'>
+    <div className='h-full xs:h-screen py-40 text-center xl:text-left'>
       {/* <Circles /> */}
       {/* avatar img */}
       {/* <motion.div
@@ -129,7 +129,7 @@ const About = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-3xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-p xl:text-lg'
+            className='max-w-3xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0 text-p xl:text-lg xs:text-lg'
           >
             Încă de când am început activitatea ca artist tatuator independent,
             am creat designuri inedite și memorabile, aducând la viață ideile
@@ -216,13 +216,13 @@ const About = () => {
                   key={itemIndex}
                   className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
                 > */}
-                  {/* title */}
-                  {/* <div className='font-light mb-2 md:mb-0'>{item.title}</div>
+        {/* title */}
+        {/* <div className='font-light mb-2 md:mb-0'>{item.title}</div>
                   <div className='hidden md:flex'>-</div>
                   <div>{item.stage}</div>
                   <div className='flex gap-x-4'> */}
-                    {/* icons */}
-                    {/* {item.icons?.map((icon, itemIndex) => {
+        {/* icons */}
+        {/* {item.icons?.map((icon, itemIndex) => {
                       return <div  key={itemIndex} className='text-2xl text-white'>{icon}</div>;
                     })}
                   </div>

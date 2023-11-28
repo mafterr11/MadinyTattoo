@@ -12,7 +12,7 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   return (
-    <div className='bg-primary/40 h-full'>
+    <div className='h-full'>
       {/* text */}
       <div className='w-full h-full bg-gradient-to-r py-12'>
         <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-screen xl:h-full container mx-auto'>
@@ -22,7 +22,7 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h1'
+            className='h1 xs:text-4xl'
           >
             Transformăm Ideile <br /> In{" "}
             <span className='text-accent '>Realitate</span>
@@ -33,7 +33,7 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-lg text-p'
+            className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-lg text-p xs:text-xl'
           >
             În spațiul nostru creativ, transformăm fiecare concept într-o realitate vibrantă și autentică. Fiecare design captează unicitatea ta, conturând și detaliind povestea personală.
           </motion.p>

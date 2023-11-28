@@ -8,7 +8,7 @@ import { fadeIn } from "../../variants";
 
 const Services = () => {
   return (
-    <div className='h-full bg-primary/30 py-36 flex items-center'>
+    <div className='h-full xs:h-screen bg-primary/30 py-36 flex items-center'>
       {/* <Circles /> */}
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-x-8'>
@@ -28,7 +28,7 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[600px] mx-auto lg:mx-0'
+              className='mb-4 max-w-[600px] mx-auto lg:mx-0 xs:text-lg'
             >
               Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii.
             </motion.p>
