@@ -28,7 +28,7 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[400px] mx-auto lg:mx-0'
+              className='mb-4 max-w-[600px] mx-auto lg:mx-0'
             >
               Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii.
             </motion.p>
@@ -39,7 +39,7 @@ const Services = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='w-full xl:max-w-[65%]'
+            className='w-full xl:max-w-[55%]'
           >
             <ServiceSlider />
           </motion.div>
