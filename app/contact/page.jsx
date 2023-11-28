@@ -13,13 +13,13 @@ import { fadeIn } from "../../variants";
 
 const Contact = () => {
   return (
-    <div className='h-full bg-primary/30'>
-      <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
+    <div className=' h-max bg-primary/30'>
+      <div className='container mx-auto  py-32 text-center xl:text-left flex items-center justify-center h-full'>
         {/* text n form */}
-        <div className=' flex flex-col w-full'>
+        <div className=' flex flex-col w-full h-full xl:pt-[5rem] '>
           {/* text */}
           <motion.h2
-            variants={fadeIn("up", 0, 2)}
+            variants={fadeIn("right", 0, 2)}
             initial='hidden'
             animate='show'
             exit='hidden'
@@ -28,14 +28,18 @@ const Contact = () => {
             Let's <span className='text-accent'>connect.</span>
           </motion.h2>
           {/* form */}
-          <div className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 xl:pt-[7rem] '>
+          <motion.div
+            variants={fadeIn("left", 0, 4)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] '>
             {/* map */}
-            <div className='w-full relative lg:w-full md:w-1/2 mt-12 lg:mt-0 rounted-lg'>
+            <div className='w-full lg:w-full mt-12 lg:mt-0 rounted-lg map-responsive'>
               <iframe
                 src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1196.8146252130132!2d26.10955270913075!3d44.483991660275706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sro!2sro!4v1701113350695!5m2!1sro!2sro'
                 width='100%'
                 height='100%'
-                style={{ border: "0" }}
                 allowFullScreen=''
                 title="google map"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -72,7 +76,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* <motion.form
             variants={fadeIn("up", 0, 4)}
             initial='hidden'

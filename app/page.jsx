@@ -18,7 +18,7 @@ const Home = () => {
         <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-screen xl:h-full container mx-auto'>
           {/* title */}
           <motion.h1
-            variants={fadeIn("down", 0.2)}
+            variants={fadeIn("right", 0.2)}
             initial='hidden'
             animate='show'
             exit='hidden'
@@ -29,7 +29,7 @@ const Home = () => {
           </motion.h1>
           {/* subtitle */}
           <motion.p
-            variants={fadeIn("down", 0.3)}
+            variants={fadeIn("right", 0.3)}
             initial='hidden'
             animate='show'
             exit='hidden'
@@ -42,7 +42,7 @@ const Home = () => {
             <ProjectsBtn />
           </div>
           <motion.div
-            variants={fadeIn("down", 0.4)}
+            variants={fadeIn("right", 0.5)}
             initial='hidden'
             animate='show'
             exit='hidden'
