@@ -16,7 +16,7 @@ const Contact = () => {
     <div className=' h-max'>
       <div className='container mx-auto  py-32 text-center xl:text-left flex items-center justify-center h-full'>
         {/* text n form */}
-        <div className='flex flex-col w-full h-full xl:pt-[5rem] '>
+        <div className=' flex flex-col w-full h-full xl:pt-[5rem] '>
           {/* text */}
           <motion.h2
             variants={fadeIn("right", 0, 2)}
@@ -25,7 +25,7 @@ const Contact = () => {
             exit='hidden'
             className='h2 text-center mb-12'
           >
-            Să <span className="text-accent">luăm</span> o legătură
+            Let's <span className='text-accent'>connect.</span>
           </motion.h2>
           {/* form */}
           <motion.div
@@ -45,9 +45,9 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div className='text-center flex flex-col w-3/4 text-2xl gap-6'>
-              <h1 className='text-3xl font-bold underline underline-offset-8'>
-              Contactează-ne
+            <div className='text-center flex flex-col w-3/4 text-xl gap-6 md:text-2xl'>
+              <h1 className='text-3xl underline underline-offset-8'>
+                Contact Us
               </h1>
               <p>
                 <strong className='font-bold text-accent text-2xl'>
@@ -67,12 +67,14 @@ const Contact = () => {
                 </strong>{" "}
                 Cloud 9, Pipera
               </p>
+              <div>
                 <p>
                   <strong className='font-bold text-accent text-2xl'>
                     Program:
                   </strong>{" "}
                   10:00 am - 20:00 pm{" "}
                 </p>
+              </div>
             </div>
           </motion.div>
           {/* <motion.form
