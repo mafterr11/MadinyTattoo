@@ -121,8 +121,8 @@ const About = () => {
             exit='hidden'
             className='h2'
           >
-            Poveștile <span className='text-accent'>captivante</span> dau
-            naștere designurilor unice.
+            Poveștile <span className='text-accent'>captivante</span> Dau
+            Naștere Designurilor Unice.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}

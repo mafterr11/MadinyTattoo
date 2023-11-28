@@ -21,7 +21,7 @@ const Services = () => {
               exit='hidden'
               className='h2 xl:mt-8'
             >
-              My Services <span className='text-accent'>.</span>
+              <span className='text-accent'>Serviciile</span> Noastre.
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -30,9 +30,7 @@ const Services = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0'
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-              mollitia dolores veniam delectus laborum explicabo, natus
-              perferendis modi.
+              Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii.
             </motion.p>
           </div>
           {/* slider */}
