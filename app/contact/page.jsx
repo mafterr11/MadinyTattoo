@@ -13,7 +13,7 @@ import { fadeIn } from "../../variants";
 
 const Contact = () => {
   return (
-    <div className=' h-max bg-primary/30'>
+    <div className=' h-max'>
       <div className='container mx-auto  py-32 text-center xl:text-left flex items-center justify-center h-full'>
         {/* text n form */}
         <div className=' flex flex-col w-full h-full xl:pt-[5rem] '>
@@ -25,7 +25,7 @@ const Contact = () => {
             exit='hidden'
             className='h2 text-center mb-12'
           >
-            Let's <span className='text-accent'>connect.</span>
+            Să <span className='text-accent'>luăm</span> legătura.
           </motion.h2>
           {/* form */}
           <motion.div
@@ -33,7 +33,8 @@ const Contact = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] '>
+            className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] '
+          >
             {/* map */}
             <div className='w-full lg:w-full mt-12 lg:mt-0 rounted-lg map-responsive'>
               <iframe
@@ -41,13 +42,13 @@ const Contact = () => {
                 width='100%'
                 height='100%'
                 allowFullScreen=''
-                title="google map"
-                referrerPolicy="no-referrer-when-downgrade"
+                title='google map'
+                referrerPolicy='no-referrer-when-downgrade'
               ></iframe>
             </div>
             <div className='text-center flex flex-col w-3/4 text-xl gap-6'>
-              <h1 className='text-3xl underline underline-offset-8'>
-                Contact Us
+              <h1 className='text-3xl font-bold underline underline-offset-8'>
+                Contactează-<span className='text-accent'>ne</span>
               </h1>
               <p>
                 <strong className='font-bold text-accent text-2xl'>
@@ -56,9 +57,7 @@ const Contact = () => {
                 contact@madinytattoo.ro
               </p>
               <p>
-                <strong className='font-bold text-accent text-2xl'>
-                  Tel:
-                </strong>{" "}
+                <strong className='font-bold text-accent text-2xl'>Tel:</strong>{" "}
                 +04.741.620.774
               </p>
               <p>

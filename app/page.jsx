@@ -12,9 +12,9 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   return (
-    <div className='h-full'>
+    <div className='h-full lg:h-screen'>
       {/* text */}
-      <div className='w-full h-full bg-gradient-to-r py-12'>
+      <div className='w-full h-full bg-gradient-to-r py-12 xs:py-0'>
         <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-screen xl:h-full container mx-auto'>
           {/* title */}
           <motion.h1
@@ -22,7 +22,7 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h1 xs:text-4xl'
+            className='h1'
           >
             Transformăm Ideile <br /> In{" "}
             <span className='text-accent '>Realitate</span>
