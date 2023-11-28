@@ -9,12 +9,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // icons
-import {
-  RxCrop,
-  RxDesktop,
-  RxPencil2,
-  RxArrowTopRight,
-} from "react-icons/rx";
+import { RxCrop, RxDesktop, RxPencil2, RxArrowTopRight } from "react-icons/rx";
 
 // REQUIRED MODULES
 import { FreeMode, Pagination } from "swiper";
@@ -24,19 +19,22 @@ const serviceData = [
     icon: <RxCrop />,
     title: "Tatuaje",
     path: "/servicii/tatuaje",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Intră în lumea noastră cu designuri expresive și personalizate pentru a-ți îndeplini visul de a avea un tatuaj memorabil.",
   },
   {
     icon: <RxPencil2 />,
     title: "Micropigmentare",
     path: "/servicii/micropigmentare",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Descoperă magia micropigmentării pentru trăsături perfecte și naturale, conturând frumusețea ta într-un mod subtil și rafinat.",
   },
   {
     icon: <RxDesktop />,
     title: "Laser",
     path: "/servicii/laser",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Transformă trecutul într-o poveste uitată. Cu laserul nostru avansat, eliminăm tatuajele fără regrete, oferindu-ți un nou început.",
   },
 ];
 
@@ -58,27 +56,31 @@ const ServiceSlider = () => {
         clickable: true,
       }}
       modules={[FreeMode, Pagination]}
-      className='h-[240px] sm:h-[340px]'
+      className='h-[350px] w-[300px] sm:w-[900px] sm:h-[370px]'
     >
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
             <Link href={item.path}>
-            <div className='bg-[rgba(65,47,123)] bg-opacity-[0.15] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169)] hover:bg-opacity-[0.15] transition-all duration-300'>
-              {/* icon */}
-              <div className='text-4xl text-accent mb-4'>{item.icon}</div>
-              {/* title & descr*/}
-              <div className='mb-8'>
-                <div className='mb-2 text-lg'>{item.title}</div>
-                <p className='max-w-[350px] leading-normal'>
-                  {item.description}
-                </p>
+              <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col  sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
+                {/* icon */}
+                <div>
+                  <div className="flex items-center justify-start gap-x-8">
+                    <div className='text-4xl text-accent mb-4'>{item.icon}</div>
+                    {/* title & descr*/}
+                    <div className='mb-2 text-lg'>{item.title}</div>
+                  </div>
+                  <div className='mb-8'>
+                    <p className='max-w-[350px] leading-normal'>
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+                {/* arrow */}
+                <div className='text-3xl'>
+                  <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
+                </div>
               </div>
-              {/* arrow */}
-              <div className='text-3xl'>
-                <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
-              </div>
-            </div>
             </Link>
           </SwiperSlide>
         );
