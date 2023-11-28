@@ -47,15 +47,15 @@ const Contact = () => {
               </h1>
               <p>
                 <strong className='font-bold text-accent text-2xl'>
-                  Rezervari:
+                  Email:
                 </strong>{" "}
                 contact@madinytattoo.ro
               </p>
               <p>
                 <strong className='font-bold text-accent text-2xl'>
-                  Restaurant:
+                  Tel:
                 </strong>{" "}
-                021-XXX-230
+                +04.741.620.774
               </p>
               <p>
                 <strong className='font-bold text-accent text-2xl'>
