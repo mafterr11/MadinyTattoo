@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 
 // icons
 import { RxCrop, RxDesktop, RxPencil2, RxArrowTopRight } from "react-icons/rx";
+import { GiGunshot, GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
+
 
 // REQUIRED MODULES
 import { FreeMode, Pagination } from "swiper";
@@ -23,14 +25,14 @@ const serviceData = [
       "Intră în lumea noastră cu designuri expresive și personalizate pentru a-ți îndeplini visul de a avea un tatuaj memorabil.",
   },
   {
-    icon: <RxPencil2 />,
+    icon: <GiBleedingEye />,
     title: "Micropigmentare",
     path: "/servicii/micropigmentare",
     description:
       "Descoperă magia micropigmentării pentru trăsături perfecte și naturale, conturând frumusețea ta într-un mod subtil și rafinat.",
   },
   {
-    icon: <RxDesktop />,
+    icon: <GiSinusoidalBeam />,
     title: "Laser",
     path: "/servicii/laser",
     description:
