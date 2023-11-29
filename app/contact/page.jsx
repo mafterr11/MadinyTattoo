@@ -33,7 +33,7 @@ const Contact = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] '>
+            className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] gap-x-8'>
             {/* map */}
             <div className='w-full lg:w-full mt-12 lg:mt-0 rounted-lg map-responsive'>
               <iframe
@@ -46,7 +46,7 @@ const Contact = () => {
               ></iframe>
             </div>
             <div className='text-center flex flex-col w-3/4 text-xl gap-6'>
-              <h1 className='text-3xl underline underline-offset-8'>
+              <h1 className='text-3xl underline underline-offset-8 mb-6 sm:mb-0'>
                 Contact Us
               </h1>
               <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
@@ -65,14 +65,14 @@ const Contact = () => {
                 <strong className='font-bold text-accent text-2xl'>
                   Adresa:
                 </strong>{" "}
-                Cloud 9, Pipera
+                Șos. Pipera 61, București 077190
               </p>
               <div>
                 <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                   <strong className='font-bold text-accent text-2xl'>
                     Program:
                   </strong>{" "}
-                  10:00 am - 20:00 pm{" "}
+                  11:00 am - 18:00 pm{" "}
                 </p>
               </div>
             </div>
