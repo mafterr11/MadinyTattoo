@@ -53,13 +53,21 @@ const Contact = () => {
                 <strong className='font-bold text-accent text-2xl'>
                   Email:
                 </strong>{" "}
-                contact@madinytattoo.ro
+                <a href="mailto: contact@madinytattoo.ro" className="hover:text-accent hover:underline hover:underline-offset-8 transition-all duration-300">contact@madinytattoo.ro</a>
+
               </p>
               <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                 <strong className='font-bold text-accent text-2xl'>
                   Tel:
                 </strong>{" "}
-                +04.741.620.774
+                <a
+                  href='tel:+40741620774'
+                  target='blank'
+                  className='hover:text-accent hover:underline hover:underline-offset-8 transition-all duration-300'
+                >
+                  +04.741.620.774
+                </a>
+
               </p>
               <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                 <strong className='font-bold text-accent text-2xl'>
