@@ -12,10 +12,12 @@ const Header = () => {
         <div className='flex flex-col lg:flex-row justify-between items-center py-6'>
           {/* logo */}
           <Link href={"/"}>
-            <h3 className="h3">MADINY.<span className='text-accent'>TATTOO</span></h3>
+            <h3 className="h3 lg:pt-4">MADINY.<span className='text-accent'>TATTOO</span></h3>
           </Link>
+          <div>
           {/* socials */}
           <Socials />
+          </div>
         </div>
       </div>
     </header>
