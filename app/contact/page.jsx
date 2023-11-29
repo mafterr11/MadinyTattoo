@@ -45,30 +45,30 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div className='text-center flex flex-col w-3/4 text-xl gap-6 md:text-2xl'>
+            <div className='text-center flex flex-col w-3/4 text-xl gap-6'>
               <h1 className='text-3xl underline underline-offset-8'>
                 Contact Us
               </h1>
-              <p>
+              <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                 <strong className='font-bold text-accent text-2xl'>
                   Email:
                 </strong>{" "}
                 contact@madinytattoo.ro
               </p>
-              <p>
+              <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                 <strong className='font-bold text-accent text-2xl'>
                   Tel:
                 </strong>{" "}
                 +04.741.620.774
               </p>
-              <p>
+              <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                 <strong className='font-bold text-accent text-2xl'>
                   Adresa:
                 </strong>{" "}
                 Cloud 9, Pipera
               </p>
               <div>
-                <p>
+                <p className="flex xl:flex-row flex-col items-center justify-center gap-x-4">
                   <strong className='font-bold text-accent text-2xl'>
                     Program:
                   </strong>{" "}
