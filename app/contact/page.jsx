@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 // Variants
 import { fadeIn } from "../../variants";
 
+
 const Contact = () => {
   return (
     <div className=' h-max'>
