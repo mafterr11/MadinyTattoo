@@ -1,53 +1,16 @@
-"use client";
-import ServiceSlider from "../components/ServiceSlider";
-import Bulb from "../components/Bulb";
-import Circles from "../components/Circles";
+import ServiciiPage from "../../components/ServiciiPage";
 
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
+export const metadata = {
+  title: "Servicii - Madiny Tattoo",
+  description:
+    "Madiny Tattoo, un spațiu artistic dedicat expresiei personale prin arta tatuajelor și micropigmentării. Oferim designuri unice de tatuaje și proceduri de micropigmentare atent executate pentru a sublinia frumusețea naturală. De asemenea, oferim servicii de eliminare laser a tatuajelor, transformând trecutul într-o nouă pagină în povestea ta. Descoperă arta autentică și profesionalismul nostru în transformarea viselor în realitate.",
+
+  keywords:
+    "designuri unice de tatuaje, arta tatuaj creativa, tatuaje personalizate, diverse stiluri de tatuaje, servicii tatuaje bucuresti, estetica tatuaj originala, imagini durabile tatuaj, tatuaje unisex, laser removal tatuaje, indepartare tatuaje, eliminare tatuaje, micropigmentare, pigmentare permanenta, servicii micropigmentare, micropigmentare bucuresti, tehnici micropigmentare, proceduri micropigmentare, tratament indepartare tatuaje, pigmentare semi-permanenta, servicii pigmentare, eliminare corecta tatuaje",
+};
 
 const Services = () => {
-  return (
-    <div className='h-full xs:h-screen py-36 flex items-center'>
-      {/* <Circles /> */}
-      <div className='container mx-auto'>
-        <div className='flex flex-col xl:flex-row gap-x-8'>
-          {/* text */}
-          <div className='text-center flex xl:w-[25vw] flex-col lg:text-left mb-4 xl:mb-0'>
-            <motion.h2
-              variants={fadeIn("up", 0.2)}
-              initial='hidden'
-              animate='show'
-              exit='hidden'
-              className='h2 xl:mt-8 flex gap-x-4 items-center justify-center'
-            >
-              <span className='text-accent'>Serviciile</span> Noastre.
-            </motion.h2>
-            <motion.p
-              variants={fadeIn("up", 0.4)}
-              initial='hidden'
-              animate='show'
-              exit='hidden'
-              className='mb-4 max-w-[600px] mx-auto lg:mx-0 xs:text-lg'
-            >
-              Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii.
-            </motion.p>
-          </div>
-          {/* slider */}
-          <motion.div
-            variants={fadeIn("down", 0.6)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='w-full xl:max-w-[55%]'
-          >
-            <ServiceSlider />
-          </motion.div>
-        </div>
-      </div>
-      {/* <Bulb /> */}
-    </div>
-  );
+  return <ServiciiPage />;
 };
 
 export default Services;

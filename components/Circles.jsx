@@ -1,5 +1,5 @@
 import Image from "next/image";
-import circles from "../../public/circles.png";
+import circles from "../public/Circles.png";
 
 const Circles = () => {
   return (

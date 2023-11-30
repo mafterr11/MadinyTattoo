@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bulb from '../../public/bulb.png'
+import bulb from '../public/Bulb.png'
 
 
 const Bulb = () => {

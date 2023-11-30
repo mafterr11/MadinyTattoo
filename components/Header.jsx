@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 // Image
-import Logo from "../../public/logo.svg";
+import Logo from "../public/logo.svg";
 // Component
-import Socials from "../components/Socials";
+import Socials from "./Socials";
 
 const Header = () => {
   return (
