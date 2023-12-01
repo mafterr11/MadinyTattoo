@@ -86,12 +86,12 @@ const ContactPage = () => {
                 for="name"
                 class="leading-relaxed text-gray-900 font-semibold "
               >
-                Luni-Sambata: 11:00 am - 22:00 pm
+               <span className="text-accent">Luni-Sambata:</span>  11:00 am - 22:00 pm
               </p>
             </div>
             <div class="relative">
               <p for="name" class="leading-relaxed text-gray-900 font-semibold">
-                Duminica: Inchis
+              <span className="text-accent">Duminica:</span> Inchis
               </p>
             </div>
           </div>
