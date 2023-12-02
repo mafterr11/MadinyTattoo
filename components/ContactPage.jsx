@@ -13,7 +13,7 @@ import { fadeIn } from "../variants";
 
 const ContactPage = () => {
   return (
-    <section class=' body-font relative h-full lg:pt-44 pt-32'>
+    <section class=' body-font relative h-full lg:pt-44 py-32'>
       <motion.h2
         variants={fadeIn("right", 0, 2)}
         initial='hidden'
@@ -28,7 +28,7 @@ const ContactPage = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        class='container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap h-[800px]'
+        class='container px-5 py-12 lg:py-24 mx-auto flex sm:flex-nowrap flex-wrap h-[800px]'
       >
         <div class='lg:w-full md:w-1/2 bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col lg:flex-row lg:items-end lg:justify-start justify-end relative'>
           <iframe
