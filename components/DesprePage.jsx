@@ -131,9 +131,9 @@ const DesprePage = () => {
             exit='hidden'
             className='max-w-3xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0 text-p xl:text-lg xs:text-lg'
           >
-            Încă de când am început activitatea ca artist tatuator independent,
+            Încă de când am început activitatea ca artisti tatuatori independenți,
             am creat designuri inedite și memorabile, aducând la viață ideile
-            clienților mei. Le mulțumesc pentru susținere și încrederea
+            clienților nostrii. Le mulțumim pentru susținere și încrederea
             acordată!
           </motion.p>
           {/* counters */}
