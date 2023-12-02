@@ -13,7 +13,7 @@ import { fadeIn } from "../variants";
 
 const ContactPage = () => {
   return (
-    <section class=' body-font relative h-full lg:pt-44 py-32'>
+    <section class='h-full lg:pt-44 py-32'>
       <motion.h2
         variants={fadeIn("right", 0, 2)}
         initial='hidden'
@@ -28,7 +28,7 @@ const ContactPage = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        class='container px-5 py-12 lg:py-24 mx-auto flex sm:flex-nowrap flex-wrap h-[800px]'
+        class='container px-5 py-12 lg:py-24 mx-auto flex h-[800px]'
       >
         <div class='lg:w-full md:w-1/2 bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col lg:flex-row lg:items-end lg:justify-start justify-end relative'>
           <iframe
@@ -59,7 +59,7 @@ const ContactPage = () => {
               </h2>
               <a
                 href='mailto: contact@madinytattoo.ro'
-                className='text-accent hover:underline hover:underline-offset-8 transition-all duration-300 leading-relaxed font-bold'
+                className='text-accent hover:underline hover:underline-offset-8 hover:decoration-2 transition-all duration-300 leading-relaxed font-bold'
               >
                 contact@madinytattoo.ro
               </a>
@@ -69,13 +69,12 @@ const ContactPage = () => {
               <a
                 href='tel:+40741620774'
                 target='blank'
-                className='text-accent hover:underline hover:underline-offset-8 transition-all duration-300  leading-relaxed font-bold'
+                className='text-accent hover:underline hover:underline-offset-8 hover:decoration-2 transition-all duration-300  leading-relaxed font-bold'
               >
                 +04.741.620.774
               </a>
             </div>
           </div>
-          {/* form */}
           <div class='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[22rem] rounded shadow-md'>
             <h2 class='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
