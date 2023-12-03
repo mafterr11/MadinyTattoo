@@ -13,7 +13,7 @@ import { fadeIn } from "../variants";
 
 const ContactPage = () => {
   return (
-    <section class='h-full lg:pt-44 py-32'>
+    <section className='h-full lg:pt-44 py-32'>
       <motion.h2
         variants={fadeIn("right", 0, 2)}
         initial='hidden'
@@ -28,9 +28,9 @@ const ContactPage = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        class='container px-5 py-12 lg:py-24 mx-auto flex h-[800px]'
+        className='container px-5 py-12 lg:py-24 mx-auto flex h-[800px]'
       >
-        <div class='lg:w-full md:w-1/2 bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col lg:flex-row lg:items-end lg:justify-start justify-end relative'>
+        <div className='lg:w-full md:w-1/2 bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col lg:flex-row lg:items-end lg:justify-start justify-end relative'>
           <iframe
             width='100%'
             height='100%'
@@ -44,26 +44,26 @@ const ContactPage = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
 
-          <div class='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-start justify-end'>
-            <div class='lg:w-1/2 px-4'>
-              <h2 class='title-font font-semibold text-gray-900 tracking-widest text-sm'>
+          <div className='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-start justify-end'>
+            <div className='lg:w-1/2 px-4'>
+              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
               </h2>
-              <p class='mt-1 text-accent font-bold leading-relaxed'>
+              <p className='mt-1 text-accent font-bold leading-relaxed'>
                 Șos. Pipera 61, București 077190
               </p>
             </div>
-            <div class='lg:w-1/2 px-6 mt-4 lg:mt-0'>
-              <h2 class='title-font font-semibold text-gray-900 tracking-widest text-sm'>
+            <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
+              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 EMAIL
               </h2>
               <a
                 href='mailto: contact@madinytattoo.ro'
                 className='text-accent hover:underline hover:underline-offset-8 hover:decoration-2 transition-all duration-300 leading-relaxed font-bold'
               >
-                contact@madinytattoo.ro
+                Madinytattoo@gmail.com
               </a>
-              <h2 class='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
+              <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
                 PHONE
               </h2>
               <a
@@ -75,68 +75,68 @@ const ContactPage = () => {
               </a>
             </div>
           </div>
-          <div class='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[22rem] rounded shadow-md'>
-            <h2 class='font-semibold text-gray-900 tracking-widest mb-1'>
+          <div className='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[22rem] rounded shadow-md'>
+            <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
 
-            <div class='relative mb-4'>
+            <div className='relative mb-4'>
               <p
                 for='name'
-                class='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'
+                className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'
               >
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
                 22:00 pm
               </p>
             </div>
-            <div class='relative'>
-              <p for='name' class='leading-relaxed text-gray-900 font-semibold'>
+            <div className='relative'>
+              <p for='name' className='leading-relaxed text-gray-900 font-semibold'>
                 <span className='text-accent'>Duminica:</span> Inchis
               </p>
             </div>
           </div>
         </div>
       </motion.div>
-      {/* <div class="lg:w-1/3 md:w-1/2 bg-white z-10 flex flex-col md:ml-auto w-full md:p-6 mt-8 md:mt-0">
-            <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
+      {/* <div className="lg:w-1/3 md:w-1/2 bg-white z-10 flex flex-col md:ml-auto w-full md:p-6 mt-8 md:mt-0">
+            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
               Feedback
             </h2>
-            <p class="leading-relaxed mb-5 text-gray-600">
+            <p className="leading-relaxed mb-5 text-gray-600">
               Post-ironic portland shabby chic echo park, banjo fashion axe
             </p>
-            <div class="relative mb-4">
-              <label for="name" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label for="name" className="leading-7 text-sm text-gray-600">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div class="relative mb-4">
-              <label for="email" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label for="email" className="leading-7 text-sm text-gray-600">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div class="relative mb-4">
-              <label for="message" class="leading-7 text-sm text-gray-600">
+            <div className="relative mb-4">
+              <label for="message" className="leading-7 text-sm text-gray-600">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Button
             </button>
           </div> */}

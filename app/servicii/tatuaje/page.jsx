@@ -1,4 +1,4 @@
-import React from "react";
+import ServiciiTatuaje from "../../../components/ServiciiTatuaje";
 
 export const metadata = {
   title: "Tatuaje - Madiny Tattoo",
@@ -9,8 +9,8 @@ export const metadata = {
     "madiny tattoo, tatuaje artistice, modele tatuaje, tatuaje personalizate, arta tatuaj, designuri tatuaje, artist tatuaj, tatuaje unice, tatuaje realiste, tatuaje abstracte, tatuaje stilizate, tatuaje colorate, tatuaje blackwork",
 };
 
-const page = () => {
-  return <div className='h-screen'></div>;
+const Tatuaje = () => {
+  return <ServiciiTatuaje />;
 };
 
-export default page;
+export default Tatuaje;

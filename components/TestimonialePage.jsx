@@ -26,7 +26,7 @@ const TestimonialePage = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-        >
+        > 
           <TestimonialSlider />
         </motion.div>
       </div>

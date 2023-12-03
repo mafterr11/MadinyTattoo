@@ -5,39 +5,19 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/tattoo1.png",
+          path: "/gallery/tattoo1.png",
         },
         {
           title: "title",
-          path: "/tattoo2.png",
+          path: "/gallery/tattoo2.png",
         },
         {
           title: "title",
-          path: "/tattoo3.png",
+          path: "/gallery/tattoo3.png",
         },
         {
           title: "title",
-          path: "/tattoo4.png",
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: "title",
-          path: "/tattoo5.png",
-        },
-        {
-          title: "title",
-          path: "/tattoo6.png",
-        },
-        {
-          title: "title",
-          path: "/tattoo7.png",
-        },
-        {
-          title: "title",
-          path: "/tattoo8.png",
+          path: "/gallery/tattoo4.png",
         },
       ],
     },
@@ -45,19 +25,39 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/tattoo9.png",
+          path: "/gallery/tattoo5.png",
         },
         {
           title: "title",
-          path: "/tattoo10.png",
+          path: "/gallery/tattoo6.png",
         },
         {
           title: "title",
-          path: "/tattoo11.png",
+          path: "/gallery/tattoo7.png",
         },
         {
           title: "title",
-          path: "/tattoo12.png",
+          path: "/gallery/tattoo8.png",
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: "title",
+          path: "/gallery/tattoo9.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo10.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo11.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo12.png",
         },
       ],
     },
