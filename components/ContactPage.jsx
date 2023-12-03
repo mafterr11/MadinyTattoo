@@ -44,7 +44,7 @@ const ContactPage = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
 
-          <div className='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-start justify-end'>
+          <div className='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-end'>
             <div className='lg:w-1/2 px-4'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
