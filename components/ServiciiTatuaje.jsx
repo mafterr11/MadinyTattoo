@@ -12,7 +12,7 @@ const ServiciiTatuaje = () => {
           <Image
             src={albNegruTattoo}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
@@ -22,23 +22,39 @@ const ServiciiTatuaje = () => {
           <div className='absolute inset-0 bg-black/70 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
               <div className='font-bold text-2xl m-2 mt-[20%]'>
-                <h1>Alb/Negru</h1>
+                <h1 className='underline decoration-[3px] underline-offset-4'>
+                  Alb/Negru
+                </h1>
               </div>
               <div className='m-2 text-md'>
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mic(1-5)cm:</span> 400 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mic(1-5)cm:</span>{" "}
+                    400 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mediu(6-9)cm:</span> 500-800 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mediu(6-9)cm:</span>{" "}
+                    500-800 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mare(10-15)cm:</span> 900-1400 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>
+                      Mare(10-15)cm:
+                    </span>{" "}
+                    900-1400 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Toata ziua:</span> 1800 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Full day:</span>{" "}
+                    1800 RON
+                  </p>
                 </div>
               </div>
             </div>
@@ -49,7 +65,7 @@ const ServiciiTatuaje = () => {
           <Image
             src={colorTattoo}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
@@ -58,24 +74,40 @@ const ServiciiTatuaje = () => {
           />
           <div className='absolute inset-0 bg-black/70 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
-            <div className='font-bold text-2xl m-2 mt-[20%]'>
-                <h1>Color</h1>
+              <div className='font-bold text-2xl m-2 mt-[20%]'>
+                <h1 className='underline decoration-[3px] underline-offset-4'>
+                  Color
+                </h1>
               </div>
               <div className='m-2 text-md'>
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mic(1-4)cm:</span> 500 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
+                    500 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mediu(5-9)cm:</span> 600-1000 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mediu(5-9)cm:</span>{" "}
+                    600-1000 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mare(10-15)cm:</span> 1100-1600 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>
+                      Mare(10-15)cm:
+                    </span>{" "}
+                    1100-1600 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Toata ziua:</span> 2000 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Full day:</span>{" "}
+                    2000 RON
+                  </p>
                 </div>
               </div>
             </div>
@@ -86,7 +118,7 @@ const ServiciiTatuaje = () => {
           <Image
             src={conturTattoo}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
@@ -95,24 +127,40 @@ const ServiciiTatuaje = () => {
           />
           <div className='absolute inset-0 bg-black/70 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
-            <div className='font-bold text-2xl m-2 mt-[20%]'>
-                <h1>Contur</h1>
+              <div className='font-bold text-2xl m-2 mt-[20%]'>
+                <h1 className='underline decoration-[3px] underline-offset-4'>
+                  Contur
+                </h1>
               </div>
               <div className='m-2 text-md'>
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mic(1-4)cm:</span> 300 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
+                    300 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mediu(4-9)cm:</span> 400-600 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mediu(4-9)cm:</span>{" "}
+                    400-600 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mare(10-15)cm:</span> 700-900 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>
+                      Mare(10-15)cm:
+                    </span>{" "}
+                    700-900 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Toata ziua:</span> 1800 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Full day:</span>{" "}
+                    1800 RON
+                  </p>
                 </div>
               </div>
             </div>
@@ -123,7 +171,7 @@ const ServiciiTatuaje = () => {
           <Image
             src={embroderyTattoo}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
@@ -132,20 +180,35 @@ const ServiciiTatuaje = () => {
           />
           <div className='absolute inset-0 bg-black/70 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
-            <div className='font-bold text-2xl m-2 mt-[20%]'>
-                <h1>Brodat</h1>
+              <div className='font-bold text-2xl m-2 mt-[20%]'>
+                <h1 className='underline decoration-[3px] underline-offset-4'>
+                  Brodat
+                </h1>
               </div>
               <div className='m-2 text-md'>
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mic(5-8)cm:</span> 700-1150 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>Mic(5-8)cm:</span>{" "}
+                    700-1150 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mediu(9-12)cm:</span> 1300-1700 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>
+                      Mediu(9-12)cm:
+                    </span>{" "}
+                    1300-1700 RON
+                  </p>
                 </div>
 
-                <div className="my-4">
-                <p><span className="text-accent font-bold">Mare(13-15)cm:</span> 1800-2000 RON</p>
+                <div className='my-4'>
+                  <p>
+                    <span className='text-accent font-bold'>
+                      Mare(13-15)cm:
+                    </span>{" "}
+                    1800-2000 RON
+                  </p>
                 </div>
               </div>
             </div>
