@@ -39,9 +39,9 @@ const ContactPage = () => {
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
               </h2>
-              <p className='mt-1 text-accent font-bold'>
+              <a href="https://maps.app.goo.gl/p1wcRJjfmqQvtwxq8" target="_blank" className='mt-1 text-accent font-bold hover hover:underline-offset-4 hover:decoration-2'>
                 Șos. Pipera 61, București 077190
-              </p>
+              </a>
             </div>
             <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
@@ -49,7 +49,7 @@ const ContactPage = () => {
               </h2>
               <a
                 href='mailto: contact@madinytattoo.ro'
-                className='text-accent hover:underline hover:underline-offset-8 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
               >
                 Madinytattoo@gmail.com
               </a>
@@ -59,7 +59,7 @@ const ContactPage = () => {
               <a
                 href='tel:+40741620774'
                 target='blank'
-                className='text-accent hover:underline hover:underline-offset-8 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
               >
                 +04.741.620.774
               </a>
