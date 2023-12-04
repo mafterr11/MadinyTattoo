@@ -1,8 +1,5 @@
 "use client";
-// Components
 import TestimonialSlider from "../TestimonialSlider";
-
-// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
@@ -26,7 +23,7 @@ const TestimonialePage = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-        > 
+        >
           <TestimonialSlider />
         </motion.div>
       </div>

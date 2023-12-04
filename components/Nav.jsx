@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// icons
 import {
   HiHome,
   HiUser,
@@ -10,8 +9,6 @@ import {
   HiChatBubbleBottomCenterText,
   HiEnvelope,
 } from "react-icons/hi2";
-
-// nav data
 export const navData = [
   { name: "acasa", path: "/", icon: <HiHome /> },
   { name: "despre", path: "/despre", icon: <HiUser /> },
@@ -50,12 +47,11 @@ const Nav = () => {
                     {link.name}
                   </div>
                   {/* triangle */}
-                  <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'>
-                  </div>
+                  <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'></div>
                 </div>
               </div>
               {/* icons */}
-              <div >{link.icon}</div>
+              <div>{link.icon}</div>
             </Link>
           );
         })}

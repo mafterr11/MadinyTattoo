@@ -1,6 +1,5 @@
 "use client";
 import WorkSlider from "../WorkSlider";
-// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 

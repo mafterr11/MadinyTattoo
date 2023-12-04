@@ -24,15 +24,8 @@ module.exports = {
         secondary: "#393A47",
         accent: "#d4b39a",
         p: "white",
-        // site: '#FDF7E4',
-        // #976252
-        // 1AACAC turquoise
-        // gold cdab85  d4b39a
       },
       backgroundImage: {
-        explosion: "url('/bg-explosion.png')",
-        circles: "url('/bg-circles.png')",
-        circleStar: "url('/circle-star.svg')",
         site: "url('/bgMada2.jpg')",
       },
       animation: {
@@ -40,7 +33,6 @@ module.exports = {
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, "sans-serif"],
-        sora: [`var(--font-sora)`, "sans-serif"],
       },
     },
   },

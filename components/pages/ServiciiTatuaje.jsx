@@ -1,12 +1,10 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import albNegruTattoo from "../../public/gallery/tattoo9.png";
 import colorTattoo from "../../public/gallery/tattoo8.jpg";
 import conturTattoo from "../../public/gallery/tattoo14.jpg";
 import embroderyTattoo from "../../public/gallery/tattoo13.jpg";
-
-// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
@@ -18,16 +16,27 @@ const ServiciiTatuaje = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        className="flex flex-col justify-center items-center md:mt-20 mt-32">
-        <h1 className="h1"><span className="text-accent">Tatuaje</span></h1>
-        <p className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'><span className="text-accent">Detalii</span> suplimentare și tarife precise disponibile direct de la tatuator. <Link className="text-accent underline" href={'/contact'} >Contactează-ne</Link> pentru informații complete!</p>
+        className='flex flex-col justify-center items-center md:mt-20 mt-32'
+      >
+        <h1 className='h1'>
+          <span className='text-accent'>Tatuaje</span>
+        </h1>
+        <p className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
+          <span className='text-accent'>Detalii</span> suplimentare și tarife
+          precise disponibile direct de la tatuator.{" "}
+          <Link className='text-accent underline' href={"/contact"}>
+            Contactează-ne
+          </Link>{" "}
+          pentru informații complete!
+        </p>
       </motion.div>
       <motion.div
         variants={fadeIn("right", 0.4)}
         initial='hidden'
         animate='show'
         exit='hidden'
-        className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
+        className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'
+      >
         <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
           <Image
             src={albNegruTattoo}

@@ -12,7 +12,6 @@ import "swiper/css/pagination";
 import { RxCrop, RxArrowTopRight } from "react-icons/rx";
 import { GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
 
-
 // Required Modules
 import { FreeMode, Pagination } from "swiper";
 
@@ -68,7 +67,7 @@ const ServiceSlider = () => {
               <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col  sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
                 {/* icon */}
                 <div>
-                  <div className="flex items-center justify-start gap-x-8">
+                  <div className='flex items-center justify-start gap-x-8'>
                     <div className='text-4xl text-accent mb-4'>{item.icon}</div>
                     {/* title & descr*/}
                     <div className='mb-2 text-lg'>{item.title}</div>

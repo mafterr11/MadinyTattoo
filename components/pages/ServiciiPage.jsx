@@ -1,8 +1,5 @@
 "use client";
-// Component
 import ServiceSlider from "../ServiceSlider";
-
-// Framer / Variants
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 

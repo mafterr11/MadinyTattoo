@@ -1,8 +1,5 @@
 "use client";
-// Components
 import ProjectsBtn from "../ProjectsBtn";
-
-// Framer
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 

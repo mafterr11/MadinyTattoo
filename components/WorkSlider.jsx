@@ -73,7 +73,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // Icons
-import { BsArrowRight } from "react-icons/bs";
+// import { BsArrowRight } from "react-icons/bs";
 
 // Required Modules
 import { Pagination } from "swiper";

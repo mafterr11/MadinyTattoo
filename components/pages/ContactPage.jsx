@@ -1,13 +1,10 @@
 "use client";
-// Framer
 import { motion } from "framer-motion";
-
-// Variants
 import { fadeIn } from "../../variants";
 
 const ContactPage = () => {
   return (
-    <section className='lg:pt-44 py-32'>
+    <div className='lg:pt-44 py-32'>
       <motion.h2
         variants={fadeIn("right", 0, 2)}
         initial='hidden'
@@ -39,7 +36,11 @@ const ContactPage = () => {
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
               </h2>
-              <a href="https://maps.app.goo.gl/p1wcRJjfmqQvtwxq8" target="_blank" className='mt-1 text-accent font-bold hover hover:underline-offset-4 hover:decoration-2'>
+              <a
+                href='https://maps.app.goo.gl/p1wcRJjfmqQvtwxq8'
+                target='_blank'
+                className='mt-1 text-accent font-bold hover hover:underline-offset-4 hover:decoration-2'
+              >
                 Șos. Pipera 61, București 077190
               </a>
             </div>
@@ -71,9 +72,7 @@ const ContactPage = () => {
             </h2>
 
             <div className='relative mb-4'>
-              <p
-                className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'
-              >
+              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
                 22:00 pm
               </p>
@@ -86,10 +85,8 @@ const ContactPage = () => {
           </div>
         </div>
       </motion.div>
-
-    </section>
+    </div>
   );
 };
 
 export default ContactPage;
-
