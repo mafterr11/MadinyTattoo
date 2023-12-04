@@ -1,4 +1,4 @@
-import React from 'react'
+import ServiciiMicropigmentare from "../../../components/ServiciiMicropigmentare";
 
 export const metadata = {
   title: "Micropigmentare - Madiny Tattoo",
@@ -9,12 +9,8 @@ export const metadata = {
     "micropigmentare, micropigmentare sprâncene, micropigmentare buze, micropigmentare ochi, tehnici micropigmentare, micropigmentare profesională, micropigmentare realism, pigmentare semipermanentă, proceduri micropigmentare",
 };
 
-const page = () => {
-  return (
-    <div className='h-screen'>
-      
-    </div>
-  )
+const Micropigmentare = () => {
+  return <ServiciiMicropigmentare />;
 }
 
-export default page
+export default Micropigmentare
