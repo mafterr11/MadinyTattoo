@@ -1,16 +1,31 @@
+"use client"
 import Image from "next/image"
 import buze from '../../public/micropigmentareBuze.jpg'
 import sprancene from '../../public/micropigmentareSprancene.jpg'
 import retus from '../../public/micropigmentareRetus.png'
 
+// Framer
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
+
 const ServiciiMicropigmentare = () => {
     return (
         <div className='flex justify-center flex-col items-center h-full md:h-screen'>
-            <div className="flex flex-col justify-center items-center md:mt-24 mt-32">
+            <motion.div
+                variants={fadeIn("left", 0.2)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+                className="flex flex-col justify-center items-center md:mt-24 mt-32">
                 <h1 className="h1"><span className="text-accent">Micropigmentare</span></h1>
                 <p className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'><span className="text-accent">Definește-ți</span> stilul cu precizie: <span className="text-accent">vezi</span> tarifele noastre pentru micropigmentare și <span className="text-accent">experimentează</span> transformarea delicată a trăsăturilor.</p>
-            </div>
-            <div className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
+            </motion.div>
+            <motion.div
+                variants={fadeIn("right", 0.4)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+                className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
                 <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
                     <Image
                         src={buze}
@@ -100,7 +115,7 @@ const ServiciiMicropigmentare = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
