@@ -89,19 +89,3 @@
   text-underline-offset: 0.5rem;
 }
 
-.hover span {
-  display: inline-block;
-}
-
-.hover span:after {
-  content: '';
-  width: 0px;
-  height: 3px;
-  display: block;
-  background: white;
-  transition: 300ms;
-}
-
-.hover span:hover:after {
-  width: 100%;
-}
