@@ -24,7 +24,7 @@ const ServiciiTatuaje = () => {
             className='brightness-110 hover:brightness-90 rounded-lg'
             alt='Description of your image'
           />
-          <div className='absolute inset-0 bg-black/70 rounded-lg'>
+          <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
               <div className='font-bold text-2xl m-2 mt-[20%]'>
                 <h1 className='underline decoration-[3px] underline-offset-4'>
@@ -77,7 +77,7 @@ const ServiciiTatuaje = () => {
             className='brightness-110 hover:brightness-90 rounded-lg'
             alt='Description of your image'
           />
-          <div className='absolute inset-0 bg-black/70 rounded-lg'>
+          <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
               <div className='font-bold text-2xl m-2 mt-[20%]'>
                 <h1 className='underline decoration-[3px] underline-offset-4'>
@@ -130,7 +130,7 @@ const ServiciiTatuaje = () => {
             className='brightness-110 hover:brightness-90 rounded-lg'
             alt='Description of your image'
           />
-          <div className='absolute inset-0 bg-black/70 rounded-lg'>
+          <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
               <div className='font-bold text-2xl m-2 mt-[20%]'>
                 <h1 className='underline decoration-[3px] underline-offset-4'>
@@ -183,7 +183,7 @@ const ServiciiTatuaje = () => {
             className='brightness-110 hover:brightness-90 rounded-lg'
             alt='Description of your image'
           />
-          <div className='absolute inset-0 bg-black/70 rounded-lg'>
+          <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
               <div className='font-bold text-2xl m-2 mt-[20%]'>
                 <h1 className='underline decoration-[3px] underline-offset-4'>
