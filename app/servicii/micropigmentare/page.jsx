@@ -1,4 +1,4 @@
-import ServiciiMicropigmentare from "../../../components/ServiciiMicropigmentare";
+import ServiciiMicropigmentare from "../../../components/pages/ServiciiMicropigmentare";
 
 export const metadata = {
   title: "Micropigmentare - Madiny Tattoo",

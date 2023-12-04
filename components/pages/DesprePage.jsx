@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
+// Framer / CountUp
+import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../../variants"
 
-// icons
+// Icons
 import {
   FaHtml5,
   FaCss3,
@@ -20,7 +22,7 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
-//  data
+//  Data
 const aboutData = [
   {
     title: "skills",
@@ -92,27 +94,12 @@ const aboutData = [
   },
 ];
 
-import Avatar from "./Avatar";
-import Circles from "./Circles";
-import CountUp from "react-countup";
 
 const DesprePage = () => {
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
   return (
     <div className='h-full xs:h-screen py-40 text-center xl:text-left'>
-      {/* <Circles /> */}
-      {/* avatar img */}
-      {/* <motion.div
-        variants={fadeIn("right", 0.2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='hidden xl:flex absolute bottom-0 -left-[370px]'
-      >
-        <Avatar />
-      </motion.div> */}
       <div className='container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
-        {/* text */}
         <div className='flex flex-col justify-center'>
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -136,7 +123,6 @@ const DesprePage = () => {
             clienților nostrii. Le mulțumim pentru susținere și încrederea
             acordată!
           </motion.p>
-          {/* counters */}
           <motion.div
             variants={fadeIn("right", 0.6)}
             initial='hidden'
@@ -172,15 +158,6 @@ const DesprePage = () => {
                   Proiecte finalizate
                 </div>
               </div>
-              {/* awards */}
-              {/* <div className='relative flex-1'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={8} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] '>
-                  Winning Awards
-                </div>
-              </div> */}
             </div>
           </motion.div>
         </div>

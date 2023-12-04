@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import albNegruTattoo from "../public/gallery/tattoo9.png";
-import colorTattoo from "../public/gallery/tattoo8.jpg";
-import conturTattoo from "../public/gallery/tattoo14.jpg";
-import embroderyTattoo from "../public/gallery/tattoo13.jpg";
+import albNegruTattoo from "../../public/gallery/tattoo9.png";
+import colorTattoo from "../../public/gallery/tattoo8.jpg";
+import conturTattoo from "../../public/gallery/tattoo14.jpg";
+import embroderyTattoo from "../../public/gallery/tattoo13.jpg";
 
 const ServiciiTatuaje = () => {
   return (

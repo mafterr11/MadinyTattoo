@@ -1,6 +1,6 @@
 import Image from "next/image"
-import laserRemoval from '../public/laserRemoval.jpeg'
-import FAQSection from '../components/FAQLaser'
+import laserRemoval from '../../public/laserRemoval.jpeg'
+import FAQSection from '../FAQLaser'
 
 const ServiciiMicropigmentare = () => {
     return (

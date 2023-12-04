@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 import Nav from "./Nav";
 import Header from "./Header";
 import Footer from "./Footer";
-import TopLeftImg from "./TopLeftImg";
 import Transition from "./Transition";
 
 // ROUTER
@@ -30,7 +29,6 @@ const Layout = ({ children }) => {
         <body className={`${poppins.className} page bg-primary/40`}>
           <motion.div key={router} className='h-full'>
             <Transition />
-            {/* <TopLeftImg /> */}
             <Nav />
             <Header />
             {children}

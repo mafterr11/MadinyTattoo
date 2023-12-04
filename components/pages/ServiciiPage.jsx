@@ -1,14 +1,14 @@
 "use client";
-import ServiceSlider from "./ServiceSlider";
-import Bulb from "./Bulb";
-import Circles from "./Circles";
+// Component
+import ServiceSlider from "../ServiceSlider";
 
+// Framer / Variants
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../../variants";
 
 const Services = () => {
   return (
-    <div className='h-full xs:h-screen py-36 flex items-center'>
+    <div className='md:h-screen py-36 flex items-center'>
       {/* <Circles /> */}
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-x-8'>

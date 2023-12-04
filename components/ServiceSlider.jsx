@@ -1,21 +1,22 @@
 "use client";
 import Link from "next/link";
-// SWIPER COMPONENTS
+// Swiper Components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// SWIPER STYLES
+// Swiper Styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-// icons
-import { RxCrop, RxDesktop, RxPencil2, RxArrowTopRight } from "react-icons/rx";
-import { GiGunshot, GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
+// Icons
+import { RxCrop, RxArrowTopRight } from "react-icons/rx";
+import { GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
 
 
-// REQUIRED MODULES
+// Required Modules
 import { FreeMode, Pagination } from "swiper";
-// data
+
+// Data
 const serviceData = [
   {
     icon: <RxCrop />,
