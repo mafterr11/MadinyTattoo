@@ -44,8 +44,8 @@ const ContactPage = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
 
-          <div className='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-center'>
-            <div className='lg:w-1/2 px-8'>
+          <div className='bg-white/90 lg:bg-white relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
+            <div className='lg:w-1/2 px-6'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
               </h2>
@@ -53,7 +53,7 @@ const ContactPage = () => {
                 Șos. Pipera 61, București 077190
               </p>
             </div>
-            <div className='lg:w-1/2 px-4 mt-4 lg:mt-0'>
+            <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 EMAIL
               </h2>
@@ -75,7 +75,7 @@ const ContactPage = () => {
               </a>
             </div>
           </div>
-          <div className='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[22rem] rounded shadow-md'>
+          <div className='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
@@ -144,4 +144,78 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage; 
+export default ContactPage;
+
+//  <div className=' h-max'>
+//       <div className='container mx-auto  py-32 text-center xl:text-left flex items-center justify-center h-full'>
+//         <div className=' flex flex-col w-full h-full xl:pt-[5rem] '>
+//           <motion.h2
+//             variants={fadeIn("right", 0, 2)}
+//             initial='hidden'
+//             animate='show'
+//             exit='hidden'
+//             className='h2 text-center mb-12'
+//           >
+//             Să ne <span className='text-accent'>conectăm.</span>
+//           </motion.h2>
+//           <motion.div
+//             variants={fadeIn("left", 0, 4)}
+//             initial='hidden'
+//             animate='show'
+//             exit='hidden'
+//             className='container flex justify-center items-center flex-wrap-reverse sm:flex-nowrap lg:p-8 lg:pt-[7rem] gap-x-8'
+//           >
+//             <div className='w-full lg:w-full mt-12 lg:mt-0 rounted-lg map-responsive'>
+//               <iframe
+//                 src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1196.8146252130132!2d26.10955270913075!3d44.483991660275706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sro!2sro!4v1701113350695!5m2!1sro!2sro'
+//                 width='100%'
+//                 height='100%'
+//                 allowFullScreen=''
+//                 title='google map'
+//                 referrerPolicy='no-referrer-when-downgrade'
+//               ></iframe>
+//             </div>
+//             <div className='text-center flex flex-col w-3/4 text-xl gap-6'>
+//               <h1 className='text-3xl underline underline-offset-8 mb-6 sm:mb-0'>
+//               Detalii de contact <span className="text-accent">:</span>
+//               </h1>
+//               <p className='flex xl:flex-row flex-col items-center justify-center gap-x-4'>
+//                 <strong className='font-bold text-accent text-2xl'>
+//                   Email:
+//                 </strong>{" "}
+//                 <a
+//                   href='mailto: contact@madinytattoo.ro'
+//                   className='hover:text-accent hover:underline hover:underline-offset-8 transition-all duration-300'
+//                 >
+//                   contact@madinytattoo.ro
+//                 </a>
+//               </p>
+//               <p className='flex xl:flex-row flex-col items-center justify-center gap-x-4'>
+//                 <strong className='font-bold text-accent text-2xl'>Tel:</strong>{" "}
+//                 <a
+//                   href='tel:+40741620774'
+//                   target='blank'
+//                   className='hover:text-accent hover:underline hover:underline-offset-8 transition-all duration-300'
+//                 >
+//                   +04.741.620.774
+//                 </a>
+//               </p>
+//               <p className='flex xl:flex-row flex-col items-center justify-center gap-x-4'>
+//                 <strong className='font-bold text-accent text-2xl'>
+//                   Adresa:
+//                 </strong>{" "}
+//                 Șos. Pipera 61, București 077190
+//               </p>
+//               <div>
+//                 <p className='flex xl:flex-row flex-col items-center justify-center gap-x-4'>
+//                   <strong className='font-bold text-accent text-2xl'>
+//                     Program:
+//                   </strong>{" "}
+//                   11:00 am - 18:00 pm{" "}
+//                 </p>
+//               </div>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </div>
+//     </div>
