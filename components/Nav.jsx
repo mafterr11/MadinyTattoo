@@ -1,28 +1,29 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  HiHome,
-  HiUser,
-  HiViewColumns,
-  HiRectangleGroup,
-  HiChatBubbleBottomCenterText,
-  HiEnvelope,
-} from "react-icons/hi2";
+
+import { 
+  LiaHomeSolid,
+  LiaUserSolid,
+  LiaEnvelopeSolid,
+  LiaComments,
+  LiaImageSolid,
+  LiaLayerGroupSolid      } from "react-icons/lia";
+
 export const navData = [
-  { name: "acasa", path: "/", icon: <HiHome /> },
-  { name: "despre", path: "/despre", icon: <HiUser /> },
-  { name: "servicii", path: "/servicii", icon: <HiRectangleGroup /> },
-  { name: "proiecte", path: "/proiecte", icon: <HiViewColumns /> },
+  { name: "acasa", path: "/", icon: <LiaHomeSolid /> },
+  { name: "despre", path: "/despre", icon: <LiaUserSolid /> },
+  { name: "servicii", path: "/servicii", icon: <LiaLayerGroupSolid  /> },
+  { name: "proiecte", path: "/proiecte", icon: <LiaImageSolid   /> },
   {
     name: "testimoniale",
     path: "/testimoniale",
-    icon: <HiChatBubbleBottomCenterText />,
+    icon: <LiaComments  />,
   },
   {
     name: "contact",
     path: "/contact",
-    icon: <HiEnvelope />,
+    icon: <LiaEnvelopeSolid />,
   },
 ];
 
