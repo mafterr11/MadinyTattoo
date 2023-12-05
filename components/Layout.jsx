@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   const router = usePathname();
   return (
     <html
-      lang='en'
+      lang='ro'
       className='bg-site bg-cover bg-no-repeat bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
