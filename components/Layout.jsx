@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     >
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} page bg-primary/40`}>
-          <motion.div key={router} layout className='h-full'>
+          <motion.div key={router}>
             <Transition />
             <Nav />
             <Header />

@@ -27,6 +27,7 @@ module.exports = {
       },
       backgroundImage: {
         site: "url('/bgMada2.jpg')",
+        tatuaje: "url('/bgMada.jpg')",
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",
