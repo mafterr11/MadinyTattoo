@@ -92,7 +92,6 @@ const ContactPage = () => {
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
-
             <div className='relative mb-4'>
               <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
@@ -107,7 +106,6 @@ const ContactPage = () => {
           </div>
           {/* Detalii */}
           <div className='bg-white/90 relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
-
             <div className='lg:w-1/2 px-6 mb-4 lg:mt-0'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 EMAIL
@@ -142,7 +140,6 @@ const ContactPage = () => {
               </a>
             </div>
           </div>
-
         </div>
       </motion.div>
     </div>
