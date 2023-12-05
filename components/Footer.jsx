@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className='text-white body-font'>
-      <div className='container px-5 py-8 mx-auto flex items-center justify-evenly sm:flex-row flex-col pb-24 md:pb-4'>
+    <footer>
+      <div className='w-full flex items-center justify-evenly pb-24 md:pb-4'>
         <div>
           Made by{" "}
           <Link
