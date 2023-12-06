@@ -66,6 +66,7 @@ const workSlides = {
 
 // Swiper Components
 import { Swiper, SwiperSlide } from "swiper/react";
+// import SwiperButtons from "./SwiperButtons";
 
 // Swiper Styles
 import "swiper/css";
@@ -130,6 +131,7 @@ const WorkSlider = () => {
           </SwiperSlide>
         );
       })}
+      {/* <SwiperButtons /> */}
     </Swiper>
   );
 };
