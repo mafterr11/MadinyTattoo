@@ -140,7 +140,7 @@ const WorkSlider = () => {
           );
         })}
       </Swiper>
-      <div className="hidden md:flex items-center justify-between w-full absolute inset-y-0  px-4 text-5xl cursor-pointer">
+      <div className="hidden md:flex items-center justify-between w-full absolute inset-y-0 text-5xl cursor-pointer">
         <SlArrowLeft className="swiper-navigation-prev absolute -left-[10%] top-[44%] text-accent" />
         <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[10%] top-[44%] text-accent"/>
       </div>

@@ -92,7 +92,7 @@ const ServiceSlider = () => {
           );
         })}
       </Swiper>
-      <div className="flex md:hidden items-center justify-between w-full absolute inset-y-0  px-4 text-5xl cursor-pointer">
+      <div className="flex md:hidden text-5xl cursor-pointer">
         <SlArrowLeft className="swiper-navigation-prev absolute -left-[4%] top-[34%] text-accent" />
         <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[4%] top-[34%] text-accent" />
       </div>
