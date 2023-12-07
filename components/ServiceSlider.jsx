@@ -54,18 +54,17 @@ const ServiceSlider = () => {
             spaceBetween: 15,
           },
         }}
-        freeMode={true}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
-        className='h-[300px] w-[290px] sm:w-[900px] sm:h-[370px]'
+        className='h-[300px] w-[270px] sm:w-[900px] sm:h-[370px]'
       >
         {serviceData.map((item, index) => {
           return (
             <SwiperSlide key={index}>
               <Link href={item.path}>
-                <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col  sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
+                <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
                   {/* icon */}
                   <div>
                     <div className='flex items-center justify-start gap-x-8'>
@@ -90,8 +89,8 @@ const ServiceSlider = () => {
         })}
       </Swiper>
       <div className="flex md:hidden items-center justify-between w-full absolute inset-y-0  px-4 text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[3%] top-[34%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[3%] top-[34%] text-accent" />
+        <SlArrowLeft className="swiper-navigation-prev absolute -left-[6%] top-[34%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[6%] top-[34%] text-accent" />
       </div>
     </div>
   );

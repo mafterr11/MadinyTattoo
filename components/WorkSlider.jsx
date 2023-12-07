@@ -110,6 +110,8 @@ const WorkSlider = () => {
                         {/* image */}
                         <Image
                           src={image.path}
+                          quality={100}
+                          priority={true}
                           width={500}
                           height={300}
                           alt='my work images'
