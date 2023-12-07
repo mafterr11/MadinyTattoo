@@ -13,7 +13,7 @@ const TestimonialePage = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='h2 mb-8 xl:mb-0'
+          className='h2 mb-8 xl:mb-24'
         >
           Părerea <span className='text-accent'>clienților.</span>
         </motion.h2>
