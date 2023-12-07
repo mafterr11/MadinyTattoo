@@ -6,7 +6,6 @@ import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 // Swiper Styles
 import "swiper/css";
-import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // Icons
@@ -14,7 +13,7 @@ import { RxCrop, RxArrowTopRight } from "react-icons/rx";
 import { GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
 
 // Required Modules
-import { FreeMode, Pagination } from "swiper";
+import { Pagination } from "swiper";
 
 // Data
 const serviceData = [
@@ -59,7 +58,7 @@ const ServiceSlider = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[FreeMode, Pagination]}
+        modules={[Pagination]}
         className='h-[300px] w-[290px] sm:w-[900px] sm:h-[370px]'
       >
         {serviceData.map((item, index) => {
