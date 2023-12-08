@@ -29,6 +29,7 @@ module.exports = {
         site: "url('/bgMada2.jpg')",
         micropigmentare: "url('/backgrounds/micropigmentare.jpg')",
         micropigmentare2: "url('/backgrounds/micropigmentare2.jpg')",
+        despre: "url('/backgrounds/despre.jpg')",
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",
