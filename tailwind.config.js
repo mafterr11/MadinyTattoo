@@ -27,7 +27,8 @@ module.exports = {
       },
       backgroundImage: {
         site: "url('/bgMada2.jpg')",
-        tatuaje: "url('/bgMada.jpg')",
+        micropigmentare: "url('/backgrounds/micropigmentare.jpg')",
+        micropigmentare2: "url('/backgrounds/micropigmentare2.jpg')",
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",
