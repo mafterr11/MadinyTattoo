@@ -82,7 +82,7 @@ const ServiciiTatuaje = () => {
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
-                    1800 RON
+                    2000 RON
                   </p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const ServiciiTatuaje = () => {
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
-                    2000 RON
+                    2300 RON
                   </p>
                 </div>
               </div>
