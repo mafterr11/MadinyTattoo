@@ -48,7 +48,6 @@ const TestimonialSlider = () => {
       }}
       modules={[Navigation, Pagination]}
       className='h-[500px] lg:h-[300px]'
-      lazy={true}
     >
       {testimonialData.map((person, index) => {
         return (

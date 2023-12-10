@@ -30,8 +30,6 @@ module.exports = {
         micropigmentare: "url('/backgrounds/micropigmentare.jpg')",
         micropigmentare2: "url('/backgrounds/micropigmentare2.jpg')",
         despre: "url('/backgrounds/despre.jpg')",
-        tatuaje: "url('/backgrounds/tatuaje.jpg')",
-        servicii: "url('/backgrounds/servicii.jpg')",
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",

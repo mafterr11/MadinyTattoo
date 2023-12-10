@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} page bg-primary/40`}>
           <motion.div key={router}>
-            {/* <Transition /> */}
+            <Transition />
             <Nav />
             <Header />
             {children}

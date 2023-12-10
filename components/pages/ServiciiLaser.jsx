@@ -55,7 +55,7 @@ const ServiciiMicropigmentare = () => {
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Sprâncene:</span>{" "}
-                    250 RON
+                    300 RON
                   </p>
                 </div>
                 <div className='my-4'>
@@ -63,7 +63,7 @@ const ServiciiMicropigmentare = () => {
                     <span className='text-accent font-bold'>
                       Laser în funcție de dimensiune:
                     </span>{" "}
-                    150-450 RON
+                    150-500 RON
                   </p>
                 </div>
               </div>

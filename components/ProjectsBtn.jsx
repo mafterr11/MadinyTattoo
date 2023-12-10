@@ -13,7 +13,6 @@ const ProjectsBtn = () => {
         <Image
           src={roundedText}
           width={141}
-          priority
           height={148}
           alt='projects button'
           className='animate-spin-slow w-full h-full max-w-[141px] max-h-[148px]'

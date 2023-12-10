@@ -1,4 +1,4 @@
-import ContactPage from "../../../components/pages/ContactPage";
+import ContactPage from "../../components/pages/ContactPage";
 
 export const metadata = {
   title: "Contact - Madiny Tattoo",

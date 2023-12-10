@@ -20,14 +20,14 @@ const serviceData = [
   {
     icon: <RxCrop />,
     title: "Tatuaje",
-    path: "/tatuaje",
+    path: "/servicii/tatuaje",
     description:
       "Intră în lumea noastră cu designuri expresive și personalizate pentru a-ți îndeplini visul de a avea un tatuaj memorabil.",
   },
   {
     icon: <GiBleedingEye />,
     title: "Micropigmentare",
-    path: "/micropigmentare",
+    path: "/servicii/micropigmentare",
     description:
       "Descoperă magia micropigmentării pentru trăsături perfecte și naturale, conturând frumusețea ta într-un mod subtil și rafinat.",
   },
@@ -63,7 +63,6 @@ const ServiceSlider = () => {
         }}
         modules={[Navigation, Pagination]}
         className='h-[300px] w-[290px] sm:w-[900px] sm:h-[370px]'
-        lazy={true}
       >
         {serviceData.map((item, index) => {
           return (

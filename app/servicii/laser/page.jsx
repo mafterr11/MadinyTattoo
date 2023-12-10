@@ -1,4 +1,4 @@
-import ServiciiLaser from "../../../../components/pages/ServiciiLaser";
+import ServiciiLaser from "../../../components/pages/ServiciiLaser";
 
 export const metadata = {
   title: "Laser Removal - Madiny Tattoo",
