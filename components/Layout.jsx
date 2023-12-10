@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <html
       lang='ro'
-      className='bg-site bg-cover bg-no-repeat bg-fixed bg-center relative'
+      className='bg-site bg-cover bg-no-repeat bg-center fixed top-0 left-0 w-full h-full z-0'
     >
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} page bg-primary/40`}>
