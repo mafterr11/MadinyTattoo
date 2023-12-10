@@ -1,4 +1,4 @@
-import DesprePage from "../../components/pages/DesprePage";
+import DesprePage from "../../../components/pages/DesprePage";
 
 export const metadata = {
   title: "Despre - Madiny Tattoo",

@@ -95,6 +95,7 @@ const WorkSlider = () => {
         }}
         modules={[Navigation, Pagination]}
         className='h-[500px] lg:h-[700px]'
+        lazy={true}
       >
         {workSlides.slides.map((slide, index) => {
           return (

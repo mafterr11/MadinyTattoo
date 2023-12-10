@@ -1,4 +1,4 @@
-import ProiectePage from "../../components/pages/ProiectePage";
+import ProiectePage from "../../../components/pages/ProiectePage";
 
 export const metadata = {
   title: "Proiecte Finalizate - Madiny Tattoo",

@@ -25,7 +25,7 @@ const HomePage = () => {
           </motion.h1>
           {/* subtitle */}
           <motion.p
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("left", 0.4)}
             initial='hidden'
             animate='show'
             exit='hidden'

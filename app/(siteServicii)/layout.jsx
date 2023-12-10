@@ -1,5 +1,5 @@
-import "./globals.css";
-import Layout from "../components/Layout";
+import "../globals.css";
+import LayoutMicropigmentare from "../../components/layouts/LayoutServicii";
 
 export const metadata = {
   title: "Madiny Tattoo",
@@ -11,5 +11,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <Layout>{children}</Layout>;
+  return <LayoutMicropigmentare>{children}</LayoutMicropigmentare>;
 }

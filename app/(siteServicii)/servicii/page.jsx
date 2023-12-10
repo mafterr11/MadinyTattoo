@@ -1,4 +1,4 @@
-import ServiciiPage from "../../components/pages/ServiciiPage";
+import ServiciiPage from "../../../components/pages/ServiciiPage";
 
 export const metadata = {
   title: "Servicii - Madiny Tattoo",

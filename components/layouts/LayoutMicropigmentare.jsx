@@ -1,10 +1,10 @@
 "use client";
 import { Poppins } from "next/font/google";
 // COMPONENTS
-import Nav from "./Nav";
-import Header from "./Header";
-import Footer from "./Footer";
-import Transition from "./Transition";
+import Nav from "../Nav";
+import Header from "../Header";
+import Footer from "../Footer";
+import Transition from "../Transition";
 
 // ROUTER
 import { usePathname } from "next/navigation";
@@ -18,12 +18,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const Layout = ({ children }) => {
+const LayoutMicropigmentare = ({ children }) => {
   const router = usePathname();
   return (
     <html
       lang='ro'
-      className='bg-site bg-cover bg-no-repeat bg-scroll lg:bg-fixed bg-center relative'
+      className=' bg-micropigmentare2 md:bg-micropigmentare bg-cover bg-no-repeat bg-scroll lg:bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} page bg-primary/40`}>
@@ -40,4 +40,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default LayoutMicropigmentare;
