@@ -75,7 +75,7 @@ const ContactPage = () => {
             <div className='relative mb-4'>
               <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
-                19:00 pm
+                22:00 pm
               </p>
             </div>
             <div className='relative'>
@@ -95,7 +95,7 @@ const ContactPage = () => {
             <div className='relative mb-4'>
               <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
-                19:00 pm
+                22:00 pm
               </p>
             </div>
             <div className='relative'>

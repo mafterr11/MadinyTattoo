@@ -18,7 +18,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, backgroundClass }) => {
   const router = usePathname();
   return (
     <html
@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
       className='bg-site bg-cover bg-no-repeat bg-scroll lg:bg-fixed bg-center relative'
     >
       <AnimatePresence mode='wait'>
-        <body className={`${poppins.className} page bg-primary/40`}>
-          <motion.div key={router}>
+        <body className={`${poppins.className} ${backgroundClass} `}>
+          <motion.div key={router} className="page bg-primary/40">
             <Transition />
             <Nav />
             <Header />

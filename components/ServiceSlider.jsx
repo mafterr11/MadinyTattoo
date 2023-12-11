@@ -20,14 +20,14 @@ const serviceData = [
   {
     icon: <RxCrop />,
     title: "Tatuaje",
-    path: "/servicii/tatuaje",
+    path: "/tatuaje",
     description:
       "Intră în lumea noastră cu designuri expresive și personalizate pentru a-ți îndeplini visul de a avea un tatuaj memorabil.",
   },
   {
     icon: <GiBleedingEye />,
     title: "Micropigmentare",
-    path: "/servicii/micropigmentare",
+    path: "/micropigmentare",
     description:
       "Descoperă magia micropigmentării pentru trăsături perfecte și naturale, conturând frumusețea ta într-un mod subtil și rafinat.",
   },
