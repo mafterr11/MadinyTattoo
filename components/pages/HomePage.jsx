@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 // Components
 import ProjectsBtn from "../ProjectsBtn";
 
 // Framer
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
+// import { motion } from "framer-motion";
+// import { fadeIn } from "../../variants";
 
 const HomePage = () => {
   return (
@@ -13,7 +13,7 @@ const HomePage = () => {
       <div className='w-full h-screen py-12 xs:py-0'>
         <div className='container mx-auto flex flex-col justify-center text-center xl:text-left xl:pt-40 h-screen xl:h-full '>
           {/* title */}
-          <motion.h1
+          <h1
             variants={fadeIn("right", 0.2)}
             initial='hidden'
             animate='show'
@@ -22,9 +22,9 @@ const HomePage = () => {
           >
             Transformăm Ideile <br /> In{" "}
             <span className='text-accent '>Realitate</span>
-          </motion.h1>
+          </h1>
           {/* subtitle */}
-          <motion.p
+          <p
             variants={fadeIn("left", 0.4)}
             initial='hidden'
             animate='show'
@@ -34,12 +34,12 @@ const HomePage = () => {
             În spațiul nostru creativ, transformăm fiecare concept într-o
             realitate vibrantă și autentică. Fiecare design captează unicitatea
             ta, conturând și detaliind povestea personală.
-          </motion.p>
+          </p>
           {/* btn */}
           <div className='flex justify-center xl:hidden relative'>
             <ProjectsBtn />
           </div>
-          <motion.div
+          <div
             variants={fadeIn("right", 0.5)}
             initial='hidden'
             animate='show'
@@ -47,7 +47,7 @@ const HomePage = () => {
             className='hidden xl:flex'
           >
             <ProjectsBtn />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
