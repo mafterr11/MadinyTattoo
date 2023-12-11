@@ -4,33 +4,18 @@ import { motion } from "framer-motion";
 // Variants
 const transitionVariants = {
   initial: {
-    opacity: 0,
-    transform: "translateX(100%)",
+    opacity: 1,
+    transform: "translateX(100%)", // Start off-screen to the right
   },
   animate: {
     opacity: 1,
-    transform: "translateX(0%)",
+    transform: "translateX(0%)", // Slide in to fill the screen
   },
   exit: {
-    opacity: 0,
-    transform: "translateX(100%)",
+    opacity: 1,
+    transform: "translateX(-100%)", // Slide out to the left
   },
 };
-
-// const transitionVariants = {
-//   initial: {
-//     x: "100%",
-//     width: "100%",
-//   },
-//   animate: {
-//     x: "0%",
-//     width: "0%",
-//   },
-//   exit: {
-//     x: ["0%", "100%"],
-//     width: ["0%", "100%"],
-//   },
-// };
 
 const Transition = () => {
   return (
@@ -41,7 +26,7 @@ const Transition = () => {
         initial='initial'
         animate='animate'
         exit='exit'
-        transition={{ delay: 0.1, duration: 1.6, ease: "easeInOut" }}
+        transition={{ delay: 0.1, duration: 1, ease: "easeInOut" }}
       ></motion.div>
 
       <motion.div
@@ -50,7 +35,7 @@ const Transition = () => {
         initial='initial'
         animate='animate'
         exit='exit'
-        transition={{ delay: 0.2, duration: 1.6, ease: "easeInOut" }}
+        transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
       ></motion.div>
 
       <motion.div
@@ -59,7 +44,7 @@ const Transition = () => {
         initial='initial'
         animate='animate'
         exit='exit'
-        transition={{ delay: 0.3, duration: 1.6, ease: "easeInOut" }}
+        transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
       ></motion.div>
     </>
   );
