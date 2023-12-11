@@ -30,7 +30,7 @@ export const navData = [
 const Nav = () => {
   const pathname = usePathname();
   return (
-    <nav className='flex flex-col items-center gap-y-4 fixed h-max bottom-0 xl:right-[2%] w-full xl:w-16 xl:max-w-md z-50  xl:justify-center xl:h-screen text-white'>
+    <nav className='flex flex-col items-center gap-y-4 fixed h-max bottom-0 xl:right-[2%] w-full xl:w-16 xl:max-w-md z-[8]  xl:justify-center xl:h-screen text-white'>
       <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-black/60 backdrop-blur-sm text-3xl xl:text-2xl xl:rounded-full border-[1px] border-black/70'>
         {navData.map((link, index) => {
           return (
