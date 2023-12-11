@@ -1,12 +1,10 @@
 "use client";
 import { Poppins } from "next/font/google";
-import  dynamic from 'next/dynamic'
 // COMPONENTS
-const Nav = dynamic(() => import("../components/Nav"), { ssr: false });
-const Header = dynamic(() => import("../components/Header"), { ssr: false });
-const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
-const Transition = dynamic(() => import("../components/Transition"), { ssr: false });
-
+import Nav from "./Nav";
+import Header from "./Header";
+import Footer from "./Footer";
+import Transition from "./Transition";
 
 // ROUTER
 import { usePathname } from "next/navigation";
