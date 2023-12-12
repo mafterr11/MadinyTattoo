@@ -83,7 +83,7 @@ import Image from "next/image";
 
 const WorkSlider = () => {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative">
       <Swiper
         spaceBetween={10}
         navigation={{
@@ -94,7 +94,7 @@ const WorkSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className='h-[380px] w-[300px] xs:h-[480px] xs:w-[320px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[700px] xl:w-full '
+        className='h-[400px] w-[280px] xs:h-[450px] xs:w-[300px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[720px] xl:w-[530px]'
       >
         {workSlides.slides.map((slide, index) => {
           return (
@@ -112,6 +112,7 @@ const WorkSlider = () => {
                           src={image.path}
                           width={500}
                           height={300}
+                          priority={true}
                           alt='my work images'
                           className="object-cover"
                         />
@@ -139,9 +140,9 @@ const WorkSlider = () => {
           );
         })}
       </Swiper>
-      <div className="flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-5xl md:text-7xl xl:text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[4%] xs:-left-[6%] md:left-0 xl:-left-[10%] top-[44%] xs:top-[37%] md:top-[43%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[4%] xs:-right-[6%] md:right-0 xl:-right-[10%] top-[44%] xs:top-[37%] md:top-[43%] text-accent"/>
+      <div className="flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-7xl cursor-pointer">
+        <SlArrowLeft className="swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[1%] md:right-0 xl:-right-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent"/>
       </div>
     </div>
   );
