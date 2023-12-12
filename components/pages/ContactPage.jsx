@@ -88,7 +88,7 @@ const ContactPage = () => {
         {/* Panel */}
         <div className="flex md:hidden flex-col gap-y-6">
           {/* Program */}
-          <div className='lg:w-1/3 md:w-1/2 bg-white/90 z-10 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
+          <div className='lg:w-1/3 md:w-1/2 bg-white/90 z-[7] flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
