@@ -83,7 +83,7 @@ import Image from "next/image";
 
 const WorkSlider = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <Swiper
         spaceBetween={10}
         navigation={{
