@@ -4,7 +4,7 @@ import { BiPhone } from "react-icons/bi";
 
 const Socials = () => {
   return (
-    <div className='flex items-center gap-x-5 text-3xl'>
+    <div className='flex items-center gap-x-5 text-3xl lg:text-4xl xl:text-3xl'>
       <Link
         href={"https://www.instagram.com/madinytattoo/"}
         target='blank'

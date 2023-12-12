@@ -99,7 +99,7 @@ const DesprePage = () => {
   return (
     <div className='h-full xs:h-screen py-40 text-center xl:text-left'>
       <div className='container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center md:mt-20 xl:mt-0'>
           <motion.h1
             variants={fadeIn("right", 0.2)}
             initial='hidden'

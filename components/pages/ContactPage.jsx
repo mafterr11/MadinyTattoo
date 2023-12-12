@@ -10,7 +10,7 @@ const ContactPage = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        className='h1 text-center lg:mb-12'
+        className='h1 text-center lg:mb-12 mb-0'
       >
         Să ne <span className='text-accent'>conectăm.</span>
       </motion.h1>
