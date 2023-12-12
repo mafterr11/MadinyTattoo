@@ -1,8 +1,5 @@
-"use client";
 // import { useState } from "react";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants"
 
 // Icons
 // import {
@@ -100,33 +97,24 @@ const DesprePage = () => {
     <div className='h-full xs:h-screen py-40 text-center xl:text-left'>
       <div className='container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
         <div className='flex flex-col justify-center md:mt-20 xl:mt-0'>
-          <motion.h1
-            variants={fadeIn("right", 0.2)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
+          <h1
+            
             className='h1'
           >
             Poveștile <span className='text-accent'>Captivante</span> Dau
             Naștere Designurilor Unice.
-          </motion.h1>
-          <motion.p
-            variants={fadeIn("right", 0.4)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
+          </h1>
+          <p
+            
             className='lg:max-w-4xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0'
           >
             Încă de când am început activitatea ca artisti tatuatori independenți,
             am creat designuri inedite și memorabile, aducând la viață ideile
             clienților nostrii. Le mulțumim pentru susținere și încrederea
             acordată!
-          </motion.p>
-          <motion.div
-            variants={fadeIn("right", 0.6)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
+          </p>
+          <div
+            
             className='flex max-w-xl xl:max-w-2xl mx-auto xl:mx-0 mb-8'
           >
             <div className='flex flex-1 gap-x-6 md:gap-x-20 xl:gap-x-6'>
@@ -158,7 +146,7 @@ const DesprePage = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         {/* info */}
         {/* <motion.div

@@ -1,24 +1,15 @@
-"use client";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <motion.h1
-        variants={fadeIn("right", 0, 2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
+      <h1
+        
         className='h1 text-center lg:mb-12 mb-0'
       >
         Să ne <span className='text-accent'>conectăm.</span>
-      </motion.h1>
-      <motion.div
-        variants={fadeIn("left", 0, 4)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
+      </h1>
+      <div
+        
         className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'
       >
         <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative'>
@@ -141,7 +132,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
