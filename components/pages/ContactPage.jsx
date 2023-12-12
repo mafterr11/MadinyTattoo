@@ -19,9 +19,9 @@ const ContactPage = () => {
         initial='hidden'
         animate='show'
         exit='hidden'
-        className='container px-5 py-12 lg:py-24 mx-auto flex flex-col-reverse h-[900px] lg:h-[800px] gap-y-10'
+        className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'
       >
-        <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col lg:flex-row lg:items-end lg:justify-start justify-end relative'>
+        <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative'>
           <iframe
             width='100%'
             height='100%'
@@ -31,7 +31,7 @@ const ContactPage = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
           {/* Detalii */}
-          <div className='bg-white/90 lg:bg-white relative hidden lg:flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
+          <div className='bg-white/90 lg:bg-white relative hidden md:flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
             <div className='lg:w-1/2 px-6'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
@@ -67,19 +67,19 @@ const ContactPage = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='lg:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-10 hidden lg:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
+          <div className='xl:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-[7] hidden md:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 md:mb-[24rem] lg:mb-[31rem] rounded shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
 
             <div className='relative mb-4'>
-              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
+              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1 lg:text-base'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
                 22:00 pm
               </p>
             </div>
             <div className='relative'>
-              <p className='leading-relaxed text-gray-900 font-semibold'>
+              <p className='leading-relaxed text-gray-900 font-semibold lg:text-base'>
                 <span className='text-accent'>Duminica:</span> Inchis
               </p>
             </div>

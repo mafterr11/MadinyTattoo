@@ -9,7 +9,7 @@ const ProiectePage = () => {
       <div className='container mx-auto h-full py-36 xl:py-60'>
         <div className='flex xl:h-full flex-col xl:flex-row gap-x-8'>
           {/* text */}
-          <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
+          <div className='text-center flex xl:w-[30vw] flex-col xl:text-left mb-4 xl:mb-0'>
             <motion.h1
               variants={fadeIn("up", 0.2)}
               initial='hidden'
@@ -24,7 +24,7 @@ const ProiectePage = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[500px] mx-auto lg:mx-0'
+              className='mb-4 xl:max-w-[500px] mx-auto lg:mx-0'
             >
               Prin arta mea, transform viziunile în realitate, aducând emoție și
               semnificație fiecărui tatuaj. Explorează portofoliul meu și

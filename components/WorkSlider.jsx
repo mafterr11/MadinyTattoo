@@ -94,12 +94,12 @@ const WorkSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className='h-[500px] lg:h-[700px]'
+        className='h-[490px] xs:h-[500px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[700px] xl:w-full '
       >
         {workSlides.slides.map((slide, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className='grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 cursor-pointer relative'>
+              <div className='grid grid-cols-2 grid-rows-2 gap-2 lg:gap-4 cursor-pointer relative'>
                 {slide.images.map((image, index) => {
                   return (
                     <div
@@ -110,11 +110,11 @@ const WorkSlider = () => {
                         {/* image */}
                         <Image
                           src={image.path}
-                          quality={100}
                           priority={true}
                           width={500}
                           height={300}
                           alt='my work images'
+                          className="object-cover"
                         />
                         {/* overlay gradient */}
                         <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
@@ -140,9 +140,9 @@ const WorkSlider = () => {
           );
         })}
       </Swiper>
-      <div className="hidden md:flex items-center justify-between w-full absolute inset-y-0 text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[10%] top-[44%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[10%] top-[44%] text-accent"/>
+      <div className="hidden md:flex items-center justify-between w-full absolute inset-y-0 xl:text-5xl md:text-7xl cursor-pointer">
+        <SlArrowLeft className="swiper-navigation-prev absolute xl:-left-[10%] md:left-0 top-[44%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute xl:-right-[10%] md:right-0 top-[44%] text-accent"/>
       </div>
     </div>
   );
