@@ -19,7 +19,7 @@ const workSlides = {
           title: "title",
           path: "/gallery/tattoo4.png",
         },
-      ], 
+      ],
     },
     {
       images: [
