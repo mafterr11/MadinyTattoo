@@ -132,7 +132,6 @@ const WorkSlider = () => {
                           src={image.path}
                           width={500}
                           height={300}
-                          priority={true}
                           alt='my work images'
                           className="object-cover"
                         />
