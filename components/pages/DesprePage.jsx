@@ -115,7 +115,7 @@ const DesprePage = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-3xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0 text-p xl:text-lg xs:text-lg'
+            className='max-w-3xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0'
           >
             Încă de când am început activitatea ca artisti tatuatori independenți,
             am creat designuri inedite și memorabile, aducând la viață ideile
@@ -127,11 +127,11 @@ const DesprePage = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='flex max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'
+            className='flex max-w-xl xl:max-w-2xl mx-auto xl:mx-0 mb-8'
           >
-            <div className='flex flex-1 xl:gap-x-6'>
+            <div className='flex flex-1 gap-x-6 md:gap-x-20 lg:gap-x-6'>
               {/* clients */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/20 after:absolute after:top-0 after:-right-3 lg:after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={878} duration={5} /> +
                 </div>
@@ -140,7 +140,7 @@ const DesprePage = () => {
                 </div>
               </div>
               {/* experience */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/20 after:absolute after:top-0 after:-right-3 lg:after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={652} duration={5} /> +
                 </div>
@@ -149,7 +149,7 @@ const DesprePage = () => {
                 </div>
               </div>
               {/* projects */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/20 after:absolute after:top-0 after:-right-3 lg:after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={2725} duration={5} /> +
                 </div>

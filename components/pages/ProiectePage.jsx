@@ -24,7 +24,7 @@ const ProiectePage = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[500px] mx-auto lg:mx-0 text-p text-lg'
+              className='mb-4 max-w-[500px] mx-auto lg:mx-0'
             >
               Prin arta mea, transform viziunile în realitate, aducând emoție și
               semnificație fiecărui tatuaj. Explorează portofoliul meu și

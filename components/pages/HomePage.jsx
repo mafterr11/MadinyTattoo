@@ -29,7 +29,7 @@ const HomePage = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-lg text-p text-xl'
+            className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16'
           >
             În spațiul nostru creativ, transformăm fiecare concept într-o
             realitate vibrantă și autentică. Fiecare design captează unicitatea
