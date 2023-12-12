@@ -5,15 +5,15 @@ import { fadeIn } from "../../variants";
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <motion.h2
+      <motion.h1
         variants={fadeIn("right", 0, 2)}
         initial='hidden'
         animate='show'
         exit='hidden'
-        className='h2 text-center lg:mb-12'
+        className='h1 text-center lg:mb-12'
       >
         Să ne <span className='text-accent'>conectăm.</span>
-      </motion.h2>
+      </motion.h1>
       <motion.div
         variants={fadeIn("left", 0, 4)}
         initial='hidden'

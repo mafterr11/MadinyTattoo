@@ -50,6 +50,10 @@ const ServiceSlider = () => {
             spaceBetween: 15,
           },
           640: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          1024:{
             slidesPerView: 3,
             spaceBetween: 15,
           },
@@ -62,7 +66,7 @@ const ServiceSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className='h-[300px] w-[290px] sm:w-[900px] sm:h-[370px]'
+        className='h-[320px] w-[250px] xs:w-[310px] md:w-[650px] md:h-[370px] lg:w-[900px] xl:h-[370px]'
       >
         {serviceData.map((item, index) => {
           return (
@@ -77,7 +81,7 @@ const ServiceSlider = () => {
                       <div className='mb-2 text-lg'>{item.title}</div>
                     </div>
                     <div className='mb-8'>
-                      <p className='max-w-[350px] text-base leading-normal'>
+                      <p className='max-w-[350px] text-sm xs:text-base md:text-lg lg:text-base leading-normal'>
                         {item.description}
                       </p>
                     </div>
@@ -92,9 +96,9 @@ const ServiceSlider = () => {
           );
         })}
       </Swiper>
-      <div className="flex md:hidden text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[6%] top-[34%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[6%] top-[34%] text-accent" />
+      <div className="flex lg:hidden text-5xl cursor-pointer">
+        <SlArrowLeft className="swiper-navigation-prev absolute -left-[2%] xs:-left-[5%] md:-left-[2%] top-[34%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[2%] xs:-right-[5%] md:-right-[2%] top-[34%] text-accent" />
       </div>
     </div>
   );
