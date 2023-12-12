@@ -5,11 +5,11 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/gallery/tattoo1.png",
+          path: "/gallery/tattoo16.png",
         },
         {
           title: "title",
-          path: "/gallery/tattoo2.png",
+          path: "/gallery/tattoo1.png",
         },
         {
           title: "title",
@@ -58,6 +58,26 @@ const workSlides = {
         {
           title: "title",
           path: "/gallery/tattoo12.png",
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: "title",
+          path: "/gallery/tattoo13.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo14.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo15.png",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo2.png",
         },
       ],
     },
