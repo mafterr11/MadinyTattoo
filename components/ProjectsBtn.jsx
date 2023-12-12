@@ -1,6 +1,9 @@
+// Image
 import Image from "next/image";
 import roundedText from "../public/rounded-white-bold.png";
+// Link
 import Link from "next/link";
+// Image
 import { HiArrowRight } from "react-icons/hi2";
 
 const ProjectsBtn = () => {

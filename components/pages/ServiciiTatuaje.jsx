@@ -1,23 +1,16 @@
 "use client";
+// Image
 import Link from "next/link";
 import Image from "next/image";
 import albNegruTattoo from "../../public/gallery/tattoo9.png";
 import colorTattoo from "../../public/gallery/tattoo8.jpg";
 import conturTattoo from "../../public/gallery/tattoo14.jpg";
 import embroderyTattoo from "../../public/gallery/tattoo13.jpg";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const ServiciiTatuaje = () => {
   return (
     <div className='flex justify-center flex-col items-center h-full md:h-screen'>
-      <motion.div
-        variants={fadeIn("left", 0.2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='flex flex-col justify-center items-center md:mt-20 mt-32'
-      >
+      <div className='flex flex-col justify-center items-center md:mt-20 mt-32'>
         <h1 className='h1'>
           <span className='text-accent'>Tatuaje</span>
         </h1>
@@ -29,14 +22,9 @@ const ServiciiTatuaje = () => {
           </Link>{" "}
           pentru informații complete!
         </p>
-      </motion.div>
-      <motion.div
-        variants={fadeIn("right", 0.4)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'
-      >
+      </div>
+      <div className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
+        {/* First */}
         <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
           <Image
             src={albNegruTattoo}
@@ -62,14 +50,12 @@ const ServiciiTatuaje = () => {
                     400 RON
                   </p>
                 </div>
-
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Mediu(6-9)cm:</span>{" "}
                     500-800 RON
                   </p>
                 </div>
-
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>
@@ -78,7 +64,6 @@ const ServiciiTatuaje = () => {
                     900-1400 RON
                   </p>
                 </div>
-
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
@@ -89,7 +74,7 @@ const ServiciiTatuaje = () => {
             </div>
           </div>
         </div>
-        {/* second*/}
+        {/* Second*/}
         <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
           <Image
             src={colorTattoo}
@@ -142,7 +127,7 @@ const ServiciiTatuaje = () => {
             </div>
           </div>
         </div>
-        {/* third */}
+        {/* Third */}
         <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
           <Image
             src={conturTattoo}
@@ -243,7 +228,7 @@ const ServiciiTatuaje = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

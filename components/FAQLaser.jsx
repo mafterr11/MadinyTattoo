@@ -6,7 +6,7 @@ const FAQSection = () => {
           Întrebări frecvente
         </h2>
         <div className='grid pt-8 text-left border-t border-gray-200 md:gap-16 md:grid-cols-3 '>
-          {/* prima col */}
+          {/* Prima col */}
           <div>
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
@@ -73,7 +73,7 @@ const FAQSection = () => {
               </p>
             </div>
           </div>
-          {/* a doua col */}
+          {/* A doua col */}
           <div>
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
@@ -140,7 +140,7 @@ const FAQSection = () => {
               </p>
             </div>
           </div>
-          {/* a treia col */}
+          {/* A treia col */}
           <div>
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>

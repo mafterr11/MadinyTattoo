@@ -1,3 +1,4 @@
+// Component
 import Socials from "./Socials";
 
 const Header = () => {
@@ -5,12 +6,12 @@ const Header = () => {
     <header className='absolute z-[8] w-full flex items-center px-16 xl:px-0 xl:h-[90px] '>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row justify-between items-center py-6'>
-          {/* logo */}
+          {/* Logo */}
           <h3 className='h3 lg:pt-4'>
             MADINY.<span className='text-accent'>TATTOO</span>
           </h3>
           <div>
-            {/* socials */}
+            {/* Socials */}
             <Socials />
           </div>
         </div>

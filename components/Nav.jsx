@@ -1,15 +1,16 @@
 "use client";
+// Link
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+// Icons
 import { 
   LiaHomeSolid,
   LiaUserSolid,
   LiaEnvelopeSolid,
   LiaComments,
   LiaImageSolid,
-  LiaLayerGroupSolid      } from "react-icons/lia";
-
+  LiaLayerGroupSolid } from "react-icons/lia";
+// Data
 export const navData = [
   { name: "acasa", path: "/", icon: <LiaHomeSolid /> },
   { name: "despre", path: "/despre", icon: <LiaUserSolid /> },
@@ -40,23 +41,23 @@ const Nav = () => {
               href={link.path}
               key={index}
             >
-              {/* tooltip */}
+              {/* Tooltip */}
               <div className='absolute pr-16 right-0 hidden xl:group-hover:flex'>
                 <div className='bg-white relative flex text-primary items-center p-[12px] rounded-[3px] border-solid border-black border-[1px]'>
                   <div className='text-[18px] leading-none font-semibold capitalize'>
                     {link.name}
                   </div>
-                  {/* triangle */}
+                  {/* Triangle */}
                   <div className='border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'></div>
                 </div>
               </div>
-              {/* icons div */}
+              {/* Icons div */}
               <div className="flex flex-col justify-center items-center gap-y-1">
-                {/* icons */}
+                {/* Icons */}
                 <div className='text-3xl md:text-4xl'>
                   {link.icon}
                 </div>
-                {/* name */}
+                {/* Name */}
                 <div className='xl:hidden text-[10px] md:text-[18px] leading-none font-semibold capitalize'>
                   {link.name}
                 </div>

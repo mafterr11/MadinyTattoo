@@ -1,15 +1,13 @@
 "use client";
 import { Poppins } from "next/font/google";
-// COMPONENTS
+// Component
 import Nav from "./Nav";
 import Header from "./Header";
 import Footer from "./Footer";
 import Transition from "./Transition";
-
-// ROUTER
+// Router
 import { usePathname } from "next/navigation";
-
-// FRAMER MOTION
+// Framer
 import { AnimatePresence, motion } from "framer-motion";
 
 const poppins = Poppins({

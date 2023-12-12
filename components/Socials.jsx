@@ -1,4 +1,6 @@
+// Link
 import Link from "next/link";
+// Icons
 import { RiInstagramLine, RiTiktokLine, RiWhatsappLine } from "react-icons/ri";
 import { BiPhone } from "react-icons/bi";
 
@@ -12,7 +14,6 @@ const Socials = () => {
       >
         <RiInstagramLine />
       </Link>
-
       <Link
         href={"https://www.tiktok.com/@madiny.tattoo"}
         target='blank'
@@ -20,7 +21,6 @@ const Socials = () => {
       >
         <RiTiktokLine />
       </Link>
-
       <a
         href='tel:+40741620774'
         target='blank'
@@ -28,7 +28,6 @@ const Socials = () => {
       >
         <BiPhone />
       </a>
-
       <a
         href='http://wa.me/+40741620774'
         target='blank'

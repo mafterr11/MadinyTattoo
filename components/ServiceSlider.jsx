@@ -73,11 +73,11 @@ const ServiceSlider = () => {
             <SwiperSlide key={index}>
               <Link href={item.path}>
                 <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col  sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
-                  {/* icon */}
+                  {/* Icon */}
                   <div>
                     <div className='flex items-center justify-start gap-x-8'>
                       <div className='text-4xl text-accent mb-4'>{item.icon}</div>
-                      {/* title & descr*/}
+                      {/* Title & Descr*/}
                       <div className='mb-2 text-lg'>{item.title}</div>
                     </div>
                     <div className='mb-8'>
@@ -86,7 +86,7 @@ const ServiceSlider = () => {
                       </p>
                     </div>
                   </div>
-                  {/* arrow */}
+                  {/* Arrow */}
                   <div className='text-3xl'>
                     <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
                   </div>

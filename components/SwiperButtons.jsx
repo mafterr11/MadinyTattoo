@@ -1,3 +1,4 @@
+"use client"
 import { useSwiper } from "swiper/react";
 
 const SwiperButtons = () => {

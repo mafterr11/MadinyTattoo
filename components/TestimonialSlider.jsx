@@ -23,18 +23,14 @@ const testimonialData = [
       "Nu pot să nu admir cât de incredibil este tatuajul meu! Mulțumesc din inimă, ești pur și simplu remarcabilă în ceea ce faci!",
   },
 ];
-
 // Swiper Components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Swiper Styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 // Icons
 import { FaQuoteLeft } from "react-icons/fa";
-
 // Required Modules
 import { Navigation, Pagination } from "swiper";
 import Image from "next/image";

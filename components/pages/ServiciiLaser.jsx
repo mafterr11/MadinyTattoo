@@ -1,20 +1,14 @@
 "use client";
+// Image
 import Image from "next/image";
 import laserRemoval from "../../public/laserRemoval.jpeg";
+// Component
 import FAQSection from "../FAQLaser";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const ServiciiMicropigmentare = () => {
   return (
     <div className='flex justify-center flex-col items-center h-full md:h-full'>
-      <motion.div
-        variants={fadeIn("left", 0.2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='flex flex-col justify-center items-center md:mt-40 mt-32'
-      >
+      <div className='flex flex-col justify-center items-center md:mt-40 mt-32'>
         <h1 className='h1'>
           <span className='text-accent'>Laser Removal</span>
         </h1>
@@ -25,14 +19,8 @@ const ServiciiMicropigmentare = () => {
           <span className='text-accent'>transformă-ți</span> aspectul cu
           încredere.
         </p>
-      </motion.div>
-      <motion.div
-        variants={fadeIn("left", 0.4)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='flex flex-col lg:flex-row items-center justify-center max-w-7xl  w-[90%] m-4'
-      >
+      </div>
+      <div className='flex flex-col lg:flex-row items-center justify-center max-w-7xl  w-[90%] m-4'>
         <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
           <Image
             src={laserRemoval}
@@ -71,15 +59,10 @@ const ServiciiMicropigmentare = () => {
           </div>
         </div>
         {/* FAQ */}
-      </motion.div>
-      <motion.div
-        variants={fadeIn("right", 0.4)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-      >
+      </div>
+      <div>
         <FAQSection />
-      </motion.div>
+      </div>
     </div>
   );
 };

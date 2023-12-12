@@ -1,26 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
-
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <motion.h1
-        variants={fadeIn("right", 0, 2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='h1 text-center lg:mb-12 mb-0'
-      >
+      <h1 className='h1 text-center lg:mb-12 mb-0'>
         Să ne <span className='text-accent'>conectăm.</span>
-      </motion.h1>
-      <motion.div
-        variants={fadeIn("left", 0, 4)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'
-      >
+      </h1>
+      <div className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'>
         <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative'>
           <iframe
             width='100%'
@@ -85,7 +69,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        {/* Panel */}
+        {/* Mobile Panel */}
         <div className="flex md:hidden flex-col gap-y-6">
           {/* Program */}
           <div className='lg:w-1/3 md:w-1/2 bg-white/90 z-[7] flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
@@ -141,7 +125,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
