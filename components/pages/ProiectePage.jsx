@@ -1,3 +1,4 @@
+"use client"
 import WorkSlider from "../WorkSlider";
 
 const ProiectePage = () => {
