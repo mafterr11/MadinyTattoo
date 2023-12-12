@@ -94,7 +94,7 @@ const WorkSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className='h-[380px] w-[300px] xs:h-[480px] xs:w-[330px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[700px] xl:w-full '
+        className='h-[380px] w-[300px] xs:h-[480px] xs:w-[320px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[700px] xl:w-full '
       >
         {workSlides.slides.map((slide, index) => {
           return (
@@ -140,8 +140,8 @@ const WorkSlider = () => {
         })}
       </Swiper>
       <div className="flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-5xl md:text-7xl xl:text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[4%] xs:-left-[8%] md:left-0 xl:-left-[10%] top-[44%] xs:top-[38%] md:top-[43%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[4%] xs:-right-[8%] md:right-0 xl:-right-[10%] top-[44%] xs:top-[38%] md:top-[43%] text-accent"/>
+        <SlArrowLeft className="swiper-navigation-prev absolute -left-[4%] xs:-left-[6%] md:left-0 xl:-left-[10%] top-[44%] xs:top-[38%] md:top-[43%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[4%] xs:-right-[6%] md:right-0 xl:-right-[10%] top-[44%] xs:top-[38%] md:top-[43%] text-accent"/>
       </div>
     </div>
   );
