@@ -17,12 +17,12 @@ const poppins = Poppins({
   display: "swap"
 });
 
-const Layout = ({ children, backgroundClass }) => {
+const LayoutHome = ({ children, backgroundClass }) => {
   const router = usePathname();
   return (
     <html
       lang='ro'
-      className='bg-cover bg-no-repeat bg-scroll lg:bg-fixed bg-center relative'
+      className='relative'
     >
       <AnimatePresence mode='wait'>
         <body className={`${poppins.className} ${backgroundClass} `}>
@@ -39,4 +39,4 @@ const Layout = ({ children, backgroundClass }) => {
   );
 };
 
-export default Layout;
+export default LayoutHome;
