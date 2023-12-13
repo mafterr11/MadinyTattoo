@@ -26,6 +26,7 @@ const VideoBackground = () => {
         autoPlay
         loop
         muted
+        poster="/bgMada2.jpg"
         playsInline // Helps with autoplay on mobile browsers
         className="min-w-full min-h-full absolute object-cover"
       >
