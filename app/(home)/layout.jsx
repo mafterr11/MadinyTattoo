@@ -1,6 +1,6 @@
 import "../globals.css";
-import Layout from "../../components/Layout";
+import LayoutHome from "../../components/LayoutHome";
 
 export default function RootLayout({ children }) {
-  return <Layout>{children}</Layout>;
+  return <LayoutHome>{children}</LayoutHome>;
 }
