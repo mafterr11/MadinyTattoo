@@ -2,21 +2,21 @@
 // Testimonial Data
 const testimonialData = [
   {
-    image: "/t-avt-1.png",
-    name: "Ana Maria",
+    image: "/customer.webp",
+    name: "Tudor",
     position: "Tattoo Customer",
     message:
       "Sincer, nu o să mai merg în altă parte VREODATĂ să mă tatuez. Sunt atât de superbe și a fost atât de faină atmosfera la tine, încât aș simți că te-aș trăda dacă aș merge în altă parte. Abia aștept să revin!",
   },
   {
-    image: "/t-avt-2.png",
+    image: "/customer2.webp",
     name: "Ioana",
     position: "Tattoo Customer",
     message:
       "Tatuajul este absolut divin. Îți mulțumesc din suflet, ești cea mai profesionistă și pricepută de pe piață. Nu aș fi avut încredere în altcineva pentru primul tatuaj!",
   },
   {
-    image: "/t-avt-3.png",
+    image: "/customer3.webp",
     name: "Andreea",
     position: "Tattoo Customer",
     message:
@@ -56,6 +56,7 @@ const TestimonialSlider = () => {
                       src={person.image}
                       width={100}
                       height={100}
+                      className=" rounded-[50%]"
                       alt='testimonial image'
                     />
                   </div>
