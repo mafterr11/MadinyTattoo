@@ -1,28 +1,23 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
+"use client";
+import React, { useRef, useEffect } from 'react';
 
 const VideoBackground = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef(null);
 
+  const getVideoSource = () => {
+    // Check if window is defined (for SSR compatibility)
+    if (typeof window !== "undefined") {
+      return window.innerWidth < 768 ? '/intro-mobile.mp4' : '/intro.mp4';
+    }
+    return '/intro.mp4'; // Default for SSR
+  };
+
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Example breakpoint for mobile
-    };
-
-    // Check on mount (initial load)
-    checkIfMobile();
-
-    // Add event listener
-    window.addEventListener('resize', checkIfMobile);
-
-    // Clean up
-    return () => {
-      window.removeEventListener('resize', checkIfMobile);
-    };
+    // Update the video source when the component mounts
+    if (videoRef.current) {
+      videoRef.current.src = getVideoSource();
+    }
   }, []);
-
-  const videoSrc = isMobile ? '/intro-mobile.mp4' : '/intro.mp4'; // Different video for mobile
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
@@ -31,9 +26,10 @@ const VideoBackground = () => {
         autoPlay
         loop
         muted
+        playsInline // Helps with autoplay on mobile browsers
         className="min-w-full min-h-full absolute object-cover"
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src={getVideoSource()} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
