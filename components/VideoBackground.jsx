@@ -5,6 +5,7 @@ const VideoBackground = () => {
         autoPlay
         loop
         muted
+        playsInline
         className="min-w-full min-h-full absolute object-cover"
       >
         <source src="/intro.mp4" type="video/mp4" />
