@@ -154,7 +154,6 @@ const WorkSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
       {/* Lightbox Component */}
       {lightbox.open && (
         <div
@@ -172,7 +171,6 @@ const WorkSlider = () => {
           </div>
         </div>
       )}
-
       {/* Navigation Arrows */}
       <div className='flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-7xl cursor-pointer'>
         <SlArrowLeft className='swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent' />
