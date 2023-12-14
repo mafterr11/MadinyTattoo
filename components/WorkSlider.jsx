@@ -84,31 +84,34 @@ const workSlides = {
   ],
 };
 
-// Swiper Components
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
-
-
-// Swiper Styles
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// Icons
-// import { BsArrowRight } from "react-icons/bs";
-
-// Required Modules
-import { Navigation, Pagination } from "swiper";
-import Image from "next/image";
-
 const WorkSlider = () => {
+  const [lightbox, setLightbox] = useState({ open: false, image: null });
+
+  const handleImageClick = (image) => {
+    setLightbox({ open: true, image });
+  };
+
+  const closeLightbox = () => {
+    setLightbox({ open: false, image: null });
+  };
+
   return (
-    <div className="relative">
+    <div className='relative'>
+      {/* Swiper Component */}
       <Swiper
         spaceBetween={10}
         navigation={{
           nextEl: ".swiper-navigation-next",
-          prevEl: ".swiper-navigation-prev"
+          prevEl: ".swiper-navigation-prev",
         }}
         pagination={{
           clickable: true,
@@ -116,52 +119,64 @@ const WorkSlider = () => {
         modules={[Navigation, Pagination]}
         className='h-[400px] w-[280px] xs:h-[450px] xs:w-[300px] md:h-[800px] md:w-[600px] lg:w-[700px] lg:h-[920px] xl:h-[720px] xl:w-[530px]'
       >
-        {workSlides.slides.map((slide, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <div className='grid grid-cols-2 grid-rows-2 gap-2 lg:gap-4 cursor-pointer relative'>
-                {slide.images.map((image, index) => {
-                  return (
-                    <div
-                      className='relative rounded-lg overflow-hidden flex items-center justify-center group'
-                      key={index}
-                    >
-                      <div className='flex items-center justify-center relative overflow-hidden group'>
-                        {/* image */}
-                        <Image
-                          src={image.path}
-                          width={500}
-                          height={300}
-                          alt='my work images'
-                          className="object-cover"
-                        />
-                        {/* overlay gradient */}
-                        <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
-                        {/* title */}
-                        <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20'>
-                          <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
-                            {/* title  */}
-                            {/* <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
+        {workSlides.slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className='grid grid-cols-2 grid-rows-2 gap-2 lg:gap-4 cursor-pointer relative'>
+              {slide.images.map((image, idx) => (
+                <div
+                  className='relative rounded-lg overflow-hidden flex items-center justify-center group'
+                  key={idx}
+                  onClick={() => handleImageClick(image)}
+                >
+                  <Image
+                    src={image.path}
+                    width={500}
+                    height={300}
+                    alt={image.title}
+                    className='object-cover'
+                  />
+                  {/* overlay gradient */}
+                  <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
+                  {/* title
+                  <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20'>
+                    <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
+                      <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
                             LIVE PROJECT
-                          </div> */}
-                            {/* icon*/}
-                            {/* <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300'>
-                            <BsArrowRight />
-                          </div> */}
                           </div>
-                        </div>
-                      </div>
+                      <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300'>
+                            <BsArrowRight />
+                          </div>
                     </div>
-                  );
-                })}
-              </div>
-            </SwiperSlide>
-          );
-        })}
+                  </div> */}
+                </div>
+              ))}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
-      <div className="flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-7xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[1%] md:right-0 xl:-right-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent"/>
+
+      {/* Lightbox Component */}
+      {lightbox.open && (
+        <div
+          className='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'
+          onClick={closeLightbox}
+        >
+          <div className='max-w-2xl max-h-full p-4'>
+            <Image
+              src={lightbox.image.path}
+              alt={lightbox.image.title}
+              width={800} // Adjust as needed
+              height={600} // Adjust as needed
+              className='object-contain'
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Navigation Arrows */}
+      <div className='flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-7xl cursor-pointer'>
+        <SlArrowLeft className='swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent' />
+        <SlArrowRight className='swiper-navigation-next absolute -right-[1%] md:right-0 xl:-right-[16%] top-[40%] xs:top-[37%] md:top-[43%] xl:top-[41%] text-accent' />
       </div>
     </div>
   );
