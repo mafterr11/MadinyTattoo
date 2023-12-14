@@ -1,9 +1,9 @@
 "use client";
 // Image
 import Image from "next/image";
-import buze from "../../public/gallery/micropigmentareService/micropigmentareBuze.jpg";
-import sprancene from "../../public/gallery/micropigmentareService/micropigmentareSprancene.jpg";
-import retus from "../../public/gallery/micropigmentareService/micropigmentareRetus.png";
+import buze from "../../public/gallery/micropigmentareService/micropigmentareBuze.webp";
+import sprancene from "../../public/gallery/micropigmentareService/micropigmentareSprancene.webp";
+import retus from "../../public/gallery/micropigmentareService/micropigmentareRetus.webp";
 
 const ServiciiMicropigmentare = () => {
   return (
