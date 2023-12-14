@@ -1,9 +1,15 @@
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <h1 className='h1 text-center lg:mb-12 mb-0'>
-        Să ne <span className='text-accent'>conectăm.</span>
-      </h1>
+      <div className='lg:mb-12 mb-0 text-center'>
+        <h1 className='h1 mb-2'>
+          Să ne <span className='text-accent'>conectăm.</span>
+        </h1>
+        <h2 className="h2 px-5 uppercase">
+          <span className="text-accent">Programări</span>  ▸  Asistență  ▸  <span className="text-accent">Tatuaje unice</span>  ▸  Întrebări  ▸ 
+          <span className="text-accent"> Estimatimare de Preț</span>
+        </h2>
+      </div>
       <div className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'>
         <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative'>
           <iframe
