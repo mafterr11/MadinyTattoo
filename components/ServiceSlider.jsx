@@ -34,7 +34,7 @@ const serviceData = [
   {
     icon: <GiSinusoidalBeam />,
     title: "Laser",
-    path: "/servicii/laser",
+    path: "/laser",
     description:
       "Transformă trecutul într-o poveste uitată. Cu laserul nostru avansat, eliminăm tatuajele fără regrete, oferindu-ți un nou început.",
   },

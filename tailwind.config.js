@@ -31,6 +31,7 @@ module.exports = {
         despre: "url('/backgrounds/despre.jpg')",
         tatuaje: "url('/backgrounds/tatuaje.jpg')",
         servicii: "url('/backgrounds/servicii.jpg')",
+        laser: "url('/backgrounds/laser.webp')",
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",
