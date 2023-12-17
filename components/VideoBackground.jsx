@@ -1,22 +1,28 @@
-"use client";
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const VideoBackground = () => {
   const videoRef = useRef(null);
-
-  const getVideoSource = () => {
-    // Check if window is defined (for SSR compatibility)
-    if (typeof window !== "undefined") {
-      return window.innerWidth < 768 ? '/intro-mobile.mp4' : '/intro.mp4';
-    }
-    return '/intro.mp4'; // Default for SSR
-  };
+  const [videoSource, setVideoSource] = useState('/intro.mp4'); // Default video source
 
   useEffect(() => {
-    // Update the video source when the component mounts
-    if (videoRef.current) {
-      videoRef.current.src = getVideoSource();
-    }
+    // Function to determine the video source based on window size
+    const determineVideoSource = () => {
+      return window.innerWidth < 768 ? '/intro-mobile.mp4' : '/intro.mp4';
+    };
+
+    // Set the video source when the component mounts
+    setVideoSource(determineVideoSource());
+
+    // Optional: Adjust video source on window resize
+    const handleResize = () => {
+      setVideoSource(determineVideoSource());
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -29,8 +35,8 @@ const VideoBackground = () => {
         poster="/bgMada2.jpg"
         playsInline // Helps with autoplay on mobile browsers
         className="min-w-full min-h-full absolute object-cover"
+        src={videoSource} // Use the state variable for the source
       >
-        <source src={getVideoSource()} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
