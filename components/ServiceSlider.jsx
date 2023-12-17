@@ -20,21 +20,21 @@ const serviceData = [
   {
     icon: <RxCrop />,
     title: "Tatuaje",
-    path: "/tatuaje",
+    path: "/servicii/tatuaje",
     description:
       "Intră în lumea noastră cu designuri expresive și personalizate pentru a-ți îndeplini visul de a avea un tatuaj memorabil.",
   },
   {
     icon: <GiBleedingEye />,
     title: "Micropigmentare",
-    path: "/micropigmentare",
+    path: "/servicii/micropigmentare",
     description:
       "Descoperă magia micropigmentării pentru trăsături perfecte și naturale, conturând frumusețea ta într-un mod subtil și rafinat.",
   },
   {
     icon: <GiSinusoidalBeam />,
     title: "Laser",
-    path: "/laser",
+    path: "/servicii/laser",
     description:
       "Transformă trecutul într-o poveste uitată. Cu laserul nostru avansat, eliminăm tatuajele fără regrete, oferindu-ți un nou început.",
   },
