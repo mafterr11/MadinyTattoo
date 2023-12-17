@@ -12,7 +12,7 @@ const ServiciiMicropigmentare = () => {
         <h1 className='h1'>
           <span className='text-accent'>Laser Removal</span>
         </h1>
-        <p className='max-w-sm xl:max-w-3xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
+        <p className='max-w-sm md:max-w-xl xl:max-w-3xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
           <span className='text-accent'>Redescoperă</span> libertatea pielii
           tale: <span className='text-accent'>consultă</span> tarifele noastre
           competitive pentru eliminarea tatuajelor cu laser și{" "}
@@ -21,7 +21,7 @@ const ServiciiMicropigmentare = () => {
         </p>
       </div>
       <div className='flex flex-col lg:flex-row items-center justify-center max-w-7xl  w-[90%] m-4'>
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
+        <div className='relative flex flex-col w-[90%] md:w-[80%] lg:w-[40%] h-96 m-2'>
           <Image
             src={laserRemoval}
             fill
