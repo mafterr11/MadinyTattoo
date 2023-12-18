@@ -32,7 +32,7 @@ const VideoBackground = () => {
         autoPlay
         loop
         muted
-        poster="/bgMada2.jpg"
+        poster="/backgrounds/bgMada2.webp"
         playsInline // Helps with autoplay on mobile browsers
         className="min-w-full min-h-full absolute object-cover"
         src={videoSource} // Use the state variable for the source

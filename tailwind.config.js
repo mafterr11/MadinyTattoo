@@ -25,7 +25,7 @@ module.exports = {
         p: "white",
       },
       backgroundImage: {
-        site: "url('/bgMada2.jpg')",
+        site: "url('/backgrounds/bgMada2.webp')",
         micropigmentare: "url('/backgrounds/micropigmentare.webp')",
         micropigmentare2: "url('/backgrounds/micropigmentare2.webp')",
         despre: "url('/backgrounds/despre.webp')",

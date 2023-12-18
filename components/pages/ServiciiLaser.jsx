@@ -1,7 +1,7 @@
 "use client";
 // Image
 import Image from "next/image";
-import laserRemoval from "../../public/laserRemoval.jpeg";
+import laserRemoval from "../../public/gallery/laserService/laserRemoval.webp";
 // Component
 import FAQSection from "../FAQLaser";
 
