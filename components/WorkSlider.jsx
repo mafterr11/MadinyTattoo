@@ -130,8 +130,8 @@ const WorkSlider = () => {
                 >
                   <Image
                     src={image.path}
-                    width={300}
-                    height={200}
+                    width={500}
+                    height={300}
                     alt={image.title}
                     className='object-cover'
                     loading="lazy"
