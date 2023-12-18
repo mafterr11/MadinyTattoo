@@ -130,10 +130,11 @@ const WorkSlider = () => {
                 >
                   <Image
                     src={image.path}
-                    width={500}
-                    height={300}
+                    width={300}
+                    height={200}
                     alt={image.title}
                     className='object-cover'
+                    loading="lazy"
                   />
                   {/* overlay gradient */}
                   <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
