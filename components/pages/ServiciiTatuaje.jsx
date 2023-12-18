@@ -16,7 +16,7 @@ const ServiciiTatuaje = () => {
         <h1 className='h1'>
           <span className='text-accent'>Tatuaje</span>
         </h1>
-        <p className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
+        <p className='max-w-sm md:max-w-xl xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
           <span className='text-accent'>Detalii</span> suplimentare și tarife
           precise disponibile direct de la tatuator.{" "}
           <Link className='text-accent underline' href={"/contact"}>
@@ -25,9 +25,9 @@ const ServiciiTatuaje = () => {
           pentru informații complete!
         </p>
       </div>
-      <div className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
+      <div className='flex flex-col xl:flex-row items-center max-w-7xl w-[90%] m-4'>
         {/* First */}
-        <div className='relative flex flex-col w-[90%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
+        <div className='relative flex flex-col w-[90%] lg:w-[70%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={albNegruTattoo}
             fill
@@ -77,7 +77,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* Second*/}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
+        <div className='relative flex flex-col w-[90%] lg:w-[70%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={colorTattoo}
             fill
@@ -130,7 +130,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* Third */}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
+        <div className='relative flex flex-col w-[90%] lg:w-[70%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={conturTattoo}
             fill
@@ -183,7 +183,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* fourth */}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2 '>
+        <div className='relative flex flex-col w-[90%] lg:w-[70%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2 '>
           <Image
             src={embroderyTattoo}
             fill
