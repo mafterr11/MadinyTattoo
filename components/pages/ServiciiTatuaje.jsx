@@ -6,11 +6,13 @@ import albNegruTattoo from "../../public/gallery/tattooService/albNegruTattoo.pn
 import colorTattoo from "../../public/gallery/tattooService/colorTattoo.jpg";
 import conturTattoo from "../../public/gallery/tattooService/conturTattoo.jpg";
 import embroderyTattoo from "../../public/gallery/tattooService/embroderyTattoo.jpg";
+// Component
+import TattooCare from "../TattooCare";
 
 const ServiciiTatuaje = () => {
   return (
-    <div className='flex justify-center flex-col items-center h-full md:h-screen'>
-      <div className='flex flex-col justify-center items-center md:mt-20 mt-32'>
+    <div className='flex justify-center flex-col items-center h-full'>
+      <div className='flex flex-col justify-center items-center md:mt-40 mt-32'>
         <h1 className='h1'>
           <span className='text-accent'>Tatuaje</span>
         </h1>
@@ -25,7 +27,7 @@ const ServiciiTatuaje = () => {
       </div>
       <div className='flex flex-col lg:flex-row items-center max-w-7xl  w-[90%] m-4'>
         {/* First */}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
+        <div className='relative flex flex-col w-[90%] xl:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={albNegruTattoo}
             fill
@@ -43,29 +45,29 @@ const ServiciiTatuaje = () => {
                   Alb/Negru
                 </h1>
               </div>
-              <div className='m-2 text-md'>
-                <div className='my-4'>
-                  <p>
+              <div className='m-2'>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mic(1-5)cm:</span>{" "}
                     400 RON
                   </p>
                 </div>
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mediu(6-9)cm:</span>{" "}
                     500-800 RON
                   </p>
                 </div>
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
                     900-1400 RON
                   </p>
                 </div>
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     2000 RON
                   </p>
@@ -75,7 +77,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* Second*/}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
+        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={colorTattoo}
             fill
@@ -93,23 +95,23 @@ const ServiciiTatuaje = () => {
                   Color
                 </h1>
               </div>
-              <div className='m-2 text-md'>
-                <div className='my-4'>
-                  <p>
+              <div className='m-2'>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
                     500 RON
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mediu(5-9)cm:</span>{" "}
                     600-1000 RON
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
@@ -117,8 +119,8 @@ const ServiciiTatuaje = () => {
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     2300 RON
                   </p>
@@ -128,7 +130,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* Third */}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2'>
+        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2'>
           <Image
             src={conturTattoo}
             fill
@@ -146,23 +148,23 @@ const ServiciiTatuaje = () => {
                   Contur
                 </h1>
               </div>
-              <div className='m-2 text-md'>
-                <div className='my-4'>
-                  <p>
+              <div className='m-2'>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
                     300 RON
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mediu(4-9)cm:</span>{" "}
                     400-600 RON
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
@@ -170,8 +172,8 @@ const ServiciiTatuaje = () => {
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     1800 RON
                   </p>
@@ -181,7 +183,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
         {/* fourth */}
-        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 m-2 '>
+        <div className='relative flex flex-col w-[90%] lg:w-[40%] h-96 xl:h-96 md:h-[30rem] m-2 '>
           <Image
             src={embroderyTattoo}
             fill
@@ -199,16 +201,16 @@ const ServiciiTatuaje = () => {
                   Brodat
                 </h1>
               </div>
-              <div className='m-2 text-md'>
-                <div className='my-4'>
-                  <p>
+              <div className='m-2'>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>Mic(5-8)cm:</span>{" "}
                     700-1150 RON
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>
                       Mediu(9-12)cm:
                     </span>{" "}
@@ -216,8 +218,8 @@ const ServiciiTatuaje = () => {
                   </p>
                 </div>
 
-                <div className='my-4'>
-                  <p>
+                <div className='my-6'>
+                  <p className="xs:text-lg md:text-xl xl:text-base">
                     <span className='text-accent font-bold'>
                       Mare(13-15)cm:
                     </span>{" "}
@@ -229,6 +231,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
       </div>
+      <TattooCare />
     </div>
   );
 };
