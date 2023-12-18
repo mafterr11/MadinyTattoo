@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
@@ -40,9 +43,9 @@ const ContactPage = () => {
               </h2>
               <a
                 href='mailto: contact@madinytattoo.ro'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                Madinytattoo@gmail.com
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-black" />Madinytattoo@gmail.com
               </a>
               <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
                 PHONE
@@ -50,9 +53,9 @@ const ContactPage = () => {
               <a
                 href='tel:+40741620774'
                 target='blank'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                +04.741.620.774
+                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+04.741.620.774
               </a>
             </div>
           </div>
@@ -102,9 +105,9 @@ const ContactPage = () => {
               </h2>
               <a
                 href='mailto: contact@madinytattoo.ro'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold items-center flex'
               >
-                Madinytattoo@gmail.com
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-black" />Madinytattoo@gmail.com
               </a>
               <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
                 PHONE
@@ -112,9 +115,9 @@ const ContactPage = () => {
               <a
                 href='tel:+40741620774'
                 target='blank'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
+                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                +04.741.620.774
+                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+04.741.620.774
               </a>
             </div>
             <div className='lg:w-1/2 px-6'>
