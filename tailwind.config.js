@@ -26,11 +26,11 @@ module.exports = {
       },
       backgroundImage: {
         site: "url('/bgMada2.jpg')",
-        micropigmentare: "url('/backgrounds/micropigmentare.jpg')",
-        micropigmentare2: "url('/backgrounds/micropigmentare2.jpg')",
-        despre: "url('/backgrounds/despre.jpg')",
-        tatuaje: "url('/backgrounds/tatuaje.jpg')",
-        servicii: "url('/backgrounds/servicii.jpg')",
+        micropigmentare: "url('/backgrounds/micropigmentare.webp')",
+        micropigmentare2: "url('/backgrounds/micropigmentare2.webp')",
+        despre: "url('/backgrounds/despre.webp')",
+        tatuaje: "url('/backgrounds/tatuaje.webp')",
+        servicii: "url('/backgrounds/servicii.webp')",
         laser: "url('/backgrounds/laser.webp')",
       },
       animation: {
