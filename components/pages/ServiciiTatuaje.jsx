@@ -47,19 +47,19 @@ const ServiciiTatuaje = () => {
               </div>
               <div className='m-2'>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mic(1-5)cm:</span>{" "}
                     400 RON
                   </p>
                 </div>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mediu(6-9)cm:</span>{" "}
                     500-800 RON
                   </p>
                 </div>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
@@ -67,7 +67,7 @@ const ServiciiTatuaje = () => {
                   </p>
                 </div>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     2000 RON
                   </p>
@@ -97,21 +97,21 @@ const ServiciiTatuaje = () => {
               </div>
               <div className='m-2'>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
                     500 RON
                   </p>
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mediu(5-9)cm:</span>{" "}
                     600-1000 RON
                   </p>
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
@@ -120,7 +120,7 @@ const ServiciiTatuaje = () => {
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     2300 RON
                   </p>
@@ -150,21 +150,21 @@ const ServiciiTatuaje = () => {
               </div>
               <div className='m-2'>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mic(1-4)cm:</span>{" "}
                     300 RON
                   </p>
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mediu(4-9)cm:</span>{" "}
                     400-600 RON
                   </p>
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>
                       Mare(10-15)cm:
                     </span>{" "}
@@ -173,7 +173,7 @@ const ServiciiTatuaje = () => {
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Full day:</span>{" "}
                     1800 RON
                   </p>
@@ -203,14 +203,14 @@ const ServiciiTatuaje = () => {
               </div>
               <div className='m-2'>
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>Mic(5-8)cm:</span>{" "}
                     700-1150 RON
                   </p>
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>
                       Mediu(9-12)cm:
                     </span>{" "}
@@ -219,7 +219,7 @@ const ServiciiTatuaje = () => {
                 </div>
 
                 <div className='my-6'>
-                  <p className="xs:text-lg md:text-xl xl:text-base">
+                  <p className='xs:text-lg md:text-xl xl:text-base'>
                     <span className='text-accent font-bold'>
                       Mare(13-15)cm:
                     </span>{" "}
@@ -231,7 +231,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
       </div>
-      <TattooCare />
+        <TattooCare />
     </div>
   );
 };

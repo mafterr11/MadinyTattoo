@@ -30,12 +30,12 @@ const TattooCare = () => {
   ];
 
   return (
-    <div className="container mx-auto p-6 my-24">
+    <div className="container mx-auto p-6 mt-24 mb-12">
       <h2 className="text-3xl font-bold text-center  mb-24"><span className="text-accent">Instrucțiuni</span> de Îngrijire a <span className="text-accent">Tatuajului</span></h2>
       <ul>
         {steps.map((step, index) => (
           <li key={index} className="flex items-start mb-6">
-            <div className="shrink-0">{step.icon}</div>
+            <div>{step.icon}</div>
             <div className="ml-4">
               <h3 className="text-xl font-semibold ">{step.title}</h3>
               <p className="">{step.description}</p>
