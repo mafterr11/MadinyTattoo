@@ -2,10 +2,10 @@
 // Image
 import Link from "next/link";
 import Image from "next/image";
-import albNegruTattoo from "../../public/gallery/tattooService/albNegruTattoo.png";
-import colorTattoo from "../../public/gallery/tattooService/colorTattoo.jpg";
-import conturTattoo from "../../public/gallery/tattooService/conturTattoo.jpg";
-import embroderyTattoo from "../../public/gallery/tattooService/embroderyTattoo.jpg";
+import albNegruTattoo from "../../public/gallery/tattooService/albNegruTattoo.webp";
+import colorTattoo from "../../public/gallery/tattooService/colorTattoo.webp";
+import conturTattoo from "../../public/gallery/tattooService/conturTattoo.webp";
+import embroderyTattoo from "../../public/gallery/tattooService/embroderyTattoo.webp";
 // Component
 import TattooCare from "../TattooCare";
 
