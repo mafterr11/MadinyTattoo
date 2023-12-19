@@ -7,12 +7,12 @@ import retus from "../../public/gallery/micropigmentareService/micropigmentareRe
 
 const ServiciiMicropigmentare = () => {
   return (
-    <div className='flex justify-center flex-col items-center h-full md:h-screen'>
-      <div className='flex flex-col justify-center items-center md:mt-24 mt-32'>
+    <div className='flex justify-center flex-col items-center h-full lg:h-screen'>
+      <div className='flex flex-col justify-center items-center md:mt-40 mt-32'>
         <h1 className='h1'>
           <span className='text-accent'>Micropigmentare</span>
         </h1>
-        <p className='max-w-sm xl:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
+        <p className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
           <span className='text-accent'>Definește-ți</span> stilul cu precizie:{" "}
           <span className='text-accent'>vezi</span> tarifele noastre pentru
           micropigmentare și <span className='text-accent'>experimentează</span>{" "}
