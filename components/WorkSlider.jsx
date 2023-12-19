@@ -81,6 +81,46 @@ const workSlides = {
         },
       ],
     },
+    {
+      images: [
+        {
+          title: "title",
+          path: "/gallery/tattoo17.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo18.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo19.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo20.webp",
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: "title",
+          path: "/gallery/tattoo21.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo22.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo23.webp",
+        },
+        {
+          title: "title",
+          path: "/gallery/tattoo24.webp",
+        },
+      ],
+    },
   ],
 };
 
