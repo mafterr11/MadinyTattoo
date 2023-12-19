@@ -61,19 +61,19 @@ const ContactPage = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='xl:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-[7] hidden md:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 md:mb-[24rem] lg:mb-[31rem] rounded shadow-md'>
+          <div className='xl:w-1/3 md:w-1/2 bg-white/90 lg:bg-white z-[7] hidden md:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 md:mb-[30rem] lg:mb-[31rem] rounded shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
 
             <div className='relative mb-4'>
-              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1 lg:text-base'>
+              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1 text-base'>
                 <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
                 22:00 pm
               </p>
             </div>
             <div className='relative'>
-              <p className='leading-relaxed text-gray-900 font-semibold lg:text-base'>
+              <p className='leading-relaxed text-gray-900 font-semibold text-base'>
                 <span className='text-accent'>Duminica:</span> Inchis
               </p>
             </div>
