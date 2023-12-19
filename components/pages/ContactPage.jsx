@@ -1,5 +1,6 @@
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const ContactPage = () => {
   return (
@@ -9,7 +10,7 @@ const ContactPage = () => {
           Să ne <span className='text-accent'>conectăm.</span>
         </h1>
         <h2 className="h2 px-5 uppercase">
-          <span className="text-accent">Programări</span>  ▸  Asistență  ▸  <span className="text-accent">Tatuaje unice</span>  ▸  Întrebări  ▸ 
+          <span className="text-accent">Programări</span>  ▸  Asistență  ▸  <span className="text-accent">Tatuaje unice</span>  ▸  Întrebări  ▸
           <span className="text-accent"> Estimatimare de Preț</span>
         </h2>
       </div>

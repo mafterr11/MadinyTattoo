@@ -53,7 +53,7 @@ const ServiceSlider = () => {
             slidesPerView: 2,
             spaceBetween: 15,
           },
-          1024:{
+          1024: {
             slidesPerView: 3,
             spaceBetween: 15,
           },

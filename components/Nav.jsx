@@ -3,23 +3,24 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // Icons
-import { 
+import {
   LiaHomeSolid,
   LiaUserSolid,
   LiaEnvelopeSolid,
   LiaComments,
   LiaImageSolid,
-  LiaLayerGroupSolid } from "react-icons/lia";
+  LiaLayerGroupSolid
+} from "react-icons/lia";
 // Data
 export const navData = [
   { name: "acasa", path: "/", icon: <LiaHomeSolid /> },
   { name: "despre", path: "/despre", icon: <LiaUserSolid /> },
-  { name: "servicii", path: "/servicii", icon: <LiaLayerGroupSolid  /> },
-  { name: "proiecte", path: "/proiecte", icon: <LiaImageSolid   /> },
+  { name: "servicii", path: "/servicii", icon: <LiaLayerGroupSolid /> },
+  { name: "proiecte", path: "/proiecte", icon: <LiaImageSolid /> },
   {
     name: "testimoniale",
     path: "/testimoniale",
-    icon: <LiaComments  />,
+    icon: <LiaComments />,
   },
   {
     name: "contact",
