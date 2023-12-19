@@ -75,10 +75,10 @@ const ServiceSlider = () => {
                 <div className='bg-[#0f0f11] bg-opacity-[0.45] h-max rounded-lg px-6 py-8 flex sm:flex-col  sm:gap-x-0 group cursor-pointer hover:bg-[#000000]/70 transition-all duration-300'>
                   {/* Icon */}
                   <div>
-                    <div className='flex items-center justify-start gap-x-4'>
+                    <div className='flex items-center justify-start gap-x-4 xs:gap-x-6'>
                       <div className='text-4xl text-accent mb-4'>{item.icon}</div>
                       {/* Title & Descr*/}
-                      <div className='mb-2 text-base'>{item.title}</div>
+                      <div className='mb-2 text-base xs:text-lg'>{item.title}</div>
                     </div>
                     <div className='mb-8'>
                       <p className='max-w-[350px] text-sm xs:text-base md:text-lg lg:text-base leading-normal'>
