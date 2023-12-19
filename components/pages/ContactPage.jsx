@@ -43,7 +43,7 @@ const ContactPage = () => {
                 EMAIL
               </h2>
               <a
-                href='mailto: contact@madinytattoo.ro'
+                href='mailto: madinytattoo@gmail.com'
                 className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-black" />Madinytattoo@gmail.com
@@ -105,7 +105,7 @@ const ContactPage = () => {
                 EMAIL
               </h2>
               <a
-                href='mailto: contact@madinytattoo.ro'
+                href='mailto: madinytattoo@gmail.com'
                 className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold items-center flex'
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-black" />Madinytattoo@gmail.com
