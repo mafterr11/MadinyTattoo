@@ -1,4 +1,5 @@
 import ServiciiTatuaje from "../../../../components/pages/ServiciiTatuaje";
+import metaImg from '../../../../public/backgrounds/bgMada2.webp'
 
 export const metadata = {
   title: "Tatuaje - Madiny Tattoo",
@@ -7,6 +8,8 @@ export const metadata = {
 
   keywords:
     "madiny tattoo, tatuaje artistice, modele tatuaje, tatuaje personalizate, arta tatuaj, designuri tatuaje, artist tatuaj, tatuaje unice, tatuaje realiste, tatuaje abstracte, tatuaje stilizate, tatuaje colorate, tatuaje blackwork",
+
+  ogImage: {metaImg},
 };
 
 const Tatuaje = () => {
