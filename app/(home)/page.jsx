@@ -1,4 +1,5 @@
 import HomePage from "../../components/pages/HomePage";
+import metaImg from '../../public/backgrounds/bgMada2.webp'
 
 export const metadata = {
   title: "Madiny Tattoo",
@@ -7,6 +8,9 @@ export const metadata = {
 
   keywords:
     "artist tatuaj romania, tatuator talentat, studio tatuaje personalizate, arta profesionala de tatuaj, tatuaje detaliat executate, calitate premium tatuaje, micropigmentare profesionala, tehnici avansate micropigmentare, proceduri estetice micropigmentare, tehnologii laser tatuaje, eliminare eficienta tatuaje",
+
+  ogImage: {metaImg},
+
 };
 
 const Acasa = () => {
