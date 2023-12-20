@@ -7,6 +7,8 @@ export const metadata = {
 
   keywords:
     "artist tatuaj romania, tatuator talentat, studio tatuaje personalizate, arta profesionala de tatuaj, tatuaje detaliat executate, calitate premium tatuaje, micropigmentare profesionala, tehnici avansate micropigmentare, proceduri estetice micropigmentare, tehnologii laser tatuaje, eliminare eficienta tatuaje",
+
+    
 };
 
 const Acasa = () => {
