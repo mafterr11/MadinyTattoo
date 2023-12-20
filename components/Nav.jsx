@@ -17,16 +17,8 @@ export const navData = [
   { name: "despre", path: "/despre", icon: <LiaUserSolid /> },
   { name: "servicii", path: "/servicii", icon: <LiaLayerGroupSolid /> },
   { name: "proiecte", path: "/proiecte", icon: <LiaImageSolid /> },
-  {
-    name: "testimoniale",
-    path: "/testimoniale",
-    icon: <LiaComments />,
-  },
-  {
-    name: "contact",
-    path: "/contact",
-    icon: <LiaEnvelopeSolid />,
-  },
+  { name: "testimoniale", path: "/testimoniale", icon: <LiaComments /> },
+  { name: "contact", path: "/contact", icon: <LiaEnvelopeSolid /> },
 ];
 
 const Nav = () => {
