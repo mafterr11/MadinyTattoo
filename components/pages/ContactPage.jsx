@@ -15,11 +15,11 @@ const ContactPage = () => {
         </h2>
       </div>
       <div className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'>
-        <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative'>
+        <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative iframe-container'>
           <iframe
             width='100%'
             height='100%'
-            className='absolute inset-0'
+            className='responsive-iframe'
             title='map'
             src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11385.737698530624!2d26.1075064!3d44.4857646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b203567ff26e41%3A0x3c22c06af60c1061!2sMadiny%20Tattoo!5e0!3m2!1sen!2sro!4v1701444628772!5m2!1sen!2sro'
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
