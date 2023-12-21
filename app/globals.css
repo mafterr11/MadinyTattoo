@@ -45,16 +45,16 @@
   .input {
     @apply h-[52px];
   }
-  .input {
+  /* .input {
     @apply w-full h-[52px] rounded-lg pl-6 capitalize;
   }
   .input,
   .textarea {
     @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
-  }
-  .textarea {
+  } */
+  /* .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
-  }
+  } */
 }
 
 .iframe-container {

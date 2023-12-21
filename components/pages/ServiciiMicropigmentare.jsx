@@ -12,7 +12,7 @@ const ServiciiMicropigmentare = () => {
         <h1 className='h1'>
           <span className='text-accent'>Micropigmentare</span>
         </h1>
-        <p className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
+        <p className='max-w-sm md:max-w-2xl xl:max-w-3xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>
           <span className='text-accent'>Definește-ți</span> stilul cu precizie:{" "}
           <span className='text-accent'>vezi</span> tarifele noastre pentru
           micropigmentare și <span className='text-accent'>experimentează</span>{" "}
@@ -26,7 +26,6 @@ const ServiciiMicropigmentare = () => {
             src={buze}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
@@ -55,7 +54,6 @@ const ServiciiMicropigmentare = () => {
             src={sprancene}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
@@ -84,7 +82,6 @@ const ServiciiMicropigmentare = () => {
             src={retus}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
