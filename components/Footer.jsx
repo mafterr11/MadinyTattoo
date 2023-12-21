@@ -15,7 +15,7 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <p>© All Rights Reserved</p>
+          <p className="md:text-xl lg:text-2xl xl:text-base">© All Rights Reserved</p>
         </div>
       </div>
     </footer>
