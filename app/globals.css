@@ -35,7 +35,7 @@
   } 
   
   .h3 {
-    @apply text-[30px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
+    @apply text-[30px] xs:text-[35px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
   }
 
   p {
