@@ -42,7 +42,7 @@
     @apply leading-[1.8] text-white font-light text-[16px] xs:text-lg md:text-2xl lg:text-3xl xl:text-lg;
   }
   .btn,
-  .input {
+  .input { 
     @apply h-[52px];
   }
   /* .input {
