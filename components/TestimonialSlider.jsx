@@ -57,7 +57,7 @@ const TestimonialSlider = () => {
                       width={100}
                       height={100}
                       className=" rounded-[50%]"
-                      alt='testimonial image'
+                      alt='Imagine Testimoniale Clienti'
                     />
                   </div>
                   <div className='text-lg'>{person.name}</div>

@@ -29,7 +29,7 @@ const ServiciiMicropigmentare = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Micropigmetare Buze'
           />
           <div className='absolute inset-0 bg-black/50 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
@@ -57,7 +57,7 @@ const ServiciiMicropigmentare = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Micropigmetare Sprancene'
           />
           <div className='absolute inset-0 bg-black/50 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
@@ -85,7 +85,7 @@ const ServiciiMicropigmentare = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Micropigmetare Retus'
           />
           <div className='absolute inset-0 bg-black/50 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>

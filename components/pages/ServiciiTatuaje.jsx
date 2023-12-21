@@ -36,7 +36,7 @@ const ServiciiTatuaje = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Tatuaje Alb Negru'
           />
           <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
@@ -86,7 +86,7 @@ const ServiciiTatuaje = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Tatuaje Color'
           />
           <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
@@ -139,7 +139,7 @@ const ServiciiTatuaje = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Tatuaje Contur'
           />
           <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
@@ -192,7 +192,7 @@ const ServiciiTatuaje = () => {
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Preturi Tatuaje Broderie'
           />
           <div className='absolute inset-0 bg-black/60 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>

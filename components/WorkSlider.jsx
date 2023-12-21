@@ -4,19 +4,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo1.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo2.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo3.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo4.webp",
         },
       ],
@@ -24,19 +24,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo5.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo6.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo7.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo8.webp",
         },
       ],
@@ -44,19 +44,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo9.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo10.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo11.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo12.webp",
         },
       ],
@@ -64,19 +64,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo13.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo14.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo15.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo16.webp",
         },
       ],
@@ -84,19 +84,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo17.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo18.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo19.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo20.webp",
         },
       ],
@@ -104,19 +104,19 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo21.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo22.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo23.webp",
         },
         {
-          title: "title",
+          title: "Poza tatuaje",
           path: "/gallery/tattoo24.webp",
         },
       ],

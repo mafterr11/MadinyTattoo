@@ -26,11 +26,10 @@ const ServiciiMicropigmentare = () => {
             src={laserRemoval}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            quality={100}
             priority={true}
             style={{ objectFit: "cover" }}
             className='brightness-110 hover:brightness-90 rounded-lg'
-            alt='Description of your image'
+            alt='Background Pretui Laser Removal'
           />
           <div className='absolute inset-0 bg-black/50 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>

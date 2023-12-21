@@ -16,9 +16,9 @@ const ProjectsBtn = () => {
         <Image
           src={roundedText}
           width={141}
-          priority
+          priority={true}
           height={148}
-          alt='projects button'
+          alt='Buton Proiectele Mele'
           className='animate-spin-slow max-w-[141px] max-h-[148px]'
         />
         <HiArrowRight className='absolute text-4xl group-hover:translate-x-2 transition-all duration-500' />
