@@ -1,5 +1,4 @@
 import HomePage from "../../components/pages/HomePage";
-import Head from "next/head";
 
 export const metadata = {
   title: "Madiny Tattoo",
@@ -11,19 +10,7 @@ export const metadata = {
 };
 
 const Acasa = () => {
-  return (
-    <>
-      <Head>
-        <meta
-          property='og:image'
-          content='https://madinytattoo.ro/opengraph-image.jpg'
-        />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
-      </Head>
-      <HomePage />
-    </>
-  );
+  return <HomePage />;
 };
 
 export default Acasa;
