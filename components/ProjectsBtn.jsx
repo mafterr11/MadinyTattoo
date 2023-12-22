@@ -1,6 +1,6 @@
 // Image
 import Image from "next/image";
-import roundedText from "../public/rounded-white-bold.png";
+import roundedText from "../public/rounded-white-bold.webp";
 // Link
 import Link from "next/link";
 // Image
