@@ -16,7 +16,7 @@ export default function sitemap() {
         url: 'https://madinytattoo.ro/servicii',
         lastModified: new Date(),
         changeFrequency: 'monthly',
-        priority: 0.5,
+        priority: 0.8,
       },
       {
         url: 'https://madinytattoo.ro/servicii/tatuaje',
@@ -52,7 +52,7 @@ export default function sitemap() {
         url: 'https://madinytattoo.ro/contact',
         lastModified: new Date(),
         changeFrequency: 'monthly',
-        priority: 0.5,
+        priority: 0.8,
       },
     ]
   }
