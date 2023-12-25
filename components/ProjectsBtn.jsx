@@ -16,7 +16,6 @@ const ProjectsBtn = () => {
         <Image
           src={roundedText}
           width={141}
-          priority={true}
           height={148}
           alt='Buton Proiectele Mele'
           className='animate-spin-slow max-w-[141px] max-h-[148px]'
