@@ -1,7 +1,7 @@
 import ProiectePage from "../../../components/pages/ProiectePage";
 
 export const metadata = {
-  title: "Proiecte Finalizate - Madiny Tattoo",
+  title: "Proiecte Finalizate - MadinyTattoo",
   description:
     "Exploră galeria noastră variată de tatuaje finalizate la Madiny Tattoo. Descoperă arta transformând ideile în realitate și vezi designurile finalizate ce reflectă stiluri diverse și creație autentică.",
 

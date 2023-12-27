@@ -1,7 +1,7 @@
 import ContactPage from "../../../components/pages/ContactPage";
 
 export const metadata = {
-  title: "Contact - Madiny Tattoo",
+  title: "Contact - MadinyTattoo",
   description:
     "Contactează-ne pentru programări și informații suplimentare la Madiny Tattoo, situat la Șoseaua Pipera 61, Complexul Cloud 9, București, 077190. Te așteptăm în apropierea sediului Direcției Regim Permise de Conducere și Înmatriculare a Vehiculelor.",
   keywords:

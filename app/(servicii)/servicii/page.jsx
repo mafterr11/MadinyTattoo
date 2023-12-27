@@ -1,7 +1,7 @@
 import ServiciiPage from "../../../components/pages/ServiciiPage";
 
 export const metadata = {
-  title: "Servicii - Madiny Tattoo",
+  title: "Servicii - MadinyTattoo",
   description:
     "Madiny Tattoo, un spațiu artistic dedicat expresiei personale prin arta tatuajelor și micropigmentării. Oferim designuri unice de tatuaje și proceduri de micropigmentare atent executate pentru a sublinia frumusețea naturală. De asemenea, oferim servicii de eliminare laser a tatuajelor, transformând trecutul într-o nouă pagină în povestea ta. Descoperă arta autentică și profesionalismul nostru în transformarea viselor în realitate.",
 

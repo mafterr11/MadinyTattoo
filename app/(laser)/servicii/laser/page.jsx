@@ -1,7 +1,7 @@
 import ServiciiLaser from "../../../../components/pages/ServiciiLaser";
 
 export const metadata = {
-  title: "Laser Removal - Madiny Tattoo",
+  title: "Laser Removal - MadinyTattoo",
   description:
     "Experimentează soluțiile noastre eficiente pentru eliminarea tatuajelor cu laser la Madiny Tattoo. Oferim tratamente profesionale și tehnologii moderne pentru a transforma sau elimina tatuajele dorite.",
 

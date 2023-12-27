@@ -1,7 +1,7 @@
 import HomePage from "../../components/pages/HomePage";
 
 export const metadata = {
-  title: "Madiny Tattoo",
+  title: "MadinyTattoo - Salon De Tatuaje",
   description:
     "Bine ai venit la Madiny Tattoo, unde arta se întâlnește cu pielea. Descoperă designuri unice de tatuaje și lucrări excepționale realizate de artiștii noștri talentați. Explorează o lume a creativității și a expresiei personale cu portofoliul nostru diversificat.",
 

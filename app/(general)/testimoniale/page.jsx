@@ -1,7 +1,7 @@
 import TestimonialePage from "../../../components/pages/TestimonialePage";
 
 export const metadata = {
-  title: "Testimoniale - Madiny Tattoo",
+  title: "Testimoniale - MadinyTattoo",
   description:
     "Descoperă păreri autentice și testimoniale ale clienților satisfăcuți la Madiny Tattoo. Vezi experiențele reale ale celor care au ales să își îndeplinească dorințele artistice și estetice la salonul nostru.",
 

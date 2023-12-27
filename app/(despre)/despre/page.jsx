@@ -1,7 +1,7 @@
 import DesprePage from "../../../components/pages/DesprePage";
 
 export const metadata = {
-  title: "Despre - Madiny Tattoo",
+  title: "Despre - MadinyTattoo",
   description:
     "Explorează povestea și pasiunea din spatele tatuatoarei Madiny la Madiny Tattoo. Descoperă angajamentul și talentul ei în arta tatuajului și relația autentică cu clienții săi.",
 

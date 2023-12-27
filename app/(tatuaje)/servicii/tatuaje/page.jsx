@@ -1,7 +1,7 @@
 import ServiciiTatuaje from "../../../../components/pages/ServiciiTatuaje";
 
 export const metadata = {
-  title: "Tatuaje - Madiny Tattoo",
+  title: "Tatuaje - MadinyTattoo",
   description:
     "Descoperă gama noastră variată de servicii tatuaje la Madiny Tattoo. De la tatuaje artistice și personalizate până la designuri realiste sau abstracte, suntem aici pentru a transforma ideile tale în artă permanentă. Alege dintr-o varietate de stiluri și lasă-ne să creăm ceva unic pentru tine.",
 
