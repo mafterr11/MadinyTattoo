@@ -5,12 +5,12 @@ const TattooCare = () => {
     {
       icon: <FaBandAid className="text-4xl text-accent" />,
       title: 'Păstrează-l Acoperit',
-      description: 'După procedură, artistul va acoperi tatuajul cu un bandaj. Este important să menții bandajul pentru cel puțin 2-4 ore pentru a proteja tatuajul de bacterii și a începe procesul de vindecare.'
+      description: 'După procedură, artistul va acoperi tatuajul cu o folie impermeabilă. Este important să menții folia pentru cel puțin 3-4 zile pentru a proteja tatuajul de bacterii și a începe procesul de vindecare.'
     },
     {
       icon: <FaSoap className="text-4xl text-accent" />,
       title: 'Curăță Blând',
-      description: 'Îndepărtează bandajul și curăță tatuajul cu apă călduță și săpun antibacterian. Fă-o cu mișcări ușoare, fără a freca, și clătește bine.'
+      description: 'Îndepărtează folia și curăță tatuajul cu apă călduță și săpun antibacterian(Protex). Fă-o cu mișcări ușoare, fără a freca, și clătește bine.'
     },
     {
       icon: <FaSun className="text-4xl text-accent" />,
@@ -20,7 +20,7 @@ const TattooCare = () => {
     {
       icon: <FaRegHandPeace className="text-4xl text-accent" />,
       title: 'Hidratează',
-      description: 'Aplică o cremă hidratantă specială pentru tatuaje sau o loțiune fără parfum pentru a menține pielea hidratată și a favoriza vindecarea.'
+      description: 'După ce cureți zona, aplică o cremă hidratantă specială pentru tatuaje(Sorry Mom) pentru a menține pielea hidratată și a favoriza vindecarea. Repetă de 3/4 ori pe zi, timp de două săptămâni.'
     },
     {
       icon: <FaHandHoldingWater className="text-4xl text-accent" />,
