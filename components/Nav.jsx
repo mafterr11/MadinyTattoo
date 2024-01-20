@@ -47,7 +47,7 @@ const Nav = () => {
               {/* Icons div */}
               <div className="flex flex-col justify-center items-center gap-y-1">
                 {/* Icons */}
-                <div className='text-3xl md:text-4xl'>
+                <div className='text-3xl'>
                   {link.icon}
                 </div>
                 {/* Name */}

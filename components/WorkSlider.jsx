@@ -213,9 +213,9 @@ const WorkSlider = () => {
         </div>
       )}
       {/* Navigation Arrows */}
-      <div className='flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-7xl cursor-pointer'>
-        <SlArrowLeft className='swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[16%] top-[40%] xs:top-[40%] md:top-[43%] xl:top-[41%] text-accent' />
-        <SlArrowRight className='swiper-navigation-next absolute -right-[1%] md:right-0 xl:-right-[16%] top-[40%] xs:top-[40%] md:top-[43%] xl:top-[41%] text-accent' />
+      <div className='flex items-center justify-between w-full absolute inset-y-0 text-4xl xs:text-4xl md:text-5xl cursor-pointer'>
+        <SlArrowLeft className='swiper-navigation-prev absolute -left-[1%] md:left-0 xl:-left-[12%] top-[40%] xs:top-[40%] md:top-[43%] xl:top-[42%] text-accent' />
+        <SlArrowRight className='swiper-navigation-next absolute -right-[1%] md:right-0 xl:-right-[12%] top-[40%] xs:top-[40%] md:top-[43%] xl:top-[42%] text-accent' />
       </div>
     </div>
   );
