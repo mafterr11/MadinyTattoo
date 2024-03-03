@@ -50,7 +50,7 @@ const ServiciiMicropigmentare = () => {
                     <span className='text-accent font-bold'>
                       Laser în funcție de dimensiune:
                     </span>{" "}
-                    150-450 RON
+                    150-700 RON
                   </p>
                 </div>
               </div>
