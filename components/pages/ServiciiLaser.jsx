@@ -21,7 +21,7 @@ const ServiciiMicropigmentare = () => {
         </p>
       </div>
       <div className='flex flex-col lg:flex-row items-center justify-center max-w-7xl  w-[90%] m-4'>
-        <div className='relative flex flex-col w-[90%] md:w-[80%] lg:w-[40%] h-96 m-2'>
+        <div className='relative flex flex-col w-[90%] md:w-[80%] lg:w-[35%] h-96 m-2'>
           <Image
             src={laserRemoval}
             fill
@@ -33,7 +33,7 @@ const ServiciiMicropigmentare = () => {
           />
           <div className='absolute inset-0 bg-black/50 rounded-lg'>
             <div className='flex flex-col items-center justify-center p-2 text-gray-300'>
-              <div className='font-bold text-2xl m-2 mt-[20%]'>
+              <div className='font-bold text-2xl m-2 mt-[5%]'>
                 <h1 className='underline decoration-[3px] underline-offset-4 mb-4'>
                   Ședința
                 </h1>
@@ -46,12 +46,23 @@ const ServiciiMicropigmentare = () => {
                   </p>
                 </div>
                 <div className='my-4'>
-                  <p>
-                    <span className='text-accent font-bold'>
+                  <p className="text-accent font-bold">
                       Laser în funcție de dimensiune:
-                    </span>{" "}
-                    150-700 RON
                   </p>
+                  <div className="grid grid-cols-2 gap-x-2">
+                    <p>1-5 cm²: 150 RON</p> 
+                    <p>51-65 cm²: 450 RON</p>
+                    <p>5-10 cm²: 200 RON</p> 
+                    <p>66-80 cm²: 500 RON</p>
+                    <p>11-20 cm²: 250 RON</p> 
+                    <p>81-95 cm²: 550 RON</p>
+                    <p>21-30 cm²: 300 RON</p> 
+                    <p>96-110 cm²: 600 RON</p>
+                    <p>31-40 cm²: 350 RON</p>
+                    <p>111-125 cm²: 650 RON</p>
+                    <p>41-50 cm²: 400 RON</p>
+                    <p>126-140 cm²: 700 RON</p>
+                  </div>
                 </div>
               </div>
             </div>
