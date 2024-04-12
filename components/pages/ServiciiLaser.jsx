@@ -42,7 +42,7 @@ const ServiciiMicropigmentare = () => {
                 <div className='my-4'>
                   <p>
                     <span className='text-accent font-bold'>Sprâncene:</span>{" "}
-                    250 RON
+                    300 RON
                   </p>
                 </div>
                 <div className='my-4'>
