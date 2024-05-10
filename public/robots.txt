@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.madinytattoo.ro
+
+# Sitemaps
+Sitemap: https://www.madinytattoo.ro/sitemap.xml
