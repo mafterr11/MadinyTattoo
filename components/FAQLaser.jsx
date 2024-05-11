@@ -24,7 +24,7 @@ const FAQSection = () => {
                 </svg>
                 Ce presupune exact eliminarea tatuajelor cu laser?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Procedura utilizează impulsuri de lumină concentrată pentru a
                 fragmenta particulele de cerneală din piele.
               </p>
@@ -46,7 +46,7 @@ const FAQSection = () => {
                 Care sunt culorile de tatuaj cel mai ușor de eliminat cu
                 laserul?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Tatuajele cu cerneală neagră sau închisă sunt cele mai receptive
                 la tratamentul cu laser.
               </p>
@@ -67,7 +67,7 @@ const FAQSection = () => {
                 </svg>
                 Există un număr fix de ședințe pentru eliminarea unui tatuaj?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Numărul de ședințe variază în funcție de dimensiunea, culoarea
                 și vechimea tatuajului.
               </p>
@@ -92,7 +92,7 @@ const FAQSection = () => {
                 Cât timp trebuie să aștept între ședințele de eliminare cu
                 laser?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 De obicei, ședințele sunt programate la intervale de câteva
                 săptămâni pentru o vindecare eficientă a pielii.
               </p>
@@ -113,7 +113,7 @@ const FAQSection = () => {
                 </svg>
                 Există vreo restricție privind activitățile după procedură?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Se recomandă evitarea activităților care ar putea irita zona
                 tratată pentru câteva zile.
               </p>
@@ -134,7 +134,7 @@ const FAQSection = () => {
                 </svg>
                 Care este cel mai important lucru în îngrijirea post-tratament?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Protejarea zonei tratate de expunerea excesivă la soare și
                 respectarea instrucțiunilor medicului.
               </p>
@@ -158,7 +158,7 @@ const FAQSection = () => {
                 </svg>
                 Care sunt efectele secundare obișnuite ale procedurii?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Roșeață, umflare și senzație de arsură temporară sunt comune,
                 dar trec în câteva zile.
               </p>
@@ -180,7 +180,7 @@ const FAQSection = () => {
                 Există riscuri pe termen lung asociate cu eliminarea tatuajelor
                 cu laser?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Riscurile pe termen lung sunt rare, dar pot include modificări
                 temporare ale pigmentației pielii sau cicatrici temporare.
               </p>
@@ -202,7 +202,7 @@ const FAQSection = () => {
                 Există anumite zone ale corpului mai dificil de tratat pentru
                 eliminarea tatuajelor cu laser?
               </h3>
-              <p className='text-white'>
+              <p className='text-white md:text-base xl:text-lg'>
                 Unele zone, precum zonele cu piele subțire sau cu circulație
                 redusă, pot fi mai dificile de tratat și pot necesita mai multe
                 sesiuni pentru rezultate optime.

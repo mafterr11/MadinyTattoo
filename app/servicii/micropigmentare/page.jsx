@@ -1,5 +1,5 @@
-import ServiciiMicropigmentare from "../../../../components/pages/ServiciiMicropigmentare";
-import { constructMetadata } from "../../../../lib/utils";
+import ServiciiMicropigmentare from "../../../components/pages/ServiciiMicropigmentare";
+import { constructMetadata } from "../../../lib/utils";
 
 export const metadata = constructMetadata({
   title: "Micropigmentare - MadinyTattoo",
@@ -12,6 +12,6 @@ export const metadata = constructMetadata({
 
 const Micropigmentare = () => {
   return <ServiciiMicropigmentare />;
-}
+};
 
-export default Micropigmentare
+export default Micropigmentare;

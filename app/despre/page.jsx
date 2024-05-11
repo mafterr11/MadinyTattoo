@@ -1,5 +1,5 @@
-import DesprePage from "../../../components/pages/DesprePage";
-import { constructMetadata } from "../../../lib/utils";
+import DesprePage from "../../components/pages/DesprePage";
+import { constructMetadata } from "../../lib/utils";
 
 export const metadata = constructMetadata({
   title: "Despre - MadinyTattoo",

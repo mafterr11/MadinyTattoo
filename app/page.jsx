@@ -1,5 +1,5 @@
-import HomePage from "../../components/pages/HomePage";
-import { constructMetadata } from "../../lib/utils";
+import HomePage from "../components/pages/HomePage";
+import { constructMetadata } from "../lib/utils";
 
 export const metadata = constructMetadata();
 

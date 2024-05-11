@@ -1,5 +1,5 @@
-import ServiciiLaser from "../../../../components/pages/ServiciiLaser";
-import { constructMetadata } from "../../../../lib/utils";
+import ServiciiLaser from "../../../components/pages/ServiciiLaser";
+import { constructMetadata } from "../../../lib/utils";
 
 export const metadata = constructMetadata({
   title: "Laser Removal - MadinyTattoo",
@@ -12,6 +12,6 @@ export const metadata = constructMetadata({
 
 const LaserRemoval = () => {
   return <ServiciiLaser />;
-}
+};
 
-export default LaserRemoval
+export default LaserRemoval;

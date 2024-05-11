@@ -1,5 +1,5 @@
-import ProiectePage from "../../../components/pages/ProiectePage";
-import { constructMetadata } from "../../../lib/utils";
+import ProiectePage from "../../components/pages/ProiectePage";
+import { constructMetadata } from "../../lib/utils";
 
 export const metadata = constructMetadata({
   title: "Proiecte Finalizate - MadinyTattoo",

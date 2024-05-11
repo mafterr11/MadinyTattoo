@@ -4,11 +4,15 @@ import Image from "next/image";
 import buze from "../../public/gallery/micropigmentareService/micropigmentareBuze.webp";
 import sprancene from "../../public/gallery/micropigmentareService/micropigmentareSprancene.webp";
 import retus from "../../public/gallery/micropigmentareService/micropigmentareRetus.webp";
+import BackButton from "../BackButton";
 
 const ServiciiMicropigmentare = () => {
   return (
     <div className='flex justify-center flex-col items-center h-full lg:h-screen'>
-      <div className='flex flex-col justify-center items-center md:mt-40 mt-32'>
+      <div className='relative flex flex-col justify-center items-center md:mt-40 mt-32'>
+      <div className="absolute bottom-0 xl:-right-56">
+        <BackButton />
+        </div>
         <h1 className='h1'>
           <span className='text-accent'>Micropigmentare</span>
         </h1>

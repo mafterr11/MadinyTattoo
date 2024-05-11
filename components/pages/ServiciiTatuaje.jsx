@@ -6,13 +6,17 @@ import albNegruTattoo from "../../public/gallery/tattooService/albNegruTattoo.we
 import colorTattoo from "../../public/gallery/tattooService/colorTattoo.webp";
 import conturTattoo from "../../public/gallery/tattooService/conturTattoo.webp";
 import embroderyTattoo from "../../public/gallery/tattooService/embroderyTattoo.webp";
+import BackButton from "../BackButton";
 // Component
 import TattooCare from "../TattooCare";
 
 const ServiciiTatuaje = () => {
   return (
-    <div className='flex justify-center flex-col items-center h-full'>
-      <div className='flex flex-col justify-center items-center md:mt-40 mt-32'>
+    <div className=' flex justify-center flex-col items-center h-full'>
+      <div className='relative flex flex-col justify-center items-center md:mt-40 mt-32'>
+        <div className="absolute bottom-0 xl:-right-56">
+        <BackButton />
+        </div>
         <h1 className='h1'>
           <span className='text-accent'>Tatuaje</span>
         </h1>
@@ -231,7 +235,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
       </div>
-        <TattooCare />
+      <TattooCare />
     </div>
   );
 };

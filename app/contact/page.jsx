@@ -1,5 +1,5 @@
-import ContactPage from "../../../components/pages/ContactPage";
-import { constructMetadata } from "../../../lib/utils";
+import ContactPage from "../../components/pages/ContactPage";
+import { constructMetadata } from "../../lib/utils";
 
 export const metadata = constructMetadata({
   title: "Contact - MadinyTattoo",

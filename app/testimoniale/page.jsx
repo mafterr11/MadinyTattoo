@@ -1,4 +1,4 @@
-import TestimonialePage from "../../../components/pages/TestimonialePage";
+import TestimonialePage from "../../components/pages/TestimonialePage";
 
 export const metadata = {
   title: "Testimoniale - MadinyTattoo",
