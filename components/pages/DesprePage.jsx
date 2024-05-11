@@ -11,7 +11,7 @@ const DesprePage = () => {
             Poveștile <span className='text-accent'>Captivante</span> Dau
             Naștere Designurilor Unice.
           </h1>
-          <p className='lg:max-w-4xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0'>
+          <p className='lg:max-w-4xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xs:px-0 xl:px-0 text-balance'>
             Încă de când am început activitatea ca artisti tatuatori
             independenți, am creat designuri inedite și memorabile, aducând la
             viață ideile clienților nostrii. Le mulțumim pentru susținere și

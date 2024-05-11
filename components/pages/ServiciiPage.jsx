@@ -12,7 +12,7 @@ const Services = () => {
             <h1 className='h1 xl:mt-8 flex gap-x-4 items-center justify-center'>
               <span className='text-accent'>Serviciile</span> Noastre.
             </h1>
-            <p className='mb-4 xl:max-w-[600px] text-center xl:text-left mx-auto lg:mx-0'>
+            <p className='mb-4 xl:max-w-[600px] text-center xl:text-left mx-auto lg:mx-0 text-balance'>
               Într-un spațiu creativ pentru artă și frumusețe, oferim servicii
               profesionale de tatuaje, micropigmentare și eliminare cu laser,
               completate de expertiză și atenție meticuloasă la detalii.

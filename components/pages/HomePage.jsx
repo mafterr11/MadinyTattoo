@@ -17,7 +17,7 @@ const HomePage = () => {
             <span className='text-accent '>Realitate</span>
           </h1>
           {/* Subtitle */}
-          <p className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-8'>
+          <p className='max-w-sm md:max-w-2xl mx-auto xl:mx-0 mb-10 xl:mb-8 text-balance'>
             În spațiul nostru creativ, transformăm fiecare concept într-o
             realitate vibrantă și autentică. Fiecare design captează unicitatea
             ta, conturând și detaliind povestea personală.
