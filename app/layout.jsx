@@ -6,6 +6,8 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Transition from "../components/Transition";
+import { constructMetadata } from "../lib/utils";
+
 // Router
 import { usePathname } from "next/navigation";
 // Framer
@@ -17,6 +19,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
+
+export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   const currentRoute = usePathname();
@@ -32,10 +36,18 @@ export default function RootLayout({ children }) {
             <Nav />
             <Header />
             {children}
-            {currentRoute === "/" ? <Footer /> : currentRoute === "/contact" ? <Footer /> : currentRoute === "/testimoniale" ? <Footer /> : currentRoute === "/proiecte" ? <Footer /> : null} 
+            {currentRoute === "/" ? (
+              <Footer />
+            ) : currentRoute === "/contact" ? (
+              <Footer />
+            ) : currentRoute === "/testimoniale" ? (
+              <Footer />
+            ) : currentRoute === "/proiecte" ? (
+              <Footer />
+            ) : null}
           </motion.div>
         </body>
       </AnimatePresence>
     </html>
   );
-};
+}
