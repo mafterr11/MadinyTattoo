@@ -7,7 +7,7 @@ const DesprePage = () => {
     <div className='h-full xs:h-screen py-40 text-center xl:text-left'>
       <div className='container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
         <div className='flex flex-col justify-center md:mt-20 xl:mt-0'>
-          <h1 className='h1'>
+          <h1>
             Poveștile <span className='text-accent'>Captivante</span> Dau
             Naștere Designurilor Unice.
           </h1>

@@ -27,14 +27,14 @@
   .page {
     @apply w-full h-full;
   }
-  .h1 {
+  h1 {
     @apply text-[30px] xs:text-[35px] md:text-[60px] lg:text-[70px] xl:text-[50px] leading-tight md:leading-[1.3] mb-8 font-semibold;
   }
-  .h2 {
+  h2 {
     @apply text-[15px] leading-tight md:text-[25px] xl:text-[22px] md:leading-[1.3] mb-4 font-semibold;
   } 
   
-  .h3 {
+  h3 {
     @apply text-[30px] xs:text-[35px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
   }
 

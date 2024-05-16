@@ -9,7 +9,7 @@ const Services = () => {
         <div className='flex flex-col xl:flex-row gap-x-8'>
           {/* Text */}
           <div className='text-center flex xl:w-[25vw] flex-col lg:text-left mb-4 xl:mb-0'>
-            <h1 className='h1 xl:mt-8 flex gap-x-4 items-center justify-center'>
+            <h1 className='xl:mt-8 flex gap-x-4 items-center justify-center'>
               <span className='text-accent'>Serviciile</span> Noastre.
             </h1>
             <p className='mb-4 xl:max-w-[600px] text-center xl:text-left mx-auto lg:mx-0 text-balance'>

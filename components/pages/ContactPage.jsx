@@ -6,10 +6,10 @@ const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
       <div className='lg:mb-12 mb-0 text-center'>
-        <h1 className='h1 mb-2'>
+        <h1 className='mb-2'>
           Să ne <span className='text-accent'>conectăm.</span>
         </h1>
-        <h2 className="h2 px-5 uppercase">
+        <h2 className="px-5 uppercase">
           <span className="text-accent">Programări</span>  ▸  Asistență  ▸  <span className="text-accent">Tatuaje unice</span>  ▸  Întrebări  ▸
           <span className="text-accent"> Estimatimare de Preț</span>
         </h2>

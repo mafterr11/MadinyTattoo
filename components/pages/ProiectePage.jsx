@@ -8,7 +8,7 @@ const ProiectePage = () => {
         <div className='flex xl:h-full flex-col xl:flex-row gap-x-8'>
           {/* Text */}
           <div className='text-center flex xl:w-[30vw] flex-col xl:text-left mb-4 xl:mb-0'>
-            <h1 className='h1 xl:mt-8'>
+            <h1 className='xl:mt-8'>
               <span className='text-accent'>Lucrările</span> mele.
             </h1>
             <p className='mb-4 xl:max-w-[500px] mx-auto lg:mx-0'>

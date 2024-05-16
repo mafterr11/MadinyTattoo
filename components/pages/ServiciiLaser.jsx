@@ -13,7 +13,7 @@ const ServiciiMicropigmentare = () => {
         <div className='absolute bottom-0 xl:-right-56'>
           <BackButton />
         </div>
-        <h1 className='h1'>
+        <h1>
           <span className='text-accent'>Laser Removal</span>
         </h1>
         <p className='max-w-sm md:max-w-xl xl:max-w-3xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-xl text-center text-p xs:text-xl font-bold'>

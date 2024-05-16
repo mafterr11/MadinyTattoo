@@ -9,7 +9,7 @@ const Header = () => {
         <div className='flex flex-col lg:flex-row justify-between items-center py-6'>
           {/* Logo */}
           <Link href="/">
-            <h3 className='h3 flex lg:pt-4'>
+            <h3 className='flex lg:pt-4'>
               MADINY.<span className='text-accent'>TATTOO</span>
             </h3>
           </Link>

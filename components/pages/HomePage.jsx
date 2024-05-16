@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className='w-full h-screen py-12 xs:py-0 relative z-[3]'>
         <div className='container mx-auto flex flex-col justify-center text-center xl:text-left xl:pt-36 h-screen xl:h-full '>
           {/* Title */}
-          <h1 className='h1 text-'>
+          <h1>
             Transformăm Ideile <br /> In{" "}
             <span className='text-accent '>Realitate</span>
           </h1>
