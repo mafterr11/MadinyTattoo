@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="md:text-xl lg:text-2xl xl:text-base">
           Creat de {" "}
           <Link
-            href='https://www.linkedin.com/in/maftei-alexandru/'
+            href='https://myriad-tech.ro'
             target='blank'
             className='hover'
           >
