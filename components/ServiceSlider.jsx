@@ -13,7 +13,7 @@ import { RxCrop, RxArrowTopRight } from "react-icons/rx";
 import { GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
 
 // Required Modules
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 
 // Data
 const serviceData = [

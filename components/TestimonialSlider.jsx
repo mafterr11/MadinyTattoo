@@ -25,6 +25,8 @@ const testimonialData = [
 ];
 // Swiper Components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
 // Swiper Styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -32,7 +34,6 @@ import "swiper/css/pagination";
 // Icons
 import { FaQuoteLeft } from "react-icons/fa";
 // Required Modules
-import { Navigation, Pagination } from "swiper";
 import Image from "next/image";
 
 const TestimonialSlider = () => {

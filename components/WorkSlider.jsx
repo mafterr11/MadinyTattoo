@@ -126,7 +126,7 @@ const workSlides = {
 
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import Image from "next/image";
 import "swiper/css";
