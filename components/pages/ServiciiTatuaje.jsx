@@ -14,8 +14,8 @@ const ServiciiTatuaje = () => {
   return (
     <div className=' flex justify-center flex-col items-center h-full'>
       <div className='relative flex flex-col justify-center items-center md:mt-40 mt-32'>
-        <div className="absolute bottom-0 xl:-right-56">
-        <BackButton />
+        <div className='absolute bottom-0 xl:-right-56'>
+          <BackButton />
         </div>
         <h1>
           <span className='text-accent'>Tatuaje</span>
@@ -70,12 +70,6 @@ const ServiciiTatuaje = () => {
                     900-1400 RON
                   </p>
                 </div>
-                <div className='my-6'>
-                  <p className='xs:text-lg md:text-xl xl:text-base'>
-                    <span className='text-accent font-bold'>Full day:</span>{" "}
-                    2000 RON
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -122,13 +116,6 @@ const ServiciiTatuaje = () => {
                     1100-1600 RON
                   </p>
                 </div>
-
-                <div className='my-6'>
-                  <p className='xs:text-lg md:text-xl xl:text-base'>
-                    <span className='text-accent font-bold'>Full day:</span>{" "}
-                    2300 RON
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -173,13 +160,6 @@ const ServiciiTatuaje = () => {
                       Mare(10-15)cm:
                     </span>{" "}
                     700-900 RON
-                  </p>
-                </div>
-
-                <div className='my-6'>
-                  <p className='xs:text-lg md:text-xl xl:text-base'>
-                    <span className='text-accent font-bold'>Full day:</span>{" "}
-                    1800 RON
                   </p>
                 </div>
               </div>
