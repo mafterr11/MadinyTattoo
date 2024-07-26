@@ -1,4 +1,4 @@
-import Footer from "../../../components/Footer";
+import Footer from "../../../components/layout/Footer";
 export default function TatuajeLayout({ children }) {
   return (
     <div className='bg-tatuaje bg-cover  bg-no-repeat bg-fixed bg-center relative'>

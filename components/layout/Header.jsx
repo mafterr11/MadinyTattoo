@@ -1,6 +1,6 @@
 // Component
 import Link from "next/link";
-import Socials from "./Socials";
+import Socials from "../Socials";
 
 const Header = () => {
   return (

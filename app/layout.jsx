@@ -1,11 +1,10 @@
 "use client";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-
+import Header from "../components/layout/Header";
+import Nav from "../components/layout/Nav";
 // Component
-import Nav from "../components/Nav";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 import Transition from "../components/Transition";
 import { AnimatePresence, motion } from "framer-motion";
 
