@@ -31,6 +31,27 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-2 right-4 flex items-center justify-center max-md:flex-col z-50">
+          <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
+            <img
+              style={{ width: "250px" }}
+              src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sal.png"
+              alt="Solutionarea Alternativa a Litigiilor"
+            />
+          </a>
+          <br />
+          <a
+            href="https://ec.europa.eu/consumers/odr"
+            target="_blank"
+            rel="nofollow"
+          >
+            <img
+              style={{ width: "250px" }}
+              src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sol.png"
+              alt="Solutionarea Online a Litigiilor"
+            />
+          </a>
+        </div>
     </div>
   );
 };
