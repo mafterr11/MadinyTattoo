@@ -1,4 +1,3 @@
-// Component
 import Link from "next/link";
 import Socials from "../Socials";
 

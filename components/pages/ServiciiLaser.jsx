@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // Image
 import Image from "next/image";
 import laserRemoval from "../../public/gallery/laserService/laserRemoval.webp";

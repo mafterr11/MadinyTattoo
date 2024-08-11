@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // Component
 import ServiceSlider from "../ServiceSlider";
 

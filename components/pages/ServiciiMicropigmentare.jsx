@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // Image
 import Image from "next/image";
 import buze from "../../public/gallery/micropigmentareService/micropigmentareBuze.webp";

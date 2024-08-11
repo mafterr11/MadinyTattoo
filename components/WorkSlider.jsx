@@ -1,3 +1,4 @@
+"use client"
 // Data
 const workSlides = {
   slides: [

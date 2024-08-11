@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // Image
 import Link from "next/link";
 import Image from "next/image";

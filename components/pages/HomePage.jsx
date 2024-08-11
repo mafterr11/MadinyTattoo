@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // Components
 import ProjectsBtn from "../ProjectsBtn";
 import VideoBackground from "../VideoBackground";
