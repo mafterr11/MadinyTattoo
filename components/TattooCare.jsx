@@ -36,8 +36,8 @@ const TattooCare = () => {
         {steps.map((step, index) => (
           <li key={index} className="flex items-start mb-6">
             <div className="ml-4">
-              <h3 className="text-xl font-semibold flex items-center max-md:justify-center gap-x-2">
-                <FaCheck className="text-accent" size={32} /> {step.title}
+              <h3 className="text-xl font-semibold flex items-center max-md:justify-center gap-x-2 ">
+              <span className="relative"><FaCheck className="text-accent absolute -left-9 -top-1" size={32} />{step.title}</span>
               </h3>
               <p className="max-md:text-balance">{step.description}</p>
             </div>
