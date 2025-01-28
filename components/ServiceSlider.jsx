@@ -97,8 +97,8 @@ const ServiceSlider = () => {
         })}
       </Swiper>
       <div className="flex lg:hidden text-5xl cursor-pointer">
-        <SlArrowLeft className="swiper-navigation-prev absolute -left-[2%] xs:-left-[5%] md:-left-[2%] top-[34%] text-accent" />
-        <SlArrowRight type="button" className="swiper-navigation-next absolute -right-[2%] xs:-right-[5%] md:-right-[2%] top-[34%] text-accent" />
+        <SlArrowLeft className="swiper-navigation-prev absolute left-1 xs:left-[2%] md:left-0 top-[34%] text-accent" />
+        <SlArrowRight type="button" className="swiper-navigation-next absolute right-1 xs:right-[2%] md:right-0 top-[34%] text-accent" />
       </div>
     </div>
   );

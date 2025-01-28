@@ -14,12 +14,13 @@ import {
 // Data
 export const navData = [
   { name: "acasa", path: "/", icon: <LiaHomeSolid /> },
-  { name: "despre", path: "/despre", icon: <LiaUserSolid /> },
+  { name: "aftercare", path: "/aftercare", icon: <PiHandSoap /> },
   { name: "servicii", path: "/servicii", icon: <LiaLayerGroupSolid /> },
   { name: "proiecte", path: "/proiecte", icon: <LiaImageSolid /> },
   { name: "testimoniale", path: "/testimoniale", icon: <LiaComments /> },
   { name: "contact", path: "/contact", icon: <LiaEnvelopeSolid /> },
 ];
+import { PiHandSoap } from "react-icons/pi";
 
 const Nav = () => {
   const pathname = usePathname();

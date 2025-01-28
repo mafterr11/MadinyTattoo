@@ -14,7 +14,7 @@ const ContactPage = () => {
           <span className="text-accent"> Estimatimare de Preț</span>
         </h2>
       </div>
-      <div className='container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'>
+      <div className='xl:container px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[900px] gap-y-10'>
         <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative iframe-container'>
           <iframe
             width='100%'

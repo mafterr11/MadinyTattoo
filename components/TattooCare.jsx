@@ -1,44 +1,45 @@
-import { FaBandAid, FaSoap, FaSun, FaRegHandPeace, FaHandHoldingWater } from 'react-icons/fa';
+import { FaCheck } from "react-icons/fa6";
 
 const TattooCare = () => {
   const steps = [
     {
-      icon: <FaBandAid className="text-4xl text-accent" />,
-      title: 'Păstrează-l Acoperit',
-      description: 'După procedură, artistul va acoperi tatuajul cu o folie impermeabilă. Este important să menții folia pentru cel puțin 3-4 zile pentru a proteja tatuajul de bacterii și a începe procesul de vindecare.'
+      title: "Păstrează-l acoperit",
+      description:
+        "Păstrează folia protectoare timp de 2-3 zile - este impermeabilă, deci poți face duș fără griji.",
     },
     {
-      icon: <FaSoap className="text-4xl text-accent" />,
-      title: 'Curăță Blând',
-      description: 'Îndepărtează folia și curăță tatuajul cu apă călduță și săpun antibacterian(Protex). Fă-o cu mișcări ușoare, fără a freca, și clătește bine.'
+      title: "Igienă",
+      description:
+        "Schimbă lenjeria de pat în ziua în care îndepărtezi folia și evită contactul tatuajului cu orice mediu care ar putea duce la infectarea acestuia, cum ar fi praf, transpirație sau părul de animale.",
     },
     {
-      icon: <FaSun className="text-4xl text-accent" />,
-      title: 'Evită Soarele',
-      description: 'Evită expunerea directă la soare, deoarece razele UV pot deteriora tatuajul. Folosește cremă cu protecție solară în cazul expunerilor inevitabile.'
+      title: "Curăță tatuajul cu grijă",
+      description:
+        "Spală-l cu apă călduță și săpun antibacterian, tamponează-l ușor cu un prosop curat și așteaptă să se usuce bine.",
     },
     {
-      icon: <FaRegHandPeace className="text-4xl text-accent" />,
-      title: 'Hidratează',
-      description: 'După ce cureți zona, aplică o cremă hidratantă specială pentru tatuaje(Sorry Mom) pentru a menține pielea hidratată și a favoriza vindecarea. Repetă de 3/4 ori pe zi, timp de două săptămâni.'
+      title: "Cremă de vindecare",
+      description:
+        "Dupa spălare, aplică un strat foarte subțire de cremă specială pentru vindecarea tatuajului (ex: Sorry Mom) pentru a menține pielea hidratată. Repetă acest proces de 3-4 ori pe zi timp de 2 săptămâni, pentru o vindecare optimă.",
     },
     {
-      icon: <FaHandHoldingWater className="text-4xl text-accent" />,
-      title: 'Evită Înotul',
-      description: 'Evită bazinele de înot, saunele și băile lungi în primele săptămâni. Apa clorată sau murdară poate infecta tatuajul, iar expunerea prelungită la apă poate afecta vindecarea.'
-    }
+      title: "Protejează tatuajul",
+      description:
+        "Evită expunerea la soare, băi lungi în cadă, piscină, saună sau solar pe toată perioada de vindecare.",
+    },
   ];
 
   return (
-    <div className="container mx-auto p-6 mt-24 mb-12">
-      <h2 className="text-3xl font-bold text-center  mb-24"><span className="text-accent">Instrucțiuni</span> de Îngrijire a <span className="text-accent">Tatuajului</span></h2>
+    <div className=" mx-auto p-3 xl:mt-24 mb-12">
+      <h1 className="font-bold text-center xl:mt-24 mb-24"><span className="text-accent">Aftercare-ul</span> tatuajelor</h1>
       <ul>
         {steps.map((step, index) => (
           <li key={index} className="flex items-start mb-6">
-            <div>{step.icon}</div>
             <div className="ml-4">
-              <h3 className="text-xl font-semibold ">{step.title}</h3>
-              <p className="">{step.description}</p>
+              <h3 className="text-xl font-semibold flex items-center max-md:justify-center gap-x-2">
+                <FaCheck className="text-accent" size={32} /> {step.title}
+              </h3>
+              <p className="max-md:text-balance">{step.description}</p>
             </div>
           </li>
         ))}

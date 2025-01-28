@@ -10,7 +10,7 @@ const HomePage = () => {
       <div className='absolute top-0 left-0 w-full h-full bg-black/40 z-2'></div>
       {/* Text */}
       <div className='w-full h-screen py-12 xs:py-0 relative z-3'>
-        <div className='container mx-auto flex flex-col justify-center text-center xl:text-left xl:pt-36 h-screen xl:h-full '>
+        <div className='xl:container mx-auto flex flex-col justify-center text-center xl:text-left xl:pt-36 h-screen xl:h-full '>
           {/* Title */}
           <h1>
             Transformăm Ideile <br /> In{" "}
@@ -31,27 +31,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-2 right-4 flex items-center justify-center max-md:flex-col z-50">
-          <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
-            <img
-              style={{ width: "250px" }}
-              src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sal.png"
-              alt="Solutionarea Alternativa a Litigiilor"
-            />
-          </a>
-          <br />
-          <a
-            href="https://ec.europa.eu/consumers/odr"
-            target="_blank"
-            rel="nofollow"
-          >
-            <img
-              style={{ width: "250px" }}
-              src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sol.png"
-              alt="Solutionarea Online a Litigiilor"
-            />
-          </a>
-        </div>
     </div>
   );
 };
