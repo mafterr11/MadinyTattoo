@@ -178,9 +178,9 @@ const WorkSlider = () => {
                     loading="lazy"
                   />
                   {/* overlay gradient */}
-                  <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
+                  <div className='absolute inset-0 bg-linear-to-l from-transparent via-[#d4b39a4b] to-[#d4b39a34] opacity-0 group-hover:opacity-80 transition-all duration-300'></div>
                   {/* title
-                  <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20'>
+                  <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 xl:group-hover:-translate-y-20'>
                     <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
                       <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
                             LIVE PROJECT

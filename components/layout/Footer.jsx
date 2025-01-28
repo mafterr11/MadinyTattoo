@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer>
-      <div className='container px-5 py-8 mx-auto flex items-center justify-center flex-col pb-24 xl:pb-4 md:gap-x-1 relative z-[2]'>
+      <div className='container px-5 py-8 mx-auto flex items-center justify-center flex-col pb-24 xl:pb-4 md:gap-x-1 relative z-2'>
         <div className="md:text-xl lg:text-2xl xl:text-base">
           Creat de {" "}
           <Link

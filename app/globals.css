@@ -1,28 +1,87 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/* Define custom theme variables */
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 400px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
 
-.translate-z-0 {
-  transform: translateZ(0px);
+   /* Container Padding */
+   --container-padding: 15px;
+   
+  /* Colors */
+  --color-primary: black;
+  --color-accent: #d4b39a;
+  --color-p: white;
+
+  /* Font Family */
+  --font-poppins: var(--font-poppins, sans-serif);
 }
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  background-color: #d4b39a;
+
+/* Extend utilities */
+@layer utilities {
+  /* Background Images */
+  .bg-site {
+    background-image: url('/backgrounds/bgMada2.webp');
+  }
+  .bg-micropigmentare {
+    background-image: url('/backgrounds/micropigmentare.webp');
+  }
+  .bg-micropigmentare2 {
+    background-image: url('/backgrounds/micropigmentare2.webp');
+  }
+  .bg-despre {
+    background-image: url('/backgrounds/despre.webp');
+  }
+  .bg-tatuaje {
+    background-image: url('/backgrounds/tatuaje.webp');
+  }
+  .bg-servicii {
+    background-image: url('/backgrounds/servicii.webp');
+  }
+  .bg-laser {
+    background-image: url('/backgrounds/laser.webp');
+  }
+
+  /* Animations */
+  .animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  /* Font Family */
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+
+  /* Custom Utilities */
+  .translate-z-0 {
+    transform: translateZ(0px);
+  }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    background-color: var(--color-accent);
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-prev:after {
+    color: var(--color-accent);
+  }
 }
 
-
-.swiper-button-next:after,
-.swiper-button-prev:after,
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-  color: #d4b39a;
+@utility container {
+  margin-inline: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 66.3%;
 }
-
+/* Base styles */
 @layer base {
- 
+
   body {
-    @apply  leading-relaxed text-white;
+    @apply leading-relaxed text-white;
   }
   .page {
     @apply w-full h-full;
@@ -32,27 +91,25 @@
   }
   h2 {
     @apply text-[15px] leading-tight md:text-[25px] xl:text-[22px] md:leading-[1.3] mb-4 font-semibold;
-  } 
-  
+  }
   h3 {
     @apply text-[30px] xs:text-[35px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
   }
-
   p {
-    @apply leading-[1.8] text-white font-light text-[16px] xs:text-lg md:text-2xl lg:text-3xl xl:text-lg;
+    @apply leading-[1.6] text-white font-light text-[16px] xs:text-lg md:text-2xl lg:text-3xl xl:text-lg;
   }
   .btn,
-  .input { 
+  .input {
     @apply h-[52px];
   }
 }
 
+/* Additional styles */
 .iframe-container {
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
-
 .responsive-iframe {
   position: absolute;
   top: 0;
@@ -61,7 +118,6 @@
   height: 100%;
   border: 0;
 }
-
 .hover:hover {
   cursor: pointer;
   text-decoration: underline;

@@ -5,7 +5,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 const ContactPage = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <div className='lg:mb-12 mb-0 text-center'>
+      <div className='lg:mb-24 mb-0 text-center'>
         <h1 className='mb-2'>
           Să ne <span className='text-accent'>conectăm.</span>
         </h1>
@@ -25,7 +25,7 @@ const ContactPage = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
           {/* Detalii */}
-          <div className='bg-white/90  relative hidden md:flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
+          <div className='bg-white/90  relative hidden md:flex flex-wrap py-4 mb-4 rounded-sm shadow-md items-center justify-start'>
             <div className='lg:w-1/2 px-6'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 ADDRESS
@@ -61,7 +61,7 @@ const ContactPage = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='xl:w-1/3 md:w-1/2 bg-white/90 z-[7] hidden md:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 md:mb-[30rem] lg:mb-[31rem] rounded shadow-md'>
+          <div className='xl:w-1/3 md:w-1/2 bg-white/90 z-7 hidden md:flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 md:mb-[30rem] lg:mb-[31rem] rounded-sm shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
@@ -82,7 +82,7 @@ const ContactPage = () => {
         {/* Mobile Panel */}
         <div className="flex md:hidden flex-col gap-y-6">
           {/* Program */}
-          <div className='lg:w-1/3 md:w-1/2 bg-white/90 z-[7] flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
+          <div className='lg:w-1/3 md:w-1/2 bg-white/90 z-7 flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded-sm shadow-md'>
             <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
               Program:
             </h2>
@@ -99,7 +99,7 @@ const ContactPage = () => {
             </div>
           </div>
           {/* Detalii */}
-          <div className='bg-white/90 relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
+          <div className='bg-white/90 relative flex flex-wrap py-4 mb-4 rounded-sm shadow-md items-center justify-start'>
             <div className='lg:w-1/2 px-6 mb-4 lg:mt-0'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 EMAIL

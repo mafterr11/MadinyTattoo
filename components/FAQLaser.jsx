@@ -11,7 +11,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -32,7 +32,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -54,7 +54,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -78,7 +78,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -100,7 +100,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -121,7 +121,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -145,7 +145,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -166,7 +166,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -188,7 +188,7 @@ const FAQSection = () => {
             <div className='mb-10'>
               <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
                 <svg
-                  className='flex-shrink-0 mr-2 w-5 h-5 text-white md:hidden'
+                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'

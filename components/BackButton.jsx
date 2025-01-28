@@ -14,7 +14,7 @@ function BackButton() {
   return (
     <button
       onClick={handleBackClick}
-      className='flex items-center justify-center gap-x-1 border-white/40 border py-1 px-4 rounded-[5px]'
+      className='flex items-center justify-center gap-x-1 border-white/40 border py-1 px-4 rounded-[5px] hover:cursor-pointer'
     >
       Înapoi <FaArrowRight className='fill-accent' />
     </button>
