@@ -44,6 +44,9 @@
   .bg-laser {
     background-image: url('/backgrounds/laser.webp');
   }
+  .bg-piercing {
+    background-image: url('/backgrounds/piercing.jpg');
+  }
 
   /* Animations */
   .animate-spin-slow {
