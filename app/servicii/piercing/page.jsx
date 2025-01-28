@@ -1,9 +1,11 @@
-import React from 'react'
+import PiercingPage from "../../../components/pages/PiercingPage";
 
 const Piercing = () => {
   return (
-    <div>Piercing</div>
-  )
-}
+    <>
+      <PiercingPage />
+    </>
+  );
+};
 
-export default Piercing
+export default Piercing;
