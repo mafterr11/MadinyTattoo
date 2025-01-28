@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 // Icons
 import { RxCrop, RxArrowTopRight } from "react-icons/rx";
 import { GiSinusoidalBeam, GiBleedingEye } from "react-icons/gi";
-
+import { PiNeedle } from "react-icons/pi";
 // Required Modules
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -38,6 +38,13 @@ const serviceData = [
     description:
       "Transformă trecutul într-o poveste uitată. Cu laserul nostru avansat, eliminăm tatuajele fără regrete, oferindu-ți un nou început.",
   },
+  {
+    icon: <PiNeedle />,
+    title: "Piercing",
+    path: "/servicii/piercing",
+    description:
+      "Adaugă un plus de stil și expresivitate cu un piercing realizat profesional. Evidențiază-ți unicitatea în siguranță și confort.",
+  },
 ];
 
 const ServiceSlider = () => {
@@ -57,6 +64,10 @@ const ServiceSlider = () => {
             slidesPerView: 3,
             spaceBetween: 15,
           },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
         }}
         navigation={{
           nextEl: ".swiper-navigation-next",
@@ -66,7 +77,7 @@ const ServiceSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className='h-[300px] w-[280px] xs:w-[310px] md:w-[650px] md:h-[370px] lg:w-[900px] xl:h-[370px]'
+        className='h-[300px] w-[280px] xs:w-[310px] md:w-[650px] md:h-[370px] lg:w-[900px] xl:w-[1200px] xl:h-[370px]'
       >
         {serviceData.map((item, index) => {
           return (
