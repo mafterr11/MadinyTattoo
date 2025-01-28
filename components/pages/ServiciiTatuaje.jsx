@@ -8,7 +8,7 @@ import conturTattoo from "../../public/gallery/tattooService/conturTattoo.webp";
 import embroderyTattoo from "../../public/gallery/tattooService/embroderyTattoo.webp";
 import BackButton from "../BackButton";
 // Component
-import TattooCare from "../TattooCare";
+import AvansTatuaje from './../AvansTatuaje';
 
 const ServiciiTatuaje = () => {
   return (
@@ -215,7 +215,7 @@ const ServiciiTatuaje = () => {
           </div>
         </div>
       </div>
-      <TattooCare />
+      <AvansTatuaje />
     </div>
   );
 };
