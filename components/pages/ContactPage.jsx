@@ -56,7 +56,7 @@ const ContactPage = () => {
                 target='blank'
                 className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+04.741.620.774
+                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+40.741.620.774
               </a>
             </div>
           </div>
@@ -118,7 +118,7 @@ const ContactPage = () => {
                 target='blank'
                 className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+04.741.620.774
+                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-black" />+40.741.620.774
               </a>
             </div>
             <div className='lg:w-1/2 px-6'>
