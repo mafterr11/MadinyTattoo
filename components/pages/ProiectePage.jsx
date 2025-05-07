@@ -4,7 +4,7 @@ import NewGallery from "./NewGallery";
 
 const ProiectePage = () => {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-x-8 gap-y-32 py-36 xl:h-full xl:py-60">
+    <div className="flex h-full flex-col items-center justify-center gap-x-8 gap-y-14 xl:gap-y-32 py-36 xl:h-full xl:py-60">
       {/* Text */}
       <div className="mb-4 flex flex-col text-center xl:mb-0 xl:w-[50vw]">
         <h1 className="xl:mt-8">
