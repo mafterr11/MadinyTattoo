@@ -107,7 +107,7 @@ const images = [
 
 const NewGallery = () => {
   return (
-    <div className="custom-scrollbar grid h-[100vh] max-xl:w-[95vw] grid-cols-1 gap-4 overflow-auto md:grid-cols-3 xl:min-w-[1240px]">
+    <div className="custom-scrollbar grid max-md:h-[200vh] h-[100vh] max-xl:w-[95vw] grid-cols-1 gap-4 overflow-auto md:grid-cols-3 xl:min-w-[1240px]">
       {images.map((image, index) => (
         <div key={index} className="relative aspect-square">
           <Image src={image.path} fill alt={image.title} />
