@@ -12,27 +12,27 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.0",
-    "@tailwindcss/upgrade": "^4.1.15",
-    "framer-motion": "^12.23.24",
-    "next": "^16.0.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
+    "@tailwindcss/upgrade": "^4.1.18",
+    "framer-motion": "^12.33.0",
+    "next": "^16.1.6",
     "next-sitemap": "^4.2.3",
-    "react": "^19.2.0",
+    "react": "^19.2.4",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.2.0",
+    "react-dom": "^19.2.4",
     "react-icons": "^5.5.0",
     "react-tsparticles": "^2.12.2",
-    "sharp": "^0.34.4",
-    "swiper": "^12.0.3",
+    "sharp": "^0.34.5",
+    "swiper": "^12.1.0",
     "tsparticles": "^3.9.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.15",
-    "eslint": "^9.38.0",
-    "eslint-config-next": "^16.0.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "eslint": "^10.0.0",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.6",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.7.1",
-    "tailwindcss": "^4.1.15"
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.18"
   }
 }
