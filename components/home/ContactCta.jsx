@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
@@ -68,9 +67,15 @@ const ContactCta = () => (
                 <RiWhatsappLine className="text-lg" aria-hidden="true" />
                 WhatsApp
               </a>
-              <Link href="/contact" className="btn btn-ghost btn-block">
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost btn-block"
+              >
+                <FiMapPin className="text-base" aria-hidden="true" />
                 Vezi harta
-              </Link>
+              </a>
             </div>
           </Reveal>
         </div>
