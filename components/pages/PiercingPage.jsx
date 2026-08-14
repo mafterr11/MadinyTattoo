@@ -149,7 +149,7 @@ const PiercingPage = () => (
             <h2>Cât timp trebuie purtat titanul?</h2>
             <div className="hairline mt-4" />
             <p className="text-muted mt-6">
-              Recomendăm purtarea bijuteriei din titan pentru cel puțin{" "}
+              Recomandăm purtarea bijuteriei din titan pentru cel puțin{" "}
               <strong className="text-fg font-semibold">2-3 luni</strong>, până
               la finalizarea procesului de vindecare.
             </p>

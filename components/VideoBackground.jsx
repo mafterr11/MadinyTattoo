@@ -1,49 +1,55 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-const DESKTOP_SRC = "/intro.mp4";
-const MOBILE_SRC = "/intro-mobile.mp4";
-const POSTER = "/backgrounds/bgMada2.webp";
+// Each source ships with a poster cut from its own first frame, so the fade-in
+// has nothing to jump to.
+const SOURCES = {
+  desktop: { src: "/intro.mp4", poster: "/hero-poster.webp" },
+  mobile: { src: "/intro-mobile.mp4", poster: "/hero-poster-mobile.webp" },
+};
 
 /**
  * The poster paints immediately and the video only starts downloading after
- * mount, so the hero is never blocked on a multi-megabyte file. The source is
- * chosen once per breakpoint crossing — the previous version re-assigned `src`
- * on every resize event, which restarted the download each time.
+ * mount, so the hero is never blocked on the clip. The source is chosen once
+ * per breakpoint crossing — the previous version re-assigned `src` on every
+ * resize event, which restarted the download each time.
  */
 const VideoBackground = () => {
-  const videoRef = useRef(null);
-  const [src, setSrc] = useState(null);
-  // Storing which source is ready — rather than a bare boolean — means the
+  const [variant, setVariant] = useState(null);
+  // Tracking which source is ready — rather than a bare boolean — means the
   // fade resets by itself when the source swaps, with no extra effect.
   const [readySrc, setReadySrc] = useState(null);
 
   useEffect(() => {
     const query = window.matchMedia("(max-width: 767px)");
-    const pick = () => setSrc(query.matches ? MOBILE_SRC : DESKTOP_SRC);
+    const pick = () => setVariant(query.matches ? "mobile" : "desktop");
 
     pick();
     query.addEventListener("change", pick);
     return () => query.removeEventListener("change", pick);
   }, []);
 
+  const active = variant ? SOURCES[variant] : null;
+
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-ink">
+    <div className="bg-ink absolute inset-0 -z-10 overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={POSTER}
+        src={SOURCES.desktop.poster}
+        srcSet={`${SOURCES.mobile.poster} 900w, ${SOURCES.desktop.poster} 1600w`}
+        sizes="100vw"
         alt=""
         aria-hidden="true"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      {src && (
+      {active && (
         <video
-          ref={videoRef}
-          key={src}
-          src={src}
-          poster={POSTER}
+          key={active.src}
+          src={active.src}
+          poster={active.poster}
           autoPlay
           loop
           muted
@@ -51,9 +57,9 @@ const VideoBackground = () => {
           preload="metadata"
           aria-hidden="true"
           tabIndex={-1}
-          onCanPlay={() => setReadySrc(src)}
+          onCanPlay={() => setReadySrc(active.src)}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-            readySrc === src ? "opacity-100" : "opacity-0"
+            readySrc === active.src ? "opacity-100" : "opacity-0"
           }`}
         />
       )}
