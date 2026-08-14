@@ -58,17 +58,17 @@ const ContactCta = () => (
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className="btn btn-primary btn-block"
               >
                 <RiWhatsappLine className="text-lg" aria-hidden="true" />
                 WhatsApp
               </a>
-              <Link href="/contact" className="btn btn-ghost">
+              <Link href="/contact" className="btn btn-ghost btn-block">
                 Vezi harta
               </Link>
             </div>

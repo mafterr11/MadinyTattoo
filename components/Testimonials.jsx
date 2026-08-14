@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa6";
 
 import Reveal from "./Reveal";
@@ -19,20 +18,11 @@ const Testimonials = () => (
             {person.message}
           </blockquote>
 
-          <figcaption className="mt-7 flex items-center gap-3 border-t border-white/8 pt-5">
-            <Image
-              src={person.image}
-              width={48}
-              height={48}
-              alt={`${person.name}, client Madiny Tattoo`}
-              className="h-12 w-12 rounded-full object-cover"
-            />
-            <div>
-              <p className="text-fg text-sm font-medium">{person.name}</p>
-              <p className="text-accent text-[0.7rem] tracking-[0.16em] uppercase">
-                {person.position}
-              </p>
-            </div>
+          <figcaption className="mt-7 border-t border-white/8 pt-5">
+            <p className="font-display text-lg">{person.name}</p>
+            <p className="text-accent mt-0.5 text-[0.7rem] tracking-[0.16em] uppercase">
+              {person.position}
+            </p>
           </figcaption>
         </figure>
       </Reveal>

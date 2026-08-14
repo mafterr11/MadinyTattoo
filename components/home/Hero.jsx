@@ -37,11 +37,11 @@ const Hero = () => (
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link href="/contact" className="btn btn-primary">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Link href="/contact" className="btn btn-primary btn-block">
               Programează-te
             </Link>
-            <Link href="/proiecte" className="btn btn-ghost">
+            <Link href="/proiecte" className="btn btn-ghost btn-block">
               Vezi lucrările
               <FiArrowUpRight className="text-base" aria-hidden="true" />
             </Link>

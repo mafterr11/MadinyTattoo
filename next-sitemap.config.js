@@ -11,7 +11,6 @@ const priorities = {
   '/proiecte': 0.8,
   '/contact': 0.7,
   '/aftercare': 0.6,
-  '/testimoniale': 0.6,
 }
 
 module.exports = {

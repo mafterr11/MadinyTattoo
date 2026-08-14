@@ -15,16 +15,35 @@ const socialIcons = {
   tiktok: RiTiktokLine,
 };
 
-const Logo = ({ onClick }) => (
-  <Link
-    href="/"
-    onClick={onClick}
-    aria-label={`${business.name} — pagina principală`}
-    className="font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
-  >
-    MADINY<span className="text-accent">.</span>TATTOO
-  </Link>
-);
+const Logo = ({ onClick }) => {
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+
+  const handleClick = (event) => {
+    // Already home: scroll back to the top instead of a no-op navigation.
+    if (onHome) {
+      event.preventDefault();
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    }
+    onClick?.();
+  };
+
+  return (
+    <Link
+      href="/"
+      onClick={handleClick}
+      aria-label={
+        onHome
+          ? `${business.name} — înapoi sus`
+          : `${business.name} — pagina principală`
+      }
+      className="neon font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
+    >
+      MADINY<span className="neon-dot">.</span>TATTOO
+    </Link>
+  );
+};
 
 const Header = () => {
   const pathname = usePathname();

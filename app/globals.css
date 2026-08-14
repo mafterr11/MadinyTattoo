@@ -226,6 +226,52 @@
     font-size: 0.75rem;
   }
 
+  /* Full width on phones, shared minimum on wider screens so buttons sitting
+     side by side always match each other. */
+  .btn-block {
+    width: 100%;
+  }
+
+  @media (width >= 640px) {
+    .btn-block {
+      width: auto;
+      min-width: 12rem;
+    }
+  }
+
+  /* --- Neon wordmark --------------------------------------------------
+     Echoes the studio's real neon sign rather than inventing a new symbol.
+     Kept subtle so it reads as warmth, not as a glow effect. */
+  .neon {
+    /* A real neon tube has a near-white core inside a saturated halo, so the
+       glow is layered: tight and bright, then wide and soft. */
+    color: #fffaf4;
+    text-shadow:
+      0 0 2px color-mix(in oklab, var(--color-accent-bright) 90%, transparent),
+      0 0 10px color-mix(in oklab, var(--color-accent) 75%, transparent),
+      0 0 26px color-mix(in oklab, var(--color-accent) 45%, transparent),
+      0 0 52px color-mix(in oklab, var(--color-accent-deep) 30%, transparent);
+    transition: text-shadow 0.5s var(--ease-out-soft);
+  }
+
+  .neon:hover,
+  .neon:focus-visible {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 12px var(--color-accent-bright),
+      0 0 32px color-mix(in oklab, var(--color-accent) 70%, transparent),
+      0 0 68px color-mix(in oklab, var(--color-accent) 45%, transparent);
+  }
+
+  /* The separating dot is the tube's hottest bend — brightest point of all. */
+  .neon-dot {
+    color: #fff;
+    text-shadow:
+      0 0 4px var(--color-accent-bright),
+      0 0 14px var(--color-accent),
+      0 0 30px color-mix(in oklab, var(--color-accent) 65%, transparent);
+  }
+
   /* --- Surfaces --- */
   .card {
     position: relative;

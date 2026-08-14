@@ -25,11 +25,11 @@ const NotFound = () => (
         ducem înapoi la treabă.
       </p>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-3">
-        <Link href="/" className="btn btn-primary">
+      <div className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center">
+        <Link href="/" className="btn btn-primary btn-block">
           Înapoi acasă
         </Link>
-        <Link href="/proiecte" className="btn btn-ghost">
+        <Link href="/proiecte" className="btn btn-ghost btn-block">
           Vezi lucrările
           <FiArrowUpRight className="text-base" aria-hidden="true" />
         </Link>
