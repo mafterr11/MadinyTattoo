@@ -1,14 +1,31 @@
-// Counter
-import TattooCare from "../../components/TattooCare";
+import PageHero from "../PageHero";
+import TattooCare from "../TattooCare";
+import ContactCta from "../home/ContactCta";
 
-const AftercarePage = () => {
-  return (
-    <div className='h-full sm:h-screen pt-40 pb-24 text-center xl:text-left'>
-      <div className='xl:container mx-auto h-full xl:h-full flex flex-col items-center xl:flex-row gap-x-6'>
+const AftercarePage = () => (
+  <>
+    <PageHero
+      eyebrow="Îngrijire"
+      title={
+        <>
+          <span className="text-accent">Aftercare-ul</span> tatuajelor
+        </>
+      }
+      image="/backgrounds/despre.webp"
+      breadcrumbs={[
+        { name: "Acasă", path: "/" },
+        { name: "Aftercare", path: "/aftercare" },
+      ]}
+    />
+
+    <section className="pb-20 lg:pb-28">
+      <div className="container max-w-4xl">
         <TattooCare />
       </div>
-    </div>
-  );
-};
+    </section>
+
+    <ContactCta />
+  </>
+);
 
 export default AftercarePage;

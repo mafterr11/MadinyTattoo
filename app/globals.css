@@ -1,151 +1,412 @@
 @import 'tailwindcss';
-/* Define custom theme variables */
+
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
 @theme {
   /* Breakpoints */
   --breakpoint-xs: 400px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 960px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
-   /* Container Padding */
-   --container-padding: 15px;
-   
-  /* Colors */
-  --color-primary: black;
+  /* Surfaces — layered dark, warm-neutral rather than pure black */
+  --color-ink: #08080a;
+  --color-surface: #100f12;
+  --color-surface-2: #17161a;
+  --color-surface-3: #201e24;
+
+  /* Accent — the studio's warm sand tone */
   --color-accent: #d4b39a;
-  --color-p: white;
+  --color-accent-bright: #ecd3ba;
+  --color-accent-deep: #a8866a;
 
-  /* Font Family */
-  --font-poppins: var(--font-poppins, sans-serif);
+  /* Foreground */
+  --color-fg: #f6f4f2;
+  --color-muted: #a9a4a0;
+
+  /* Legacy aliases kept so existing markup never breaks */
+  --color-primary: #08080a;
+  --color-p: #f6f4f2;
+
+  /* Fonts */
+  --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  /* Fluid type scale */
+  --text-display: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
+  --text-h1: clamp(2.25rem, 1.5rem + 3.4vw, 4.25rem);
+  --text-h2: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  --text-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
+  --text-lead: clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem);
+  --text-body: clamp(0.975rem, 0.94rem + 0.18vw, 1.0625rem);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 40px -12px rgb(0 0 0 / 0.7);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 28px 60px -20px rgb(0 0 0 / 0.85);
 }
 
-/* Extend utilities */
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  * {
+    border-color: color-mix(in oklab, var(--color-fg) 10%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-poppins);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+  }
+  h2 {
+    font-size: var(--text-h2);
+  }
+  h3 {
+    font-size: var(--text-h3);
+    line-height: 1.25;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Respect users who ask for less motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Layout primitives
+   ========================================================================== */
+@utility container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 768px) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 1280px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility container-narrow {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 52rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Vertical rhythm for page sections */
+@utility section {
+  padding-block: clamp(4rem, 3rem + 5vw, 8rem);
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  /* --- Buttons --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3rem;
+    padding-inline: 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.35s var(--ease-out-soft),
+      color 0.35s var(--ease-out-soft),
+      border-color 0.35s var(--ease-out-soft),
+      transform 0.35s var(--ease-out-soft),
+      box-shadow 0.35s var(--ease-out-soft);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+    box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--color-accent) 70%, transparent);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-accent-bright);
+    box-shadow: 0 18px 40px -14px color-mix(in oklab, var(--color-accent) 85%, transparent);
+  }
+
+  .btn-ghost {
+    border: 1px solid color-mix(in oklab, var(--color-fg) 22%, transparent);
+    background-color: color-mix(in oklab, var(--color-fg) 4%, transparent);
+    color: var(--color-fg);
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .btn-sm {
+    min-height: 2.5rem;
+    padding-inline: 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  /* --- Surfaces --- */
+  .card {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in oklab, var(--color-fg) 8%, transparent);
+    background-color: color-mix(in oklab, var(--color-surface) 82%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-card);
+    transition:
+      border-color 0.4s var(--ease-out-soft),
+      transform 0.4s var(--ease-out-soft),
+      box-shadow 0.4s var(--ease-out-soft);
+  }
+
+  .card-hover:hover {
+    border-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* --- Eyebrow label above section titles --- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-accent)
+    );
+  }
+
+  .eyebrow-center::before {
+    display: none;
+  }
+
+  /* --- Body copy --- */
+  .lead {
+    font-size: var(--text-lead);
+    line-height: 1.75;
+    color: var(--color-muted);
+  }
+
+  .prose-ro p {
+    color: var(--color-muted);
+    margin-block-end: 1rem;
+  }
+  .prose-ro strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+
+  /* --- Decorative hairline --- */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--color-accent) 40%, transparent),
+      transparent
+    );
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+@utility text-gradient-accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-bright),
+    var(--color-accent) 45%,
+    var(--color-accent-deep)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility grain {
+  position: relative;
+}
+
+/* Subtle film grain — gives the flat dark surfaces some texture */
+@utility grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 @layer utilities {
-  /* Background Images */
-  .bg-site {
-    background-image: url('/backgrounds/bgMada2.webp');
-  }
-  .bg-micropigmentare {
-    background-image: url('/backgrounds/micropigmentare.webp');
-  }
-  .bg-micropigmentare2 {
-    background-image: url('/backgrounds/micropigmentare2.webp');
-  }
-  .bg-despre {
-    background-image: url('/backgrounds/despre.webp');
-  }
-  .bg-tatuaje {
-    background-image: url('/backgrounds/tatuaje.webp');
-  }
-  .bg-servicii {
-    background-image: url('/backgrounds/servicii.webp');
-  }
-  .bg-laser {
-    background-image: url('/backgrounds/laser.webp');
-  }
-  .bg-piercing {
-    background-image: url('/backgrounds/piercing.jpg');
-  }
-
-  /* Animations */
   .animate-spin-slow {
-    animation: spin 6s linear infinite;
+    animation: spin 18s linear infinite;
   }
 
-  /* Font Family */
   .font-poppins {
     font-family: var(--font-poppins);
   }
 
-  /* Custom Utilities */
-  .translate-z-0 {
-    transform: translateZ(0px);
-  }
-  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    background-color: var(--color-accent);
-  }
-  .swiper-button-next:after,
-  .swiper-button-prev:after,
-  .swiper-rtl .swiper-button-prev:after {
-    color: var(--color-accent);
+  .font-display {
+    font-family: var(--font-display);
   }
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  width: 66.3%;
-}
-/* Base styles */
-@layer base {
-
-  body {
-    @apply leading-relaxed text-white;
-  }
-  .page {
-    @apply w-full h-full;
-  }
-  h1 {
-    @apply text-[30px] xs:text-[35px] md:text-[60px] lg:text-[70px] xl:text-[50px] leading-tight md:leading-[1.3] mb-8 font-semibold;
-  }
-  h2 {
-    @apply text-[15px] leading-tight md:text-[25px] xl:text-[22px] md:leading-[1.3] mb-4 font-semibold;
-  }
-  h3 {
-    @apply text-[30px] xs:text-[35px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
-  }
-  p {
-    @apply leading-[1.6] text-white font-light text-[16px] xs:text-lg md:text-2xl lg:text-3xl xl:text-lg;
-  }
-  .btn,
-  .input {
-    @apply h-[52px];
-  }
-}
-
-/* Additional styles */
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.hover:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 0.5rem;
-}
-
+/* ==========================================================================
+   Scrollbar
+   ========================================================================== */
 .custom-scrollbar {
-  scrollbar-width: 8px;
-  scrollbar-color: #4c5273 #1e1f2b; /* Firefox: thumb + track */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-deep) var(--color-surface);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #1e1f2b;
+  background: var(--color-surface);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #4c5273;
-  border-radius: 4px;
-  border: 2px solid #1e1f2b;
+  background-color: var(--color-accent-deep);
+  border-radius: 9999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #5e658c;
+  background-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.responsive-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Underline that grows from the left on hover */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out-soft);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

@@ -1,31 +1,32 @@
-// "use client";
-// Component
-import ServiceSlider from "../ServiceSlider";
+import PageHero from "../PageHero";
+import ServicesGrid from "../ServicesGrid";
+import ContactCta from "../home/ContactCta";
 
-const Services = () => {
-  return (
-    <div className="flex items-center py-36 md:h-screen xl:pr-24">
-      <div className="xl:container mx-auto">
-        <div className="flex flex-col gap-x-8">
-          {/* Text */}
-          <div className="mb-4 flex flex-col items-center justify-center text-center xl:mb-0">
-            <h1 className="flex items-center justify-center gap-x-4 xl:mt-8 mb-16">
-              <span className="text-accent">Serviciile</span> Noastre.
-            </h1>
-            <p className="mx-auto mb-4 text-balance xl:max-w-5xl">
-              Într-un spațiu creativ pentru artă și frumusețe, oferim servicii
-              profesionale de tatuaje, micropigmentare și eliminare cu laser,
-              completate de expertiză și atenție meticuloasă la detalii.
-            </p>
-          </div>
-          {/* Slider */}
-          <div>
-            <ServiceSlider />
-          </div>
-        </div>
+const ServiciiPage = () => (
+  <>
+    <PageHero
+      eyebrow="Ce facem"
+      title={
+        <>
+          <span className="text-accent">Serviciile</span> Noastre.
+        </>
+      }
+      lead="Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii."
+      image="/backgrounds/servicii.webp"
+      breadcrumbs={[
+        { name: "Acasă", path: "/" },
+        { name: "Servicii", path: "/servicii" },
+      ]}
+    />
+
+    <section className="pb-20 lg:pb-28">
+      <div className="container">
+        <ServicesGrid />
       </div>
-    </div>
-  );
-};
+    </section>
 
-export default Services;
+    <ContactCta />
+  </>
+);
+
+export default ServiciiPage;

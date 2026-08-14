@@ -1,49 +1,53 @@
-"use client";
 import "./globals.css";
-import { Poppins } from "next/font/google";
-import Header from "../components/layout/Header";
-import Nav from "../components/layout/Nav";
-// Component
-import Footer from "../components/layout/Footer";
-import Transition from "../components/Transition";
-import { AnimatePresence, motion } from "framer-motion";
+import { Poppins, Playfair_Display } from "next/font/google";
 
-// Router
-import { usePathname } from "next/navigation";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import FloatingContact from "../components/FloatingContact";
+import PageTransition from "../components/PageTransition";
+import JsonLd from "../components/JsonLd";
+import { constructMetadata } from "../lib/utils";
+import { localBusinessSchema, websiteSchema } from "../lib/schema";
+
 const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-poppins",
   display: "swap",
 });
 
-export default function RootLayout({ children }) {
-  const currentRoute = usePathname();
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600"],
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+  display: "swap",
+});
 
+export const metadata = constructMetadata();
+
+export const viewport = {
+  themeColor: "#08080a",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }) {
   return (
-    <html
-      lang="ro"
-      className="bg-site bg-cover bg-no-repeat bg-scroll lg:bg-fixed bg-center relative"
-    >
-      <AnimatePresence mode="wait">
-        <body className={`${poppins.className}`}>
-          <motion.div key={currentRoute} className="page bg-primary/40">
-            <Transition />
-            <Nav />
-            <Header />
-            {children}
-            {currentRoute === "/" ? (
-              <Footer />
-            ) : currentRoute === "/contact" ? (
-              <Footer />
-            ) : currentRoute === "/testimoniale" ? (
-              <Footer />
-            ) : currentRoute === "/proiecte" ? (
-              <Footer />
-            ) : null}
-          </motion.div>
-        </body>
-      </AnimatePresence>
+    <html lang="ro" className={`${poppins.variable} ${playfair.variable}`}>
+      <body>
+        <JsonLd schema={[localBusinessSchema, websiteSchema]} />
+        <div className="grain-overlay" aria-hidden="true" />
+
+        <Header />
+
+        <main id="continut">
+          <PageTransition>{children}</PageTransition>
+        </main>
+
+        <Footer />
+        <FloatingContact />
+      </body>
     </html>
   );
 }

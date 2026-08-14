@@ -1,37 +1,70 @@
-export default function AvansTatuaje() {
-  return (
-    <div className="rounded-2xl pt-24 max-xl:px-4 max-md:text-center xl:container">
-      <h2 className="text-accent mb-4 text-2xl font-bold">
-        Politica de avans pentru programări
-      </h2>
-      <p className="mb-4">
-        Pentru a confirma o programare la salonul nostru de tatuaj, este necesar
-        un avans cuprins între
-        <span className="font-semibold"> 100 și 400 lei</span>, în funcție de
-        costul total al tatuajului.
-      </p>
-      <h3 className="mb-3 text-xl font-semibold text-red-500">
-        Avansul este <span className="underline">nereturnabil</span> în
-        următoarele situații:
-      </h3>
-      <ul className="mb-4 list-inside list-disc space-y-2">
-        <li className="text-lg">Clientul nu se prezintă la programare.</li>
-        <li className="text-lg">
-          Clientul nu anunță în timp util dorința de a reprograma (cu cel puțin{" "}
-          <span className="font-semibold">48 de ore</span> înainte de ora
-          stabilită).
-        </li>
-      </ul>
-      <p className="mb-4">
-        Această politică ne ajută să respectăm timpul fiecărui client și să
-        menținem un program eficient. Dacă ne anunțați cu cel puțin{" "}
-        <span className="font-semibold">48 de ore</span> înainte, vom face tot
-        posibilul să găsim o nouă dată convenabilă pentru reprogramare, fără a
-        pierde avansul achitat.
-      </p>
-      <h2 className="mt-24 text-center font-medium">
-        Vă mulțumim pentru înțelegere și pentru încrederea acordată!
-      </h2>
+import { FiAlertTriangle } from "react-icons/fi";
+
+import Reveal from "./Reveal";
+
+const AvansTatuaje = () => (
+  <section
+    aria-labelledby="politica-avans"
+    className="section bg-surface/40 border-y border-white/8"
+  >
+    <div className="container max-w-4xl">
+      <Reveal>
+        <span className="eyebrow">Programări</span>
+        <h2 id="politica-avans" className="mt-5">
+          Politica de avans pentru programări
+        </h2>
+      </Reveal>
+
+      <Reveal delay={0.08}>
+        <p className="lead mt-6">
+          Pentru a confirma o programare la salonul nostru de tatuaj, este
+          necesar un avans cuprins între{" "}
+          <strong className="text-fg font-semibold">100 și 400 lei</strong>, în
+          funcție de costul total al tatuajului.
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.16}>
+        <div className="card mt-8 border-red-400/25 bg-red-500/6 p-6 sm:p-8">
+          <h3 className="flex items-start gap-3 text-lg text-red-300">
+            <FiAlertTriangle className="mt-1 shrink-0" aria-hidden="true" />
+            <span>
+              Avansul este <span className="underline">nereturnabil</span> în
+              următoarele situații:
+            </span>
+          </h3>
+
+          <ul className="text-muted mt-5 space-y-3 text-sm sm:text-[0.95rem]">
+            <li className="before:bg-accent relative pl-5 before:absolute before:top-2.5 before:left-0 before:h-1.5 before:w-1.5 before:rounded-full">
+              Clientul nu se prezintă la programare.
+            </li>
+            <li className="before:bg-accent relative pl-5 before:absolute before:top-2.5 before:left-0 before:h-1.5 before:w-1.5 before:rounded-full">
+              Clientul nu anunță în timp util dorința de a reprograma (cu cel
+              puțin{" "}
+              <strong className="text-fg font-semibold">48 de ore</strong>{" "}
+              înainte de ora stabilită).
+            </li>
+          </ul>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.24}>
+        <p className="text-muted mt-8 leading-relaxed">
+          Această politică ne ajută să respectăm timpul fiecărui client și să
+          menținem un program eficient. Dacă ne anunțați cu cel puțin{" "}
+          <strong className="text-fg font-semibold">48 de ore</strong> înainte,
+          vom face tot posibilul să găsim o nouă dată convenabilă pentru
+          reprogramare, fără a pierde avansul achitat.
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.32}>
+        <p className="font-display text-accent mt-10 text-center text-xl">
+          Vă mulțumim pentru înțelegere și pentru încrederea acordată!
+        </p>
+      </Reveal>
     </div>
-  );
-}
+  </section>
+);
+
+export default AvansTatuaje;

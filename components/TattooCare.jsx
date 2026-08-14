@@ -1,51 +1,28 @@
-import { FaCheck } from "react-icons/fa6";
+import Reveal from "./Reveal";
+import { aftercareSteps } from "../lib/aftercare";
 
-const TattooCare = () => {
-  const steps = [
-    {
-      title: "Păstrează-l acoperit",
-      description:
-        "Păstrează folia protectoare timp de 2-3 zile - este impermeabilă, deci poți face duș fără griji.",
-    },
-    {
-      title: "Igienă",
-      description:
-        "Schimbă lenjeria de pat în ziua în care îndepărtezi folia și evită contactul tatuajului cu orice mediu care ar putea duce la infectarea acestuia, cum ar fi praf, transpirație sau părul de animale.",
-    },
-    {
-      title: "Curăță tatuajul cu grijă",
-      description:
-        "Spală-l cu apă călduță și săpun antibacterian, tamponează-l ușor cu un prosop curat și așteaptă să se usuce bine.",
-    },
-    {
-      title: "Cremă de vindecare",
-      description:
-        "Dupa spălare, aplică un strat foarte subțire de cremă specială pentru vindecarea tatuajului (ex: Sorry Mom) pentru a menține pielea hidratată. Repetă acest proces de 3-4 ori pe zi timp de 2 săptămâni, pentru o vindecare optimă.",
-    },
-    {
-      title: "Protejează tatuajul",
-      description:
-        "Evită expunerea la soare, băi lungi în cadă, piscină, saună sau solar pe toată perioada de vindecare.",
-    },
-  ];
+const TattooCare = () => (
+  <ol className="relative space-y-4">
+    {aftercareSteps.map((step, i) => (
+      <Reveal as="li" key={step.title} delay={i * 0.07}>
+        <div className="card card-hover flex gap-5 p-6 sm:gap-7 sm:p-8">
+          <span
+            aria-hidden="true"
+            className="font-display text-accent/35 text-3xl leading-none tabular-nums sm:text-4xl"
+          >
+            {String(i + 1).padStart(2, "0")}
+          </span>
 
-  return (
-    <div className=" mx-auto p-3 xl:mt-24 mb-12">
-      <h1 className="font-bold text-center xl:mt-24 mb-24"><span className="text-accent">Aftercare-ul</span> tatuajelor</h1>
-      <ul>
-        {steps.map((step, index) => (
-          <li key={index} className="flex items-start mb-6">
-            <div className="ml-4">
-              <h3 className="text-xl font-semibold flex items-center max-md:justify-center gap-x-2 ">
-              <span className="relative"><FaCheck className="text-accent absolute -left-9 -top-1" size={32} />{step.title}</span>
-              </h3>
-              <p className="max-md:text-balance">{step.description}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+          <div>
+            <h3 className="text-lg sm:text-xl">{step.title}</h3>
+            <p className="text-muted mt-2 text-sm leading-relaxed sm:text-[0.95rem]">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      </Reveal>
+    ))}
+  </ol>
+);
 
 export default TattooCare;

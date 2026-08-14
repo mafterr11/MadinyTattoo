@@ -1,45 +1,72 @@
-"use client"
-import React, { useRef, useEffect, useState } from 'react';
+"use client";
 
+import { useEffect, useRef, useState } from "react";
+
+const DESKTOP_SRC = "/intro.mp4";
+const MOBILE_SRC = "/intro-mobile.mp4";
+const POSTER = "/backgrounds/bgMada2.webp";
+
+/**
+ * The poster paints immediately and the video only starts downloading after
+ * mount, so the hero is never blocked on a multi-megabyte file. The source is
+ * chosen once per breakpoint crossing — the previous version re-assigned `src`
+ * on every resize event, which restarted the download each time.
+ */
 const VideoBackground = () => {
   const videoRef = useRef(null);
-  const [videoSource, setVideoSource] = useState('/intro.mp4'); // Default video source
+  const [src, setSrc] = useState(null);
+  // Storing which source is ready — rather than a bare boolean — means the
+  // fade resets by itself when the source swaps, with no extra effect.
+  const [readySrc, setReadySrc] = useState(null);
 
   useEffect(() => {
-    // Function to determine the video source based on window size
-    const determineVideoSource = () => {
-      return window.innerWidth < 768 ? '/intro-mobile.mp4' : '/intro.mp4';
-    };
+    const query = window.matchMedia("(max-width: 767px)");
+    const pick = () => setSrc(query.matches ? MOBILE_SRC : DESKTOP_SRC);
 
-    // Set the video source when the component mounts
-    setVideoSource(determineVideoSource());
-
-    // Optional: Adjust video source on window resize
-    const handleResize = () => {
-      setVideoSource(determineVideoSource());
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    pick();
+    query.addEventListener("change", pick);
+    return () => query.removeEventListener("change", pick);
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        poster="/backgrounds/bgMada2.webp"
-        playsInline // Helps with autoplay on mobile browsers
-        className="min-w-full min-h-full absolute object-cover"
-        src={videoSource} // Use the state variable for the source
-      >
-        Your browser does not support the video tag.
-      </video>
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-ink">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={POSTER}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      {src && (
+        <video
+          ref={videoRef}
+          key={src}
+          src={src}
+          poster={POSTER}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          tabIndex={-1}
+          onCanPlay={() => setReadySrc(src)}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+            readySrc === src ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      )}
+
+      {/* Legibility scrim: darkest at the bottom where the copy sits. */}
+      <div
+        aria-hidden="true"
+        className="from-ink/95 via-ink/55 to-ink/75 absolute inset-0 bg-gradient-to-b"
+      />
+      <div
+        aria-hidden="true"
+        className="from-ink absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t to-transparent"
+      />
     </div>
   );
 };

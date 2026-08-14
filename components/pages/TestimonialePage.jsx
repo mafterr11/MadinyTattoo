@@ -1,22 +1,31 @@
-// "use client";
-// Component
-import TestimonialSlider from "../TestimonialSlider";
+import PageHero from "../PageHero";
+import Testimonials from "../Testimonials";
+import ContactCta from "../home/ContactCta";
 
-const TestimonialePage = () => {
-  return (
-    <div className='h-full py-24 xs:py-0 text-center'>
-      <div className='xl:container mx-auto h-screen flex flex-col justify-center xl:gap-y-48'>
-        {/* Title */}
-        <h1 className='mb-8 xl:mb-0'>
-          Părerea <span className='text-accent'>clienților.</span>
-        </h1>
-        {/* Slider */}
-        <div>
-          <TestimonialSlider />
-        </div>
+const TestimonialePage = () => (
+  <>
+    <PageHero
+      eyebrow="Recenzii"
+      title={
+        <>
+          Părerea <span className="text-accent">clienților.</span>
+        </>
+      }
+      image="/backgrounds/bgMada2.webp"
+      breadcrumbs={[
+        { name: "Acasă", path: "/" },
+        { name: "Testimoniale", path: "/testimoniale" },
+      ]}
+    />
+
+    <section className="pb-20 lg:pb-28">
+      <div className="container">
+        <Testimonials />
       </div>
-    </div>
-  );
-};
+    </section>
+
+    <ContactCta />
+  </>
+);
 
 export default TestimonialePage;

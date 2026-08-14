@@ -1,218 +1,45 @@
-const FAQSection = () => {
-  return (
-    <section className='bg-transparent'>
-      <div className='py-8 px-4 mx-auto max-w-[1500px] sm:py-16 lg:px-6'>
-        <h2 className='mb-8 text-4xl tracking-tight font-extrabold text-white'>
+import { FiPlus } from "react-icons/fi";
+
+import Reveal from "./Reveal";
+import { laserFaq } from "../lib/pricing";
+
+/**
+ * Native <details> accordion — zero JavaScript, keyboard-accessible for free,
+ * and the answers stay in the DOM so Google can lift them into a rich result.
+ */
+const FAQSection = () => (
+  <section aria-labelledby="faq-laser" className="section border-t border-white/8">
+    <div className="container max-w-4xl">
+      <Reveal>
+        <span className="eyebrow">Răspunsuri</span>
+        <h2 id="faq-laser" className="mt-5">
           Întrebări frecvente
         </h2>
-        <div className='grid pt-8 text-left border-t border-gray-200 md:gap-16 md:grid-cols-3 '>
-          {/* Prima col */}
-          <div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Ce presupune exact eliminarea tatuajelor cu laser?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Procedura utilizează impulsuri de lumină concentrată pentru a
-                fragmenta particulele de cerneală din piele.
+      </Reveal>
+
+      <div className="mt-10 space-y-3">
+        {laserFaq.map((item, i) => (
+          <Reveal key={item.question} delay={Math.min(i, 5) * 0.05}>
+            <details className="card group overflow-hidden">
+              <summary className="hover:text-accent flex cursor-pointer list-none items-start justify-between gap-4 p-5 text-left font-medium transition-colors duration-300 sm:p-6 [&::-webkit-details-marker]:hidden">
+                <span className="text-[0.95rem] sm:text-base">
+                  {item.question}
+                </span>
+                <FiPlus
+                  aria-hidden="true"
+                  className="text-accent mt-0.5 shrink-0 text-lg transition-transform duration-300 group-open:rotate-45"
+                />
+              </summary>
+
+              <p className="text-muted px-5 pb-5 text-sm leading-relaxed sm:px-6 sm:pb-6">
+                {item.answer}
               </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Care sunt culorile de tatuaj cel mai ușor de eliminat cu
-                laserul?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Tatuajele cu cerneală neagră sau închisă sunt cele mai receptive
-                la tratamentul cu laser.
-              </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Există un număr fix de ședințe pentru eliminarea unui tatuaj?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Numărul de ședințe variază în funcție de dimensiunea, culoarea
-                și vechimea tatuajului.
-              </p>
-            </div>
-          </div>
-          {/* A doua col */}
-          <div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Cât timp trebuie să aștept între ședințele de eliminare cu
-                laser?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                De obicei, ședințele sunt programate la intervale de câteva
-                săptămâni pentru o vindecare eficientă a pielii.
-              </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Există vreo restricție privind activitățile după procedură?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Se recomandă evitarea activităților care ar putea irita zona
-                tratată pentru câteva zile.
-              </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Care este cel mai important lucru în îngrijirea post-tratament?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Protejarea zonei tratate de expunerea excesivă la soare și
-                respectarea instrucțiunilor medicului.
-              </p>
-            </div>
-          </div>
-          {/* A treia col */}
-          <div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Care sunt efectele secundare obișnuite ale procedurii?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Roșeață, umflare și senzație de arsură temporară sunt comune,
-                dar trec în câteva zile.
-              </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Există riscuri pe termen lung asociate cu eliminarea tatuajelor
-                cu laser?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Riscurile pe termen lung sunt rare, dar pot include modificări
-                temporare ale pigmentației pielii sau cicatrici temporare.
-              </p>
-            </div>
-            <div className='mb-10'>
-              <h3 className='flex items-center mb-4 text-lg font-bold text-accent'>
-                <svg
-                  className='shrink-0 mr-2 w-5 h-5 text-white md:hidden'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-                    clipRule='evenodd'
-                  ></path>
-                </svg>
-                Există anumite zone ale corpului mai dificil de tratat pentru
-                eliminarea tatuajelor cu laser?
-              </h3>
-              <p className='text-white md:text-base xl:text-lg'>
-                Unele zone, precum zonele cu piele subțire sau cu circulație
-                redusă, pot fi mai dificile de tratat și pot necesita mai multe
-                sesiuni pentru rezultate optime.
-              </p>
-            </div>
-          </div>
-        </div>
+            </details>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default FAQSection;
