@@ -17,7 +17,13 @@ const ServiciiLaser = () => (
   <>
     <PageHero
       eyebrow="Tarife"
-      title={<span className="text-accent">Laser Removal</span>}
+      // "Laser Removal" reads well but nobody searches it in Romanian —
+      // "ștergere tatuaje cu laser" is the phrase people actually type.
+      title={
+        <>
+          <span className="text-accent">Ștergere tatuaje</span> cu laser
+        </>
+      }
       lead={
         <>
           <span className="text-accent">Redescoperă</span> libertatea pielii

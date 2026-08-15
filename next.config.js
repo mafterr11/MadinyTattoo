@@ -1,3 +1,5 @@
+const galleryManifest = require('./lib/galleryManifest')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -19,6 +21,14 @@ const nextConfig = {
         destination: '/#testimoniale',
         permanent: true,
       },
+      // The portfolio files were renamed from tattoo1..tattoo24 to names that
+      // describe the work. Anything Google Images already indexed under the
+      // old paths follows the redirect instead of turning into 24 dead URLs.
+      ...galleryManifest.map((entry, i) => ({
+        source: `/gallery/tattoo${i + 1}.webp`,
+        destination: `/gallery/${entry.file}`,
+        permanent: true,
+      })),
     ]
   },
   async headers() {
