@@ -383,6 +383,53 @@
     min-height: 7rem;
   }
 
+  .booking-range-shell {
+    position: relative;
+    padding-block: 0.55rem;
+  }
+
+  .booking-range-markers {
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 0.25rem;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .booking-range-marker {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid color-mix(in oklab, var(--color-fg) 25%, transparent);
+    border-radius: 9999px;
+    background-color: var(--color-surface-2);
+    box-shadow: 0 0 0 3px var(--color-surface-2);
+    transition:
+      width 180ms ease,
+      height 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .booking-range-marker-past {
+    border-color: var(--color-accent-deep);
+    background-color: var(--color-accent-deep);
+  }
+
+  .booking-range-marker-active {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-color: var(--color-accent-bright);
+    background-color: var(--color-accent);
+    box-shadow:
+      0 0 0 3px var(--color-surface-2),
+      0 0 18px -3px var(--color-accent);
+  }
+
   .booking-range {
     appearance: none;
     width: 100%;

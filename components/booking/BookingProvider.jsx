@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowLeft, FiArrowRight, FiCheck, FiX } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
-import { business, whatsappUrl } from "../../lib/site";
+import { whatsappUrl } from "../../lib/site";
 
 const BookingContext = createContext(null);
 
@@ -35,10 +35,9 @@ const SIZE_OPTIONS = [
 
 const AVAILABILITY_OPTIONS = [
   { value: "Cât mai curând", detail: "Cât mai repede" },
-  { value: "Săptămâna aceasta", detail: "Zilele acestea" },
   { value: "Săptămâna viitoare", detail: "Planificat" },
   { value: "Luna aceasta", detail: "Relaxat" },
-  { value: "Luna viitoare", detail: "Fără grabă" },
+  { value: "Oricând", detail: "Sunt flexibil(ă)" },
 ];
 
 const TIME_OPTIONS = ["Dimineață", "După-amiază", "Oricând"];
@@ -112,18 +111,7 @@ const StepOne = ({ form, updateForm }) => {
       />
 
       <div>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
-            Zona corpului
-          </p>
-          {form.area && (
-            <span className="border-accent/35 bg-accent/10 text-accent rounded-full border px-3 py-1 text-[0.65rem] font-semibold">
-              {getAreaLabel(form)}
-            </span>
-          )}
-        </div>
-
-        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {BODY_AREAS.map((area) => (
             <BookingOption
               key={area}
@@ -155,12 +143,27 @@ const StepOne = ({ form, updateForm }) => {
           <p className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
             Detalii &amp; mărime
           </p>
-          <span className="border-accent/35 bg-accent/10 text-accent rounded-full border px-3 py-1 text-[0.65rem] font-semibold">
-            {size.label} ({size.detail})
-          </span>
+          <div className="text-right">
+            <p className="text-accent text-xs font-semibold">{size.label}</p>
+            <p className="text-muted mt-0.5 text-[0.65rem]">{size.detail}</p>
+          </div>
         </div>
 
-        <div className="mt-6 px-1">
+        <div className="booking-range-shell mt-5 px-1">
+          <div className="booking-range-markers" aria-hidden="true">
+            {SIZE_OPTIONS.map((option, index) => (
+              <span
+                key={option.label}
+                className={`booking-range-marker ${
+                  index === form.sizeIndex
+                    ? "booking-range-marker-active"
+                    : index < form.sizeIndex
+                      ? "booking-range-marker-past"
+                      : ""
+                }`}
+              />
+            ))}
+          </div>
           <input
             type="range"
             min="0"
@@ -174,7 +177,7 @@ const StepOne = ({ form, updateForm }) => {
             className="booking-range"
             style={{ "--range-progress": `${progress}%` }}
           />
-          <div className="text-muted mt-3 flex justify-between gap-3 text-[0.65rem]">
+          <div className="text-muted mt-4 flex justify-between gap-2 text-[0.6rem] sm:text-[0.65rem]">
             {SIZE_OPTIONS.map((option) => (
               <span key={option.label} className="text-center">
                 {option.label}
@@ -191,16 +194,13 @@ const StepTwo = ({ form, updateForm }) => (
   <div className="space-y-8">
     <StepHeading
       kicker="Pasul 2 din 3"
-      title="Când ți-ar fi cel mai bine?"
+      title="Când ești disponibil?"
       description="Alege perioada care ți se potrivește. Revenim pe WhatsApp pentru o zi și o oră exacte."
     />
 
-    <div>
-      <p className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
-        Când ești disponibil?
-      </p>
+    <div className="-mt-1">
       <div
-        className="mt-4 grid gap-2 sm:grid-cols-2"
+        className="grid gap-2 sm:grid-cols-2"
         role="radiogroup"
         aria-label="Disponibilitate"
       >
@@ -538,15 +538,20 @@ const BookingProvider = ({ children }) => {
 
     const size = SIZE_OPTIONS[form.sizeIndex];
     const message = [
-      `Bună, ${business.name}! Aș dori să fac o programare.`,
+      "Bună! 👋 Vreau să fac o programare pentru un tatuaj.",
       "",
-      `Zona corpului: ${getAreaLabel(form)}`,
-      `Dimensiune estimată: ${size.label} (${size.detail})`,
-      `Disponibilitate: ${form.availability}`,
-      `Preferință orară: ${form.time || "Oricând"}`,
-      `Nume: ${form.name.trim()}`,
-      `Idee: ${form.idea.trim()}`,
-      `Poză de referință: ${form.reference === "Da" ? "Am o poză" : "Nu am o poză"}`,
+      `📍 Zona corpului: ${getAreaLabel(form)}`,
+      `📏 Mărime: ${size.label} (${size.detail})`,
+      "",
+      `📅 Disponibilitate: ${form.availability}`,
+      `🕐 Preferință: ${form.time || "Oricând"}`,
+      "",
+      `👤 Nume: ${form.name.trim()}`,
+      "",
+      "💭 Ideea mea:",
+      form.idea.trim(),
+      "",
+      `📷 ${form.reference === "Da" ? "Am" : "Nu am"} o poză de referință.`,
     ].join("\n");
 
     const target = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
