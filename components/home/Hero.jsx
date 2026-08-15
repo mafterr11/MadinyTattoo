@@ -26,15 +26,19 @@ const Hero = () => (
               keeps the studio's own line, which said nothing to a crawler on
               its own. Sized down a step: two lines at display size overflow
               the hero on short viewports. */}
-          {/* Two tiers inside one heading: the searched phrase carries the
-              display size, the studio's own line supports it a step down.
-              Both at display size wrapped to four lines and swamped the hero. */}
+          {/* Both lines live inside the one heading, so the searched phrase
+              counts for the crawler whichever of the two is set larger — type
+              size is a visual decision here, not an SEO one. The studio's own
+              line leads; the descriptor carries "salon de tatuaje" and the
+              city underneath it. */}
           <h1 className="mt-6">
-            <span className="block text-[length:var(--text-display)] text-balance">
-              <span className="text-gradient-accent">Tatuaje</span> în București
+            <span className="block text-[length:var(--text-display)]">
+              Transformăm ideile
+              <br />
+              în <span className="text-gradient-accent">Realitate</span>
             </span>
-            <span className="text-fg/70 mt-3 block text-[length:var(--text-h3)] font-normal">
-              Transformăm ideile în realitate.
+            <span className="text-accent/85 mt-4 block text-[length:var(--text-h3)] font-normal">
+              Salon de tatuaje în București
             </span>
           </h1>
         </Reveal>
