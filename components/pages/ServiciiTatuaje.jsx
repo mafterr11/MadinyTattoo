@@ -2,9 +2,16 @@ import Link from "next/link";
 
 import PageHero from "../PageHero";
 import PriceCard from "../PriceCard";
+import ServiceIntro from "../ServiceIntro";
+import ProcessSteps from "../ProcessSteps";
+import SectionHeading from "../SectionHeading";
 import AvansTatuaje from "../AvansTatuaje";
 import ContactCta from "../home/ContactCta";
 import { tattooPricing } from "../../lib/pricing";
+import { getService } from "../../lib/servicesDetail";
+import { serviceProcess } from "../../lib/serviceProcess";
+
+const service = getService("tatuaje");
 
 const ServiciiTatuaje = () => (
   <>
@@ -29,8 +36,18 @@ const ServiciiTatuaje = () => (
       ]}
     />
 
-    <section className="pb-16 lg:pb-20">
+    <ServiceIntro intro={service.intro} highlights={service.highlights} />
+
+    <section aria-label="Tarife tatuaje" className="pb-16 lg:pb-20">
       <div className="container">
+        <SectionHeading
+          eyebrow="Tarife"
+          title="Prețuri pe stil și dimensiune"
+          align="left"
+          as="h2"
+          className="mb-10"
+        />
+
         <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {tattooPricing.map((item, i) => (
             <PriceCard
@@ -45,6 +62,8 @@ const ServiciiTatuaje = () => (
         </ul>
       </div>
     </section>
+
+    <ProcessSteps {...serviceProcess.tatuaje} />
 
     <AvansTatuaje />
 

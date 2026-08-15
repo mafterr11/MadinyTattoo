@@ -3,9 +3,15 @@ import Image from "next/image";
 import PageHero from "../PageHero";
 import { blurProps } from "../../lib/blur";
 import Reveal from "../Reveal";
+import ServiceIntro from "../ServiceIntro";
+import ProcessSteps from "../ProcessSteps";
 import FAQSection from "../FAQLaser";
 import ContactCta from "../home/ContactCta";
 import { laserSizePricing } from "../../lib/pricing";
+import { getService } from "../../lib/servicesDetail";
+import { serviceProcess } from "../../lib/serviceProcess";
+
+const service = getService("laser");
 
 const ServiciiLaser = () => (
   <>
@@ -29,7 +35,9 @@ const ServiciiLaser = () => (
       ]}
     />
 
-    <section className="pb-20 lg:pb-24">
+    <ServiceIntro intro={service.intro} highlights={service.highlights} />
+
+    <section aria-label="Tarife laser" className="pb-20 lg:pb-24">
       <div className="container grid gap-6 lg:grid-cols-5">
         {/* Visual + headline price */}
         <Reveal className="lg:col-span-2">
@@ -83,6 +91,8 @@ const ServiciiLaser = () => (
         </Reveal>
       </div>
     </section>
+
+    <ProcessSteps {...serviceProcess.laser} />
 
     <FAQSection />
 
