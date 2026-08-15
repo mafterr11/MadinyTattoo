@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowLeft, FiArrowRight, FiCheck, FiX } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
-import { whatsappUrl } from "../../lib/site";
+import { whatsappSendUrl } from "../../lib/site";
 
 const BookingContext = createContext(null);
 
@@ -572,8 +572,9 @@ const BookingProvider = ({ children }) => {
       `${WHATSAPP_EMOJI.reference} ${form.reference === "Da" ? "Am" : "Nu am"} o poză de referință.`,
     ].join("\n");
 
-    const target = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
-    window.open(target, "_blank", "noopener,noreferrer");
+    const target = new URL(whatsappSendUrl);
+    target.searchParams.set("text", message);
+    window.open(target.toString(), "_blank", "noopener,noreferrer");
     closeBooking();
   };
 
