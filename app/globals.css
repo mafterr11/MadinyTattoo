@@ -349,6 +349,58 @@
     font-weight: 600;
   }
 
+  /* --- Vertically scrolling review wall ---------------------------------
+     The track holds the list twice; translating it by exactly half its height
+     puts the copy where the original started, so the loop has no seam. Items
+     carry margin-bottom instead of the track using `gap`, which keeps every
+     block the same height and makes that -50% exact. */
+  .review-marquee {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 7%,
+      #000 93%,
+      transparent
+    );
+  }
+
+  .review-marquee-track {
+    animation: review-scroll var(--marquee-duration, 60s) linear infinite;
+    will-change: transform;
+  }
+
+  /* Stop while someone is reading, or tabbing through the links inside. */
+  .review-marquee:hover .review-marquee-track,
+  .review-marquee:focus-within .review-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes review-scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  /* The global reduced-motion rule collapses every animation to 0.01ms, which
+     would snap this track straight to its end position. Cancel it outright and
+     hand the reader a normal scrollbar instead. */
+  @media (prefers-reduced-motion: reduce) {
+    .review-marquee {
+      overflow-y: auto;
+      mask-image: none;
+    }
+
+    .review-marquee-track {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+
   /* --- Decorative hairline --- */
   .hairline {
     height: 1px;

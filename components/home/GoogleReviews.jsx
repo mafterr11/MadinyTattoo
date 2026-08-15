@@ -1,13 +1,15 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { FaQuoteLeft } from "react-icons/fa6";
+import { FaQuoteLeft, FaStar } from "react-icons/fa6";
 
 import Reveal from "../Reveal";
-import StarRating from "../StarRating";
 import {
   googleProfileUrl,
   googleRating,
   sortedReviews,
 } from "../../lib/reviews";
+
+/** Seconds each review spends on screen; total loop scales with the count. */
+const SECONDS_PER_REVIEW = 9;
 
 /** Google's own mark, so the badge reads as a Google score, not ours. */
 const GoogleG = ({ className }) => (
@@ -32,22 +34,15 @@ const GoogleG = ({ className }) => (
 );
 
 const ReviewCard = ({ review }) => (
-  <figure className="card card-hover flex h-full flex-col p-6 sm:p-7">
-    <div className="flex items-start justify-between gap-4">
-      <StarRating
-        value={review.rating}
-        size="text-base"
-        label={`${review.rating} din 5 stele`}
-      />
-      <FaQuoteLeft className="text-accent/25 text-xl" aria-hidden="true" />
-    </div>
+  <figure className="card flex flex-col p-6 sm:p-7">
+    <FaQuoteLeft className="text-accent/30 text-xl" aria-hidden="true" />
 
     {/* pre-line keeps the paragraph breaks people actually wrote on Google. */}
-    <blockquote className="text-fg/85 mt-4 flex-1 text-[0.95rem] leading-relaxed whitespace-pre-line">
+    <blockquote className="text-fg/85 mt-4 text-[0.95rem] leading-relaxed whitespace-pre-line">
       {review.text}
     </blockquote>
 
-    <figcaption className="mt-6 flex items-baseline justify-between gap-3 border-t border-white/8 pt-4">
+    <figcaption className="mt-5 flex items-baseline justify-between gap-3 border-t border-white/8 pt-4">
       <span className="font-display text-base">{review.author}</span>
       {review.date && (
         <span className="text-muted text-[0.7rem] tracking-[0.12em] uppercase">
@@ -60,13 +55,28 @@ const ReviewCard = ({ review }) => (
 
 /**
  * Google reviews block: the score badge anchors the left column while the
- * reviews themselves run down the right, highest rating first.
+ * reviews scroll past on the right, one per row, highest rating first.
  *
- * Renders nothing unless real reviews exist — see lib/reviews.js.
+ * The list is rendered twice — the second copy is hidden from assistive tech
+ * and exists only so the loop can restart without a visible seam.
+ *
+ * Renders nothing unless real reviews exist. See lib/reviews.js.
  */
 const GoogleReviews = () => {
   const items = sortedReviews();
   if (items.length === 0) return null;
+
+  const duration = `${items.length * SECONDS_PER_REVIEW}s`;
+
+  const column = (hidden) => (
+    <ul aria-hidden={hidden || undefined}>
+      {items.map((review, i) => (
+        <li key={`${review.author}-${i}`} className="mb-5">
+          <ReviewCard review={review} />
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
@@ -84,35 +94,18 @@ const GoogleReviews = () => {
             <div className="card mt-8 inline-flex items-center gap-4 p-5">
               <GoogleG className="h-8 w-8 shrink-0" />
 
-              {googleRating ? (
-                <div>
-                  <div className="flex items-center gap-2.5">
-                    <span className="font-display text-accent text-3xl leading-none tabular-nums">
-                      {googleRating.score.toLocaleString("ro-RO", {
-                        minimumFractionDigits: 1,
-                        maximumFractionDigits: 1,
-                      })}
-                    </span>
-                    <StarRating
-                      value={googleRating.score}
-                      size="text-lg"
-                      label={`${googleRating.score} din 5 stele pe Google`}
-                    />
-                  </div>
-                  <p className="text-muted mt-1.5 text-xs tracking-[0.12em] uppercase">
-                    {googleRating.count} recenzii pe Google
-                  </p>
-                </div>
-              ) : (
-                /* No headline score confirmed yet — say where the reviews come
-                   from without implying an average we have not verified. */
-                <p className="text-muted text-xs tracking-[0.14em] uppercase">
-                  Recenzii de pe
-                  <span className="text-fg block text-sm tracking-[0.1em]">
-                    Google
-                  </span>
-                </p>
-              )}
+              <div className="flex items-center gap-2">
+                <span className="font-display text-accent text-3xl leading-none tabular-nums">
+                  {googleRating.score}
+                </span>
+                <FaStar
+                  className="neon-icon text-accent text-xl"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">
+                  {googleRating.score} din 5 stele pe Google
+                </span>
+              </div>
             </div>
           </Reveal>
 
@@ -132,19 +125,18 @@ const GoogleReviews = () => {
         </div>
       </div>
 
-      {/* Reviews */}
-      <ul className="grid gap-5 sm:grid-cols-2 lg:col-span-8">
-        {items.map((review, i) => (
-          <Reveal
-            as="li"
-            key={`${review.author}-${i}`}
-            delay={Math.min(i, 4) * 0.08}
-            className="h-full"
+      {/* Scrolling wall */}
+      <Reveal delay={0.12} className="lg:col-span-8">
+        <div className="review-marquee h-[30rem] lg:h-[38rem]">
+          <div
+            className="review-marquee-track"
+            style={{ "--marquee-duration": duration }}
           >
-            <ReviewCard review={review} />
-          </Reveal>
-        ))}
-      </ul>
+            {column(false)}
+            {column(true)}
+          </div>
+        </div>
+      </Reveal>
     </div>
   );
 };

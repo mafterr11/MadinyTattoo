@@ -41,7 +41,9 @@ const aggregateSchema = googleRating
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: googleRating.score,
-          reviewCount: googleRating.count,
+          // Falls back to what this page actually shows, so the count is
+          // never larger than the reviews backing it up.
+          reviewCount: googleRating.count ?? reviews.length,
           bestRating: 5,
           worstRating: 1,
         },
