@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
+
+import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 import ServicesGrid from "../ServicesGrid";
 
@@ -17,6 +21,15 @@ const ServicesSection = () => (
       <div className="mt-14">
         <ServicesGrid />
       </div>
+
+      <Reveal delay={0.1}>
+        <div className="mt-12 flex justify-center">
+          <Link href="/servicii" className="btn btn-ghost">
+            Vezi toate serviciile
+            <FiArrowUpRight className="text-base" aria-hidden="true" />
+          </Link>
+        </div>
+      </Reveal>
     </div>
   </section>
 );
