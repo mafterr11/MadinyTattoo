@@ -21,10 +21,21 @@ const Hero = () => (
         </Reveal>
 
         <Reveal delay={0.1}>
-          <h1 className="mt-6 text-[length:var(--text-display)]">
-            Transformăm Ideile
-            <br />
-            In <span className="text-gradient-accent">Realitate</span>
+          {/* The first line carries the words people actually search — the
+              homepage is the page competing for "tatuaje București". The second
+              keeps the studio's own line, which said nothing to a crawler on
+              its own. Sized down a step: two lines at display size overflow
+              the hero on short viewports. */}
+          {/* Two tiers inside one heading: the searched phrase carries the
+              display size, the studio's own line supports it a step down.
+              Both at display size wrapped to four lines and swamped the hero. */}
+          <h1 className="mt-6">
+            <span className="block text-[length:var(--text-display)] text-balance">
+              <span className="text-gradient-accent">Tatuaje</span> în București
+            </span>
+            <span className="text-fg/70 mt-3 block text-[length:var(--text-h3)] font-normal">
+              Transformăm ideile în realitate.
+            </span>
           </h1>
         </Reveal>
 
