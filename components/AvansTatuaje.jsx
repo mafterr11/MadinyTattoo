@@ -1,6 +1,7 @@
 import { FiAlertTriangle } from "react-icons/fi";
 
 import Reveal from "./Reveal";
+import { deposit } from "../lib/deposit";
 
 const AvansTatuaje = () => (
   <section
@@ -10,7 +11,7 @@ const AvansTatuaje = () => (
     <div className="container max-w-4xl">
       <Reveal>
         <span className="eyebrow">Programări</span>
-        <h2 id="politica-avans" className="mt-5">
+        <h2 id={deposit.anchor} className="mt-5">
           Politica de avans pentru programări
         </h2>
       </Reveal>
@@ -19,7 +20,9 @@ const AvansTatuaje = () => (
         <p className="lead mt-6">
           Pentru a confirma o programare la salonul nostru de tatuaj, este
           necesar un avans cuprins între{" "}
-          <strong className="text-fg font-semibold">100 și 400 lei</strong>, în
+          <strong className="text-fg font-semibold">
+            {deposit.min} și {deposit.max} lei
+          </strong>, în
           funcție de costul total al tatuajului.
         </p>
       </Reveal>
@@ -41,7 +44,9 @@ const AvansTatuaje = () => (
             <li className="before:bg-accent relative pl-5 before:absolute before:top-2.5 before:left-0 before:h-1.5 before:w-1.5 before:rounded-full">
               Clientul nu anunță în timp util dorința de a reprograma (cu cel
               puțin{" "}
-              <strong className="text-fg font-semibold">48 de ore</strong>{" "}
+              <strong className="text-fg font-semibold">
+                {deposit.noticeHours} de ore
+              </strong>{" "}
               înainte de ora stabilită).
             </li>
           </ul>
@@ -52,7 +57,10 @@ const AvansTatuaje = () => (
         <p className="text-muted mt-8 leading-relaxed">
           Această politică ne ajută să respectăm timpul fiecărui client și să
           menținem un program eficient. Dacă ne anunțați cu cel puțin{" "}
-          <strong className="text-fg font-semibold">48 de ore</strong> înainte,
+          <strong className="text-fg font-semibold">
+            {deposit.noticeHours} de ore
+          </strong>{" "}
+          înainte,
           vom face tot posibilul să găsim o nouă dată convenabilă pentru
           reprogramare, fără a pierde avansul achitat.
         </p>

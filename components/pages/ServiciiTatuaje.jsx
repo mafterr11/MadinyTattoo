@@ -63,9 +63,11 @@ const ServiciiTatuaje = () => (
       </div>
     </section>
 
-    <ProcessSteps {...serviceProcess.tatuaje} />
-
+    {/* Deposit policy sits directly under the prices: it is the condition
+        attached to the figures above, so it belongs next to them. */}
     <AvansTatuaje />
+
+    <ProcessSteps {...serviceProcess.tatuaje} />
 
     <ContactCta />
   </>

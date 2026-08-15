@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiCheck } from "react-icons/fi";
+import { FiAlertTriangle, FiArrowUpRight } from "react-icons/fi";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -88,22 +88,8 @@ const ServicePanel = ({ service }) => (
         <p className="text-muted mt-5 leading-relaxed">{service.intro}</p>
       </motion.div>
 
-      <motion.ul variants={itemVariants} className="grid gap-3 sm:grid-cols-2">
-        {service.highlights.map((highlight) => (
-          <li
-            key={highlight}
-            className="group border-white/6 bg-surface/50 hover:border-accent/30 flex items-start gap-3 rounded-xl border p-4 transition-colors duration-300"
-          >
-            <FiCheck
-              className="neon-icon text-accent mt-0.5 shrink-0"
-              aria-hidden="true"
-            />
-            <span className="text-muted text-sm leading-relaxed">
-              {highlight}
-            </span>
-          </li>
-        ))}
-      </motion.ul>
+      {/* The bullet list of highlights lives only on the dedicated page now —
+          the panel is the summary, not a second copy of it. */}
 
       <motion.div variants={itemVariants} className="card p-6 sm:p-7">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -130,6 +116,46 @@ const ServicePanel = ({ service }) => (
           </p>
         )}
       </motion.div>
+
+      {/* Conditions attached to the figures above, so they sit right below
+          them rather than waiting on the dedicated page. */}
+      {service.notice && (
+        <motion.aside
+          variants={itemVariants}
+          className="card border-accent/25 bg-accent/6 p-6 sm:p-7"
+        >
+          <h3 className="flex items-center gap-2.5 text-base">
+            <FiAlertTriangle
+              className="neon-icon text-accent shrink-0"
+              aria-hidden="true"
+            />
+            {service.notice.title}
+          </h3>
+
+          <p className="text-muted mt-3 text-sm leading-relaxed">
+            {service.notice.body}
+          </p>
+
+          <ul className="mt-4 space-y-2">
+            {service.notice.items.map((item) => (
+              <li
+                key={item}
+                className="text-muted before:bg-accent relative pl-5 text-sm leading-relaxed before:absolute before:top-2.5 before:left-0 before:h-1.5 before:w-1.5 before:rounded-full"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href={service.notice.linkHref}
+            className="text-accent link-underline mt-5 inline-flex items-center gap-2 text-[0.7rem] tracking-[0.16em] uppercase"
+          >
+            {service.notice.linkLabel}
+            <FiArrowUpRight className="text-sm" aria-hidden="true" />
+          </Link>
+        </motion.aside>
+      )}
 
       <motion.div
         variants={itemVariants}
