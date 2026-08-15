@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
 import Reveal from "./Reveal";
+import { blurProps } from "../lib/blur";
 
 /**
  * Shared masthead for inner pages. The themed background image now lives in
@@ -19,6 +20,7 @@ const PageHero = ({ eyebrow, title, lead, image, breadcrumbs = [] }) => (
           fill
           priority
           sizes="100vw"
+          {...blurProps(image)}
           className="object-cover"
         />
         <div className="from-ink via-ink/85 to-ink/70 absolute inset-0 bg-gradient-to-b" />

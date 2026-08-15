@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import PageHero from "../PageHero";
+import { blurProps } from "../../lib/blur";
 import Reveal from "../Reveal";
 import FAQSection from "../FAQLaser";
 import ContactCta from "../home/ContactCta";
@@ -39,6 +40,7 @@ const ServiciiLaser = () => (
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
+              {...blurProps("/gallery/laserService/laserRemoval.webp")}
               className="object-cover"
             />
             <div

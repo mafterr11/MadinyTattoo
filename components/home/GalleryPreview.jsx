@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
+import BlurImage from "../BlurImage";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 import { galleryImages } from "../../lib/gallery";
@@ -9,7 +9,10 @@ import { galleryImages } from "../../lib/gallery";
 const preview = galleryImages.slice(0, 8);
 
 const GalleryPreview = () => (
-  <section id="lucrari" className="section bg-surface/40 border-y border-white/8">
+  <section
+    id="lucrari"
+    className="section bg-surface/40 border-y border-white/8"
+  >
     <div className="container">
       <SectionHeading
         eyebrow="Portofoliu"
@@ -29,11 +32,11 @@ const GalleryPreview = () => (
               aria-label="Vezi portofoliul complet de tatuaje"
               className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 overflow-hidden rounded-xl border transition-colors duration-500"
             >
-              <Image
+              <BlurImage
                 src={image.src}
                 alt={image.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
+                blurDataURL={image.blurDataURL}
+                sizes="(max-width: 768px) 48vw, 300px"
                 loading="lazy"
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
               />

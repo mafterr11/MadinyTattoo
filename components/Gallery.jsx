@@ -5,12 +5,62 @@ import Image from "next/image";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 import { HiOutlineMagnifyingGlassPlus } from "react-icons/hi2";
 
+import BlurImage from "./BlurImage";
+
+/**
+ * The widest a thumbnail ever gets: the container caps at 80rem with 2rem of
+ * padding, so four columns and three 1rem gaps leave 292px. Describing that
+ * as `25vw` made a 1920px viewport ask for a 480px crop of a 292px cell.
+ */
+const GRID_SIZES = "(max-width: 768px) 48vw, (max-width: 1280px) 31vw, 300px";
+
+/** The portfolio files are 1080px wide; asking for more only upscales. */
+const FULL_WIDTH = 1080;
+const FULL_HEIGHT = 1350;
+const LIGHTBOX_SIZES = "(max-width: 1024px) 92vw, 900px";
+
+/**
+ * The full-size view, fading up from the same blur the thumbnail used so the
+ * frame is never blank while the larger crop is on the wire. Mounted with a
+ * `key` on the src, which resets the fade for each new image.
+ */
+const LightboxImage = ({ image }) => {
+  const [loaded, setLoaded] = useState(false);
+  const ref = useCallback((node) => {
+    if (node?.complete) setLoaded(true);
+  }, []);
+
+  return (
+    <span className="relative flex max-h-[82vh] items-center justify-center">
+      {image.blurDataURL && !loaded && (
+        <span
+          aria-hidden="true"
+          style={{ backgroundImage: `url(${image.blurDataURL})` }}
+          className="absolute inset-0 rounded-lg bg-cover bg-center blur-2xl"
+        />
+      )}
+      <Image
+        ref={ref}
+        onLoad={() => setLoaded(true)}
+        src={image.src}
+        alt={image.alt}
+        width={FULL_WIDTH}
+        height={FULL_HEIGHT}
+        sizes={LIGHTBOX_SIZES}
+        className={`h-auto max-h-[82vh] w-auto rounded-lg object-contain transition-opacity duration-500 ease-out ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </span>
+  );
+};
+
 /**
  * Portfolio grid with a real lightbox: arrow keys, Escape, swipe, focus
  * restore and a live counter. The previous gallery was a scroll container
  * nested inside the page scroll, with no way to enlarge an image.
  */
-const Gallery = ({ images, priorityCount = 6 }) => {
+const Gallery = ({ images, priorityCount = 4 }) => {
   const [index, setIndex] = useState(null);
   const openerRef = useRef(null);
   const touchStartX = useRef(null);
@@ -70,11 +120,11 @@ const Gallery = ({ images, priorityCount = 6 }) => {
               aria-label={`Mărește imaginea: ${image.alt}`}
               className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 w-full overflow-hidden rounded-xl border transition-colors duration-500"
             >
-              <Image
+              <BlurImage
                 src={image.src}
                 alt={image.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                blurDataURL={image.blurDataURL}
+                sizes={GRID_SIZES}
                 priority={i < priorityCount}
                 loading={i < priorityCount ? undefined : "lazy"}
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
@@ -144,18 +194,39 @@ const Gallery = ({ images, priorityCount = 6 }) => {
             onClick={(e) => e.stopPropagation()}
             className="relative flex h-full max-h-[82vh] w-full max-w-4xl flex-col items-center justify-center"
           >
-            <Image
-              src={images[index].src}
-              alt={images[index].alt}
-              width={1200}
-              height={1500}
-              sizes="(max-width: 1024px) 92vw, 900px"
-              className="h-auto max-h-[82vh] w-auto rounded-lg object-contain"
-            />
+            <LightboxImage key={images[index].src} image={images[index]} />
             <figcaption className="text-muted mt-4 text-xs tracking-[0.18em] uppercase">
               {index + 1} / {images.length}
             </figcaption>
           </figure>
+
+          {/*
+            Warms the neighbours at the exact width the lightbox will request,
+            so an arrow press swaps instantly instead of starting a fresh
+            round trip. Same `sizes` as the visible image, which is what the
+            browser uses to pick a srcset candidate — the 1px box does not
+            affect that choice.
+          */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute opacity-0"
+          >
+            {[-1, 1].map((delta) => {
+              const neighbour =
+                images[(index + delta + images.length) % images.length];
+              return (
+                <Image
+                  key={`${delta}-${neighbour.src}`}
+                  src={neighbour.src}
+                  alt=""
+                  width={FULL_WIDTH}
+                  height={FULL_HEIGHT}
+                  sizes={LIGHTBOX_SIZES}
+                  className="h-px w-px"
+                />
+              );
+            })}
+          </span>
         </div>
       )}
     </>

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "images": "node scripts/optimize-images.mjs && node scripts/generate-blur.mjs",
     "build": "next build && npm run sitemap",
     "start": "next start",
     "lint": "eslint app components lib",

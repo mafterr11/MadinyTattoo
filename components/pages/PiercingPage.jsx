@@ -74,7 +74,7 @@ const PiercingPage = () => (
           asigura o experiență sigură și confortabilă.
         </>
       }
-      image="/backgrounds/piercing.jpg"
+      image="/backgrounds/piercing.webp"
       breadcrumbs={[
         { name: "Acasă", path: "/" },
         { name: "Servicii", path: "/servicii" },

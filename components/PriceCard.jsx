@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Reveal from "./Reveal";
+import { blurProps } from "../lib/blur";
 
 /**
  * Pricing tile. The image is a backdrop with a real gradient scrim rather than
@@ -14,7 +15,8 @@ const PriceCard = ({ title, image, tiers, delay = 0, alt }) => (
         src={image}
         alt={alt ?? `${title} — Madiny Tattoo București`}
         fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+        {...blurProps(image)}
         className="object-cover"
       />
 

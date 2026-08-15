@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import Reveal from "./Reveal";
+import { blurProps } from "../lib/blur";
 import { services } from "../lib/site";
 
 /**
@@ -22,7 +23,8 @@ const ServicesGrid = () => (
               src={service.image}
               alt={`Serviciu ${service.title} la Madiny Tattoo București`}
               fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+              {...blurProps(service.image)}
               className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
             />
             <div
