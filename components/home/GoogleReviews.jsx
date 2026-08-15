@@ -94,17 +94,25 @@ const GoogleReviews = () => {
             <div className="card mt-8 inline-flex items-center gap-4 p-5">
               <GoogleG className="h-8 w-8 shrink-0" />
 
-              <div className="flex items-center gap-2">
-                <span className="font-display text-accent text-3xl leading-none tabular-nums">
-                  {googleRating.score}
-                </span>
-                <FaStar
-                  className="neon-icon text-accent text-xl"
-                  aria-hidden="true"
-                />
-                <span className="sr-only">
-                  {googleRating.score} din 5 stele pe Google
-                </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-display text-accent text-3xl leading-none tabular-nums">
+                    {googleRating.score}
+                  </span>
+                  <FaStar
+                    className="neon-icon text-accent text-xl"
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">
+                    {googleRating.score} din 5 stele pe Google
+                  </span>
+                </div>
+
+                {googleRating.count && (
+                  <p className="text-muted mt-1.5 text-[0.7rem] tracking-[0.14em] uppercase">
+                    {googleRating.count} recenzii
+                  </p>
+                )}
               </div>
             </div>
           </Reveal>
