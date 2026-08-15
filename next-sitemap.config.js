@@ -14,7 +14,9 @@ const priorities = {
 }
 
 module.exports = {
-  siteUrl: 'https://www.madinytattoo.ro',
+  // Shared with lib/site.js so the sitemap can never list a different origin
+  // than the canonical tags declare.
+  siteUrl: require('./lib/siteUrl'),
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   // app/icon.svg and app/apple-icon.png are route handlers, so next-sitemap
