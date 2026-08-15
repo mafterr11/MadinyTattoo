@@ -1,6 +1,19 @@
 import PageHero from "../PageHero";
-import ServicesGrid from "../ServicesGrid";
+import Safety from "../Safety";
+import ServicesExplorer from "../servicii/ServicesExplorer";
 import ContactCta from "../home/ContactCta";
+import { blurProps } from "../../lib/blur";
+import { serviceDetails } from "../../lib/servicesDetail";
+
+/**
+ * blurProps stays on the server side of the client boundary: resolving the
+ * placeholders here ships four strings to the browser instead of the whole
+ * blur map.
+ */
+const services = serviceDetails.map((service) => ({
+  ...service,
+  imageProps: blurProps(service.image),
+}));
 
 const ServiciiPage = () => (
   <>
@@ -11,7 +24,7 @@ const ServiciiPage = () => (
           <span className="text-accent">Serviciile</span> Noastre.
         </>
       }
-      lead="Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii."
+      lead="Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii. Alege un serviciu și vezi tot ce presupune — descriere, ce include și tarife."
       image="/backgrounds/servicii.webp"
       breadcrumbs={[
         { name: "Acasă", path: "/" },
@@ -19,11 +32,13 @@ const ServiciiPage = () => (
       ]}
     />
 
-    <section className="pb-20 lg:pb-28">
+    <section aria-label="Detalii servicii" className="pb-20 lg:pb-28">
       <div className="container">
-        <ServicesGrid />
+        <ServicesExplorer services={services} />
       </div>
     </section>
+
+    <Safety />
 
     <ContactCta />
   </>

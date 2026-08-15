@@ -1,5 +1,5 @@
 import Hero from "../home/Hero";
-import Stats from "../home/Stats";
+import Safety from "../Safety";
 import ServicesSection from "../home/ServicesSection";
 import GalleryPreview from "../home/GalleryPreview";
 import TestimonialsSection from "../home/TestimonialsSection";
@@ -8,7 +8,7 @@ import ContactCta from "../home/ContactCta";
 const HomePage = () => (
   <>
     <Hero />
-    <Stats />
+    <Safety />
     <ServicesSection />
     <GalleryPreview />
     <TestimonialsSection />
