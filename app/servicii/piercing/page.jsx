@@ -7,7 +7,7 @@ const description =
   "Piercing profesional la Madiny Tattoo București: echipament steril, bijuterii din titan pur și consiliere personalizată. Costul unui piercing este de 200 lei și include bijuteria sterilă și sfaturile de îngrijire post-procedură.";
 
 export const metadata = constructMetadata({
-  title: "Piercing - MadinyTattoo",
+  title: "Piercing Profesional București, Titan Pur | Madiny",
   description,
   keywords:
     "piercing bucuresti, piercing profesional, salon piercing, piercing steril, bijuterii titan pur, piercing ureche, piercing nas, piercing pipera, piercing sigur, pret piercing",

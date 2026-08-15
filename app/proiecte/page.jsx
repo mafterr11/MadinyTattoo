@@ -6,7 +6,7 @@ import { galleryImages } from "../../lib/gallery";
 import { SITE_URL } from "../../lib/site";
 
 export const metadata = constructMetadata({
-  title: "Proiecte finalizate - MadinyTattoo",
+  title: "Portofoliu Tatuaje — Lucrări Madiny Tattoo București",
   description:
     "Exploră galeria noastră variată de tatuaje finalizate la Madiny Tattoo. Descoperă arta transformând ideile în realitate și vezi designurile finalizate ce reflectă stiluri diverse și creație autentică.",
   keywords:

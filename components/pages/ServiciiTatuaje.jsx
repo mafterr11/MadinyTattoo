@@ -17,7 +17,11 @@ const ServiciiTatuaje = () => (
   <>
     <PageHero
       eyebrow="Tarife"
-      title={<span className="text-accent">Tatuaje</span>}
+      title={
+        <>
+          <span className="text-accent">Tatuaje</span> în București
+        </>
+      }
       lead={
         <>
           <span className="text-accent">Detalii</span> suplimentare și tarife

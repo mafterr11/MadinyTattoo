@@ -8,6 +8,19 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  async redirects() {
+    return [
+      {
+        // /testimoniale was a live, indexed page before the reviews moved onto
+        // the homepage. Left as a 404 it drops out of the index and takes any
+        // accumulated link equity with it; a 301 passes that to the section
+        // that replaced it.
+        source: '/testimoniale',
+        destination: '/#testimoniale',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

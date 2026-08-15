@@ -17,6 +17,10 @@ module.exports = {
   siteUrl: 'https://www.madinytattoo.ro',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
+  // app/icon.svg and app/apple-icon.png are route handlers, so next-sitemap
+  // sees them as pages. They are assets, not content, and listing them tells
+  // Google to crawl two URLs that can never rank.
+  exclude: ['/icon.svg', '/apple-icon.png'],
   changefreq: 'weekly',
   priority: 0.7,
   autoLastmod: true,

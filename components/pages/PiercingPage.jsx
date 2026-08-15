@@ -66,7 +66,11 @@ const PiercingPage = () => (
   <>
     <PageHero
       eyebrow="Serviciu"
-      title={<span className="text-accent">Piercing</span>}
+      title={
+        <>
+          <span className="text-accent">Piercing</span> în București
+        </>
+      }
       lead={
         <>
           Realizate cu <span className="text-accent">profesionalism</span> și{" "}

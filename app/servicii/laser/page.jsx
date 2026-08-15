@@ -8,7 +8,7 @@ const description =
   "Experimentează soluțiile noastre eficiente pentru eliminarea tatuajelor cu laser la Madiny Tattoo. Oferim tratamente profesionale și tehnologii moderne pentru a transforma sau elimina tatuajele dorite.";
 
 export const metadata = constructMetadata({
-  title: "Laser removal - MadinyTattoo",
+  title: "Ștergere Tatuaje cu Laser București | Madiny Tattoo",
   description,
   keywords:
     "eliminare tatuaje cu laser, laser removal, proceduri eliminare tatuaje, tratamente laser tatuaje, îndepărtare tatuaje cu laser, eliminare tatuaje nevoie de corectare, laser tatuaje profesionale, terapie laser tatuaje",

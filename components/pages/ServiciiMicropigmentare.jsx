@@ -17,7 +17,11 @@ const ServiciiMicropigmentare = () => (
   <>
     <PageHero
       eyebrow="Serviciu"
-      title={<span className="text-accent">Micropigmentare</span>}
+      title={
+        <>
+          <span className="text-accent">Micropigmentare</span> în București
+        </>
+      }
       lead={
         <>
           <span className="text-accent">Definește-ți</span> stilul cu precizie:{" "}

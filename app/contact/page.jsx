@@ -5,7 +5,7 @@ import { breadcrumbSchema } from "../../lib/schema";
 import { SITE_URL } from "../../lib/site";
 
 export const metadata = constructMetadata({
-  title: "Contact - MadinyTattoo",
+  title: "Contact și Programări — Madiny Tattoo, Șos. Pipera",
   description:
     "Contactează-ne pentru programări și informații suplimentare la Madiny Tattoo, situat la Șoseaua Pipera 61, Complexul Cloud 9, București, 077190. Te așteptăm în apropierea sediului Direcției Regim Permise de Conducere și Înmatriculare a Vehiculelor.",
   keywords:

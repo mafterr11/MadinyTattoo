@@ -6,7 +6,7 @@ import { SITE_URL, business } from "../lib/site";
 import { googleRating, reviews } from "../lib/reviews";
 
 export const metadata = constructMetadata({
-  title: "Madiny Tattoo — Salon de tatuaje în București | Tatuaje, Micropigmentare, Laser",
+  title: "Madiny Tattoo — Salon de Tatuaje în București, Pipera",
   path: "/",
 });
 
