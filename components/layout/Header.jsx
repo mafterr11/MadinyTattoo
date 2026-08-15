@@ -8,7 +8,14 @@ import { HiBars2, HiXMark } from "react-icons/hi2";
 import { RiInstagramLine, RiTiktokLine, RiWhatsappLine } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
 
-import { navLinks, socials, business, telUrl, whatsappUrl } from "../../lib/site";
+import {
+  navLinks,
+  socials,
+  business,
+  telUrl,
+  whatsappUrl,
+} from "../../lib/site";
+import { BookingTrigger } from "../booking/BookingProvider";
 
 const socialIcons = {
   instagram: RiInstagramLine,
@@ -23,7 +30,9 @@ const Logo = ({ onClick }) => {
     // Already home: scroll back to the top instead of a no-op navigation.
     if (onHome) {
       event.preventDefault();
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
       window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
     }
     onClick?.();
@@ -86,7 +95,7 @@ const Header = () => {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-white/8 bg-ink/85 backdrop-blur-xl"
+            ? "bg-ink/85 border-b border-white/8 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -133,9 +142,9 @@ const Header = () => {
               })}
             </div>
 
-            <Link href="/contact" className="btn btn-primary btn-sm hidden sm:inline-flex">
+            <BookingTrigger className="btn btn-primary btn-sm hidden sm:inline-flex">
               Programează-te
-            </Link>
+            </BookingTrigger>
 
             <button
               type="button"
@@ -201,7 +210,12 @@ const Header = () => {
               </ul>
 
               <div className="mt-10 flex flex-col gap-3">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
                   <RiWhatsappLine className="text-lg" aria-hidden="true" />
                   Scrie-ne pe WhatsApp
                 </a>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiAlertTriangle, FiArrowUpRight } from "react-icons/fi";
+import { BookingTrigger } from "../booking/BookingProvider";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -31,7 +32,9 @@ const PriceGroup = ({ group, alone }) => {
       <p className="neon text-xs font-semibold tracking-[0.18em] uppercase">
         {group.title}
       </p>
-      <dl className={`mt-3 ${split ? "sm:grid sm:grid-cols-2 sm:gap-x-10" : ""}`}>
+      <dl
+        className={`mt-3 ${split ? "sm:grid sm:grid-cols-2 sm:gap-x-10" : ""}`}
+      >
         {group.tiers.map((tier) => (
           <div
             key={tier.label}
@@ -161,9 +164,9 @@ const ServicePanel = ({ service }) => (
         variants={itemVariants}
         className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
       >
-        <Link href="/contact" className="btn btn-primary btn-block">
+        <BookingTrigger className="btn btn-primary btn-block">
           Programează-te
-        </Link>
+        </BookingTrigger>
         <Link href={service.path} className="btn btn-ghost btn-block">
           {service.ctaLabel}
           <FiArrowUpRight className="text-base" aria-hidden="true" />

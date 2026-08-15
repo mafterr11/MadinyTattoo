@@ -3,6 +3,7 @@ import { FiCheck } from "react-icons/fi";
 
 import PageHero from "../PageHero";
 import Reveal from "../Reveal";
+import { BookingTrigger } from "../booking/BookingProvider";
 import ContactCta from "../home/ContactCta";
 
 const reasons = [
@@ -166,9 +167,9 @@ const PiercingPage = () => (
 
         <Reveal>
           <div className="flex justify-center">
-            <Link href="/contact" className="btn btn-primary">
+            <BookingTrigger className="btn btn-primary">
               Programează-te acum!
-            </Link>
+            </BookingTrigger>
           </div>
         </Reveal>
       </div>

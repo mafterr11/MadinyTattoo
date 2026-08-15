@@ -6,6 +6,7 @@ import Footer from "../components/layout/Footer";
 import FloatingContact from "../components/FloatingContact";
 import PageTransition from "../components/PageTransition";
 import JsonLd from "../components/JsonLd";
+import BookingProvider from "../components/booking/BookingProvider";
 import { constructMetadata } from "../lib/utils";
 import { localBusinessSchema, websiteSchema } from "../lib/schema";
 
@@ -36,17 +37,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ro" className={`${poppins.variable} ${playfair.variable}`}>
       <body>
-        <JsonLd schema={[localBusinessSchema, websiteSchema]} />
-        <div className="grain-overlay" aria-hidden="true" />
+        <BookingProvider>
+          <JsonLd schema={[localBusinessSchema, websiteSchema]} />
+          <div className="grain-overlay" aria-hidden="true" />
 
-        <Header />
+          <Header />
 
-        <main id="continut">
-          <PageTransition>{children}</PageTransition>
-        </main>
+          <main id="continut">
+            <PageTransition>{children}</PageTransition>
+          </main>
 
-        <Footer />
-        <FloatingContact />
+          <Footer />
+          <FloatingContact />
+        </BookingProvider>
       </body>
     </html>
   );

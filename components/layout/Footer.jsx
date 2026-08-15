@@ -10,6 +10,7 @@ import {
   telUrl,
   whatsappUrl,
 } from "../../lib/site";
+import { BookingTrigger } from "../booking/BookingProvider";
 
 const socialIcons = {
   instagram: RiInstagramLine,
@@ -17,7 +18,7 @@ const socialIcons = {
 };
 
 const Footer = () => (
-  <footer className="border-t border-white/8 bg-ink/60 relative z-10 backdrop-blur-sm">
+  <footer className="bg-ink/60 relative z-10 border-t border-white/8 backdrop-blur-sm">
     <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
       {/* Brand */}
       <div className="lg:col-span-1">
@@ -87,7 +88,10 @@ const Footer = () => (
               rel="noopener noreferrer"
               className="text-muted hover:text-accent group flex items-start gap-2.5 transition-colors duration-300"
             >
-              <FiMapPin className="text-accent mt-0.5 shrink-0" aria-hidden="true" />
+              <FiMapPin
+                className="text-accent mt-0.5 shrink-0"
+                aria-hidden="true"
+              />
               <span>{business.addressFull}</span>
             </a>
           </li>
@@ -125,14 +129,14 @@ const Footer = () => (
             </li>
           ))}
         </ul>
-        <Link href="/contact" className="btn btn-ghost btn-sm mt-6">
+        <BookingTrigger className="btn btn-ghost btn-sm mt-6">
           Programează-te
-        </Link>
+        </BookingTrigger>
       </div>
     </div>
 
     <div className="border-t border-white/8">
-      <div className="container text-muted flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row">
+      <div className="text-muted container flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row">
         <p>Madiny Tattoo © All Rights Reserved</p>
         <p>
           Creat de{" "}

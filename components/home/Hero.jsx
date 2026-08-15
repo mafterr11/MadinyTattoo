@@ -3,6 +3,7 @@ import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 
 import VideoBackground from "../VideoBackground";
 import Reveal from "../Reveal";
+import { BookingTrigger } from "../booking/BookingProvider";
 import { business } from "../../lib/site";
 
 const Hero = () => (
@@ -12,7 +13,7 @@ const Hero = () => (
   >
     <VideoBackground />
 
-    <div className="container relative z-10 pt-28 pb-24 lg:pt-32">
+    <div className="relative z-10 container pt-28 pb-24 lg:pt-32">
       <div className="max-w-3xl">
         <Reveal>
           <span className="eyebrow">
@@ -53,9 +54,9 @@ const Hero = () => (
 
         <Reveal delay={0.3}>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <Link href="/contact" className="btn btn-primary btn-block">
+            <BookingTrigger className="btn btn-primary btn-block">
               Programează-te
-            </Link>
+            </BookingTrigger>
             <Link href="/proiecte" className="btn btn-ghost btn-block">
               Vezi lucrările
               <FiArrowUpRight className="text-base" aria-hidden="true" />
