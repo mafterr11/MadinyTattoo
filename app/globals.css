@@ -40,7 +40,7 @@
   --text-h1: clamp(2.25rem, 1.5rem + 3.4vw, 4.25rem);
   --text-h2: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
   --text-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
-  --text-lead: clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem);
+  --text-lead: clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);
   --text-body: clamp(0.975rem, 0.94rem + 0.18vw, 1.0625rem);
 
   /* Motion */
