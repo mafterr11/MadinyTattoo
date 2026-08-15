@@ -28,7 +28,7 @@ const PriceGroup = ({ group, alone }) => {
 
   return (
     <div className={wide ? "sm:col-span-2" : ""}>
-      <p className="text-fg text-xs font-semibold tracking-[0.18em] uppercase">
+      <p className="neon text-xs font-semibold tracking-[0.18em] uppercase">
         {group.title}
       </p>
       <dl className={`mt-3 ${split ? "sm:grid sm:grid-cols-2 sm:gap-x-10" : ""}`}>
@@ -92,9 +92,12 @@ const ServicePanel = ({ service }) => (
         {service.highlights.map((highlight) => (
           <li
             key={highlight}
-            className="border-white/6 bg-surface/50 flex items-start gap-3 rounded-xl border p-4"
+            className="group border-white/6 bg-surface/50 hover:border-accent/30 flex items-start gap-3 rounded-xl border p-4 transition-colors duration-300"
           >
-            <FiCheck className="text-accent mt-0.5 shrink-0" aria-hidden="true" />
+            <FiCheck
+              className="neon-icon text-accent mt-0.5 shrink-0"
+              aria-hidden="true"
+            />
             <span className="text-muted text-sm leading-relaxed">
               {highlight}
             </span>

@@ -5,24 +5,21 @@ import Reveal from "./Reveal";
  * about hygiene — so this band answers it right under the hero, where the
  * vanity counters used to sit.
  *
- * The numerals run 02 · 03 · 01 on purpose: the row reads as a set of marks,
- * not as a checklist to work through in order.
+ * Numerals are derived from position rather than written into the data, so the
+ * row always reads 01 · 02 · 03 no matter how the pillars are reordered.
  */
 const pillars = [
   {
-    number: "02",
     title: "Pregătire",
     accent: "de la zero",
     body: "Mănuși schimbate pe parcurs și masa de lucru dezinfectată complet înainte de fiecare persoană.",
   },
   {
-    number: "03",
     title: "Spațiu",
     accent: "autorizat sanitar",
     body: "Un cabinet amenajat pentru proceduri pe piele, unde regulile de igienă nu se negociază.",
   },
   {
-    number: "01",
     title: "Nimic",
     accent: "refolosit",
     body: "Acele, cartușele și bijuteriile vin în ambalaj sigilat, se desfac în fața ta și se aruncă la final.",
@@ -53,13 +50,13 @@ const Safety = () => (
     <div className="container relative grid grid-cols-1 divide-y divide-white/8 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
       {pillars.map((pillar, i) => (
         <Reveal
-          key={pillar.number}
+          key={pillar.title}
           delay={i * 0.12}
           className="px-1 py-11 sm:px-7 lg:px-9 lg:py-16"
         >
           <div className="flex items-center gap-4">
-            <p className="font-display text-gradient-accent text-4xl leading-none font-semibold lg:text-5xl">
-              {pillar.number}
+            <p className="font-display text-gradient-accent text-4xl leading-none font-semibold tabular-nums lg:text-5xl">
+              {String(i + 1).padStart(2, "0")}
             </p>
             <span
               aria-hidden="true"

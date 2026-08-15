@@ -15,12 +15,16 @@ export const metadata = constructMetadata({
   path: "/servicii/tatuaje",
 });
 
+// "La cerere" tiers carry no figure — quoting them would emit an empty
+// priceSpecification, which Google flags as invalid.
 const offers = tattooPricing.flatMap((category) =>
-  category.tiers.map((tier) => ({
-    name: `Tatuaj ${category.title} — ${tier.label}`,
-    minPrice: tier.min,
-    maxPrice: tier.max,
-  })),
+  category.tiers
+    .filter((tier) => tier.min != null)
+    .map((tier) => ({
+      name: `Tatuaj ${category.title} — ${tier.label}`,
+      minPrice: tier.min,
+      maxPrice: tier.max,
+    })),
 );
 
 const Tatuaje = () => (

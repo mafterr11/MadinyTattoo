@@ -263,6 +263,20 @@
       0 0 68px color-mix(in oklab, var(--color-accent) 45%, transparent);
   }
 
+  /* Same treatment for SVG icons, which text-shadow cannot reach. */
+  .neon-icon {
+    filter:
+      drop-shadow(0 0 3px color-mix(in oklab, var(--color-accent) 85%, transparent))
+      drop-shadow(0 0 9px color-mix(in oklab, var(--color-accent) 50%, transparent));
+    transition: filter 0.5s var(--ease-out-soft);
+  }
+
+  .group:hover .neon-icon {
+    filter:
+      drop-shadow(0 0 4px var(--color-accent-bright))
+      drop-shadow(0 0 14px color-mix(in oklab, var(--color-accent) 65%, transparent));
+  }
+
   /* The separating dot is the tube's hottest bend — brightest point of all. */
   .neon-dot {
     color: #fff;

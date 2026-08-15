@@ -1,28 +1,30 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 /**
- * Replaces the old triple-panel wipe: a short cross-fade reads as more
- * expensive and, unlike the wipe, doesn't hold the content back for a second
- * on every navigation.
+ * Enter-only cross-fade, keyed on the route.
+ *
+ * This deliberately does NOT use AnimatePresence with mode="wait". The App
+ * Router swaps `children` inside the same DOM node rather than unmounting the
+ * old tree, so the exit animation would run to `opacity: 0` and the entrance
+ * would never fire — leaving every navigated-to page rendered but invisible
+ * until a hard reload. Changing the `key` remounts the node instead, which
+ * always replays `initial` -> `animate`.
  */
 const PageTransition = ({ children }) => {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 };
 

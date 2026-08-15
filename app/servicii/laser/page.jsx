@@ -2,7 +2,7 @@ import ServiciiLaser from "../../../components/pages/ServiciiLaser";
 import JsonLd from "../../../components/JsonLd";
 import { constructMetadata } from "../../../lib/utils";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "../../../lib/schema";
-import { laserFaq } from "../../../lib/pricing";
+import { laserFaq, laserSizePricing } from "../../../lib/pricing";
 
 const description =
   "Experimentează soluțiile noastre eficiente pentru eliminarea tatuajelor cu laser la Madiny Tattoo. Oferim tratamente profesionale și tehnologii moderne pentru a transforma sau elimina tatuajele dorite.";
@@ -30,7 +30,12 @@ const LaserRemoval = () => (
           path: "/servicii/laser",
           offers: [
             { name: "Ședință laser sprâncene", price: 300 },
-            { name: "Ședință laser în funcție de dimensiune", minPrice: 150, maxPrice: 700 },
+            {
+              name: "Ședință laser în funcție de dimensiune",
+              // Derived from the table so the range can never fall behind it.
+              minPrice: Math.min(...laserSizePricing.map((r) => r.value)),
+              maxPrice: Math.max(...laserSizePricing.map((r) => r.value)),
+            },
           ],
         }),
         faqSchema(laserFaq),
