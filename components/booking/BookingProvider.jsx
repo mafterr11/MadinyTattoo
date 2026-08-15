@@ -47,6 +47,17 @@ const REFERENCE_OPTIONS = [
   { value: "Nu", label: "Nu am o poză de referință" },
 ];
 
+const WHATSAPP_EMOJI = {
+  wave: "\u{1f44b}\u{1f3fb}",
+  bodyArea: "\u{1f4cd}",
+  size: "\u{1f4cf}",
+  availability: "\u{1f4c5}",
+  time: "\u{1f551}",
+  name: "\u{1f575}\u{1f3fb}\u{200d}\u{2642}\u{fe0f}",
+  idea: "\u{1f4ad}",
+  reference: "\u{1f4f7}",
+};
+
 const createInitialForm = () => ({
   area: "",
   customArea: "",
@@ -150,36 +161,43 @@ const StepOne = ({ form, updateForm }) => {
         </div>
 
         <div className="booking-range-shell mt-5 px-1">
-          <div className="booking-range-markers" aria-hidden="true">
+          <div className="booking-range-track">
+            <div className="booking-range-markers" aria-hidden="true">
+              {SIZE_OPTIONS.map((option, index) => (
+                <span
+                  key={option.label}
+                  className={`booking-range-marker ${
+                    index === form.sizeIndex
+                      ? "booking-range-marker-active"
+                      : index < form.sizeIndex
+                        ? "booking-range-marker-past"
+                        : ""
+                  }`}
+                />
+              ))}
+            </div>
+            <input
+              type="range"
+              min="0"
+              max={SIZE_OPTIONS.length - 1}
+              step="1"
+              value={form.sizeIndex}
+              onChange={(event) =>
+                updateForm("sizeIndex", Number(event.target.value))
+              }
+              aria-label="Dimensiunea estimată a tatuajului"
+              className="booking-range"
+              style={{ "--range-progress": `${progress}%` }}
+            />
+          </div>
+          <div className="text-muted mt-3 flex justify-between gap-2 text-[0.6rem] sm:text-[0.65rem]">
             {SIZE_OPTIONS.map((option, index) => (
               <span
                 key={option.label}
-                className={`booking-range-marker ${
-                  index === form.sizeIndex
-                    ? "booking-range-marker-active"
-                    : index < form.sizeIndex
-                      ? "booking-range-marker-past"
-                      : ""
+                className={`text-center transition-colors duration-200 ${
+                  index === form.sizeIndex ? "text-accent font-semibold" : ""
                 }`}
-              />
-            ))}
-          </div>
-          <input
-            type="range"
-            min="0"
-            max={SIZE_OPTIONS.length - 1}
-            step="1"
-            value={form.sizeIndex}
-            onChange={(event) =>
-              updateForm("sizeIndex", Number(event.target.value))
-            }
-            aria-label="Dimensiunea estimată a tatuajului"
-            className="booking-range"
-            style={{ "--range-progress": `${progress}%` }}
-          />
-          <div className="text-muted mt-4 flex justify-between gap-2 text-[0.6rem] sm:text-[0.65rem]">
-            {SIZE_OPTIONS.map((option) => (
-              <span key={option.label} className="text-center">
+              >
                 {option.label}
               </span>
             ))}
@@ -538,20 +556,20 @@ const BookingProvider = ({ children }) => {
 
     const size = SIZE_OPTIONS[form.sizeIndex];
     const message = [
-      "Bună! 👋 Vreau să fac o programare pentru un tatuaj.",
+      `Bună! ${WHATSAPP_EMOJI.wave} Vreau să fac o programare pentru un tatuaj.`,
       "",
-      `📍 Zona corpului: ${getAreaLabel(form)}`,
-      `📏 Mărime: ${size.label} (${size.detail})`,
+      `${WHATSAPP_EMOJI.bodyArea} Zona corpului: ${getAreaLabel(form)}`,
+      `${WHATSAPP_EMOJI.size} Mărime: ${size.label} (${size.detail})`,
       "",
-      `📅 Disponibilitate: ${form.availability}`,
-      `🕐 Preferință: ${form.time || "Oricând"}`,
+      `${WHATSAPP_EMOJI.availability} Disponibilitate: ${form.availability}`,
+      `${WHATSAPP_EMOJI.time} Preferință: ${form.time || "Oricând"}`,
       "",
-      `👤 Nume: ${form.name.trim()}`,
+      `${WHATSAPP_EMOJI.name} Nume: ${form.name.trim()}`,
       "",
-      "💭 Ideea mea:",
+      `${WHATSAPP_EMOJI.idea} Ideea mea:`,
       form.idea.trim(),
       "",
-      `📷 ${form.reference === "Da" ? "Am" : "Nu am"} o poză de referință.`,
+      `${WHATSAPP_EMOJI.reference} ${form.reference === "Da" ? "Am" : "Nu am"} o poză de referință.`,
     ].join("\n");
 
     const target = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
