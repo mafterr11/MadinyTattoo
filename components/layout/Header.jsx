@@ -5,16 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiBars2, HiXMark } from "react-icons/hi2";
-import { RiInstagramLine, RiTiktokLine, RiWhatsappLine } from "react-icons/ri";
+import { RiInstagramLine, RiTiktokLine } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
 
-import {
-  navLinks,
-  socials,
-  business,
-  telUrl,
-  whatsappUrl,
-} from "../../lib/site";
+import { navLinks, socials, business, telUrl } from "../../lib/site";
 import { BookingTrigger } from "../booking/BookingProvider";
 
 const socialIcons = {
@@ -210,15 +204,12 @@ const Header = () => {
               </ul>
 
               <div className="mt-10 flex flex-col gap-3">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <BookingTrigger
                   className="btn btn-primary"
+                  onClick={() => setOpen(false)}
                 >
-                  <RiWhatsappLine className="text-lg" aria-hidden="true" />
-                  Scrie-ne pe WhatsApp
-                </a>
+                  Programează-te
+                </BookingTrigger>
                 <a href={telUrl} className="btn btn-ghost">
                   <FiPhone className="text-base" aria-hidden="true" />
                   {business.phoneDisplay}

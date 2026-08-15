@@ -482,13 +482,21 @@ export const useBooking = () => {
   return context;
 };
 
-export const BookingTrigger = ({ children, className = "", ...props }) => {
+export const BookingTrigger = ({
+  children,
+  className = "",
+  onClick,
+  ...props
+}) => {
   const { openBooking } = useBooking();
 
   return (
     <button
       type="button"
-      onClick={openBooking}
+      onClick={(event) => {
+        onClick?.(event);
+        openBooking();
+      }}
       className={className}
       {...props}
     >
