@@ -6,6 +6,7 @@ import Reveal from "../Reveal";
 import ServiceIntro from "../ServiceIntro";
 import ProcessSteps from "../ProcessSteps";
 import FAQSection from "../FAQLaser";
+import ServiceBookingCta from "../booking/ServiceBookingCta";
 import ContactCta from "../home/ContactCta";
 import { laserSizePricing } from "../../lib/pricing";
 import { getService } from "../../lib/servicesDetail";
@@ -101,6 +102,8 @@ const ServiciiLaser = () => (
     <ProcessSteps {...serviceProcess.laser} />
 
     <FAQSection />
+
+    <ServiceBookingCta service="laser" />
 
     <ContactCta />
   </>

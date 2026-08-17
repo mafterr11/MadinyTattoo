@@ -164,7 +164,10 @@ const ServicePanel = ({ service }) => (
         variants={itemVariants}
         className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
       >
-        <BookingTrigger className="btn btn-primary btn-block">
+        <BookingTrigger
+          service={service.key}
+          className="btn btn-primary btn-block"
+        >
           Programează-te
         </BookingTrigger>
         <Link href={service.path} className="btn btn-ghost btn-block">

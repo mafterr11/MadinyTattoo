@@ -6,6 +6,7 @@ import ServiceIntro from "../ServiceIntro";
 import ProcessSteps from "../ProcessSteps";
 import SectionHeading from "../SectionHeading";
 import AvansTatuaje from "../AvansTatuaje";
+import ServiceBookingCta from "../booking/ServiceBookingCta";
 import ContactCta from "../home/ContactCta";
 import { tattooPricing } from "../../lib/pricing";
 import { getService } from "../../lib/servicesDetail";
@@ -72,6 +73,8 @@ const ServiciiTatuaje = () => (
     <AvansTatuaje />
 
     <ProcessSteps {...serviceProcess.tatuaje} />
+
+    <ServiceBookingCta service="tatuaje" />
 
     <ContactCta />
   </>

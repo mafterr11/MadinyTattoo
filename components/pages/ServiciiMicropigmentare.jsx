@@ -6,6 +6,7 @@ import ServiceIntro from "../ServiceIntro";
 import ProcessSteps from "../ProcessSteps";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
+import ServiceBookingCta from "../booking/ServiceBookingCta";
 import ContactCta from "../home/ContactCta";
 import { micropigmentarePricing } from "../../lib/pricing";
 import { getService } from "../../lib/servicesDetail";
@@ -93,6 +94,8 @@ const ServiciiMicropigmentare = () => (
         </Reveal>
       </div>
     </section>
+
+    <ServiceBookingCta service="micropigmentare" />
 
     <ContactCta />
   </>
