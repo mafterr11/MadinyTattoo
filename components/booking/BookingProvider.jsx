@@ -89,24 +89,49 @@ const fieldComplete = (field, form) => {
     : true;
 };
 
-const BookingOption = ({ active, children, className = "", onClick, role }) => (
+/**
+ * Three shapes of the same answer button:
+ *
+ * - `card` — two lines of text, read left to right, tick on the right.
+ * - `tile` — a single label in a fixed-width grid cell.
+ * - `pill` — a single label, width follows the text.
+ *
+ * The last two centre their label, so their tick sits outside the flow and the
+ * padding leaves room for it. Reserving that room in the flow instead would
+ * eat enough width to wrap two-word labels onto a second line.
+ */
+const VARIANTS = {
+  card: "min-h-12 justify-between rounded-xl px-4 py-3 text-left sm:px-5",
+  tile: "min-h-12 justify-center rounded-xl px-3 py-3 text-center sm:px-4",
+  pill: "min-h-11 justify-center rounded-full px-8 py-3 text-center",
+};
+
+const BookingOption = ({
+  active,
+  children,
+  onClick,
+  role,
+  variant = "card",
+}) => (
   <button
     type="button"
     role={role}
     aria-checked={role ? active : undefined}
     aria-pressed={role ? undefined : active}
     onClick={onClick}
-    className={`group flex min-h-12 items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition-all duration-300 sm:px-5 ${
+    className={`group relative flex items-center gap-3 border transition-all duration-300 ${
+      VARIANTS[variant]
+    } ${
       active
         ? "border-accent bg-accent/12 text-fg shadow-[0_8px_28px_-18px_rgba(212,179,154,0.9)]"
         : "text-fg/70 hover:border-accent/40 hover:text-fg border-white/8 bg-white/[0.025] hover:bg-white/[0.05]"
-    } ${className}`}
+    }`}
   >
     <span className="min-w-0">{children}</span>
     <FiCheck
       className={`text-accent shrink-0 text-base transition-opacity duration-300 ${
-        active ? "opacity-100" : "opacity-0"
-      }`}
+        variant === "card" ? "" : "absolute right-2.5 sm:right-3"
+      } ${active ? "opacity-100" : "opacity-0"}`}
       aria-hidden="true"
     />
   </button>
@@ -124,9 +149,10 @@ const StepHeading = ({ kicker, title, description }) => (
   </div>
 );
 
-const FieldLabel = ({ children }) => (
+const FieldLabel = ({ children, optional }) => (
   <p className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
     {children}
+    {optional && <span className="text-muted"> (opțional)</span>}
   </p>
 );
 
@@ -135,7 +161,9 @@ const ChoiceField = ({ field, form, updateCustom, updateDetail }) => {
 
   return (
     <div>
-      {field.label && <FieldLabel>{field.label}</FieldLabel>}
+      {field.label && (
+        <FieldLabel optional={!field.required}>{field.label}</FieldLabel>
+      )}
 
       <div
         className={`grid grid-cols-2 gap-2 sm:grid-cols-4 ${
@@ -150,7 +178,7 @@ const ChoiceField = ({ field, form, updateCustom, updateDetail }) => {
             active={value === option}
             onClick={() => updateDetail(field.name, option)}
             role="radio"
-            className="justify-center text-center"
+            variant="tile"
           >
             <span className="text-[0.7rem] font-semibold tracking-[0.12em] uppercase">
               {option}
@@ -175,7 +203,9 @@ const ChoiceField = ({ field, form, updateCustom, updateDetail }) => {
 
 const PillsField = ({ field, form, updateDetail }) => (
   <div>
-    {field.label && <FieldLabel>{field.label}</FieldLabel>}
+    {field.label && (
+      <FieldLabel optional={!field.required}>{field.label}</FieldLabel>
+    )}
 
     <div
       className={`flex flex-wrap gap-2 ${field.label ? "mt-4" : ""}`}
@@ -188,7 +218,7 @@ const PillsField = ({ field, form, updateDetail }) => (
           active={form.details[field.name] === option}
           onClick={() => updateDetail(field.name, option)}
           role="radio"
-          className="min-h-11 rounded-full px-4 sm:px-5"
+          variant="pill"
         >
           <span className="text-xs font-semibold">{option}</span>
         </BookingOption>
@@ -350,9 +380,7 @@ const AvailabilityStep = ({ form, kicker, updateForm }) => (
     </div>
 
     <div>
-      <FieldLabel>
-        Preferință orară <span className="text-muted">(opțional)</span>
-      </FieldLabel>
+      <FieldLabel optional>Preferință orară</FieldLabel>
       <div
         className="mt-4 flex flex-wrap gap-2"
         role="radiogroup"
@@ -364,7 +392,7 @@ const AvailabilityStep = ({ form, kicker, updateForm }) => (
             active={form.time === time}
             onClick={() => updateForm("time", time)}
             role="radio"
-            className="min-h-11 rounded-full px-4 sm:px-5"
+            variant="pill"
           >
             <span className="text-xs font-semibold">{time}</span>
           </BookingOption>
@@ -415,6 +443,9 @@ const ContactStep = ({ flow, form, kicker, updateForm }) => (
       <fieldset>
         <legend className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
           {flow.reference.question}
+          {!flow.reference.required && (
+            <span className="text-muted"> (opțional)</span>
+          )}
         </legend>
         <div className="mt-3 grid gap-2 sm:grid-cols-2" role="radiogroup">
           {[
@@ -749,9 +780,9 @@ const BookingProvider = ({ children }) => {
 
   const canSubmit = Boolean(
     flow &&
-    form.name.trim() &&
-    (!flow.idea.required || form.idea.trim()) &&
-    (!flow.reference || form.reference),
+      form.name.trim() &&
+      (!flow.idea.required || form.idea.trim()) &&
+      (!flow.reference?.required || form.reference),
   );
 
   const goNext = () => {
@@ -786,7 +817,9 @@ const BookingProvider = ({ children }) => {
       ...(idea
         ? ["", `${WHATSAPP_EMOJI.idea} ${flow.idea.summaryLabel}`, idea]
         : []),
-      ...(flow.reference
+      // Left out entirely when the question was skipped — an unanswered
+      // question must not turn into a claim either way.
+      ...(flow.reference && form.reference
         ? [
             "",
             `${WHATSAPP_EMOJI.reference} ${
