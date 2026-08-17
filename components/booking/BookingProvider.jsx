@@ -35,14 +35,14 @@ const WHATSAPP_EMOJI = {
   reference: "\u{1f4f7}",
 };
 
-/** Range fields start on a sensible bracket, pills on their default answer. */
+/**
+ * Every field starts unanswered — `null` for a slider, "" for the rest. A
+ * slider that opened on a plausible-looking bracket used to sail past anyone
+ * who did not read it closely, and sent that guess as if it were their answer.
+ */
 const createInitialDetails = (flow) =>
   (flow?.fields ?? []).reduce((details, field) => {
-    if (field.type === "range") {
-      details[field.name] = field.defaultIndex ?? 0;
-    } else {
-      details[field.name] = field.defaultValue ?? "";
-    }
+    details[field.name] = field.type === "range" ? null : "";
 
     return details;
   }, {});
@@ -63,9 +63,8 @@ const fieldAnswer = (field, form) => {
   const value = form.details[field.name];
 
   if (field.type === "range") {
-    const option =
-      field.options[value] ?? field.options[field.defaultIndex ?? 0];
-    return `${option.label} (${option.detail})`;
+    const option = field.options[value];
+    return option ? `${option.label} (${option.detail})` : "";
   }
 
   if (!value) return "";
@@ -78,10 +77,10 @@ const fieldAnswer = (field, form) => {
 };
 
 const fieldComplete = (field, form) => {
-  // A slider always carries a value, and optional questions never block.
-  if (field.type === "range" || !field.required) return true;
+  if (!field.required) return true;
 
   const value = form.details[field.name];
+  if (field.type === "range") return value !== null;
   if (!value) return false;
 
   return field.otherOption && value === field.otherOption
@@ -227,18 +226,41 @@ const PillsField = ({ field, form, updateDetail }) => (
   </div>
 );
 
+/**
+ * Until the visitor moves it, the slider shows no answer at all: empty track,
+ * plain markers, a prompt instead of a bracket. The native handle is invisible
+ * anyway — what looks like the handle is the active marker — so an untouched
+ * slider reads as a row of dots waiting to be chosen from.
+ */
 const RangeField = ({ field, form, updateDetail }) => {
-  const index = form.details[field.name] ?? field.defaultIndex ?? 0;
+  const chosen = form.details[field.name];
+  const picked = chosen !== null;
+  const index = picked ? chosen : (field.startIndex ?? 0);
   const option = field.options[index];
-  const progress = (index / (field.options.length - 1)) * 100;
+
+  // Dragging the handle back where it started fires no change event, so
+  // releasing the pointer counts as choosing whatever sits under it.
+  const commit = (event) => updateDetail(field.name, Number(event.target.value));
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <FieldLabel>{field.label}</FieldLabel>
         <div className="text-right">
-          <p className="text-accent text-xs font-semibold">{option.label}</p>
-          <p className="text-muted mt-0.5 text-[0.65rem]">{option.detail}</p>
+          {picked ? (
+            <>
+              <p className="text-accent text-xs font-semibold">
+                {option.label}
+              </p>
+              <p className="text-muted mt-0.5 text-[0.65rem]">
+                {option.detail}
+              </p>
+            </>
+          ) : (
+            <p className="text-muted text-xs font-semibold">
+              {field.placeholder}
+            </p>
+          )}
         </div>
       </div>
 
@@ -249,11 +271,13 @@ const RangeField = ({ field, form, updateDetail }) => {
               <span
                 key={item.label}
                 className={`booking-range-marker ${
-                  i === index
-                    ? "booking-range-marker-active"
-                    : i < index
-                      ? "booking-range-marker-past"
-                      : ""
+                  !picked
+                    ? ""
+                    : i === index
+                      ? "booking-range-marker-active"
+                      : i < index
+                        ? "booking-range-marker-past"
+                        : ""
                 }`}
               />
             ))}
@@ -264,12 +288,18 @@ const RangeField = ({ field, form, updateDetail }) => {
             max={field.options.length - 1}
             step="1"
             value={index}
-            onChange={(event) =>
-              updateDetail(field.name, Number(event.target.value))
-            }
+            onChange={commit}
+            onPointerUp={commit}
             aria-label={field.ariaLabel}
+            aria-valuetext={
+              picked ? `${option.label}, ${option.detail}` : field.placeholder
+            }
             className="booking-range"
-            style={{ "--range-progress": `${progress}%` }}
+            style={{
+              "--range-progress": picked
+                ? `${(index / (field.options.length - 1)) * 100}%`
+                : "0%",
+            }}
           />
         </div>
         <div className="text-muted mt-3 flex justify-between gap-2 text-[0.6rem] sm:text-[0.65rem]">
@@ -277,7 +307,7 @@ const RangeField = ({ field, form, updateDetail }) => {
             <span
               key={item.label}
               className={`text-center transition-colors duration-200 ${
-                i === index ? "text-accent font-semibold" : ""
+                picked && i === index ? "text-accent font-semibold" : ""
               }`}
             >
               {item.label}
@@ -443,9 +473,7 @@ const ContactStep = ({ flow, form, kicker, updateForm }) => (
       <fieldset>
         <legend className="text-fg text-xs font-semibold tracking-[0.16em] uppercase">
           {flow.reference.question}
-          {!flow.reference.required && (
-            <span className="text-muted"> (opțional)</span>
-          )}
+          <span className="text-muted"> (opțional)</span>
         </legend>
         <div className="mt-3 grid gap-2 sm:grid-cols-2" role="radiogroup">
           {[
@@ -781,8 +809,7 @@ const BookingProvider = ({ children }) => {
   const canSubmit = Boolean(
     flow &&
       form.name.trim() &&
-      (!flow.idea.required || form.idea.trim()) &&
-      (!flow.reference?.required || form.reference),
+      (!flow.idea.required || form.idea.trim()),
   );
 
   const goNext = () => {
