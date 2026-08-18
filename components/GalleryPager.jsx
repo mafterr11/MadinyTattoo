@@ -192,10 +192,12 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
                   className="group flex h-8 w-4 items-center justify-center"
                 >
                   <span
-                    className={`block h-1.5 rounded-full transition-all duration-300 ${
+                    // Same dot as SafetyCarousel, so the two carousels on the
+                    // site read as one control rather than two designs.
+                    className={`block h-1.5 rounded-full transition-all duration-400 ${
                       i === current
                         ? "bg-accent w-6"
-                        : "group-hover:bg-fg/45 bg-fg/20 w-1.5"
+                        : "group-hover:bg-fg/45 bg-fg/25 w-1.5"
                     }`}
                   />
                 </button>
