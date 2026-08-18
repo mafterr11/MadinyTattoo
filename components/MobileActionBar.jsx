@@ -14,9 +14,14 @@ import { BookingTrigger } from "./booking/BookingProvider";
  * The bar is visible from the first frame rather than appearing on scroll; it
  * is the page's primary conversion path, and `body` reserves its height so it
  * never sits on top of the footer.
+ *
+ * `translateZ(0)` promotes the bar to its own compositing layer. Without it,
+ * iOS Safari resamples the backdrop-blur every time anything repaints above
+ * it — the gallery's swipe animation is exactly that — and the bar visibly
+ * flashes as if it reloaded. Isolating it stops that resampling.
  */
 const MobileActionBar = () => (
-  <div className="fixed inset-x-0 bottom-0 z-50 md:hidden">
+  <div className="fixed inset-x-0 bottom-0 z-50 [transform:translateZ(0)] md:hidden">
     <div className="bg-ink/92 border-t border-white/8 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-xl">
       <div className="flex items-center gap-3">
         <a
