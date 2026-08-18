@@ -6,6 +6,7 @@ import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 import { HiOutlineMagnifyingGlassPlus } from "react-icons/hi2";
 
 import BlurImage from "./BlurImage";
+import GalleryPager from "./GalleryPager";
 
 /**
  * The widest a thumbnail ever gets: the container caps at 80rem with 2rem of
@@ -111,34 +112,34 @@ const Gallery = ({ images, priorityCount = 4 }) => {
 
   return (
     <>
-      <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
-        {images.map((image, i) => (
-          <li key={image.src}>
-            <button
-              type="button"
-              onClick={(event) => open(i, event)}
-              aria-label={`Mărește imaginea: ${image.alt}`}
-              className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 w-full overflow-hidden rounded-xl border transition-colors duration-500"
+      {/* Paged, but the lightbox still walks the whole portfolio: the pager
+          hands back each image's index in the full list, not in the page. */}
+      <GalleryPager images={images} layout="portfolio" label="Portofoliu">
+        {(image, i) => (
+          <button
+            type="button"
+            onClick={(event) => open(i, event)}
+            aria-label={`Mărește imaginea: ${image.alt}`}
+            className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 w-full overflow-hidden rounded-xl border transition-colors duration-500"
+          >
+            <BlurImage
+              src={image.src}
+              alt={image.alt}
+              blurDataURL={image.blurDataURL}
+              sizes={GRID_SIZES}
+              priority={i < priorityCount}
+              loading={i < priorityCount ? undefined : "lazy"}
+              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+            />
+            <span
+              aria-hidden="true"
+              className="from-ink/70 absolute inset-0 flex items-end justify-end bg-gradient-to-t via-transparent to-transparent p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100 group-focus-visible:opacity-100"
             >
-              <BlurImage
-                src={image.src}
-                alt={image.alt}
-                blurDataURL={image.blurDataURL}
-                sizes={GRID_SIZES}
-                priority={i < priorityCount}
-                loading={i < priorityCount ? undefined : "lazy"}
-                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-              />
-              <span
-                aria-hidden="true"
-                className="from-ink/70 absolute inset-0 flex items-end justify-end bg-gradient-to-t via-transparent to-transparent p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100 group-focus-visible:opacity-100"
-              >
-                <HiOutlineMagnifyingGlassPlus className="text-accent text-xl" />
-              </span>
-            </button>
-          </li>
-        ))}
-      </ul>
+              <HiOutlineMagnifyingGlassPlus className="text-accent text-xl" />
+            </span>
+          </button>
+        )}
+      </GalleryPager>
 
       {isOpen && (
         <div

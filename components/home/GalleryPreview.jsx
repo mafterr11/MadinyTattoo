@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import BlurImage from "../BlurImage";
+import GalleryPreviewGrid from "./GalleryPreviewGrid";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 import { galleryImages } from "../../lib/gallery";
 
-const preview = galleryImages.slice(0, 8);
+/**
+ * A taste of the portfolio, not the whole of it: four pages of the newest work
+ * on a phone, two on anything wider. The rest lives behind "Vezi tot
+ * portofoliul", which is the link this section exists to earn.
+ */
+const preview = galleryImages.slice(0, 16);
 
 const GalleryPreview = () => (
   <section
@@ -24,29 +29,12 @@ const GalleryPreview = () => (
         lead="Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj."
       />
 
-      <ul className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-        {preview.map((image, i) => (
-          <Reveal as="li" key={image.src} delay={i * 0.05}>
-            <Link
-              href="/proiecte"
-              aria-label="Vezi portofoliul complet de tatuaje"
-              className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 overflow-hidden rounded-xl border transition-colors duration-500"
-            >
-              <BlurImage
-                src={image.src}
-                alt={image.alt}
-                blurDataURL={image.blurDataURL}
-                sizes="(max-width: 768px) 48vw, 300px"
-                loading="lazy"
-                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-              />
-            </Link>
-          </Reveal>
-        ))}
-      </ul>
+      <Reveal className="mt-14">
+        <GalleryPreviewGrid images={preview} />
+      </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mt-12 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <Link href="/proiecte" className="btn btn-ghost">
             Vezi tot portofoliul
             <FiArrowUpRight className="text-base" aria-hidden="true" />

@@ -1,5 +1,8 @@
 const galleryManifest = require('./lib/galleryManifest')
 
+/** How many portfolio files were once served as /gallery/tattooN.webp. */
+const LEGACY_NUMBERED = 24
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -24,7 +27,10 @@ const nextConfig = {
       // The portfolio files were renamed from tattoo1..tattoo24 to names that
       // describe the work. Anything Google Images already indexed under the
       // old paths follows the redirect instead of turning into 24 dead URLs.
-      ...galleryManifest.map((entry, i) => ({
+      //
+      // Only the first 24 entries ever had a numbered URL, so the slice stops
+      // there — work appended since was never reachable as /gallery/tattooN.
+      ...galleryManifest.slice(0, LEGACY_NUMBERED).map((entry, i) => ({
         source: `/gallery/tattoo${i + 1}.webp`,
         destination: `/gallery/${entry.file}`,
         permanent: true,
