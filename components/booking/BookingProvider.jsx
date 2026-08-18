@@ -525,7 +525,7 @@ const BookingModal = ({
              the page enough to push it back without erasing it. Below md the
              panel covers the screen and the scrim is just what the fade
              happens against. */
-          className="fixed inset-0 z-70 flex items-center justify-center bg-black/70 backdrop-blur-[2px] md:bg-black/60 md:p-6"
+          className="fixed inset-0 z-70 flex items-center justify-center bg-black/70 backdrop-blur-[2px] md:bg-black/85 md:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
