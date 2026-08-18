@@ -126,7 +126,14 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
 
   return (
     <div>
+      {/* touch-pan-y: tells the browser this region owns horizontal gestures
+          and only native-scrolls vertically. Without it, a swipe that drifts
+          even slightly off-axis (any real thumb) reads as an ambiguous
+          scroll attempt — which on a phone can collapse/expand the address
+          bar mid-gesture. That resize repaints the fixed bottom bar visibly,
+          which is what looked like the bar "reloading". */}
       <div
+        className="touch-pan-y"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
         }}
