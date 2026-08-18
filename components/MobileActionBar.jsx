@@ -28,7 +28,7 @@ const MobileActionBar = () => (
         </a>
 
         <BookingTrigger
-          className="btn-neon neon-flicker-slow flex-1"
+          className="btn-neon neon neon-flicker-slow flex-1"
           style={{ "--flicker-delay": "-2.4s" }}
         >
           Programează-te

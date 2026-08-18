@@ -262,23 +262,31 @@
      Kept subtle so it reads as warmth, not as a glow effect. */
   .neon {
     /* A real neon tube has a near-white core inside a saturated halo, so the
-       glow is layered: tight and bright, then wide and soft. */
+       glow is layered: tight and bright, then wide and soft.
+
+       Every radius is in `em`. Pixel radii would tie the glow to one type
+       size — right on a 20px wordmark, a thin outline on a 96px heading — and
+       the wordmark, the hero and the booking button all have to read as the
+       same sign at very different sizes. */
     color: #fffaf4;
     text-shadow:
-      0 0 2px color-mix(in oklab, var(--color-accent-bright) 90%, transparent),
-      0 0 10px color-mix(in oklab, var(--color-accent) 75%, transparent),
-      0 0 26px color-mix(in oklab, var(--color-accent) 45%, transparent),
-      0 0 52px color-mix(in oklab, var(--color-accent-deep) 30%, transparent);
+      0 0 0.02em #fff,
+      0 0 0.06em
+        color-mix(in oklab, var(--color-accent-bright) 90%, transparent),
+      0 0 0.28em color-mix(in oklab, var(--color-accent) 75%, transparent),
+      0 0 0.7em color-mix(in oklab, var(--color-accent) 45%, transparent),
+      0 0 1.5em color-mix(in oklab, var(--color-accent-deep) 30%, transparent);
     transition: text-shadow 0.5s var(--ease-out-soft);
   }
 
   .neon:hover,
   .neon:focus-visible {
     text-shadow:
-      0 0 2px #fff,
-      0 0 12px var(--color-accent-bright),
-      0 0 32px color-mix(in oklab, var(--color-accent) 70%, transparent),
-      0 0 68px color-mix(in oklab, var(--color-accent) 45%, transparent);
+      0 0 0.02em #fff,
+      0 0 0.08em var(--color-accent-bright),
+      0 0 0.36em color-mix(in oklab, var(--color-accent) 70%, transparent),
+      0 0 0.9em color-mix(in oklab, var(--color-accent) 45%, transparent),
+      0 0 1.8em color-mix(in oklab, var(--color-accent-deep) 32%, transparent);
   }
 
   /* Same treatment for SVG icons, which text-shadow cannot reach. */
@@ -303,21 +311,9 @@
   .neon-dot {
     color: #fff;
     text-shadow:
-      0 0 4px var(--color-accent-bright),
-      0 0 14px var(--color-accent),
-      0 0 30px color-mix(in oklab, var(--color-accent) 65%, transparent);
-  }
-
-  /* Glow for text that is painted with a gradient — `text-shadow` sits behind
-     a transparent glyph and fills it in, so the halo has to come from a filter
-     applied to what was actually rendered. */
-  .neon-glow {
-    filter: drop-shadow(
-        0 0 6px color-mix(in oklab, var(--color-accent) 55%, transparent)
-      )
-      drop-shadow(
-        0 0 22px color-mix(in oklab, var(--color-accent) 28%, transparent)
-      );
+      0 0 0.1em var(--color-accent-bright),
+      0 0 0.4em var(--color-accent),
+      0 0 0.9em color-mix(in oklab, var(--color-accent) 65%, transparent);
   }
 
   /* --- Neon flicker ----------------------------------------------------
@@ -396,24 +392,24 @@
     gap: 0.5rem;
     min-height: 3.25rem;
     padding-inline: 1.25rem;
-    border: 1px solid var(--color-accent);
+    border: 1px solid color-mix(in oklab, var(--color-accent-bright) 80%, #fff);
     border-radius: 0.875rem;
     background-color: color-mix(in oklab, var(--color-accent) 6%, transparent);
-    color: var(--color-accent-bright);
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    text-shadow:
-      0 0 6px color-mix(in oklab, var(--color-accent-bright) 70%, transparent),
-      0 0 18px color-mix(in oklab, var(--color-accent) 45%, transparent);
+    /* The frame glows the way the letters do: a near-white edge with the warm
+       halo thrown outwards and back inside the tube. */
     box-shadow:
-      0 0 10px -2px color-mix(in oklab, var(--color-accent) 60%, transparent),
-      0 0 26px -8px color-mix(in oklab, var(--color-accent) 45%, transparent),
-      inset 0 0 16px -8px
-        color-mix(in oklab, var(--color-accent) 75%, transparent);
+      0 0 0.15em
+        color-mix(in oklab, var(--color-accent-bright) 85%, transparent),
+      0 0 0.6em color-mix(in oklab, var(--color-accent) 55%, transparent),
+      0 0 1.4em color-mix(in oklab, var(--color-accent-deep) 35%, transparent),
+      inset 0 0 0.7em -0.2em
+        color-mix(in oklab, var(--color-accent) 45%, transparent);
     transition:
       background-color 0.35s var(--ease-out-soft),
       border-color 0.35s var(--ease-out-soft),
@@ -422,7 +418,7 @@
 
   .btn-neon:active {
     background-color: color-mix(in oklab, var(--color-accent) 12%, transparent);
-    border-color: var(--color-accent-bright);
+    border-color: #fff;
   }
 
   /* --- Surfaces --- */

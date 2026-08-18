@@ -38,7 +38,7 @@ const Hero = () => (
               <br />
               în{" "}
               <span
-                className="text-gradient-accent neon-glow neon-flicker inline-block"
+                className="neon neon-flicker"
                 style={{ "--flicker-delay": "-1.7s" }}
               >
                 Realitate
