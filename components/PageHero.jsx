@@ -10,7 +10,14 @@ import { blurProps } from "../lib/blur";
  * this band instead of being fixed behind the whole page, so long pages stay
  * readable and the image is served through next/image.
  */
-const PageHero = ({ eyebrow, title, lead, image, breadcrumbs = [] }) => (
+const PageHero = ({
+  eyebrow,
+  title,
+  lead,
+  leadClassName = "",
+  image,
+  breadcrumbs = [],
+}) => (
   <section className="relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-20">
     {image && (
       <div aria-hidden="true" className="absolute inset-0 -z-10">
@@ -48,7 +55,10 @@ const PageHero = ({ eyebrow, title, lead, image, breadcrumbs = [] }) => (
                       >
                         {crumb.name}
                       </Link>
-                      <FiChevronRight className="opacity-50" aria-hidden="true" />
+                      <FiChevronRight
+                        className="opacity-50"
+                        aria-hidden="true"
+                      />
                     </>
                   )}
                 </li>
@@ -70,7 +80,7 @@ const PageHero = ({ eyebrow, title, lead, image, breadcrumbs = [] }) => (
         </Reveal>
 
         {lead && (
-          <Reveal delay={0.16}>
+          <Reveal delay={0.16} className={leadClassName}>
             <p className="lead mt-6">{lead}</p>
           </Reveal>
         )}

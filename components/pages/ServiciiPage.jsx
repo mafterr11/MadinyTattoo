@@ -25,6 +25,7 @@ const ServiciiPage = () => (
         </>
       }
       lead="Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii. Alege un serviciu și vezi tot ce presupune — descriere, ce include și tarife."
+      leadClassName="hidden md:block"
       image="/backgrounds/servicii.webp"
       breadcrumbs={[
         { name: "Acasă", path: "/" },

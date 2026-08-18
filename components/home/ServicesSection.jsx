@@ -16,6 +16,7 @@ const ServicesSection = () => (
           </>
         }
         lead="Într-un spațiu creativ pentru artă și frumusețe, oferim servicii profesionale de tatuaje, micropigmentare și eliminare cu laser, completate de expertiză și atenție meticuloasă la detalii."
+        leadClassName="hidden md:block"
       />
 
       <div className="mt-14">

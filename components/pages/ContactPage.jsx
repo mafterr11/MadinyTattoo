@@ -3,12 +3,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 
 import PageHero from "../PageHero";
 import Reveal from "../Reveal";
-import {
-  business,
-  mailtoUrl,
-  telUrl,
-  whatsappUrl,
-} from "../../lib/site";
+import { business, mailtoUrl, telUrl, whatsappUrl } from "../../lib/site";
 
 const highlights = [
   "Programări",
@@ -33,7 +28,9 @@ const ContactPage = () => (
       ]}
     />
 
-    <div className="container">
+    {/* On a phone these five pills push the actual contact details below the
+        fold while only restating what the page is for. */}
+    <div className="container hidden md:block">
       <Reveal>
         <ul className="flex flex-wrap gap-2">
           {highlights.map((item) => (
@@ -156,7 +153,9 @@ const ContactPage = () => (
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="responsive-iframe"
-              style={{ filter: "grayscale(0.5) contrast(1.05) brightness(0.85)" }}
+              style={{
+                filter: "grayscale(0.5) contrast(1.05) brightness(0.85)",
+              }}
             />
           </div>
         </Reveal>

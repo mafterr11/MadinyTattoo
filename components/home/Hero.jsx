@@ -44,7 +44,18 @@ const Hero = () => (
           </h1>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        {/* Kept off phones, where it pushed both calls to action toward the
+            fold, and where the headline and the descriptor above already say
+            what it says. */}
+        <Reveal delay={0.2} className="hidden md:block">
+          <p className="lead mt-7 max-w-xl">
+            În spațiul nostru creativ, transformăm fiecare concept într-o
+            realitate vibrantă și autentică. Fiecare design captează unicitatea
+            ta, conturând și detaliind povestea personală.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.3}>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             {/* Booking already sits in the fixed bar at the bottom of every
                 phone screen, so the hero spends its primary slot on the one

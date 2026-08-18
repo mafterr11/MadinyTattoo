@@ -7,6 +7,7 @@ const SectionHeading = ({
   eyebrow,
   title,
   lead,
+  leadClassName = "",
   align = "center",
   as: Tag = "h2",
   className = "",
@@ -32,7 +33,7 @@ const SectionHeading = ({
       </Reveal>
 
       {lead && (
-        <Reveal delay={0.16}>
+        <Reveal delay={0.16} className={leadClassName}>
           <p className={`lead mt-5 max-w-2xl ${centered ? "mx-auto" : ""}`}>
             {lead}
           </p>
