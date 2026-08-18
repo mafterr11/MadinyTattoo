@@ -41,7 +41,7 @@ const Logo = ({ onClick }) => {
           ? `${business.name} — înapoi sus`
           : `${business.name} — pagina principală`
       }
-      className="neon font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
+      className="neon neon-flicker font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
     >
       MADINY<span className="neon-dot">.</span>TATTOO
     </Link>

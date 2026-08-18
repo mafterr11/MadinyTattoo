@@ -22,7 +22,10 @@ const Footer = () => (
     <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
       {/* Brand */}
       <div className="lg:col-span-1">
-        <p className="neon font-display text-2xl tracking-tight">
+        <p
+          className="neon neon-flicker-slow font-display text-2xl tracking-tight"
+          style={{ "--flicker-delay": "-4.1s" }}
+        >
           MADINY<span className="neon-dot">.</span>TATTOO
         </p>
         <p className="text-muted mt-4 max-w-xs text-sm leading-relaxed">

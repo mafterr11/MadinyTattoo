@@ -36,7 +36,13 @@ const Hero = () => (
             <span className="block text-[length:var(--text-display)]">
               Transformăm ideile
               <br />
-              în <span className="text-gradient-accent">Realitate</span>
+              în{" "}
+              <span
+                className="text-gradient-accent neon-glow neon-flicker inline-block"
+                style={{ "--flicker-delay": "-1.7s" }}
+              >
+                Realitate
+              </span>
             </span>
             <span className="text-accent/85 mt-4 block text-[length:var(--text-h3)] font-normal">
               Salon de tatuaje în București

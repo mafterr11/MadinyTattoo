@@ -22,7 +22,7 @@ const FloatingContact = () => {
 
   return (
     <div
-      className={`fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 flex flex-col gap-3 transition-all duration-500 sm:right-6 sm:bottom-6 ${
+      className={`fixed right-6 bottom-6 z-40 hidden flex-col gap-3 transition-all duration-500 md:flex ${
         visible
           ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none translate-y-4 opacity-0"

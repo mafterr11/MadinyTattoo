@@ -1,9 +1,10 @@
 import "./globals.css";
-import { Poppins, Playfair_Display } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import FloatingContact from "../components/FloatingContact";
+import MobileActionBar from "../components/MobileActionBar";
 import PageTransition from "../components/PageTransition";
 import JsonLd from "../components/JsonLd";
 import BookingProvider from "../components/booking/BookingProvider";
@@ -14,13 +15,6 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin", "latin-ext"],
   variable: "--font-poppins",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  weight: ["400", "500", "600"],
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -35,7 +29,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ro" className={`${poppins.variable} ${playfair.variable}`}>
+    <html lang="ro" className={poppins.variable}>
       <body>
         <BookingProvider>
           <JsonLd schema={[localBusinessSchema, websiteSchema]} />
@@ -49,6 +43,7 @@ export default function RootLayout({ children }) {
 
           <Footer />
           <FloatingContact />
+          <MobileActionBar />
         </BookingProvider>
       </body>
     </html>
