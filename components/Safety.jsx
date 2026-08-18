@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SafetyCarousel from "./SafetyCarousel";
 
 /**
  * The first real question anyone asks before a needle touches their skin is
@@ -47,7 +48,12 @@ const Safety = () => (
       SIGURANȚĂ
     </span>
 
-    <div className="container relative grid grid-cols-1 divide-y divide-white/8 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+    <div className="relative container">
+      {/* Phones take the pillars one at a time — see SafetyCarousel. */}
+      <SafetyCarousel pillars={pillars} />
+    </div>
+
+    <div className="relative container hidden divide-white/8 sm:grid sm:grid-cols-3 sm:divide-x">
       {pillars.map((pillar, i) => (
         <Reveal
           key={pillar.title}

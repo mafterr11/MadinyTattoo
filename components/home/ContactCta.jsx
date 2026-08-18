@@ -2,12 +2,7 @@ import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
 import Reveal from "../Reveal";
-import {
-  business,
-  mailtoUrl,
-  telUrl,
-  whatsappUrl,
-} from "../../lib/site";
+import { business, mailtoUrl, telUrl, whatsappUrl } from "../../lib/site";
 
 const details = [
   {
@@ -80,7 +75,13 @@ const ContactCta = () => (
           </Reveal>
         </div>
 
-        <Reveal delay={0.12}>
+        {/* Address, phone, email and opening hours repeat verbatim in the
+            footer directly below. On a phone the two stack into near-identical
+            lists a thumb-flick apart, so the card steps aside and leaves the
+            section as heading, promise and two actions. From md up the footer
+            lays out in columns and the repetition stops reading as a
+            duplicate. */}
+        <Reveal delay={0.12} className="hidden md:block">
           <div className="card p-7 sm:p-9">
             <ul className="space-y-6">
               {details.map(({ icon: Icon, label, value, href, external }) => (
@@ -112,7 +113,10 @@ const ContactCta = () => (
               </p>
               <ul className="mt-3 space-y-1.5">
                 {business.hours.map((entry) => (
-                  <li key={entry.label} className="flex justify-between gap-4 text-sm">
+                  <li
+                    key={entry.label}
+                    className="flex justify-between gap-4 text-sm"
+                  >
                     <span className="text-accent">{entry.label}:</span>
                     <span className="text-muted">{entry.value}</span>
                   </li>

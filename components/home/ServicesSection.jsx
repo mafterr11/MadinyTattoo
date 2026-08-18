@@ -25,7 +25,7 @@ const ServicesSection = () => (
       <Reveal delay={0.1}>
         <div className="mt-12 flex justify-center">
           <Link href="/servicii" className="btn btn-ghost">
-            Vezi toate serviciile
+            Vezi toate detaliile
             <FiArrowUpRight className="text-base" aria-hidden="true" />
           </Link>
         </div>

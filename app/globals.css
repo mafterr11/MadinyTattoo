@@ -687,6 +687,17 @@
   }
 }
 
+/* A swipe track shows its position through the dots underneath it, so the bar
+   itself is only noise — and on desktop trackpads it would overlay the card. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* ==========================================================================
    Scrollbar
    ========================================================================== */

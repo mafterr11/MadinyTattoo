@@ -21,7 +21,7 @@ const GalleryPreview = () => (
             <span className="text-accent">Lucrările</span> mele.
           </>
         }
-        lead="Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj. Explorează portofoliul meu și lasă-te captivat de poveștile vizuale pe care le-am imprimat pe piele."
+        lead="Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj."
       />
 
       <ul className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
