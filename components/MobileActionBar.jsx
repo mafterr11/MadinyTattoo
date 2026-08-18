@@ -27,10 +27,7 @@ const MobileActionBar = () => (
           <FiPhone className="text-xl" aria-hidden="true" />
         </a>
 
-        <BookingTrigger
-          className="btn-neon neon neon-flicker-slow flex-1"
-          style={{ "--flicker-delay": "-2.4s" }}
-        >
+        <BookingTrigger className="btn-neon neon flex-1">
           Programează-te
         </BookingTrigger>
       </div>

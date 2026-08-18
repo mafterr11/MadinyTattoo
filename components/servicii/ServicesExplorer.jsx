@@ -164,9 +164,11 @@ const ServicePanel = ({ service }) => (
         variants={itemVariants}
         className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
       >
+        {/* On a phone the fixed bar carries booking on every screen, so the
+            panel would be repeating a button the reader already has. */}
         <BookingTrigger
           service={service.key}
-          className="btn btn-primary btn-block"
+          className="btn btn-primary btn-block hidden md:inline-flex"
         >
           Programează-te
         </BookingTrigger>

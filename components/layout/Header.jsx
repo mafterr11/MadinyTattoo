@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { HiBars2, HiXMark } from "react-icons/hi2";
+import { HiBars2 } from "react-icons/hi2";
 import { RiInstagramLine, RiTiktokLine } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
 
@@ -41,7 +41,7 @@ const Logo = ({ onClick }) => {
           ? `${business.name} — înapoi sus`
           : `${business.name} — pagina principală`
       }
-      className="neon neon-flicker font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
+      className="neon font-display text-xl tracking-tight whitespace-nowrap sm:text-2xl"
     >
       MADINY<span className="neon-dot">.</span>TATTOO
     </Link>
@@ -148,7 +148,14 @@ const Header = () => {
               aria-controls="meniu-mobil"
               className="border-fg/20 text-fg hover:border-accent hover:text-accent flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 lg:hidden"
             >
-              <HiBars2 className="text-xl" aria-hidden="true" />
+              <motion.span
+                animate={{ opacity: open ? 0 : 1, rotate: open ? 80 : 0 }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                className="flex"
+                aria-hidden="true"
+              >
+                <HiBars2 className="text-xl" />
+              </motion.span>
             </button>
           </div>
         </div>
@@ -173,7 +180,15 @@ const Header = () => {
                 aria-label="Închide meniul"
                 className="border-fg/20 text-fg hover:border-accent hover:text-accent flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300"
               >
-                <HiXMark className="text-xl" aria-hidden="true" />
+                <motion.span
+                  initial={{ opacity: 0, rotate: -80, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-display text-lg leading-none font-medium"
+                  aria-hidden="true"
+                >
+                  M
+                </motion.span>
               </button>
             </div>
 

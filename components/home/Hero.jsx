@@ -36,13 +36,7 @@ const Hero = () => (
             <span className="block text-[length:var(--text-display)]">
               Transformăm ideile
               <br />
-              în{" "}
-              <span
-                className="neon neon-flicker"
-                style={{ "--flicker-delay": "-1.7s" }}
-              >
-                Realitate
-              </span>
+              în <span className="neon">Realitate</span>
             </span>
             <span className="text-accent/85 mt-4 block text-[length:var(--text-h3)] font-normal">
               Salon de tatuaje în București
@@ -60,7 +54,17 @@ const Hero = () => (
 
         <Reveal delay={0.3}>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <BookingTrigger className="btn btn-primary btn-block">
+            {/* Booking already sits in the fixed bar at the bottom of every
+                phone screen, so the hero spends its primary slot on the one
+                thing the bar cannot offer — what the studio actually does. */}
+            <Link
+              href="/servicii"
+              className="btn btn-primary btn-block md:hidden"
+            >
+              Ce oferim
+              <FiArrowUpRight className="text-base" aria-hidden="true" />
+            </Link>
+            <BookingTrigger className="btn btn-primary btn-block hidden md:inline-flex">
               Programează-te
             </BookingTrigger>
             <Link href="/proiecte" className="btn btn-ghost btn-block">

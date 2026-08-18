@@ -271,11 +271,11 @@
     color: #fffaf4;
     text-shadow:
       0 0 0.02em #fff,
-      0 0 0.06em
-        color-mix(in oklab, var(--color-accent-bright) 90%, transparent),
-      0 0 0.28em color-mix(in oklab, var(--color-accent) 75%, transparent),
-      0 0 0.7em color-mix(in oklab, var(--color-accent) 45%, transparent),
-      0 0 1.5em color-mix(in oklab, var(--color-accent-deep) 30%, transparent);
+      0 0 0.05em
+        color-mix(in oklab, var(--color-accent-bright) 65%, transparent),
+      0 0 0.15em color-mix(in oklab, var(--color-accent) 45%, transparent),
+      0 0 0.4em color-mix(in oklab, var(--color-accent) 24%, transparent),
+      0 0 0.85em color-mix(in oklab, var(--color-accent-deep) 14%, transparent);
     transition: text-shadow 0.5s var(--ease-out-soft);
   }
 
@@ -283,10 +283,11 @@
   .neon:focus-visible {
     text-shadow:
       0 0 0.02em #fff,
-      0 0 0.08em var(--color-accent-bright),
-      0 0 0.36em color-mix(in oklab, var(--color-accent) 70%, transparent),
-      0 0 0.9em color-mix(in oklab, var(--color-accent) 45%, transparent),
-      0 0 1.8em color-mix(in oklab, var(--color-accent-deep) 32%, transparent);
+      0 0 0.06em
+        color-mix(in oklab, var(--color-accent-bright) 85%, transparent),
+      0 0 0.2em color-mix(in oklab, var(--color-accent) 60%, transparent),
+      0 0 0.5em color-mix(in oklab, var(--color-accent) 34%, transparent),
+      0 0 1em color-mix(in oklab, var(--color-accent-deep) 20%, transparent);
   }
 
   /* Same treatment for SVG icons, which text-shadow cannot reach. */
@@ -311,74 +312,10 @@
   .neon-dot {
     color: #fff;
     text-shadow:
-      0 0 0.1em var(--color-accent-bright),
-      0 0 0.4em var(--color-accent),
-      0 0 0.9em color-mix(in oklab, var(--color-accent) 65%, transparent);
-  }
-
-  /* --- Neon flicker ----------------------------------------------------
-     A tube that stutters, not a blinking light: the sign holds steady for the
-     whole cycle and drops out for a few frames near the end. Opacity is the
-     one property here the compositor can animate on its own, and dimming the
-     glyph together with its halo is exactly what a failing tube does.
-
-     `--flicker-delay` takes a negative value to start an element part-way
-     through its cycle, so two signs on the same page never stutter in unison. */
-  .neon-flicker,
-  .neon-flicker-slow {
-    animation-name: neon-flicker;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-delay: var(--flicker-delay, 0s);
-    will-change: opacity;
-  }
-
-  .neon-flicker {
-    animation-duration: 3.6s;
-  }
-
-  .neon-flicker-slow {
-    animation-duration: 5.6s;
-  }
-
-  @keyframes neon-flicker {
-    0%,
-    85%,
-    100% {
-      opacity: 1;
-    }
-    86% {
-      opacity: 0.32;
-    }
-    87.2% {
-      opacity: 1;
-    }
-    88.6% {
-      opacity: 0.58;
-    }
-    89.6% {
-      opacity: 1;
-    }
-    93% {
-      opacity: 1;
-    }
-    93.8% {
-      opacity: 0.72;
-    }
-    94.6% {
-      opacity: 1;
-    }
-  }
-
-  /* The global reduced-motion rule collapses animations to a single 0.01ms
-     pass, which would leave the sign frozen on whichever frame it landed on.
-     Switch it off outright instead. */
-  @media (prefers-reduced-motion: reduce) {
-    .neon-flicker,
-    .neon-flicker-slow {
-      animation: none !important;
-      opacity: 1 !important;
-    }
+      0 0 0.08em
+        color-mix(in oklab, var(--color-accent-bright) 80%, transparent),
+      0 0 0.28em color-mix(in oklab, var(--color-accent) 55%, transparent),
+      0 0 0.7em color-mix(in oklab, var(--color-accent) 28%, transparent);
   }
 
   /* --- Neon outline button --------------------------------------------
@@ -392,7 +329,7 @@
     gap: 0.5rem;
     min-height: 3.25rem;
     padding-inline: 1.25rem;
-    border: 1px solid color-mix(in oklab, var(--color-accent-bright) 80%, #fff);
+    border: 1px solid color-mix(in oklab, var(--color-accent-bright) 92%, #fff);
     border-radius: 0.875rem;
     background-color: color-mix(in oklab, var(--color-accent) 6%, transparent);
     font-size: 0.9375rem;
@@ -404,12 +341,12 @@
     /* The frame glows the way the letters do: a near-white edge with the warm
        halo thrown outwards and back inside the tube. */
     box-shadow:
-      0 0 0.15em
-        color-mix(in oklab, var(--color-accent-bright) 85%, transparent),
-      0 0 0.6em color-mix(in oklab, var(--color-accent) 55%, transparent),
-      0 0 1.4em color-mix(in oklab, var(--color-accent-deep) 35%, transparent),
-      inset 0 0 0.7em -0.2em
-        color-mix(in oklab, var(--color-accent) 45%, transparent);
+      0 0 0.12em
+        color-mix(in oklab, var(--color-accent-bright) 60%, transparent),
+      0 0 0.4em color-mix(in oklab, var(--color-accent) 32%, transparent),
+      0 0 0.9em color-mix(in oklab, var(--color-accent-deep) 18%, transparent),
+      inset 0 0 0.5em -0.2em
+        color-mix(in oklab, var(--color-accent) 28%, transparent);
     transition:
       background-color 0.35s var(--ease-out-soft),
       border-color 0.35s var(--ease-out-soft),
