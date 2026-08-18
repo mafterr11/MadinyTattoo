@@ -240,7 +240,8 @@ const RangeField = ({ field, form, updateDetail }) => {
 
   // Dragging the handle back where it started fires no change event, so
   // releasing the pointer counts as choosing whatever sits under it.
-  const commit = (event) => updateDetail(field.name, Number(event.target.value));
+  const commit = (event) =>
+    updateDetail(field.name, Number(event.target.value));
 
   return (
     <div>
@@ -520,7 +521,11 @@ const BookingModal = ({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-70 flex items-center justify-center bg-black/75 p-3 backdrop-blur-md sm:p-6"
+          /* The scrim only has a job from md up, where the panel floats: dim
+             the page enough to push it back without erasing it. Below md the
+             panel covers the screen and the scrim is just what the fade
+             happens against. */
+          className="fixed inset-0 z-70 flex items-center justify-center bg-black/70 backdrop-blur-[2px] md:bg-black/60 md:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -533,7 +538,11 @@ const BookingModal = ({
             role="dialog"
             aria-modal="true"
             aria-labelledby="booking-title"
-            className="card bg-surface/95 flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden border-white/10 shadow-[0_30px_100px_-30px_rgba(0,0,0,0.95)] sm:max-h-[calc(100dvh-3rem)]"
+            /* A phone gives the wizard the whole screen — four steps of
+               questions have no room to spare inside a floating card, and a
+               full-height sheet is what every other app the reader uses does.
+               From md up it goes back to a centred dialog. */
+            className="card bg-surface flex h-dvh w-full flex-col overflow-hidden rounded-none border-0 border-white/10 shadow-[0_30px_100px_-30px_rgba(0,0,0,0.95)] md:h-auto md:max-h-[calc(100dvh-3rem)] md:max-w-3xl md:rounded-2xl md:border"
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
@@ -628,7 +637,7 @@ const BookingModal = ({
                 </AnimatePresence>
               </div>
 
-              <footer className="flex shrink-0 items-center justify-between gap-3 border-t border-white/8 px-5 py-4 sm:px-8">
+              <footer className="flex shrink-0 items-center justify-between gap-3 border-t border-white/8 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-8 md:pb-4">
                 {step === 0 ? (
                   <button
                     type="button"
@@ -807,9 +816,7 @@ const BookingProvider = ({ children }) => {
   })();
 
   const canSubmit = Boolean(
-    flow &&
-      form.name.trim() &&
-      (!flow.idea.required || form.idea.trim()),
+    flow && form.name.trim() && (!flow.idea.required || form.idea.trim()),
   );
 
   const goNext = () => {
