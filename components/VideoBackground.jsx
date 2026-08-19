@@ -22,6 +22,18 @@ const VideoBackground = () => {
   const [readySrc, setReadySrc] = useState(null);
 
   useEffect(() => {
+    // Two ways of asking for no clip, both of them explicit: Data Saver on the
+    // device, or a reduced-motion preference. Neither is a guess about the
+    // connection — the video stays the default for everyone else, because it
+    // is the first thing the studio wants a visitor to see. The poster is
+    // already painted underneath, so opting out costs nothing visually.
+    const declined = [
+      navigator.connection?.saveData === true,
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    ].some(Boolean);
+
+    if (declined) return undefined;
+
     const query = window.matchMedia("(max-width: 767px)");
     const pick = () => setVariant(query.matches ? "mobile" : "desktop");
 
