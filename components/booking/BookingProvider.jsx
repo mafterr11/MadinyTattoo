@@ -552,6 +552,29 @@ const AvailabilityStep = ({ form, kicker, updateForm }) => (
   </div>
 );
 
+/**
+ * The wizard collects a name and a free-text description and hands them to
+ * WhatsApp, so the visitor has to be told that before they press send — not
+ * after, on a page they would have to go looking for. Opened in a new tab on
+ * purpose: following the link in place would throw away a half-filled form.
+ */
+const PrivacyNote = () => (
+  <p className="text-muted border-t border-white/8 pt-5 text-xs leading-relaxed">
+    Apăsând „Trimite cererea” deschizi WhatsApp cu mesajul de mai sus, iar
+    conversația se poartă prin Meta. Folosim datele doar ca să îți răspundem și
+    să stabilim programarea. Detalii în{" "}
+    <a
+      href="/confidentialitate"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-accent hover:text-accent-bright underline underline-offset-2 transition-colors duration-300"
+    >
+      politica de confidențialitate
+    </a>
+    .
+  </p>
+);
+
 const ContactStep = ({ flow, form, kicker, updateForm }) => (
   <div className="space-y-7">
     <StepHeading
@@ -612,6 +635,8 @@ const ContactStep = ({ flow, form, kicker, updateForm }) => (
         />
       </fieldset>
     )}
+
+    <PrivacyNote />
   </div>
 );
 

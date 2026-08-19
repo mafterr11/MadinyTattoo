@@ -725,6 +725,95 @@
 }
 
 /* ==========================================================================
+   Legal pages
+   ==========================================================================
+   The three legal pages are the only long-form reading on the site. Styling
+   them by element keeps their clauses as plain markup — a paragraph is a <p>,
+   a list is a <ul> — instead of a class on every line. Scoped to
+   `.legal-prose` so nothing else picks these up. */
+.legal-prose p {
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.legal-prose p + p {
+  margin-top: 1rem;
+}
+
+.legal-prose ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.legal-prose li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.legal-prose li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 9999px;
+  background-color: var(--color-accent);
+}
+
+.legal-prose strong {
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+/* Inline links have to be findable in a wall of grey text, so they take the
+   accent and keep their underline rather than revealing it on hover. */
+.legal-prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(
+    in oklab,
+    var(--color-accent) 40%,
+    transparent
+  );
+  transition: color 0.3s var(--ease-out-soft);
+}
+
+.legal-prose a:hover {
+  color: var(--color-accent-bright);
+}
+
+/* Definition rows — the operator's registration details, contact addresses. */
+.legal-prose dl {
+  margin-block: 1.25rem;
+  display: grid;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (width >= 640px) {
+  .legal-prose dl {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.legal-prose dt {
+  color: var(--color-fg);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-top: 0.2em;
+}
+
+.legal-prose dd {
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
    Misc
    ========================================================================== */
 .iframe-container {

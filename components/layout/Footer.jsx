@@ -10,6 +10,7 @@ import {
   telUrl,
   whatsappUrl,
 } from "../../lib/site";
+import { anpc, legalLinks } from "../../lib/legal";
 import { BookingTrigger } from "../booking/BookingProvider";
 
 const socialIcons = {
@@ -132,6 +133,47 @@ const Footer = () => (
         <BookingTrigger className="btn btn-ghost btn-sm mt-6">
           Programează-te
         </BookingTrigger>
+      </div>
+    </div>
+
+    <div className="border-t border-white/8">
+      <div className="container py-6">
+        <nav aria-label="Informații legale">
+          <ul className="text-muted flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:justify-start">
+            {legalLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={link.path}
+                  className="hover:text-accent transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            {/* Required of Romanian commercial sites, and the reader's route
+                out if we cannot settle something between ourselves. */}
+            <li>
+              <a
+                href={anpc.salUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors duration-300"
+              >
+                ANPC — SAL
+              </a>
+            </li>
+            <li>
+              <a
+                href={anpc.solUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors duration-300"
+              >
+                ANPC — SOL
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
 

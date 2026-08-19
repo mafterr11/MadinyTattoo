@@ -11,6 +11,10 @@ const priorities = {
   '/proiecte': 0.8,
   '/contact': 0.7,
   '/aftercare': 0.6,
+  // Required reading, not pages competing for traffic.
+  '/termeni': 0.2,
+  '/confidentialitate': 0.2,
+  '/cookies': 0.2,
 }
 
 module.exports = {
@@ -28,7 +32,12 @@ module.exports = {
   autoLastmod: true,
   transform: async (config, path) => ({
     loc: path,
-    changefreq: path === '/' || path === '/proiecte' ? 'weekly' : 'monthly',
+    changefreq:
+      path === '/' || path === '/proiecte'
+        ? 'weekly'
+        : priorities[path] === 0.2
+          ? 'yearly'
+          : 'monthly',
     priority: priorities[path] ?? config.priority,
     lastmod: new Date().toISOString(),
   }),
