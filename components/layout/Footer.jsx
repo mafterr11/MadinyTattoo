@@ -137,7 +137,10 @@ const Footer = () => (
 
     <div className="border-t border-white/8">
       <div className="text-muted container flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row">
-        <p>Madiny Tattoo © All Rights Reserved</p>
+        <p>
+          © {new Date().getFullYear()} {business.name}. Toate drepturile
+          rezervate.
+        </p>
         <p>
           Creat de{" "}
           <Link
