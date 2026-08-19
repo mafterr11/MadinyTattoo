@@ -14,6 +14,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 
 import { bookingFlows, getBookingFlow } from "../../lib/bookingFlows";
 import { whatsappSendUrl } from "../../lib/site";
+import useFocusTrap from "../../lib/useFocusTrap";
 
 const BookingContext = createContext(null);
 
@@ -516,6 +517,7 @@ const BookingModal = ({
   const total = steps.length;
   const kicker = `Pasul ${step + 1} din ${total}`;
   const current = steps[step];
+  const dialogRef = useFocusTrap(open, closeBooking);
 
   return (
     <AnimatePresence>
@@ -535,9 +537,13 @@ const BookingModal = ({
           }}
         >
           <motion.div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby="booking-title"
+            // Focus lands here when the panel has no control to take it yet,
+            // and on nothing else — the trap keeps it out of the Tab order.
+            tabIndex={-1}
             /* A phone gives the wizard the whole screen — four steps of
                questions have no room to spare inside a floating card, and a
                full-height sheet is what every other app the reader uses does.
@@ -747,23 +753,18 @@ const BookingProvider = ({ children }) => {
     setForm(createInitialForm());
   }, []);
 
+  // Escape is handled by the modal's focus trap, which is also what knows
+  // where focus has to go back to afterwards.
   useEffect(() => {
     if (!open) return undefined;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") closeBooking();
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
     };
-  }, [closeBooking, open]);
+  }, [open]);
 
   const flow = getBookingFlow(form.service);
 

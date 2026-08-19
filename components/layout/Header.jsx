@@ -9,6 +9,7 @@ import { RiInstagramLine, RiTiktokLine } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
 
 import { navLinks, socials, business, telUrl } from "../../lib/site";
+import useFocusTrap from "../../lib/useFocusTrap";
 import { BookingTrigger } from "../booking/BookingProvider";
 
 const socialIcons = {
@@ -68,11 +69,9 @@ const Header = () => {
     };
   }, [open]);
 
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  // Escape, focus containment and returning focus to the hamburger all come
+  // from the trap — the drawer covers the page, so Tab must not walk behind it.
+  const drawerRef = useFocusTrap(open, () => setOpen(false));
 
   const isActive = (path) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
@@ -165,7 +164,12 @@ const Header = () => {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={drawerRef}
             id="meniu-mobil"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Meniu"
+            tabIndex={-1}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
