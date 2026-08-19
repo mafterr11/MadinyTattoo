@@ -10,7 +10,14 @@ import {
   useState,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowLeft, FiArrowRight, FiCheck, FiX } from "react-icons/fi";
+import {
+  FiAlertCircle,
+  FiArrowLeft,
+  FiArrowRight,
+  FiCheck,
+  FiCopy,
+  FiX,
+} from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
 import { bookingFlows, getBookingFlow } from "../../lib/bookingFlows";
@@ -88,6 +95,46 @@ const fieldComplete = (field, form) => {
   return field.otherOption && value === field.otherOption
     ? Boolean(form.customs[field.name]?.trim())
     : true;
+};
+
+/**
+ * What is still holding this step up, in the reader's own words — or null when
+ * nothing is.
+ *
+ * The forward button used to dim to 35% opacity and say nothing else. On the
+ * details step, where some questions are required and some are marked
+ * optional, that left people rereading four answers to find the one they had
+ * missed. This is also the single source for whether the step can advance, so
+ * the button state and the explanation can never disagree.
+ */
+const missingOn = (current, flow, form) => {
+  if (!flow) return "Alege un serviciu.";
+
+  if (current === "service") return null;
+
+  const list = (parts, join) =>
+    parts.length ? `Mai lipsește: ${parts.join(join)}.` : null;
+
+  if (current === "details")
+    return list(
+      flow.fields
+        .filter((field) => !fieldComplete(field, form))
+        .map((field) => (field.label ?? field.summaryLabel).toLowerCase()),
+      ", ",
+    );
+
+  if (current === "availability")
+    return form.availability ? null : "Alege o perioadă.";
+
+  return list(
+    [
+      form.name.trim() ? null : "numele tău",
+      !flow.idea.required || form.idea.trim()
+        ? null
+        : flow.idea.label.toLowerCase(),
+    ].filter(Boolean),
+    " și ",
+  );
 };
 
 /**
@@ -568,9 +615,127 @@ const ContactStep = ({ flow, form, kicker, updateForm }) => (
   </div>
 );
 
+/**
+ * What the wizard shows once the request has been handed off.
+ *
+ * Submitting used to open a WhatsApp tab and close the wizard in the same
+ * breath. When the browser blocked that tab — which it does often enough on
+ * phones — the form simply vanished, and the visitor had every reason to
+ * believe a request had been sent that never was. So the wizard stays open and
+ * says which of the two happened, and either way the message is still here:
+ * a link that opens WhatsApp on a real click, and the text itself to copy.
+ */
+const SentStep = ({ closeBooking, sent }) => {
+  const [copied, setCopied] = useState(false);
+  const primaryRef = useRef(null);
+
+  // The control that had focus was the submit button, and it has just
+  // unmounted — without this, focus falls back to the body.
+  useEffect(() => {
+    primaryRef.current?.focus({ preventScroll: true });
+  }, []);
+
+  useEffect(() => {
+    if (!copied) return undefined;
+    const timer = setTimeout(() => setCopied(false), 2400);
+    return () => clearTimeout(timer);
+  }, [copied]);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(sent.message);
+      setCopied(true);
+    } catch {
+      // No clipboard permission, or an insecure origin. The message is on
+      // screen below either way, so there is still a way through.
+      setCopied(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto px-5 py-8 sm:px-8">
+        <div className="mx-auto max-w-md text-center">
+          <span
+            className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full border ${
+              sent.opened
+                ? "border-accent/30 bg-accent/10 text-accent"
+                : "border-fg/15 bg-fg/5 text-fg"
+            }`}
+          >
+            {sent.opened ? (
+              <FiCheck className="text-3xl" aria-hidden="true" />
+            ) : (
+              <FiAlertCircle className="text-3xl" aria-hidden="true" />
+            )}
+          </span>
+
+          <h3 className="font-display mt-6 text-2xl sm:text-3xl">
+            {sent.opened
+              ? "Gata. Ne vedem pe WhatsApp."
+              : "A mai rămas un pas."}
+          </h3>
+
+          <p className="text-muted mt-3 text-sm leading-relaxed">
+            {sent.opened
+              ? "Ți-am deschis WhatsApp cu mesajul deja scris. Apasă trimite acolo și îți răspundem cât putem de repede."
+              : "Browserul a blocat fereastra WhatsApp, așa că cererea nu a plecat încă. Deschide-o de aici — mesajul este pregătit."}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3">
+            <a
+              ref={sent.opened ? undefined : primaryRef}
+              href={sent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`btn ${sent.opened ? "btn-ghost" : "btn-primary"}`}
+            >
+              <RiWhatsappLine className="text-lg" aria-hidden="true" />
+              {sent.opened ? "Deschide WhatsApp din nou" : "Deschide WhatsApp"}
+            </a>
+
+            <button
+              type="button"
+              onClick={copy}
+              className="btn btn-ghost btn-sm"
+            >
+              <FiCopy className="text-base" aria-hidden="true" />
+              {copied ? "Mesaj copiat" : "Copiază mesajul"}
+            </button>
+          </div>
+
+          {/* Announced rather than only shown: the button label changes, and a
+              screen reader has no other way to learn that the copy worked. */}
+          <p role="status" aria-live="polite" className="sr-only">
+            {copied ? "Mesajul a fost copiat." : ""}
+          </p>
+
+          <details className="mt-8 text-left">
+            <summary className="text-muted hover:text-fg cursor-pointer text-xs font-semibold tracking-[0.16em] uppercase transition-colors duration-300">
+              Vezi mesajul
+            </summary>
+            <pre className="text-muted mt-3 rounded-xl border border-white/8 bg-white/[0.025] p-4 text-xs leading-relaxed whitespace-pre-wrap">
+              {sent.message}
+            </pre>
+          </details>
+        </div>
+      </div>
+
+      <footer className="flex shrink-0 items-center justify-end border-t border-white/8 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-8 md:pb-4">
+        <button
+          ref={sent.opened ? primaryRef : undefined}
+          type="button"
+          onClick={closeBooking}
+          className={`btn btn-sm ${sent.opened ? "btn-primary" : "btn-ghost"}`}
+        >
+          Închide
+        </button>
+      </footer>
+    </div>
+  );
+};
+
 const BookingModal = ({
-  canContinue,
-  canSubmit,
   chooseService,
   closeBooking,
   flow,
@@ -578,7 +743,9 @@ const BookingModal = ({
   goBack,
   goNext,
   handleSubmit,
+  missing,
   open,
+  sent,
   step,
   steps,
   updateCustom,
@@ -636,7 +803,7 @@ const BookingModal = ({
                     id="booking-title"
                     className="font-display mt-1 text-2xl sm:text-3xl"
                   >
-                    Să începem.
+                    {sent ? "Cererea ta." : "Să începem."}
                   </h2>
                 </div>
                 <button
@@ -649,113 +816,158 @@ const BookingModal = ({
                 </button>
               </div>
 
-              <div className="mt-5 flex items-center gap-3">
-                <div className="flex flex-1 gap-2" aria-label={kicker}>
-                  {steps.map((item, i) => (
-                    <span
-                      key={item}
-                      className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
-                        i <= step ? "bg-accent" : "bg-white/12"
-                      }`}
-                    />
-                  ))}
+              {!sent && (
+                <div className="mt-5 flex items-center gap-3">
+                  <div className="flex flex-1 gap-2" aria-label={kicker}>
+                    {steps.map((item, i) => (
+                      <span
+                        key={item}
+                        className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
+                          i <= step ? "bg-accent" : "bg-white/12"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-muted text-[0.65rem] font-semibold tracking-[0.14em]">
+                    {step + 1} / {total}
+                  </span>
                 </div>
-                <span className="text-muted text-[0.65rem] font-semibold tracking-[0.14em]">
-                  {step + 1} / {total}
-                </span>
-              </div>
+              )}
             </header>
 
-            <form
-              onSubmit={handleSubmit}
-              className="flex min-h-0 flex-1 flex-col"
-            >
-              <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
-                <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
-                    key={current}
-                    initial={{ opacity: 0, x: 12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -12 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {current === "service" && (
-                      <ServiceStep
-                        chooseService={chooseService}
-                        form={form}
-                        kicker={kicker}
-                      />
-                    )}
-                    {current === "details" && flow && (
-                      <DetailsStep
-                        flow={flow}
-                        form={form}
-                        kicker={kicker}
-                        updateCustom={updateCustom}
-                        updateDetail={updateDetail}
-                      />
-                    )}
-                    {current === "availability" && (
-                      <AvailabilityStep
-                        form={form}
-                        kicker={kicker}
-                        updateForm={updateForm}
-                      />
-                    )}
-                    {current === "contact" && flow && (
-                      <ContactStep
-                        flow={flow}
-                        form={form}
-                        kicker={kicker}
-                        updateForm={updateForm}
-                      />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+            {sent ? (
+              <SentStep closeBooking={closeBooking} sent={sent} />
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="flex min-h-0 flex-1 flex-col"
+              >
+                <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={current}
+                      initial={{ opacity: 0, x: 12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -12 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {current === "service" && (
+                        <ServiceStep
+                          chooseService={chooseService}
+                          form={form}
+                          kicker={kicker}
+                        />
+                      )}
+                      {current === "details" && flow && (
+                        <DetailsStep
+                          flow={flow}
+                          form={form}
+                          kicker={kicker}
+                          updateCustom={updateCustom}
+                          updateDetail={updateDetail}
+                        />
+                      )}
+                      {current === "availability" && (
+                        <AvailabilityStep
+                          form={form}
+                          kicker={kicker}
+                          updateForm={updateForm}
+                        />
+                      )}
+                      {current === "contact" && flow && (
+                        <ContactStep
+                          flow={flow}
+                          form={form}
+                          kicker={kicker}
+                          updateForm={updateForm}
+                        />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
 
-              <footer className="flex shrink-0 items-center justify-between gap-3 border-t border-white/8 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-8 md:pb-4">
-                {step === 0 ? (
-                  <button
-                    type="button"
-                    onClick={closeBooking}
-                    className="text-muted hover:text-fg px-1 py-3 text-xs font-semibold tracking-[0.12em] uppercase transition-colors duration-300"
+                <footer className="shrink-0 border-t border-white/8 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-8 md:pb-4">
+                  {/* Live, because it changes as answers land while focus stays
+                    on whichever option was just pressed. */}
+                  <p
+                    id="booking-missing"
+                    role="status"
+                    aria-live="polite"
+                    className={`text-muted text-xs leading-snug transition-opacity duration-200 ${
+                      missing ? "mb-3 opacity-100" : "sr-only opacity-0"
+                    }`}
                   >
-                    Închide
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={goBack}
-                    className="btn btn-ghost btn-sm"
-                  >
-                    <FiArrowLeft className="text-base" aria-hidden="true" />
-                    Înapoi
-                  </button>
-                )}
+                    {missing}
+                  </p>
 
-                {step < total - 1 ? (
-                  <button
-                    type="button"
-                    onClick={goNext}
-                    disabled={!canContinue}
-                    className="btn btn-primary btn-sm min-w-40 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:transform-none"
-                  >
-                    Continuă
-                    <FiArrowRight className="text-base" aria-hidden="true" />
-                  </button>
-                ) : (
-                  <button
-                    type="submit"
-                    disabled={!canSubmit}
-                    className="btn btn-primary btn-sm min-w-48 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:transform-none"
-                  >
-                    <RiWhatsappLine className="text-lg" aria-hidden="true" />
-                    Trimite cererea
-                  </button>
-                )}
-              </footer>
-            </form>
+                  <div className="flex items-center justify-between gap-3">
+                    {step === 0 ? (
+                      <button
+                        type="button"
+                        onClick={closeBooking}
+                        className="text-muted hover:text-fg px-1 py-3 text-xs font-semibold tracking-[0.12em] uppercase transition-colors duration-300"
+                      >
+                        Închide
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={goBack}
+                        className="btn btn-ghost btn-sm"
+                      >
+                        <FiArrowLeft className="text-base" aria-hidden="true" />
+                        Înapoi
+                      </button>
+                    )}
+
+                    {/* aria-disabled rather than disabled: a disabled button
+                      cannot be focused, so the reader who most needs the
+                      explanation is the one who could never reach it. The
+                      handlers already refuse to act on an incomplete step. */}
+                    {step < total - 1 ? (
+                      <button
+                        type="button"
+                        onClick={goNext}
+                        aria-disabled={Boolean(missing)}
+                        aria-describedby={
+                          missing ? "booking-missing" : undefined
+                        }
+                        className={`btn btn-primary btn-sm min-w-40 ${
+                          missing
+                            ? "cursor-not-allowed opacity-35 hover:transform-none"
+                            : ""
+                        }`}
+                      >
+                        Continuă
+                        <FiArrowRight
+                          className="text-base"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    ) : (
+                      <button
+                        type="submit"
+                        aria-disabled={Boolean(missing)}
+                        aria-describedby={
+                          missing ? "booking-missing" : undefined
+                        }
+                        className={`btn btn-primary btn-sm min-w-48 ${
+                          missing
+                            ? "cursor-not-allowed opacity-35 hover:transform-none"
+                            : ""
+                        }`}
+                      >
+                        <RiWhatsappLine
+                          className="text-lg"
+                          aria-hidden="true"
+                        />
+                        Trimite cererea
+                      </button>
+                    )}
+                  </div>
+                </footer>
+              </form>
+            )}
           </motion.div>
         </motion.div>
       )}
@@ -807,6 +1019,9 @@ const BookingProvider = ({ children }) => {
   const [step, setStep] = useState(0);
   const [needsPicker, setNeedsPicker] = useState(true);
   const [form, setForm] = useState(() => createInitialForm());
+  // `{ url, message, opened }` once the request has been handed to WhatsApp —
+  // null while the wizard is still being filled in.
+  const [sent, setSent] = useState(null);
 
   const openBooking = useCallback((service) => {
     const flow = getBookingFlow(service);
@@ -814,6 +1029,7 @@ const BookingProvider = ({ children }) => {
     setForm(createInitialForm(flow));
     setNeedsPicker(!flow);
     setStep(0);
+    setSent(null);
     setOpen(true);
   }, []);
 
@@ -822,6 +1038,7 @@ const BookingProvider = ({ children }) => {
     setStep(0);
     setNeedsPicker(true);
     setForm(createInitialForm());
+    setSent(null);
   }, []);
 
   // Escape is handled by the modal's focus trap, which is also what knows
@@ -878,21 +1095,10 @@ const BookingProvider = ({ children }) => {
 
   const current = steps[step];
 
-  const canContinue = (() => {
-    if (current === "service") return Boolean(flow);
-    if (current === "details")
-      return Boolean(flow) && flow.fields.every((f) => fieldComplete(f, form));
-    if (current === "availability") return Boolean(form.availability);
-
-    return true;
-  })();
-
-  const canSubmit = Boolean(
-    flow && form.name.trim() && (!flow.idea.required || form.idea.trim()),
-  );
+  const missing = missingOn(current, flow, form);
 
   const goNext = () => {
-    if (!canContinue) return;
+    if (missing) return;
     setStep((value) => Math.min(value + 1, steps.length - 1));
   };
 
@@ -900,7 +1106,7 @@ const BookingProvider = ({ children }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!canSubmit) return;
+    if (missing) return;
 
     const answers = flow.fields
       .map((field) => {
@@ -939,16 +1145,22 @@ const BookingProvider = ({ children }) => {
 
     const target = new URL(whatsappSendUrl);
     target.searchParams.set("text", message);
-    window.open(target.toString(), "_blank", "noopener,noreferrer");
-    closeBooking();
+    const url = target.toString();
+
+    // Opened without the "noopener" feature on purpose: with it, Chrome
+    // returns null whether the tab opened or was blocked, and null is the only
+    // signal there is. Clearing `opener` by hand buys the same protection and
+    // leaves the blocked case distinguishable.
+    const popup = window.open(url, "_blank");
+    if (popup) popup.opener = null;
+
+    setSent({ url, message, opened: Boolean(popup) });
   };
 
   return (
     <BookingContext.Provider value={{ openBooking }}>
       {children}
       <BookingModal
-        canContinue={canContinue}
-        canSubmit={canSubmit}
         chooseService={chooseService}
         closeBooking={closeBooking}
         flow={flow}
@@ -956,7 +1168,9 @@ const BookingProvider = ({ children }) => {
         goBack={goBack}
         goNext={goNext}
         handleSubmit={handleSubmit}
+        missing={missing}
         open={open}
+        sent={sent}
         step={step}
         steps={steps}
         updateCustom={updateCustom}
