@@ -40,7 +40,7 @@ const MapEmbed = () => {
           that has not loaded rather than as an empty panel. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,var(--color-fg)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-fg)_1px,transparent_1px)] [background-size:44px_44px]"
+        className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,var(--color-fg)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-fg)_1px,transparent_1px)] [background-size:44px_44px] opacity-[0.07]"
       />
 
       <span className="border-accent/25 bg-accent/8 text-accent relative flex h-14 w-14 items-center justify-center rounded-full border">

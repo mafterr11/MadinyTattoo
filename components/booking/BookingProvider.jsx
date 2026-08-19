@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -110,14 +111,16 @@ const BookingOption = ({
   active,
   children,
   onClick,
-  role,
+  ref,
+  tabIndex,
   variant = "card",
 }) => (
   <button
+    ref={ref}
     type="button"
-    role={role}
-    aria-checked={role ? active : undefined}
-    aria-pressed={role ? undefined : active}
+    role="radio"
+    aria-checked={active}
+    tabIndex={tabIndex}
     onClick={onClick}
     className={`group relative flex items-center gap-3 border transition-all duration-300 ${
       VARIANTS[variant]
@@ -136,6 +139,92 @@ const BookingOption = ({
     />
   </button>
 );
+
+/**
+ * A group of answer buttons that behaves the way a set of radios is supposed
+ * to: one Tab stop for the whole group, arrows to move between the options.
+ *
+ * Every group in the wizard already declared `role="radiogroup"`, which
+ * promises exactly that — but each option was its own Tab stop and the arrow
+ * keys did nothing, so a keyboard user tabbed through eight buttons to answer
+ * one question, and a screen-reader user was told to press arrows that had no
+ * effect. The services tabs on /servicii got this right; this brings the
+ * wizard in line with them.
+ *
+ * `options` is `{ value, content }` — the label markup differs per group, the
+ * keyboard behaviour does not.
+ */
+const RadioGroup = ({
+  ariaLabel,
+  className,
+  onChange,
+  options,
+  value,
+  variant,
+}) => {
+  const refs = useRef({});
+
+  // The roving Tab stop. Before anything is picked there is no selection to
+  // rove from, so the first option holds it — that is what the pattern asks
+  // for, and it means Tab always lands somewhere useful.
+  const stop = options.some((option) => option.value === value)
+    ? value
+    : options[0]?.value;
+
+  const focusValue = (next) => {
+    onChange(next);
+    refs.current[next]?.focus();
+  };
+
+  // Both axes: these groups are a grid on some steps and a row on others, and
+  // the reader should not have to work out which before pressing a key.
+  const onKeyDown = (event) => {
+    const jump = {
+      ArrowRight: 1,
+      ArrowDown: 1,
+      ArrowLeft: -1,
+      ArrowUp: -1,
+    }[event.key];
+
+    if (jump) {
+      event.preventDefault();
+      const index = options.findIndex((option) => option.value === stop);
+      focusValue(
+        options[(index + jump + options.length) % options.length].value,
+      );
+      return;
+    }
+
+    if (event.key === "Home" || event.key === "End") {
+      event.preventDefault();
+      focusValue(options[event.key === "Home" ? 0 : options.length - 1].value);
+    }
+  };
+
+  return (
+    <div
+      role="radiogroup"
+      aria-label={ariaLabel}
+      className={className}
+      onKeyDown={onKeyDown}
+    >
+      {options.map((option) => (
+        <BookingOption
+          key={option.value}
+          ref={(node) => {
+            refs.current[option.value] = node;
+          }}
+          active={value === option.value}
+          onClick={() => onChange(option.value)}
+          tabIndex={option.value === stop ? 0 : -1}
+          variant={variant}
+        >
+          {option.content}
+        </BookingOption>
+      ))}
+    </div>
+  );
+};
 
 const StepHeading = ({ kicker, title, description }) => (
   <div>
@@ -165,27 +254,23 @@ const ChoiceField = ({ field, form, updateCustom, updateDetail }) => {
         <FieldLabel optional={!field.required}>{field.label}</FieldLabel>
       )}
 
-      <div
+      <RadioGroup
+        ariaLabel={field.ariaLabel}
         className={`grid grid-cols-2 gap-2 sm:grid-cols-4 ${
           field.label ? "mt-4" : ""
         }`}
-        role="radiogroup"
-        aria-label={field.ariaLabel}
-      >
-        {field.options.map((option) => (
-          <BookingOption
-            key={option}
-            active={value === option}
-            onClick={() => updateDetail(field.name, option)}
-            role="radio"
-            variant="tile"
-          >
+        onChange={(option) => updateDetail(field.name, option)}
+        options={field.options.map((option) => ({
+          value: option,
+          content: (
             <span className="text-[0.7rem] font-semibold tracking-[0.12em] uppercase">
               {option}
             </span>
-          </BookingOption>
-        ))}
-      </div>
+          ),
+        }))}
+        value={value}
+        variant="tile"
+      />
 
       {field.otherOption && value === field.otherOption && (
         <input
@@ -207,23 +292,17 @@ const PillsField = ({ field, form, updateDetail }) => (
       <FieldLabel optional={!field.required}>{field.label}</FieldLabel>
     )}
 
-    <div
+    <RadioGroup
+      ariaLabel={field.ariaLabel}
       className={`flex flex-wrap gap-2 ${field.label ? "mt-4" : ""}`}
-      role="radiogroup"
-      aria-label={field.ariaLabel}
-    >
-      {field.options.map((option) => (
-        <BookingOption
-          key={option}
-          active={form.details[field.name] === option}
-          onClick={() => updateDetail(field.name, option)}
-          role="radio"
-          variant="pill"
-        >
-          <span className="text-xs font-semibold">{option}</span>
-        </BookingOption>
-      ))}
-    </div>
+      onChange={(option) => updateDetail(field.name, option)}
+      options={field.options.map((option) => ({
+        value: option,
+        content: <span className="text-xs font-semibold">{option}</span>,
+      }))}
+      value={form.details[field.name]}
+      variant="pill"
+    />
   </div>
 );
 
@@ -335,25 +414,23 @@ const ServiceStep = ({ chooseService, form, kicker }) => (
       description="Alege serviciul și continuăm cu întrebările potrivite pentru el."
     />
 
-    <div
+    <RadioGroup
+      ariaLabel="Serviciu"
       className="grid gap-2 sm:grid-cols-2"
-      role="radiogroup"
-      aria-label="Serviciu"
-    >
-      {bookingFlows.map((flow) => (
-        <BookingOption
-          key={flow.key}
-          active={form.service === flow.key}
-          onClick={() => chooseService(flow.key)}
-          role="radio"
-        >
-          <span className="block text-sm font-semibold">{flow.label}</span>
-          <span className="text-muted mt-1 block text-xs">
-            {flow.pickerDetail}
-          </span>
-        </BookingOption>
-      ))}
-    </div>
+      onChange={chooseService}
+      options={bookingFlows.map((flow) => ({
+        value: flow.key,
+        content: (
+          <>
+            <span className="block text-sm font-semibold">{flow.label}</span>
+            <span className="text-muted mt-1 block text-xs">
+              {flow.pickerDetail}
+            </span>
+          </>
+        ),
+      }))}
+      value={form.service}
+    />
   </div>
 );
 
@@ -390,46 +467,40 @@ const AvailabilityStep = ({ form, kicker, updateForm }) => (
     />
 
     <div className="-mt-1">
-      <div
+      <RadioGroup
+        ariaLabel="Disponibilitate"
         className="grid gap-2 sm:grid-cols-2"
-        role="radiogroup"
-        aria-label="Disponibilitate"
-      >
-        {AVAILABILITY_OPTIONS.map((option) => (
-          <BookingOption
-            key={option.value}
-            active={form.availability === option.value}
-            onClick={() => updateForm("availability", option.value)}
-            role="radio"
-          >
-            <span className="block text-sm font-semibold">{option.value}</span>
-            <span className="text-muted mt-1 block text-xs">
-              {option.detail}
-            </span>
-          </BookingOption>
-        ))}
-      </div>
+        onChange={(option) => updateForm("availability", option)}
+        options={AVAILABILITY_OPTIONS.map((option) => ({
+          value: option.value,
+          content: (
+            <>
+              <span className="block text-sm font-semibold">
+                {option.value}
+              </span>
+              <span className="text-muted mt-1 block text-xs">
+                {option.detail}
+              </span>
+            </>
+          ),
+        }))}
+        value={form.availability}
+      />
     </div>
 
     <div>
       <FieldLabel optional>Preferință orară</FieldLabel>
-      <div
+      <RadioGroup
+        ariaLabel="Preferință orară"
         className="mt-4 flex flex-wrap gap-2"
-        role="radiogroup"
-        aria-label="Preferință orară"
-      >
-        {TIME_OPTIONS.map((time) => (
-          <BookingOption
-            key={time}
-            active={form.time === time}
-            onClick={() => updateForm("time", time)}
-            role="radio"
-            variant="pill"
-          >
-            <span className="text-xs font-semibold">{time}</span>
-          </BookingOption>
-        ))}
-      </div>
+        onChange={(time) => updateForm("time", time)}
+        options={TIME_OPTIONS.map((time) => ({
+          value: time,
+          content: <span className="text-xs font-semibold">{time}</span>,
+        }))}
+        value={form.time}
+        variant="pill"
+      />
     </div>
   </div>
 );
@@ -477,21 +548,21 @@ const ContactStep = ({ flow, form, kicker, updateForm }) => (
           {flow.reference.question}
           <span className="text-muted"> (opțional)</span>
         </legend>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2" role="radiogroup">
-          {[
+        <RadioGroup
+          ariaLabel={flow.reference.question}
+          className="mt-3 grid gap-2 sm:grid-cols-2"
+          onChange={(option) => updateForm("reference", option)}
+          options={[
             { value: "Da", label: flow.reference.yes },
             { value: "Nu", label: flow.reference.no },
-          ].map((option) => (
-            <BookingOption
-              key={option.value}
-              active={form.reference === option.value}
-              onClick={() => updateForm("reference", option.value)}
-              role="radio"
-            >
+          ].map((option) => ({
+            value: option.value,
+            content: (
               <span className="text-sm font-semibold">{option.label}</span>
-            </BookingOption>
-          ))}
-        </div>
+            ),
+          }))}
+          value={form.reference}
+        />
       </fieldset>
     )}
   </div>
