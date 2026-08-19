@@ -9,15 +9,37 @@ import { business, telUrl, whatsappUrl } from "../lib/site";
 /**
  * Always-reachable contact affordance. Appears after the first scroll so it
  * never competes with the hero, and stays clear of the mobile safe area.
+ *
+ * It also steps aside at the very bottom of the page, where it used to sit on
+ * top of the footer's credit line. Measuring the distance to the bottom rather
+ * than watching the footer keeps this independent of the footer's markup, and
+ * the buttons are redundant down there anyway — the footer carries the same
+ * phone number and a booking button of its own.
  */
+const BOTTOM_CLEARANCE = 140;
+
 const FloatingContact = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 300);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const update = () => {
+      const fromBottom =
+        document.documentElement.scrollHeight -
+        (window.scrollY + window.innerHeight);
+
+      setVisible(window.scrollY > 300 && fromBottom > BOTTOM_CLEARANCE);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    // The page can get shorter or taller without a scroll — an image settling
+    // in, or the window being resized — which moves where the bottom is.
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   return (
