@@ -1,6 +1,7 @@
 import { FiClock, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
+import MapEmbed from "../MapEmbed";
 import PageHero from "../PageHero";
 import Reveal from "../Reveal";
 import { business, mailtoUrl, telUrl, whatsappUrl } from "../../lib/site";
@@ -147,16 +148,7 @@ const ContactPage = () => (
         {/* Map */}
         <Reveal delay={0.15} className="lg:col-span-3">
           <div className="card iframe-container h-[420px] overflow-hidden p-0 sm:h-[520px] lg:h-full lg:min-h-[560px]">
-            <iframe
-              title="Harta către Madiny Tattoo, Șos. Pipera 61, București"
-              src={business.mapsEmbed}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="responsive-iframe"
-              style={{
-                filter: "grayscale(0.5) contrast(1.05) brightness(0.85)",
-              }}
-            />
+            <MapEmbed />
           </div>
         </Reveal>
       </div>

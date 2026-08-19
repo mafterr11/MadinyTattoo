@@ -49,6 +49,31 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/:path*',
+        headers: [
+          // Stop the browser second-guessing a declared Content-Type, which is
+          // how a served file gets treated as a script it was never meant to be.
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          // Nothing here is meant to be framed; the site embeds Google Maps
+          // rather than being embedded, so clickjacking has no upside to lose.
+          { key: 'X-Frame-Options', value: 'DENY' },
+          // Send the origin to other sites, the full URL to our own. Enough for
+          // referral analytics without leaking which page someone was reading.
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          // The site asks for none of these, so no embed can ask on its behalf.
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          },
+          // Two years, subdomains included: the apex already redirects to
+          // HTTPS, this removes the first unencrypted request that discovers it.
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+        ],
+      },
     ]
   },
 }
