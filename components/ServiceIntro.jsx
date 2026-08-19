@@ -7,9 +7,16 @@ import Reveal from "./Reveal";
  *
  * Copy comes from servicesDetail.js — the same source the /servicii explorer
  * reads — so the hub and the page can never describe a service differently.
+ *
+ * Hidden below md. On a phone this block is a screenful of prose standing
+ * between the hero and the prices, which is what people came for; the same
+ * copy is a tap away on /servicii, where each tab summarises its service.
  */
 const ServiceIntro = ({ intro, highlights }) => (
-  <section aria-label="Despre acest serviciu" className="pb-16 lg:pb-20">
+  <section
+    aria-label="Despre acest serviciu"
+    className="hidden pb-16 md:block lg:pb-20"
+  >
     <div className="container grid gap-10 lg:grid-cols-12 lg:gap-14">
       <Reveal className="lg:col-span-5">
         <span className="eyebrow">Ce presupune</span>

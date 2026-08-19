@@ -46,7 +46,10 @@ const ContactPage = () => (
       </Reveal>
     </div>
 
-    <section className="pt-14 pb-20 lg:pt-16 lg:pb-28">
+    {/* pt only from md up: that space exists to clear the pills above, which
+        a phone never renders — without this the hero's own bottom padding and
+        this one stack into a gap the title floats in. */}
+    <section className="pt-4 pb-20 md:pt-14 lg:pt-16 lg:pb-28">
       <div className="container grid gap-6 lg:grid-cols-5">
         {/* Details */}
         <div className="flex flex-col gap-6 lg:col-span-2">

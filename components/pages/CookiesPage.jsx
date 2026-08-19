@@ -16,8 +16,9 @@ const sections = [
         </p>
         <p>
           Singurul element extern care poate scrie ceva în browserul tău este
-          harta Google de pe pagina de contact — și aceea se încarcă doar dacă
-          apeși tu butonul.
+          harta Google de pe pagina de contact. Aceasta se încarcă odată cu
+          pagina, iar Google poate seta cookie-uri în acel moment — mai jos
+          scriem exact ce presupune și cum o poți evita.
         </p>
       </>
     ),
@@ -45,24 +46,26 @@ const sections = [
           nimic pe hartă.
         </p>
         <p>
-          De aceea nu o încărcăm din start. Pe{" "}
-          <Link href="/contact">pagina de contact</Link> vezi mai întâi adresa
-          și un buton; harta apare doar după ce apeși tu. Dacă preferi să nu o
-          încarci deloc, lângă buton găsești un link direct către Google Maps,
-          care te duce pe site-ul lor — acolo se aplică{" "}
+          Harta se încarcă odată cu{" "}
+          <Link href="/contact">pagina de contact</Link>, fără să apeși nimic:
+          adresa salonului este motivul principal pentru care se deschide acea
+          pagină, iar o hartă pe care trebuie să o ceri este o hartă pe care
+          majoritatea vizitatorilor nu o văd niciodată. Pe restul site-ului nu
+          se încarcă nimic de la Google.
+        </p>
+        <p>
+          Dacă preferi să nu ajungă nimic la Google, evită pagina de contact —
+          adresa, telefonul și emailul le găsești și în subsolul oricărei
+          pagini. Poți de asemenea bloca cookie-urile terților din setările
+          browserului. Pentru ce face Google cu datele primite se aplică{" "}
           <a
             href="https://policies.google.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
           >
-            politica de confidențialitate Google
+            politica lor de confidențialitate
           </a>
           .
-        </p>
-        <p>
-          Alegerea ta nu este memorată, tocmai pentru că memorarea ei ar cere un
-          cookie. Harta rămâne ascunsă la fiecare vizită nouă, până o ceri din
-          nou.
         </p>
       </>
     ),

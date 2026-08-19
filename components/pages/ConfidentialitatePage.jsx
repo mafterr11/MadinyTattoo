@@ -164,9 +164,9 @@ const sections = [
             . Poți evita asta scriindu-ne pe email sau sunându-ne.
           </li>
           <li>
-            <strong>Google Ireland Ltd.</strong> — doar dacă apeși butonul de
-            încărcare a hărții pe pagina de contact. Detalii pe pagina despre{" "}
-            <Link href="/cookies">cookie-uri</Link>.
+            <strong>Google Ireland Ltd.</strong> — când deschizi pagina de
+            contact, unde harta se încarcă odată cu pagina. Detalii pe pagina
+            despre <Link href="/cookies">cookie-uri</Link>.
           </li>
           <li>
             <strong>Furnizorul de găzduire al site-ului</strong>, care
