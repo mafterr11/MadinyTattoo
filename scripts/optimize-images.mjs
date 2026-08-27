@@ -42,6 +42,11 @@ const RULES = [
   { match: /^gallery\/tattoo\d+\.webp$/, maxEdge: 1350 },
   { match: /^gallery\//, maxEdge: 1600 },
   { match: /^backgrounds\//, maxEdge: 1920 },
+  // Artist portraits fill a 552px column at their widest, so they want about
+  // 1100px for a 2x screen. The cap is on the longest edge, which on a
+  // portrait is the height — 1600 there is what leaves the width near 1200.
+  // The filter avatars are head crops baked at 128px and stay well under it.
+  { match: /^artists\//, maxEdge: 1600 },
   { match: /^customer\d*\.webp$/, maxEdge: 1024 },
 ]
 
@@ -108,8 +113,10 @@ const run = async () => {
     console.log(`${rel.padEnd(52)} ${kb(original).padStart(8)} -> ${kb(output.length).padStart(8)}${dims}`)
 
     if (!DRY) {
-      // A .jpg source becomes .webp; callers are updated to match.
-      const target = file.replace(/\.jpe?g$/i, '.webp')
+      // A .jpg or .png source becomes .webp; callers are updated to match.
+      // The extension has to travel with the bytes — a WebP written back under
+      // a .png name is a file every consumer downstream mis-handles.
+      const target = file.replace(/\.(jpe?g|png)$/i, '.webp')
       await fs.writeFile(target, output)
       if (target !== file) await fs.unlink(file)
     }

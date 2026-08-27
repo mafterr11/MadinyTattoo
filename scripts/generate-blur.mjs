@@ -20,7 +20,7 @@ const ROOT = path.join(process.cwd(), 'public')
 const OUT = path.join(process.cwd(), 'lib', 'blurData.js')
 
 /** Only the folders whose images are rendered through next/image. */
-const INCLUDE = [/^gallery\//, /^backgrounds\//]
+const INCLUDE = [/^gallery\//, /^backgrounds\//, /^artists\//]
 
 const walk = async (dir) => {
   const entries = await fs.readdir(dir, { withFileTypes: true })
