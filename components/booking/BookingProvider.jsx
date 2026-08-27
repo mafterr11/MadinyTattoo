@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   FiAlertCircle,
@@ -20,6 +21,7 @@ import {
 } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 
+import { ANY_ARTIST, artists } from "../../lib/artists";
 import { bookingFlows, getBookingFlow } from "../../lib/bookingFlows";
 import { whatsappSendUrl } from "../../lib/site";
 import useFocusTrap from "../../lib/useFocusTrap";
@@ -447,7 +449,84 @@ const RangeField = ({ field, form, updateDetail }) => {
   );
 };
 
+/**
+ * Whoever is going to hold the machine, chosen by face rather than by name.
+ *
+ * The wizard is otherwise deliberately plain, but this is the one answer about
+ * a person, and someone arriving from the homepage has just been introduced to
+ * both of them — the portraits are what they remember, not the labels. Same
+ * head crops the portfolio filter uses, so the two controls are recognisably
+ * about the same two people.
+ */
+const ARTIST_CARDS = [
+  ...artists.map(({ name, shortRole, avatar }) => ({
+    name,
+    shortRole,
+    avatar,
+  })),
+  ANY_ARTIST,
+];
+
+const ArtistField = ({ field, form, updateDetail }) => (
+  <div>
+    {field.label && (
+      <FieldLabel optional={!field.required}>{field.label}</FieldLabel>
+    )}
+
+    <RadioGroup
+      ariaLabel={field.ariaLabel}
+      className={`grid gap-2 sm:grid-cols-3 ${field.label ? "mt-4" : ""}`}
+      onChange={(option) => updateDetail(field.name, option)}
+      options={ARTIST_CARDS.map((artist) => ({
+        value: artist.name,
+        content: (
+          <span className="flex items-center gap-3">
+            {artist.avatar ? (
+              <Image
+                src={artist.avatar}
+                alt=""
+                aria-hidden="true"
+                width={34}
+                height={34}
+                className="ring-ink/60 h-[34px] w-[34px] shrink-0 rounded-full object-cover ring-2"
+              />
+            ) : (
+              /* "Oricare" wears both faces, the way the portfolio's own
+                 unfiltered tab does. */
+              <span
+                aria-hidden="true"
+                className="flex shrink-0 items-center -space-x-3.5"
+              >
+                {artists.map((other) => (
+                  <Image
+                    key={other.key}
+                    src={other.avatar}
+                    alt=""
+                    width={34}
+                    height={34}
+                    className="ring-ink/60 h-[34px] w-[34px] rounded-full object-cover ring-2"
+                  />
+                ))}
+              </span>
+            )}
+
+            <span className="min-w-0">
+              <span className="block text-sm font-semibold">{artist.name}</span>
+              <span className="text-muted mt-0.5 block text-xs">
+                {artist.shortRole}
+              </span>
+            </span>
+          </span>
+        ),
+      }))}
+      value={form.details[field.name]}
+      variant="card"
+    />
+  </div>
+);
+
 const FIELD_COMPONENTS = {
+  artist: ArtistField,
   choice: ChoiceField,
   pills: PillsField,
   range: RangeField,
