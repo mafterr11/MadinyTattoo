@@ -33,16 +33,27 @@ const withPrice = services.map((service) => ({
 
 const [featured, ...rest] = withPrice;
 
+/**
+ * A price never wraps mid-figure, so this tag's width is the floor the whole
+ * card is measured against. It steps down under 400px, where "de la 800 RON"
+ * at full tracking is wider than the column a 320px phone leaves for it.
+ */
 const PriceTag = ({ children }) => (
-  <span className="border-accent/25 bg-accent/8 text-accent shrink-0 rounded-full border px-3 py-1 text-[0.65rem] font-medium tracking-[0.12em] whitespace-nowrap uppercase">
+  <span className="border-accent/25 bg-accent/8 text-accent xs:px-3 xs:text-[0.65rem] xs:tracking-[0.12em] shrink-0 rounded-full border px-2.5 py-1 text-[0.6rem] font-medium tracking-[0.08em] whitespace-nowrap uppercase">
     {children}
   </span>
 );
 
+/**
+ * `min-w-0` on both columns: a grid item defaults to `min-width: auto`, which
+ * is its content's minimum — so the widest price tag in the list was setting
+ * the column width and pushing the whole grid 56px past a 320px screen. The
+ * cards already clip their own overflow; the column should never widen for it.
+ */
 const ServicesGrid = () => (
   <div className="grid gap-5 lg:grid-cols-2">
     {/* Featured */}
-    <Reveal className="h-full">
+    <Reveal className="h-full min-w-0">
       <Link
         href={featured.path}
         className="card card-hover group relative flex h-full min-h-[24rem] flex-col justify-end overflow-hidden lg:min-h-[32rem]"
@@ -84,14 +95,19 @@ const ServicesGrid = () => (
     </Reveal>
 
     {/* The rest, as compact rows */}
-    <ul className="flex flex-col gap-5">
+    <ul className="flex min-w-0 flex-col gap-5">
       {rest.map((service, i) => (
-        <Reveal as="li" key={service.path} delay={(i + 1) * 0.08} className="flex-1">
+        <Reveal
+          as="li"
+          key={service.path}
+          delay={(i + 1) * 0.08}
+          className="flex-1"
+        >
           <Link
             href={service.path}
-            className="card card-hover group flex h-full items-stretch gap-4 overflow-hidden p-3 sm:gap-5"
+            className="card card-hover group xs:gap-4 flex h-full items-stretch gap-3 overflow-hidden p-3 sm:gap-5"
           >
-            <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
+            <div className="xs:w-24 relative aspect-square w-20 shrink-0 overflow-hidden rounded-xl sm:w-32">
               <Image
                 src={service.image}
                 alt={`Serviciu ${service.title} la Madiny Tattoo București`}
@@ -104,7 +120,7 @@ const ServicesGrid = () => (
 
             <div className="flex min-w-0 flex-1 flex-col justify-center py-1 pr-2 sm:pr-3">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-                <h3 className="group-hover:text-accent text-lg transition-colors duration-300">
+                <h3 className="group-hover:text-accent xs:text-lg text-base transition-colors duration-300">
                   {service.title}
                 </h3>
                 <PriceTag>{service.priceFrom}</PriceTag>

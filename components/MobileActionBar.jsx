@@ -21,7 +21,10 @@ import { BookingTrigger } from "./booking/BookingProvider";
  * flashes as if it reloaded. Isolating it stops that resampling.
  */
 const MobileActionBar = () => (
-  <div className="fixed inset-x-0 bottom-0 z-50 [transform:translateZ(0)] md:hidden">
+  // overflow-hidden is the guarantee rather than the layout: the booking
+  // label sets this bar's minimum width, and a bar wider than the screen makes
+  // the whole document scroll sideways instead of just cropping its own button.
+  <div className="fixed inset-x-0 bottom-0 z-50 [transform:translateZ(0)] overflow-hidden md:hidden">
     <div className="bg-ink/92 border-t border-white/8 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-xl">
       <div className="flex items-center gap-3">
         <a
@@ -32,7 +35,10 @@ const MobileActionBar = () => (
           <FiPhone className="text-xl" aria-hidden="true" />
         </a>
 
-        <BookingTrigger className="btn-neon neon flex-1">
+        {/* Steps down below 360px, where "Programează-te" at full size plus
+            the call button wants 324px of a 288px row. Every phone from 360px
+            up keeps the size the bar was drawn at. */}
+        <BookingTrigger className="btn-neon neon min-w-0 flex-1 px-3 text-[0.8rem] tracking-[0.05em] min-[360px]:px-5 min-[360px]:text-[0.9375rem] min-[360px]:tracking-[0.1em]">
           Programează-te
         </BookingTrigger>
       </div>
