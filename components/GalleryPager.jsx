@@ -69,15 +69,38 @@ const NavButton = ({ children, disabled, label, onClick }) => (
  * portfolio can open a lightbox and the homepage can link away, off the same
  * paging. The index passed back is the position in the full list, not in the
  * page, which is what a lightbox needs to keep browsing past the page edge.
+ *
+ * `resetOn` is whatever the caller filtered by — the artist tab, today. A new
+ * value puts the reader back on the first page and cross-fades the grid,
+ * because a filtered list is a different list rather than a scroll position
+ * inside the old one.
  */
-const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
+const GalleryPager = ({
+  images,
+  layout,
+  children,
+  label = "Lucrări",
+  resetOn,
+}) => {
   const { grid, steps, reveal } = LAYOUTS[layout];
   const reduceMotion = useReducedMotion();
 
   // null until the browser has been measured — see `reveal` above.
   const [pageSize, setPageSize] = useState(null);
-  const [page, setPage] = useState(0);
-  const [direction, setDirection] = useState(0);
+
+  /**
+   * The open page, stamped with the filter it was chosen under.
+   *
+   * Storing the two together is what lets a new filter fall back to page one
+   * during the same render. Resetting it afterwards from an effect would first
+   * paint the old page number against the new list — and, on a filter with
+   * fewer pages than the one before it, paint an empty grid.
+   */
+  const [chosen, setChosen] = useState({ key: resetOn, page: 0, direction: 0 });
+  const stale = chosen.key !== resetOn;
+  const page = stale ? 0 : chosen.page;
+  const direction = stale ? 0 : chosen.direction;
+
   const touchStartX = useRef(null);
 
   useEffect(() => {
@@ -94,9 +117,10 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
 
         // Keep the image you were looking at on screen when the layout
         // changes under you — rotating a phone should not jump to page one.
-        setPage((currentPage) =>
-          Math.floor((currentPage * (current ?? next)) / next),
-        );
+        setChosen((state) => ({
+          ...state,
+          page: Math.floor((state.page * (current ?? next)) / next),
+        }));
 
         return next;
       });
@@ -106,7 +130,9 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
     queries.forEach(({ list }) => list.addEventListener("change", measure));
 
     return () =>
-      queries.forEach(({ list }) => list.removeEventListener("change", measure));
+      queries.forEach(({ list }) =>
+        list.removeEventListener("change", measure),
+      );
   }, [steps]);
 
   const pages = pageSize ? Math.ceil(images.length / pageSize) : 1;
@@ -118,8 +144,11 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
 
   const goTo = (next) => {
     if (next < 0 || next >= pages || next === current) return;
-    setDirection(next > current ? 1 : -1);
-    setPage(next);
+    setChosen({
+      key: resetOn,
+      page: next,
+      direction: next > current ? 1 : -1,
+    });
   };
 
   const slide = reduceMotion ? 0 : 40;
@@ -147,7 +176,9 @@ const GalleryPager = ({ images, layout, children, label = "Lucrări" }) => {
       >
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.ul
-            key={current}
+            // Keyed on the filter as well as the page, so switching artists
+            // cross-fades instead of swapping the photos underneath in place.
+            key={`${resetOn ?? ""}:${current}`}
             className={grid}
             initial={{ opacity: 0, x: direction * slide }}
             animate={{ opacity: 1, x: 0 }}

@@ -1,12 +1,23 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 import { HiOutlineMagnifyingGlassPlus } from "react-icons/hi2";
 
+import ArtistFilter from "./ArtistFilter";
 import BlurImage from "./BlurImage";
 import GalleryPager from "./GalleryPager";
+import { isArtistKey } from "../lib/artists";
+
+const PANEL_ID = "portofoliu-grid";
 
 /**
  * The widest a thumbnail ever gets: the container caps at 80rem with 2rem of
@@ -19,6 +30,28 @@ const GRID_SIZES = "(max-width: 768px) 48vw, (max-width: 1280px) 31vw, 300px";
 const FULL_WIDTH = 1080;
 const FULL_HEIGHT = 1350;
 const LIGHTBOX_SIZES = "(max-width: 1024px) 92vw, 900px";
+
+/**
+ * `?artist=` on /proiecte, read as an external value rather than copied into
+ * state from an effect.
+ *
+ * The homepage links here as "Vezi lucrările Alexandrei", so the tab that
+ * link names has to be the one selected on arrival. Reading it through
+ * `useSyncExternalStore` keeps the page statically rendered — `useSearchParams`
+ * would either opt the route out of static generation or need a Suspense
+ * boundary, which would take the whole portfolio out of the HTML a crawler
+ * reads. The server snapshot is `null`, so the static markup is the unfiltered
+ * grid and the client narrows it after hydration.
+ */
+const subscribeToLocation = (onChange) => {
+  window.addEventListener("popstate", onChange);
+  return () => window.removeEventListener("popstate", onChange);
+};
+
+const readArtistParam = () =>
+  new URLSearchParams(window.location.search).get("artist");
+
+const noArtistParam = () => null;
 
 /**
  * The full-size view, fading up from the same blur the thumbnail used so the
@@ -60,28 +93,58 @@ const LightboxImage = ({ image }) => {
  * Portfolio grid with a real lightbox: arrow keys, Escape, swipe, focus
  * restore and a live counter. The previous gallery was a scroll container
  * nested inside the page scroll, with no way to enlarge an image.
+ *
+ * Everything below the filter works off `visible`, the slice of the portfolio
+ * belonging to the selected artist, so the lightbox walks that artist's work
+ * rather than stepping out of the grid the reader is looking at.
  */
-const Gallery = ({ images, priorityCount = 4 }) => {
-  const [index, setIndex] = useState(null);
+const Gallery = ({ images, priorityCount = 4, counts }) => {
+  const linked = useSyncExternalStore(
+    subscribeToLocation,
+    readArtistParam,
+    noArtistParam,
+  );
+
+  // A tab the reader picked outranks the one the link asked for; before they
+  // pick, the link wins. An unknown key falls back to the unfiltered grid.
+  const [picked, setPicked] = useState(null);
+  const artist = picked ?? (isArtistKey(linked) ? linked : "all");
+
+  // Stamped with the artist it was opened under, so switching tabs closes it
+  // instead of leaving an index pointing into the previous list.
+  const [opened, setOpened] = useState(null);
+  const index = opened?.artist === artist ? opened.index : null;
+
   const openerRef = useRef(null);
   const touchStartX = useRef(null);
 
+  const visible = useMemo(
+    () =>
+      artist === "all"
+        ? images
+        : images.filter((image) => image.artist === artist),
+    [artist, images],
+  );
+
   const isOpen = index !== null;
-  const close = useCallback(() => setIndex(null), []);
+  const close = useCallback(() => setOpened(null), []);
 
   const step = useCallback(
     (delta) =>
-      setIndex((current) =>
-        current === null
-          ? current
-          : (current + delta + images.length) % images.length,
+      setOpened((state) =>
+        state === null
+          ? state
+          : {
+              ...state,
+              index: (state.index + delta + visible.length) % visible.length,
+            },
       ),
-    [images.length],
+    [visible.length],
   );
 
   const open = (i, event) => {
     openerRef.current = event.currentTarget;
-    setIndex(i);
+    setOpened({ artist, index: i });
   };
 
   useEffect(() => {
@@ -112,40 +175,62 @@ const Gallery = ({ images, priorityCount = 4 }) => {
 
   return (
     <>
-      {/* Paged, but the lightbox still walks the whole portfolio: the pager
-          hands back each image's index in the full list, not in the page. */}
-      <GalleryPager images={images} layout="portfolio" label="Portofoliu">
-        {(image, i) => (
-          <button
-            type="button"
-            onClick={(event) => open(i, event)}
-            aria-label={`Mărește imaginea: ${image.alt}`}
-            className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 w-full overflow-hidden rounded-xl border transition-colors duration-500"
-          >
-            <BlurImage
-              src={image.src}
-              alt={image.alt}
-              blurDataURL={image.blurDataURL}
-              sizes={GRID_SIZES}
-              priority={i < priorityCount}
-              loading={i < priorityCount ? undefined : "lazy"}
-              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-            />
-            <span
-              aria-hidden="true"
-              className="from-ink/70 absolute inset-0 flex items-end justify-end bg-gradient-to-t via-transparent to-transparent p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100 group-focus-visible:opacity-100"
+      <ArtistFilter
+        value={artist}
+        onChange={setPicked}
+        counts={counts}
+        idPrefix="portofoliu"
+        layoutId="portfolio-artist-tab"
+        panelId={PANEL_ID}
+      />
+
+      {/* Paged, but the lightbox still walks the whole selection: the pager
+          hands back each image's index in the list it was given, not in the
+          page. */}
+      <div
+        id={PANEL_ID}
+        role="tabpanel"
+        aria-labelledby={`portofoliu-tab-${artist}`}
+        className="mt-12"
+      >
+        <GalleryPager
+          images={visible}
+          layout="portfolio"
+          label="Portofoliu"
+          resetOn={artist}
+        >
+          {(image, i) => (
+            <button
+              type="button"
+              onClick={(event) => open(i, event)}
+              aria-label={`Mărește imaginea: ${image.alt}`}
+              className="group border-fg/8 hover:border-accent/50 relative block aspect-4/5 w-full overflow-hidden rounded-xl border transition-colors duration-500"
             >
-              <HiOutlineMagnifyingGlassPlus className="text-accent text-xl" />
-            </span>
-          </button>
-        )}
-      </GalleryPager>
+              <BlurImage
+                src={image.src}
+                alt={image.alt}
+                blurDataURL={image.blurDataURL}
+                sizes={GRID_SIZES}
+                priority={i < priorityCount}
+                loading={i < priorityCount ? undefined : "lazy"}
+                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+              />
+              <span
+                aria-hidden="true"
+                className="from-ink/70 absolute inset-0 flex items-end justify-end bg-gradient-to-t via-transparent to-transparent p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100 group-focus-visible:opacity-100"
+              >
+                <HiOutlineMagnifyingGlassPlus className="text-accent text-xl" />
+              </span>
+            </button>
+          )}
+        </GalleryPager>
+      </div>
 
       {isOpen && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={images[index].alt}
+          aria-label={visible[index].alt}
           onClick={close}
           onTouchStart={(e) => {
             touchStartX.current = e.touches[0].clientX;
@@ -195,9 +280,9 @@ const Gallery = ({ images, priorityCount = 4 }) => {
             onClick={(e) => e.stopPropagation()}
             className="relative flex h-full max-h-[82vh] w-full max-w-4xl flex-col items-center justify-center"
           >
-            <LightboxImage key={images[index].src} image={images[index]} />
+            <LightboxImage key={visible[index].src} image={visible[index]} />
             <figcaption className="text-muted mt-4 text-xs tracking-[0.18em] uppercase">
-              {index + 1} / {images.length}
+              {index + 1} / {visible.length}
             </figcaption>
           </figure>
 
@@ -214,7 +299,7 @@ const Gallery = ({ images, priorityCount = 4 }) => {
           >
             {[-1, 1].map((delta) => {
               const neighbour =
-                images[(index + delta + images.length) % images.length];
+                visible[(index + delta + visible.length) % visible.length];
               return (
                 <Image
                   key={`${delta}-${neighbour.src}`}

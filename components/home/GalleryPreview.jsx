@@ -4,15 +4,17 @@ import { FiArrowUpRight } from "react-icons/fi";
 import GalleryPreviewGrid from "./GalleryPreviewGrid";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
-import { galleryImages } from "../../lib/gallery";
+import { artistCounts, previewImages } from "../../lib/gallery";
 
 /**
- * A taste of the portfolio, not the whole of it: four pages of the newest work
- * on a phone, two on anything wider. The rest lives behind "Vezi tot
+ * A taste of the portfolio, not the whole of it: the newest few from each
+ * artist, filterable by who made them. The rest lives behind "Vezi tot
  * portofoliul", which is the link this section exists to earn.
+ *
+ * The counts come from the full portfolio rather than from this teaser — see
+ * lib/gallery.js — so a tab never advertises eight pieces when there are
+ * thirty-six behind the link.
  */
-const preview = galleryImages.slice(0, 16);
-
 const GalleryPreview = () => (
   <section
     id="lucrari"
@@ -23,14 +25,14 @@ const GalleryPreview = () => (
         eyebrow="Portofoliu"
         title={
           <>
-            <span className="text-accent">Lucrările</span> mele.
+            <span className="text-accent">Lucrările</span> noastre.
           </>
         }
-        lead="Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj."
+        lead="Transformăm viziunile în realitate, cu emoție și semnificație în fiecare tatuaj. Vezi-le pe toate la un loc sau filtrează după artistă."
       />
 
       <Reveal className="mt-14">
-        <GalleryPreviewGrid images={preview} />
+        <GalleryPreviewGrid images={previewImages} counts={artistCounts} />
       </Reveal>
 
       <Reveal delay={0.1}>

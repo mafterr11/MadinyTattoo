@@ -1,7 +1,7 @@
 import PageHero from "../PageHero";
 import Gallery from "../Gallery";
 import ContactCta from "../home/ContactCta";
-import { galleryImages } from "../../lib/gallery";
+import { artistCounts, galleryImages } from "../../lib/gallery";
 
 const ProiectePage = () => (
   <>
@@ -9,10 +9,14 @@ const ProiectePage = () => (
       eyebrow="Portofoliu"
       title={
         <>
-          <span className="text-accent">Lucrările</span> mele.
+          <span className="text-accent">Lucrările</span> noastre.
         </>
       }
-      lead="Prin arta mea, transform viziunile în realitate, aducând emoție și semnificație fiecărui tatuaj. Explorează portofoliul meu și lasă-te captivat de poveștile vizuale pe care le-am imprimat pe piele."
+      lead="Transformăm viziunile în realitate, cu emoție și semnificație în fiecare tatuaj. Explorează portofoliul întreg sau filtrează după artistă, ca să vezi stilul fiecăreia separat."
+      // Off phones, where five lines of it sat between the title and the
+      // filter and pushed the first row of work off the screen. The crawler
+      // still reads it — `hidden` is a class, not a condition on the render.
+      leadClassName="hidden md:block"
       image="/backgrounds/bgMada.webp"
       breadcrumbs={[
         { name: "Acasă", path: "/" },
@@ -22,7 +26,7 @@ const ProiectePage = () => (
 
     <section className="pb-20 lg:pb-28">
       <div className="container">
-        <Gallery images={galleryImages} />
+        <Gallery images={galleryImages} counts={artistCounts} />
       </div>
     </section>
 
