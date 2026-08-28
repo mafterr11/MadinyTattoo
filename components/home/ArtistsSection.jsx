@@ -19,27 +19,34 @@ import blurData from "../../lib/blurData";
  * 1100 device pixels — visibly soft on any retina screen. At this size both
  * files have pixels to spare.
  *
- * Nothing is cropped. `object-contain` puts the whole photograph on screen
- * rather than a band cut out of its middle, whatever shape the file arrives
- * in — the two portraits do not share one today.
+ * The two files do not share a ratio — one is 5:7, the other square — so one
+ * of them has to give. Fitting each one whole inside the frame left a mat down
+ * the sides of one card and across the top of the other, which read as two
+ * photographs that had not been prepared rather than as a deliberate border.
+ * Filling the frame crops instead, and two identical rectangles is the tidier
+ * of the two wrongs.
  */
 const ArtistCard = ({ artist, index }) => (
   <Reveal delay={index * 0.1} className="h-full">
     <article className="card card-hover group flex h-full flex-col overflow-hidden p-5 sm:p-6">
       <div className="flex items-center gap-4 sm:gap-5">
-        {/* One frame for both, at a ratio that sits between the two files:
-            each portrait fills it on its long side and gets a narrow mat on
-            the other, which keeps the two cards the same height. Sizing the
-            frame to each photo instead made one row 64px taller than the
-            other and left a hole above the shorter card's link. */}
-        <div className="xs:w-32 relative aspect-5/6 w-28 shrink-0 overflow-hidden rounded-xl bg-white/[0.04] ring-1 ring-white/8 md:w-36 lg:w-40">
+        {/* One frame for both, which is what keeps the two cards the same
+            height — sizing each frame to its own photograph made one row 64px
+            taller than the other and left a hole above the shorter card's
+            link. */}
+        <div className="xs:w-32 relative aspect-5/6 w-28 shrink-0 overflow-hidden rounded-xl ring-1 ring-white/8 md:w-36 lg:w-40">
           <BlurImage
             src={artist.photo}
             alt={artist.photoAlt}
             blurDataURL={blurData[artist.photo]}
             sizes="(max-width: 400px) 7rem, (max-width: 768px) 8rem, (max-width: 1024px) 9rem, 10rem"
             loading="lazy"
-            className="object-contain"
+            // Only one axis is ever cropped, and a different one per photo:
+            // the portrait overflows vertically, the square horizontally. So
+            // the horizontal half stays centred for the square, and the
+            // vertical half sits high enough to keep the top of Mădălina's
+            // hair inside the frame.
+            className="object-cover object-[50%_20%] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
           />
         </div>
 
