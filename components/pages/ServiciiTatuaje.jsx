@@ -11,6 +11,7 @@ import ContactCta from "../home/ContactCta";
 import { tattooPricing } from "../../lib/pricing";
 import { getService } from "../../lib/servicesDetail";
 import { serviceProcess } from "../../lib/serviceProcess";
+import { business } from "../../lib/site";
 
 const service = getService("tatuaje");
 
@@ -20,17 +21,18 @@ const ServiciiTatuaje = () => (
       eyebrow="Tarife"
       title={
         <>
-          <span className="text-accent">Tatuaje</span> în București
+          <span className="text-accent">Tatuaje</span> în București, Pipera
         </>
       }
       lead={
         <>
-          <span className="text-accent">Detalii</span> suplimentare și tarife
-          precise disponibile direct de la tatuator.{" "}
+          Tatuaje personalizate, de la contur fin și alb-negru la lucrări color.
+          Vezi mai jos stilurile și prețurile orientative; pentru o estimare
+          potrivită ideii tale,{" "}
           <Link href="/contact" className="text-accent link-underline">
-            Contactează-ne
-          </Link>{" "}
-          pentru informații complete!
+            contactează-ne
+          </Link>
+          .
         </>
       }
       image="/backgrounds/tatuaje.webp"
@@ -42,6 +44,29 @@ const ServiciiTatuaje = () => (
     />
 
     <ServiceIntro intro={service.intro} highlights={service.highlights} />
+
+    <section className="pb-16 lg:pb-20" aria-labelledby="studio-pipera">
+      <div className="container">
+        <div className="card max-w-4xl p-7 sm:p-9">
+          <h2 id="studio-pipera" className="text-2xl">
+            Studio de tatuaje în zona Pipera
+          </h2>
+          <p className="text-muted mt-4 leading-relaxed">
+            Ne găsești la {business.addressFull}. Discutăm desenul, dimensiunea
+            și amplasarea înainte de ședință, apoi pregătim o schiță pentru
+            tine. Poți vedea exemple reale în{" "}
+            <Link href="/proiecte" className="text-accent link-underline">
+              portofoliul nostru
+            </Link>{" "}
+            și poți verifica traseul și programul pe{" "}
+            <Link href="/contact" className="text-accent link-underline">
+              pagina de contact
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section aria-label="Tarife tatuaje" className="pb-16 lg:pb-20">
       <div className="container">

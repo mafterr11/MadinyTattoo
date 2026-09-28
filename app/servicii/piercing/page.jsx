@@ -9,8 +9,6 @@ const description =
 export const metadata = constructMetadata({
   title: "Piercing Profesional București, Titan Pur | Madiny",
   description,
-  keywords:
-    "piercing bucuresti, piercing profesional, salon piercing, piercing steril, bijuterii titan pur, piercing ureche, piercing nas, piercing pipera, piercing sigur, pret piercing",
   path: "/servicii/piercing",
 });
 

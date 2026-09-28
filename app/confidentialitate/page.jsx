@@ -7,8 +7,6 @@ export const metadata = constructMetadata({
   title: "Politica de confidențialitate | Madiny Tattoo",
   description:
     "Ce date personale colectează Madiny Tattoo, în ce scop, cui ajung și cum îți exerciți drepturile GDPR. Site-ul nu urmărește vizitatorii și nu creează profiluri.",
-  keywords:
-    "politica de confidentialitate, gdpr, date personale, madiny tattoo, protectia datelor",
   path: "/confidentialitate",
 });
 

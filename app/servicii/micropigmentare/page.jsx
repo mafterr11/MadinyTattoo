@@ -10,8 +10,6 @@ const description =
 export const metadata = constructMetadata({
   title: "Micropigmentare Sprâncene și Buze București | Madiny",
   description,
-  keywords:
-    "micropigmentare, micropigmentare sprâncene, micropigmentare buze, micropigmentare ochi, tehnici micropigmentare, micropigmentare profesională, micropigmentare realism, pigmentare semipermanentă, proceduri micropigmentare",
   path: "/servicii/micropigmentare",
 });
 

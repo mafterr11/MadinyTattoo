@@ -5,13 +5,11 @@ import { breadcrumbSchema, serviceSchema } from "../../../lib/schema";
 import { tattooPricing } from "../../../lib/pricing";
 
 const description =
-  "Descoperă gama noastră variată de servicii tatuaje la Madiny Tattoo. De la tatuaje artistice și personalizate până la designuri realiste sau abstracte, suntem aici pentru a transforma ideile tale în artă permanentă. Alege dintr-o varietate de stiluri și lasă-ne să creăm ceva unic pentru tine.";
+  "Tatuaje personalizate în București, zona Pipera: alb-negru, color, contur fin și brodat. Vezi prețurile și lucrările Madiny Tattoo și discută ideea ta cu un artist.";
 
 export const metadata = constructMetadata({
-  title: "Tatuaje București — Prețuri și Stiluri | Madiny Tattoo",
+  title: "Tatuaje București, Pipera: stiluri și prețuri | Madiny Tattoo",
   description,
-  keywords:
-    "madiny tattoo, tatuaje artistice, modele tatuaje, tatuaje personalizate, arta tatuaj, designuri tatuaje, artist tatuaj, tatuaje unice, tatuaje realiste, tatuaje abstracte, tatuaje stilizate, tatuaje colorate, tatuaje blackwork",
   path: "/servicii/tatuaje",
 });
 

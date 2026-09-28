@@ -1,7 +1,11 @@
 import ServiciiLaser from "../../../components/pages/ServiciiLaser";
 import JsonLd from "../../../components/JsonLd";
 import { constructMetadata } from "../../../lib/utils";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "../../../lib/schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+} from "../../../lib/schema";
 import { laserFaq, laserSizePricing } from "../../../lib/pricing";
 
 const description =
@@ -10,8 +14,6 @@ const description =
 export const metadata = constructMetadata({
   title: "Ștergere Tatuaje cu Laser București | Madiny Tattoo",
   description,
-  keywords:
-    "eliminare tatuaje cu laser, laser removal, proceduri eliminare tatuaje, tratamente laser tatuaje, îndepărtare tatuaje cu laser, eliminare tatuaje nevoie de corectare, laser tatuaje profesionale, terapie laser tatuaje",
   path: "/servicii/laser",
 });
 

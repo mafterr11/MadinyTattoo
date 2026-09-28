@@ -7,7 +7,6 @@ export const metadata = constructMetadata({
   title: "Politica de cookie-uri | Madiny Tattoo",
   description:
     "Site-ul Madiny Tattoo nu folosește cookie-uri de urmărire și nu are instrumente de analiză. Singurul element extern, harta Google, se încarcă doar la cererea ta.",
-  keywords: "politica cookie-uri, cookies, madiny tattoo, confidentialitate",
   path: "/cookies",
 });
 

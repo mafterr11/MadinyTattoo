@@ -10,8 +10,6 @@ const description =
 export const metadata = constructMetadata({
   title: "Îngrijire Tatuaj Proaspăt — Ghid Aftercare | Madiny",
   description,
-  keywords:
-    "aftercare tatuaj, ingrijire tatuaj, vindecare tatuaj, cum ingrijesc tatuajul, folie protectoare tatuaj, crema vindecare tatuaj, sfaturi dupa tatuaj, tatuaj proaspat, protectie solara tatuaj",
   path: "/aftercare",
 });
 

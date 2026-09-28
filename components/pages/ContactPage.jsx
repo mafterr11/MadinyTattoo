@@ -20,7 +20,7 @@ const ContactPage = () => (
       eyebrow="Contact"
       title={
         <>
-          Să ne <span className="text-accent">conectăm.</span>
+          Ne găsești în <span className="text-accent">Pipera.</span>
         </>
       }
       breadcrumbs={[

@@ -5,11 +5,9 @@ import { breadcrumbSchema } from "../../lib/schema";
 import { SITE_URL } from "../../lib/site";
 
 export const metadata = constructMetadata({
-  title: "Contact și Programări — Madiny Tattoo, Șos. Pipera",
+  title: "Contact salon tatuaje Pipera, București | Madiny Tattoo",
   description:
-    "Contactează-ne pentru programări și informații suplimentare la Madiny Tattoo, situat la Șoseaua Pipera 61, Complexul Cloud 9, București, 077190. Te așteptăm în apropierea sediului Direcției Regim Permise de Conducere și Înmatriculare a Vehiculelor.",
-  keywords:
-    "contact Madiny Tattoo, programări tatuaj, informații contact tatuaj, adresă tatuaj, locație salon tatuaj, Șoseaua Pipera 61, Complexul Cloud 9, București, 077190, Direcția Regim Permise de Conducere și Înmatriculare a Vehiculelor",
+    "Programează-te la Madiny Tattoo, pe Șos. Pipera 61, București. Găsești adresa, harta, programul, telefonul și WhatsApp pentru întrebări despre tatuaje și servicii.",
   path: "/contact",
 });
 
