@@ -181,6 +181,29 @@
   padding-block: clamp(4rem, 3rem + 5vw, 8rem);
 }
 
+/* Native details keeps the answers accessible and in the initial HTML. */
+.faq-animated {
+  interpolate-size: allow-keywords;
+}
+.faq-animated::details-content {
+  height: 0;
+  opacity: 0;
+  overflow: clip;
+  transition:
+    height 300ms ease,
+    opacity 250ms ease,
+    content-visibility 300ms allow-discrete;
+}
+.faq-animated[open]::details-content {
+  height: auto;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-animated::details-content {
+    transition: none;
+  }
+}
+
 /* ==========================================================================
    Components
    ========================================================================== */

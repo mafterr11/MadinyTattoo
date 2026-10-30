@@ -73,6 +73,12 @@ const Footer = () => (
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/zone" className="btn btn-ghost btn-sm mt-3">
+              Zone
+              <FiMapPin aria-hidden="true" />
+            </Link>
+          </li>
         </ul>
       </nav>
 

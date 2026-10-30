@@ -1,7 +1,8 @@
 import PiercingPage from "../../../components/pages/PiercingPage";
 import JsonLd from "../../../components/JsonLd";
 import { constructMetadata } from "../../../lib/utils";
-import { breadcrumbSchema, serviceSchema } from "../../../lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "../../../lib/schema";
+import { piercingFaq } from "../../../lib/serviceFaq";
 
 const description =
   "Piercing profesional la Madiny Tattoo București: echipament steril, bijuterii din titan pur și consiliere personalizată. Costul unui piercing este de 200 lei și include bijuteria sterilă și sfaturile de îngrijire post-procedură.";
@@ -27,6 +28,7 @@ const Piercing = () => (
           path: "/servicii/piercing",
           offers: [{ name: "Piercing cu bijuterie din titan pur", price: 200 }],
         }),
+        faqSchema(piercingFaq),
       ]}
     />
     <PiercingPage />

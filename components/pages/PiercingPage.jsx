@@ -3,8 +3,10 @@ import { FiCheck } from "react-icons/fi";
 
 import PageHero from "../PageHero";
 import Reveal from "../Reveal";
+import FAQSection from "../FAQSection";
 import ServiceBookingCta from "../booking/ServiceBookingCta";
 import ContactCta from "../home/ContactCta";
+import { piercingFaq } from "../../lib/serviceFaq";
 
 const reasons = [
   {
@@ -166,6 +168,8 @@ const PiercingPage = () => (
         </div>
       </div>
     </section>
+
+    <FAQSection id="faq-piercing" items={piercingFaq} />
 
     <ServiceBookingCta service="piercing" />
 

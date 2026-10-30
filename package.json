@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint app components lib",
     "format": "prettier --write \"{app,components,lib}/**/*.{js,jsx,css}\"",
-    "sitemap": "next-sitemap --config next-sitemap.config.js"
+    "sitemap": "next-sitemap --config next-sitemap.config.js",
+    "og:zones": "node scripts/generate-zone-og.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.5.1",

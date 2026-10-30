@@ -8,9 +8,11 @@ import SectionHeading from "../SectionHeading";
 import AvansTatuaje from "../AvansTatuaje";
 import ServiceBookingCta from "../booking/ServiceBookingCta";
 import ContactCta from "../home/ContactCta";
+import FAQSection from "../FAQSection";
 import { tattooPricing } from "../../lib/pricing";
 import { getService } from "../../lib/servicesDetail";
 import { serviceProcess } from "../../lib/serviceProcess";
+import { tattooFaq } from "../../lib/serviceFaq";
 import { business } from "../../lib/site";
 
 const service = getService("tatuaje");
@@ -68,7 +70,11 @@ const ServiciiTatuaje = () => (
       </div>
     </section>
 
-    <section aria-label="Tarife tatuaje" className="pb-16 lg:pb-20">
+    <section
+      id="tarife"
+      aria-label="Tarife tatuaje"
+      className="pb-16 lg:pb-20"
+    >
       <div className="container">
         <SectionHeading
           eyebrow="Tarife"
@@ -98,6 +104,8 @@ const ServiciiTatuaje = () => (
     <AvansTatuaje />
 
     <ProcessSteps {...serviceProcess.tatuaje} />
+
+    <FAQSection id="faq-tatuaje" items={tattooFaq} />
 
     <ServiceBookingCta service="tatuaje" />
 

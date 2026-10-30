@@ -1,8 +1,9 @@
 import ServiciiTatuaje from "../../../components/pages/ServiciiTatuaje";
 import JsonLd from "../../../components/JsonLd";
 import { constructMetadata } from "../../../lib/utils";
-import { breadcrumbSchema, serviceSchema } from "../../../lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "../../../lib/schema";
 import { tattooPricing } from "../../../lib/pricing";
+import { tattooFaq } from "../../../lib/serviceFaq";
 
 const description =
   "Tatuaje personalizate în București, zona Pipera: alb-negru, color, contur fin și brodat. Vezi prețurile și lucrările Madiny Tattoo și discută ideea ta cu un artist.";
@@ -40,6 +41,7 @@ const Tatuaje = () => (
           path: "/servicii/tatuaje",
           offers,
         }),
+        faqSchema(tattooFaq),
       ]}
     />
     <ServiciiTatuaje />
