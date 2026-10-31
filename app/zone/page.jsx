@@ -11,7 +11,7 @@ import { breadcrumbSchema } from "../../lib/schema";
 export const metadata = constructMetadata({
   title: "Zone și acces către studioul din Pipera | Madiny Tattoo",
   description:
-    "Tatuaje pentru Aviației, Floreasca, Băneasa, Dorobanți și Tei. Vezi lucrările Madiny și accesul către studioul din Pipera, pe Șos. Pipera 61.",
+    "Vii din București sau Voluntari? Vezi tatuaje fine line, color și realism la Madiny și accesul din zona ta către studioul din Pipera, pe Șos. Pipera 61.",
   path: "/zone",
 });
 
@@ -31,7 +31,7 @@ export default function ZonesPage() {
             "@type": "CollectionPage",
             "@id": `${SITE_URL}/zone#webpage`,
             url: `${SITE_URL}/zone`,
-            name: "Zone din București — Madiny Tattoo",
+            name: "Zone din București și Ilfov — Madiny Tattoo",
             inLanguage: "ro-RO",
             isPartOf: { "@id": `${SITE_URL}/#website` },
             mainEntity: {
@@ -47,7 +47,7 @@ export default function ZonesPage() {
         ]}
       />
       <PageHero
-        eyebrow="București → Pipera"
+        eyebrow="București și Ilfov → Pipera"
         title={
           <>
             Din zona ta, <span className="text-accent">la Madiny.</span>
@@ -56,7 +56,10 @@ export default function ZonesPage() {
         lead="Studioul nostru este pe Șos. Pipera 61. Alege zona din care vii și descoperă lucrările, serviciile și accesul către noi."
         breadcrumbs={trail}
       />
-      <section className="pb-20 lg:pb-28" aria-label="Zone din București">
+      <section
+        className="pb-20 lg:pb-28"
+        aria-label="Zone din București și Ilfov"
+      >
         <div className="container">
           <div className="grid gap-5 md:grid-cols-2">
             {zones.map((zone, index) => (
@@ -75,7 +78,9 @@ export default function ZonesPage() {
                   />
                 </div>
                 <div className="p-6 sm:p-8">
-                  <span className="eyebrow">0{index + 1} / București</span>
+                  <span className="eyebrow">
+                    0{index + 1} / {zone.region || "București"}
+                  </span>
                   <h2 className="mt-3 text-2xl">Vii din {zone.name}?</h2>
                   <p className="text-muted mt-4 text-sm leading-relaxed">
                     {zone.intro}

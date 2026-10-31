@@ -284,7 +284,7 @@ export default function ZonePage({ zone }) {
         animated
       />
       <nav
-        aria-label="Alte zone din București"
+        aria-label="Alte zone din București și Ilfov"
         className="container flex flex-wrap items-center gap-4 pb-6 text-sm"
       >
         <span className="text-muted">Vii din altă zonă?</span>
